@@ -221,7 +221,7 @@ h1 {
   padding: 2rem 0 3rem;
 }
 
-.grid[data-home-grid]:not([data-sorted]) {
+.grid[data-meal-grid]:not([data-sorted]) {
   visibility: hidden;
 }
 

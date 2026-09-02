@@ -147,7 +147,11 @@ const catCard = (cat, { timed } = {}) => {
   </a>`;
 };
 
-const homeSortWindows = JSON.stringify(data.site.homeSort || {});
+const mealSortWindows = JSON.stringify(data.site.homeSort || {});
+
+const mealCategoryGrid = () => `<script type="application/json" id="meal-sort-windows">${mealSortWindows}</script>
+      <noscript><style>.grid[data-meal-grid]:not([data-sorted]){visibility:visible}</style></noscript>
+      <div class="grid" data-meal-grid>${categories.map((c) => catCard(c, { timed: true })).join("")}</div>`;
 
 const home = layout({
   title: data.site.name,
@@ -166,9 +170,7 @@ const home = layout({
         <a href="/viet-eats/">All categories</a>
       </div>
       <p class="lede">Named dishes, then the kitchens that cook them. More Little Saigon directories can sit beside this later.</p>
-      <script type="application/json" id="home-sort-windows">${homeSortWindows}</script>
-      <noscript><style>.grid[data-home-grid]:not([data-sorted]){visibility:visible}</style></noscript>
-      <div class="grid" data-home-grid>${categories.map((c) => catCard(c, { timed: true })).join("")}</div>
+      ${mealCategoryGrid()}
     </section>
   </main>
   <script src="/js/home-sort.js" defer></script>`,
@@ -183,8 +185,9 @@ const vietEatsIndex = layout({
       <h1>Viet Eats</h1>
       <p class="tagline">Dish-first kitchen picks for Little Saigon Sacramento.</p>
     </header>
-    <section class="grid">${categories.map(catCard).join("")}</section>
-  </main>`,
+    ${mealCategoryGrid()}
+  </main>
+  <script src="/js/home-sort.js" defer></script>`,
 });
 
 const catPage = (cat, i) => {

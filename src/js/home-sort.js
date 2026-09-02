@@ -1,4 +1,4 @@
-/** Homepage Viet Eats grid: Pacific meal windows, then snack, then the rest. */
+/** Viet Eats category grids (home + /viet-eats/): Pacific meal windows, then snack, then the rest. */
 
 const DEFAULT_WINDOWS = {
   timezone: "America/Los_Angeles",
@@ -48,8 +48,10 @@ function tier(fit, window) {
   return 3;
 }
 
-function sortHomeGrid(grid, date = new Date()) {
-  const raw = document.getElementById("home-sort-windows")?.textContent;
+function sortMealGrid(grid, date = new Date()) {
+  const raw =
+    document.getElementById("meal-sort-windows")?.textContent ||
+    document.getElementById("home-sort-windows")?.textContent;
   const windows = raw ? { ...DEFAULT_WINDOWS, ...JSON.parse(raw) } : DEFAULT_WINDOWS;
   const window = mealWindow(pacificMinutes(date, windows.timezone), windows);
   const cards = [...grid.children].map((el, index) => ({ el, index }));
@@ -63,10 +65,9 @@ function sortHomeGrid(grid, date = new Date()) {
   grid.dataset.sorted = "true";
 }
 
-const grid = document.querySelector("[data-home-grid]");
-if (grid) {
+for (const grid of document.querySelectorAll("[data-meal-grid]")) {
   try {
-    sortHomeGrid(grid);
+    sortMealGrid(grid);
   } catch {
     grid.dataset.sorted = "true";
   }

@@ -30,7 +30,9 @@ Cloudflare zone **littlesaigonsac.town** (cPALSs account), same GitHub Pages pat
 | `@` | A | `185.199.108.153` (and `.109` `.110` `.111`) | DNS only |
 | `www` | CNAME | `cpalss.github.io` | DNS only |
 
-Repo **Settings → Pages** → custom domain `littlesaigonsac.town` → Enforce HTTPS.
+Repo **Settings → Pages** → custom domain `littlesaigonsac.town` → Enforce HTTPS after DNS verifies.
+
+Assigned Cloudflare nameservers (same pair as `cpalss.com` / `eglny.com`): `david.ns.cloudflare.com` · `kim.ns.cloudflare.com`. Registrar is still Namecheap (`dns1/dns2.registrar-servers.com`) until those NS are switched.
 
 ## Notes
 
