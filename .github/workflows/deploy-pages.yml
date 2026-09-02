@@ -1,0 +1,67 @@
+name: Deploy site to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build
+        run: node scripts/build.mjs
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy attempt 1
+        id: deploy1
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+
+      - name: Deploy attempt 2
+        id: deploy2
+        if: steps.deploy1.outcome != 'success'
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+
+      - name: Deploy attempt 3
+        id: deployment
+        if: steps.deploy1.outcome != 'success' && steps.deploy2.outcome != 'success'
+        uses: actions/deploy-pages@v4
+
+      - name: Fail if all deploy attempts failed
+        if: >-
+          steps.deploy1.outcome != 'success' &&
+          steps.deploy2.outcome != 'success' &&
+          steps.deployment.outcome != 'success'
+        run: |
+          echo "All three deploy attempts failed."
+          exit 1

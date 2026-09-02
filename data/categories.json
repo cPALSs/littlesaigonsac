@@ -1,0 +1,315 @@
+{
+  "site": {
+    "name": "Little Saigon Sactown",
+    "tagline": "Love letters from the heart of Little Saigon Sacramento",
+    "nav": [
+      {
+        "id": "viet-eats",
+        "label": "Viet Eats",
+        "href": "/viet-eats/"
+      }
+    ],
+    "instagram": "https://www.instagram.com/littlesaigonsactown/",
+    "homeSort": {
+      "timezone": "America/Los_Angeles",
+      "breakfast": { "start": "05:00", "end": "11:00" },
+      "lunch": { "start": "11:00", "end": "15:00" },
+      "dinner": { "start": "17:00", "end": "22:00" }
+    }
+  },
+  "categories": [
+    {
+      "slug": "pho",
+      "vi": "Phở",
+      "gloss": "Noodle soup",
+      "photo": "pho.jpg",
+      "fit": ["breakfast", "lunch", "dinner"],
+      "dishes": [
+        {
+          "slug": "pho-dac-biet",
+          "vi": "Phở đặc biệt",
+          "gloss": "Beef combination pho",
+          "photo": "pho-dac-biet.jpg",
+          "kitchens": [
+            {
+              "name": "Sit Lo Saigon",
+              "address": "7405 Laguna Blvd #170, Elk Grove, CA 95758",
+              "maps": "https://maps.app.goo.gl/kGinPw4K49hq46x39"
+            }
+          ]
+        },
+        {
+          "slug": "pho-bo",
+          "vi": "Phở bò",
+          "gloss": "Beef pho",
+          "photo": "pho-bo.jpg",
+          "kitchens": [
+            {
+              "name": "Phở City",
+              "address": "6175 Stockton Blvd #200, Sacramento, CA 95824",
+              "maps": "https://maps.app.goo.gl/LA7AFLV43RaTXn199"
+            },
+            {
+              "name": "Pho Momma",
+              "address": "9555 Folsom Blvd Suite A, Sacramento, CA 95827",
+              "maps": "https://maps.app.goo.gl/bFRWxmweQYSVL7oP8"
+            },
+            {
+              "name": "Pho Viet Anh",
+              "address": "9529 Folsom Blvd A, Sacramento, CA 95827",
+              "maps": "https://maps.app.goo.gl/3Pmvu8PW8NtjpK8u5"
+            }
+          ]
+        },
+        {
+          "slug": "pho-ga",
+          "vi": "Phở gà",
+          "gloss": "Chicken pho",
+          "photo": "pho-ga.jpg",
+          "kitchens": []
+        },
+        {
+          "slug": "pho-hai-san",
+          "vi": "Phở hải sản",
+          "gloss": "Seafood pho",
+          "kitchens": []
+        },
+        {
+          "slug": "pho-chay",
+          "vi": "Phở chay",
+          "gloss": "Vegetarian pho",
+          "photo": "pho-chay.jpg",
+          "kitchens": []
+        }
+      ]
+    },
+    {
+      "slug": "chao",
+      "vi": "Cháo",
+      "gloss": "Porridge / congee",
+      "photo": "chao.png",
+      "fit": ["breakfast"],
+      "dishes": [
+        {
+          "slug": "chao-ga",
+          "vi": "Cháo gà",
+          "gloss": "Chicken congee",
+          "photo": "chao-ga.jpg",
+          "kitchens": []
+        },
+        {
+          "slug": "chao-long",
+          "vi": "Cháo lòng",
+          "gloss": "Offal congee",
+          "kitchens": []
+        },
+        {
+          "slug": "chao-vit",
+          "vi": "Cháo vịt",
+          "gloss": "Duck congee",
+          "kitchens": []
+        },
+        {
+          "slug": "chao-ca",
+          "vi": "Cháo cá",
+          "gloss": "Fish congee",
+          "kitchens": [
+            {
+              "name": "Lollibowl",
+              "address": "6830 Stockton Blvd #250, Sacramento, CA 95823",
+              "maps": "https://maps.app.goo.gl/QLRFeJpAcw5b41zt7"
+            }
+          ]
+        },
+        {
+          "slug": "chao-trang",
+          "vi": "Cháo trắng",
+          "gloss": "Plain congee",
+          "kitchens": []
+        }
+      ]
+    },
+    {
+      "slug": "banh-mi",
+      "vi": "Bánh mì",
+      "gloss": "Sandwich",
+      "photo": "banh-mi.jpg",
+      "fit": ["breakfast", "lunch"],
+      "dishes": [
+        {
+          "slug": "banh-mi-thit-nguoi",
+          "vi": "Bánh mì thịt nguội",
+          "gloss": "Cold cuts",
+          "photo": "banh-mi-thit-nguoi.jpg",
+          "kitchens": [
+            {
+              "name": "Paris Bánh Mì",
+              "address": "8403 Elk Grove Blvd, Elk Grove, CA 95758",
+              "maps": "https://maps.app.goo.gl/21ZA21M43MoeoXRh9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "thit-hai-san",
+      "vi": "Thịt / Hải sản",
+      "gloss": "Meat / seafood",
+      "photo": "thit-hai-san.jpg",
+      "fit": ["lunch", "dinner"],
+      "dishes": [
+        {
+          "slug": "bo-ne",
+          "vi": "Bò né",
+          "gloss": "Steak skillet",
+          "photo": "bo-ne.jpg",
+          "kitchens": [
+            {
+              "name": "Creasian Fusion",
+              "address": "9163 E Stockton Blvd #300, Elk Grove, CA 95624",
+              "maps": "https://maps.app.goo.gl/UMNnk9uXFSHGNZmm9"
+            }
+          ]
+        },
+        {
+          "slug": "banh-mi-chao",
+          "vi": "Bánh mì chảo",
+          "gloss": "Skillet bánh mì",
+          "kitchens": [
+            {
+              "name": "Saigon Oi",
+              "address": "6835 Stockton Blvd Ste 450, Sacramento, CA 95823",
+              "maps": "https://maps.google.com/?cid=16141630770361268683"
+            }
+          ]
+        },
+        {
+          "slug": "bo-luc-lac",
+          "vi": "Bò lúc lắc",
+          "gloss": "Shaking beef",
+          "photo": "bo-luc-lac.jpg",
+          "kitchens": [
+            {
+              "name": "Creasian Fusion",
+              "address": "9163 E Stockton Blvd #300, Elk Grove, CA 95624",
+              "maps": "https://maps.app.goo.gl/UMNnk9uXFSHGNZmm9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ca-phe",
+      "vi": "Cà phê",
+      "gloss": "Coffee",
+      "photo": "ca-phe.jpg",
+      "fit": ["snack"],
+      "dishes": [
+        {
+          "slug": "ca-phe-phin-den",
+          "vi": "Cà phê phin đen",
+          "gloss": "Black drip coffee",
+          "photo": "ca-phe-phin-den.jpg",
+          "kitchens": [
+            {
+              "name": "Em Coffee House",
+              "address": "7440 Laguna Blvd Ste 111, Elk Grove, CA 95758",
+              "maps": "https://maps.google.com/?cid=6540387235085985190"
+            },
+            {
+              "name": "Caffeine Society Club",
+              "address": "6821 Stockton Blvd Ste 110, Sacramento, CA 95823",
+              "maps": "https://maps.google.com/?cid=6901488499280839702"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "banh",
+      "vi": "Bánh",
+      "gloss": "Sweet / savory pastries",
+      "photo": "banh.jpg",
+      "fit": ["snack"],
+      "dishes": [
+        {
+          "section": "Sweets",
+          "slug": "banh-bo",
+          "vi": "Bánh bò",
+          "gloss": "Honeycomb cake",
+          "photo": "banh-bo.jpg",
+          "kitchens": [
+            {
+              "name": "The Bánh Bò Lady",
+              "address": "Elk Grove pickup",
+              "maps": "https://www.instagram.com/thebanhbolady/"
+            }
+          ]
+        },
+        {
+          "section": "Savories",
+          "slug": "banh-khot",
+          "vi": "Bánh khọt",
+          "gloss": "Crispy savory pancakes",
+          "photo": "banh-khot.jpg",
+          "kitchens": [
+            {
+              "name": "Mes Kitchen",
+              "address": "2610 Fair Oaks Blvd, Sacramento, CA 95864",
+              "maps": "https://maps.google.com/?cid=6298839051881367216"
+            },
+            {
+              "name": "Saigon Oi",
+              "address": "6835 Stockton Blvd Ste 450, Sacramento, CA 95823",
+              "maps": "https://maps.google.com/?cid=16141630770361268683"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "bun",
+      "vi": "Bún",
+      "gloss": "Rice vermicelli",
+      "photo": "bun.png",
+      "fit": ["lunch", "dinner"],
+      "dishes": [
+        {
+          "slug": "bun-thit-nuong-cha-gio",
+          "vi": "Bún thịt nướng chả giò",
+          "gloss": "Grilled pork and crispy egg rolls",
+          "photo": "bun-thit-nuong-cha-gio.jpg",
+          "kitchens": [
+            {
+              "name": "Creasian Fusion",
+              "address": "9163 E Stockton Blvd #300, Elk Grove, CA 95624",
+              "maps": "https://maps.app.goo.gl/UMNnk9uXFSHGNZmm9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "che",
+      "vi": "Chè",
+      "gloss": "Dessert brews",
+      "photo": "che.jpg",
+      "fit": ["snack"],
+      "dishes": [
+        {
+          "slug": "che-ba-mau",
+          "vi": "Chè ba màu",
+          "gloss": "Three-color chè",
+          "photo": "che-ba-mau.jpg",
+          "kitchens": [
+            {
+              "name": "Pho Bac Hoa Viet",
+              "address": "3110 Bradshaw Rd, Sacramento, CA 95827",
+              "maps": "https://maps.app.goo.gl/Qeji5JHZ8y2kzFs97"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
