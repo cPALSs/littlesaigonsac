@@ -5,6 +5,8 @@ Repo: [cPALSs/littlesaigonsac](https://github.com/cPALSs/littlesaigonsac)
 
 cPALSs place-brand site for Sacramento Little Saigon. **Viet Eats** is the first section (dish-first kitchen picks). Canon is [`data/categories.json`](data/categories.json); HTML is generated into `dist/` (not committed).
 
+Ops sources (brand masters, TikTok, unused stock) live in the cPALSs vault at `Operations/Little Saigon Sactown/` — not this repo. This clone is the website only.
+
 ## Edit / preview / publish
 
 ```bash
@@ -23,16 +25,23 @@ Push to `main` deploys via `.github/workflows/deploy-pages.yml` (builds `dist/`,
 
 ## DNS
 
-Cloudflare zone **littlesaigonsac.town** (cPALSs account), same GitHub Pages pattern as eglny.com:
+Cloudflare zones on the cPALSs account. Nameservers: `david.ns.cloudflare.com` · `kim.ns.cloudflare.com`.
+
+**littlesaigonsac.town** (GitHub Pages origin):
 
 | Name | Type | Content | Proxy |
 |------|------|---------|-------|
 | `@` | A | `185.199.108.153` (and `.109` `.110` `.111`) | DNS only |
-| `www` | CNAME | `cpalss.github.io` | DNS only |
+| `www` | CNAME | `littlesaigonsac.town` | Proxied |
+
+Redirect Rule: `www.littlesaigonsac.town` → `https://littlesaigonsac.town` (301, path + query).
 
 Repo **Settings → Pages** → custom domain `littlesaigonsac.town` → Enforce HTTPS after DNS verifies.
 
-Assigned Cloudflare nameservers (same pair as `cpalss.com` / `eglny.com`): `david.ns.cloudflare.com` · `kim.ns.cloudflare.com`. Registrar is still Namecheap (`dns1/dns2.registrar-servers.com`) until those NS are switched.
+**littlesaigonsac.com** (redirect-only):
+
+- `www` → apex `https://littlesaigonsac.com` (301)
+- apex → `https://littlesaigonsac.town` (301)
 
 ## Notes
 

@@ -71,7 +71,7 @@ const gaTag = gaId
 `
   : "";
 
-const layout = ({ title, body, current = "" }) => `<!doctype html>
+const layout = ({ title, body, current = "", home = false }) => `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -84,7 +84,7 @@ ${gaTag}  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="icon" href="/img/brand/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/img/brand/apple-touch.png">
 </head>
-<body>
+<body${home ? ' class="home"' : ""}>
   ${siteHeader(current)}
   ${body}
   <footer>
@@ -168,20 +168,19 @@ const mealCategoryGrid = () => `<script type="application/json" id="meal-sort-wi
 const home = layout({
   title: data.site.name,
   current: "",
-  body: `<main class="wrap">
-    <header class="hero">
-      <h1 class="hero-title">${esc(data.site.name)}</h1>
-      <p class="tagline">${esc(data.site.tagline)}</p>
+  home: true,
+  body: `<main>
+    <header class="hero hero--brand">
+      <h1 class="hero-banner">
+        <img class="hero-wordmark" src="/img/brand/logo-wordmark.svg" width="2250" height="2250" alt="${esc(data.site.name)}">
+      </h1>
     </header>
-    <section class="feature" id="viet-eats">
+    <section class="wrap feature" id="viet-eats">
       <div class="section-head">
-        <div>
-          <p class="kicker">Featured</p>
-          <h2>Viet Eats</h2>
-        </div>
+        <h2>Viet Eats</h2>
         <a href="/viet-eats/">All categories</a>
       </div>
-      <p class="lede">Named dishes, then the kitchens that cook them. More Little Saigon directories can sit beside this later.</p>
+      <p class="lede">Vietnamese cuisine and the best kitchens that cook them.</p>
       ${mealCategoryGrid()}
     </section>
   </main>

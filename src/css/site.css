@@ -10,6 +10,17 @@
   --filled: #fffaf1;
   --rule: rgba(28, 20, 15, 0.12);
   --shadow: 0 10px 30px rgba(28, 20, 15, 0.08);
+  /* Logo 2.af `_Linear2` — Affinity vector (383.57, -1879.29); CSS 0deg is up */
+  --lss-grad-angle: 11.54deg;
+  --lss-purple: #3b257b;
+  --lss-red: #f61729;
+  --lss-gold: #e6c715;
+  --lss-hero-fill: linear-gradient(
+    var(--lss-grad-angle),
+    var(--lss-purple) 0%,
+    var(--lss-red) 50%,
+    var(--lss-gold) 100%
+  );
 }
 
 * {
@@ -133,9 +144,67 @@ a:hover {
   height: 1.28rem;
 }
 
+.home .site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: transparent;
+  border-bottom: none;
+}
+
+.home .site-header .wrap {
+  justify-content: flex-end;
+}
+
+.home .wordmark {
+  display: none;
+}
+
+.home .site-nav a,
+.home .site-header .ig {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+.home .site-header .ig {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55));
+  text-shadow: none;
+}
+
+.home .site-nav a:hover,
+.home .site-nav a[aria-current="page"],
+.home .site-header .ig:hover {
+  color: #fff;
+}
+
+.home .site-nav a[aria-current="page"] {
+  box-shadow: inset 0 -2px 0 #fff;
+}
+
 .hero {
   padding: 2.6rem 0 1.6rem;
   border-bottom: 1px solid var(--rule);
+}
+
+.hero--brand {
+  padding: 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.hero-banner {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  height: 27rem;
+  background: var(--lss-hero-fill);
+}
+
+.hero-wordmark {
+  display: block;
+  height: 21rem;
+  width: auto;
 }
 
 .kicker {
@@ -167,7 +236,7 @@ h1 {
 }
 
 .lede {
-  margin: 1.1rem 0 0;
+  margin: 0.25rem 0 0;
   max-width: 40rem;
 }
 
@@ -200,13 +269,13 @@ h1 {
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-  margin: 2.2rem 0 1rem;
+  margin: 2.2rem 0 0.2rem;
 }
 
 .section-head h2 {
   margin: 0;
   font-family: "Noto Serif", Georgia, serif;
-  font-size: 1.35rem;
+  font-size: 1.85rem;
 }
 
 .muted {
