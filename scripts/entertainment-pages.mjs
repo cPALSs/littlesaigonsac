@@ -151,7 +151,7 @@ function directoryRow(entity, type, events) {
   };
 }
 
-/** People + bands/acts (A–Z). Organizations separately, event-count desc. */
+/** People + bands/acts and Organizations: default A–Z (client can re-sort both). */
 export function directorySections(people = {}, orgs = {}, events = []) {
   const named = (row) => String(row.name || "").trim();
   const performers = [
@@ -165,7 +165,7 @@ export function directorySections(people = {}, orgs = {}, events = []) {
     .map((o) => directoryRow(o, "org", events))
     .filter(named);
   performers.sort(compareViName);
-  organizations.sort((a, b) => b.eventCount - a.eventCount || compareViName(a, b));
+  organizations.sort(compareViName);
   return { performers, organizations };
 }
 
@@ -355,7 +355,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
       : "";
     const orgBlock = organizations.length
       ? `<h2 class="section-label band-label">Organizations</h2>
-    ${performerList(organizations)}`
+    ${performerList(organizations, { sortable: true })}`
       : "";
     return `${peopleBlock}
     ${orgBlock}`;

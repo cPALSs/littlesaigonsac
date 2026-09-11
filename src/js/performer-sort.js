@@ -1,4 +1,4 @@
-/** Reorder the Performers grid on /entertainment/performers/ (static Pages). */
+/** Reorder Performers + Organizations grids on /entertainment/performers/. */
 
 function compareName(a, b) {
   return String(a.dataset.name || "").localeCompare(String(b.dataset.name || ""), "vi", {
@@ -19,8 +19,10 @@ function sortPerformerGrid(grid, mode) {
 }
 
 const select = document.querySelector("[data-performer-sort]");
-const grid = document.querySelector("[data-performer-grid]");
-if (select && grid) {
-  const apply = () => sortPerformerGrid(grid, select.value);
+const grids = document.querySelectorAll("[data-performer-grid]");
+if (select && grids.length) {
+  const apply = () => {
+    for (const grid of grids) sortPerformerGrid(grid, select.value);
+  };
   select.addEventListener("change", apply);
 }
