@@ -2576,6 +2576,11 @@
           "kind": "facebook",
           "url": "https://facebook.com/rubyblvd",
           "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/rubyblvd",
+          "label": "YouTube"
         }
       ],
       "photo": "entertainment/orgs/ruby-blvd-entertainment.jpg"
