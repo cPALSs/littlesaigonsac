@@ -74,6 +74,100 @@
       ]
     },
     {
+      "id": "van-lang-da-vu-mua-thu-la-bay-2026",
+      "label": "Dạ Vũ Mùa Thu Lá Bay",
+      "display_date": "Oct 4, 2026",
+      "start_date": "2026-10-04",
+      "end_date": "2026-10-04",
+      "city": "San Jose",
+      "venue": "Dynasty Restaurant, 1001 Story Rd",
+      "place_name": "Dynasty Restaurant",
+      "status": "confirmed",
+      "poster": "entertainment/van-lang-da-vu-mua-thu-la-bay-2026.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "trung-tam-viet-ngu-van-lang-san-jose",
+          "name": "Trung Tâm Việt Ngữ Văn Lang San Jose",
+          "role": "host"
+        }
+      ],
+      "lineup": [
+        {
+          "type": "person",
+          "id": "tuong-vy",
+          "name": "bé Tường Vy",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "hoang-thuc-linh",
+          "name": "Hoàng Thục Linh",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "huong-thuy",
+          "name": "Hương Thuý",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "le-ha",
+          "name": "Lệ Hà",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "ngan-hanh",
+          "name": "Ngân Hạnh",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "quoc-khanh",
+          "name": "Quốc Khanh",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "thien-kim",
+          "name": "Thiên Kim",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "vickie-hoa-tran",
+          "name": "Vickie",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "vu-hien",
+          "name": "Vũ Hiển",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "yen-lam",
+          "name": "Yên Lam",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "quoc-bao",
+          "name": "MC Quốc Bảo",
+          "role": "mc"
+        },
+        {
+          "type": "org",
+          "id": "the-friend-band",
+          "name": "Ban nhạc The Friend",
+          "role": "band"
+        }
+      ]
+    },
+    {
       "id": "trina-giai-dieu-mua-thu-2026",
       "label": "Giai Điệu Mùa Thu",
       "display_date": "Oct 3, 2026",
@@ -1535,6 +1629,72 @@
       "links": [],
       "photo": null
     },
+    "thien-kim": {
+      "id": "thien-kim",
+      "name": "Thiên Kim",
+      "links": [],
+      "photo": null
+    },
+    "huong-thuy": {
+      "id": "huong-thuy",
+      "name": "Hương Thuý",
+      "links": [],
+      "photo": null
+    },
+    "quoc-khanh": {
+      "id": "quoc-khanh",
+      "name": "Quốc Khanh",
+      "links": [],
+      "photo": null
+    },
+    "hoang-thuc-linh": {
+      "id": "hoang-thuc-linh",
+      "name": "Hoàng Thục Linh",
+      "links": [],
+      "photo": null
+    },
+    "le-ha": {
+      "id": "le-ha",
+      "name": "Lệ Hà",
+      "links": [],
+      "photo": null
+    },
+    "ngan-hanh": {
+      "id": "ngan-hanh",
+      "name": "Ngân Hạnh",
+      "links": [],
+      "photo": null
+    },
+    "vickie-hoa-tran": {
+      "id": "vickie-hoa-tran",
+      "name": "Vickie Hoa Tran",
+      "links": [],
+      "photo": null
+    },
+    "vu-hien": {
+      "id": "vu-hien",
+      "name": "Vũ Hiển",
+      "links": [],
+      "photo": null
+    },
+    "tuong-vy": {
+      "id": "tuong-vy",
+      "name": "Tường Vy",
+      "links": [],
+      "photo": null
+    },
+    "quoc-bao": {
+      "id": "quoc-bao",
+      "name": "Quốc Bảo",
+      "links": [],
+      "photo": null
+    },
+    "yen-lam": {
+      "id": "yen-lam",
+      "name": "Yên Lam",
+      "links": [],
+      "photo": null
+    },
     "minh-thu": {
       "id": "minh-thu",
       "name": "Minh Thư",
@@ -2579,6 +2739,24 @@
       "id": "joy-entertainment",
       "name": "JOY Entertainment",
       "links": [],
+      "photo": null
+    },
+    "the-friend-band": {
+      "id": "the-friend-band",
+      "name": "The Friend",
+      "links": [],
+      "photo": null
+    },
+    "trung-tam-viet-ngu-van-lang-san-jose": {
+      "id": "trung-tam-viet-ngu-van-lang-san-jose",
+      "name": "Trung Tâm Việt Ngữ Văn Lang San Jose",
+      "links": [
+        {
+          "kind": "website",
+          "url": "http://vanlangsj.org",
+          "label": "Website"
+        }
+      ],
       "photo": null
     },
     "ban-nhac-lang-du": {
