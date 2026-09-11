@@ -7,6 +7,11 @@
         "id": "viet-eats",
         "label": "Viet Eats",
         "href": "/viet-eats/"
+      },
+      {
+        "id": "entertainment",
+        "label": "Entertainment",
+        "href": "/entertainment/"
       }
     ],
     "instagram": "https://www.instagram.com/littlesaigonsactown/",

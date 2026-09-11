@@ -2,12 +2,17 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync, cpSync, rmSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { homeEntertainmentSection, writeEntertainmentPages } from "./entertainment-pages.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dist = join(root, "dist");
 const data = JSON.parse(readFileSync(join(root, "data/categories.json"), "utf8"));
 const categories = data.categories;
 const nav = data.site.nav || [];
+const entertainmentPath = join(root, "data/entertainment.json");
+const entertainment = existsSync(entertainmentPath)
+  ? JSON.parse(readFileSync(entertainmentPath, "utf8"))
+  : null;
 
 const esc = (s = "") =>
   String(s)
@@ -33,10 +38,16 @@ const igButton = () => `<a class="ig" href="${esc(igHref)}" rel="noopener norefe
     </svg>
   </a>`;
 
-const crumbs = ({ vietEatsCurrent = false } = {}) => `<nav class="crumbs" aria-label="Breadcrumb">
+const crumbs = (trail = []) => `<nav class="crumbs" aria-label="Breadcrumb">
     <a href="/">Home</a>
-    <span class="crumbs-sep" aria-hidden="true"> / </span>
-    ${vietEatsCurrent ? `<span aria-current="page">Viet Eats</span>` : `<a href="/viet-eats/">Viet Eats</a>`}
+    ${trail
+      .map((item) => {
+        const crumb = item.current
+          ? `<span aria-current="page">${esc(item.label)}</span>`
+          : `<a href="${esc(item.href)}">${esc(item.label)}</a>`;
+        return `<span class="crumbs-sep" aria-hidden="true"> / </span>${crumb}`;
+      })
+      .join("")}
   </nav>`;
 
 const siteHeader = (current) => `<header class="site-header">
@@ -45,15 +56,18 @@ const siteHeader = (current) => `<header class="site-header">
         <img src="/img/brand/logo-circle.png" width="44" height="44" alt="">
         <span>${esc(data.site.name)}</span>
       </a>
-      <div class="header-end">
-        <nav class="site-nav" aria-label="Site">
-          ${nav
-            .map((item) => {
-              const on = item.id === current;
-              return `<a href="${esc(item.href)}"${on ? ' aria-current="page"' : ""}>${esc(item.label)}</a>`;
-            })
-            .join("")}
-        </nav>
+      <nav class="site-nav" id="site-nav" aria-label="Site">
+        ${nav
+          .map((item) => {
+            const on = item.id === current;
+            return `<a href="${esc(item.href)}"${on ? ' aria-current="page"' : ""}>${esc(item.label)}</a>`;
+          })
+          .join("")}
+      </nav>
+      <div class="header-tools">
+        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
         ${igButton()}
       </div>
     </div>
@@ -93,6 +107,8 @@ ${gaTag}  <link rel="preconnect" href="https://fonts.googleapis.com">
       ${igButton()}
     </div>
   </footer>
+  <script src="/js/site-nav.js" defer></script>
+  <script src="/js/poster-lightbox.js" defer></script>
 </body>
 </html>
 `;
@@ -183,6 +199,7 @@ const home = layout({
       <p class="lede">Vietnamese cuisine and the best kitchens that cook them.</p>
       ${mealCategoryGrid()}
     </section>
+    ${entertainment ? homeEntertainmentSection({ entertainment, esc, imgEl, crumbs }) : ""}
   </main>
   <script src="/js/home-sort.js" defer></script>`,
 });
@@ -192,7 +209,7 @@ const vietEatsIndex = layout({
   current: "viet-eats",
   body: `<main class="wrap">
     <header class="hero">
-      ${crumbs({ vietEatsCurrent: true })}
+      ${crumbs([{ label: "Viet Eats", current: true }])}
       <h1>Viet Eats</h1>
       <p class="tagline">Dish-first kitchen picks for Little Saigon Sacramento.</p>
     </header>
@@ -209,7 +226,7 @@ const catPage = (cat, i) => {
     current: "viet-eats",
     body: `<main class="wrap category">
       <header class="dish-head">
-        ${crumbs()}
+        ${crumbs([{ href: "/viet-eats/", label: "Viet Eats" }, { label: cat.vi, current: true }])}
         <h1>${esc(cat.vi)}</h1>
         <p class="tagline">${esc(cat.gloss)}</p>
         <div class="hero-photo">${imgEl(cat.photo, cat.vi)}</div>
@@ -229,6 +246,8 @@ mkdirSync(join(dist, "js"), { recursive: true });
 mkdirSync(join(dist, "viet-eats"), { recursive: true });
 cpSync(join(root, "src/css/site.css"), join(dist, "css/site.css"));
 cpSync(join(root, "src/js/home-sort.js"), join(dist, "js/home-sort.js"));
+cpSync(join(root, "src/js/site-nav.js"), join(dist, "js/site-nav.js"));
+cpSync(join(root, "src/js/poster-lightbox.js"), join(dist, "js/poster-lightbox.js"));
 cpSync(join(root, "src/img"), join(dist, "img"), { recursive: true });
 writeFileSync(join(dist, "CNAME"), "littlesaigonsac.town\n");
 writeFileSync(join(dist, ".nojekyll"), "");
@@ -240,4 +259,22 @@ for (const [i, cat] of categories.entries()) {
   writeFileSync(join(dir, "index.html"), catPage(cat, i));
 }
 
-console.log(`Built home + Viet Eats (${categories.length} categories) → ${dist}`);
+let entertainmentCounts = null;
+if (entertainment) {
+  entertainmentCounts = writeEntertainmentPages({
+    dist,
+    join,
+    mkdirSync,
+    writeFileSync,
+    layout,
+    esc,
+    imgEl,
+    crumbs,
+    entertainment,
+  });
+}
+
+const extra = entertainmentCounts
+  ? ` + Entertainment (${entertainmentCounts.events} shows, ${entertainmentCounts.people} people, ${entertainmentCounts.orgs} orgs)`
+  : "";
+console.log(`Built home + Viet Eats (${categories.length} categories)${extra} → ${dist}`);

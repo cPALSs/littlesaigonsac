@@ -3,7 +3,7 @@
 Live: [https://littlesaigonsac.town](https://littlesaigonsac.town)  
 Repo: [cPALSs/littlesaigonsac](https://github.com/cPALSs/littlesaigonsac)
 
-cPALSs place-brand site for Sacramento Little Saigon. **Viet Eats** is the first section (dish-first kitchen picks). Canon is [`data/categories.json`](data/categories.json); HTML is generated into `dist/` (not committed).
+cPALSs place-brand site for Sacramento Little Saigon. **Viet Eats** is dish-first kitchen picks ([`data/categories.json`](data/categories.json)). **Entertainment** is a scrubbed concert poster gallery ([`data/entertainment.json`](data/entertainment.json), generated from Community Graph). HTML is generated into `dist/` (not committed).
 
 Ops sources (brand masters, TikTok, unused stock) live in the cPALSs vault at `Operations/Little Saigon Sactown/` — not this repo. This clone is the website only.
 
@@ -43,8 +43,18 @@ Repo **Settings → Pages** → custom domain `littlesaigonsac.town` → Enforce
 - `www` → apex `https://littlesaigonsac.com` (301)
 - apex → `https://littlesaigonsac.town` (301)
 
+## Entertainment export
+
+After ingesting Vietnamese Concert flyers into Community Graph, regenerate public JSON + JPEG posters from the cPALSs vault (`Community OS/database`), not this clone:
+
+```bash
+node scripts/export-entertainment-public.mjs
+```
+
+That writes `data/entertainment.json` and `src/img/entertainment/{activity-id}.jpg` here. Then `npm run build` / `npm start` in this clone.
+
 ## Notes
 
-- Category stills: `src/img/`. Dish-row thumbs stay off until frames are large enough.
+- Category stills: `src/img/`. Concert posters: `src/img/entertainment/`.
 - Do not file dish canon into Community Graph SQLite.
-- Visitor pages must not link monorepo paths.
+- Visitor pages must not link monorepo paths, `file://`, or Bao Thoughts vault paths.
