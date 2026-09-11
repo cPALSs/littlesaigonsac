@@ -1674,7 +1674,7 @@
           "label": "Facebook"
         }
       ],
-      "photo": null
+      "photo": "entertainment/people/huy-tran.jpg"
     },
     "mai-thanh-son": {
       "id": "mai-thanh-son",
@@ -2234,6 +2234,11 @@
           "kind": "facebook",
           "url": "https://facebook.com/caothaison.official",
           "label": "Facebook"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/caothaison_official",
+          "label": "Instagram"
         }
       ],
       "photo": "entertainment/people/cao-thai-son.jpg"
@@ -2293,6 +2298,11 @@
           "kind": "facebook",
           "url": "https://facebook.com/mcnguyenkhang",
           "label": "Facebook"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/nguyenkhangmc",
+          "label": "Instagram"
         },
         {
           "kind": "youtube",
