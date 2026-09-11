@@ -58,6 +58,8 @@ function showsFor(events, type, id) {
 
 const UNLISTED_EVENTS_FB_URL = "https://www.facebook.com/groups/604503937066539";
 const UNLISTED_EVENTS_FB_NAME = "LITTLE SAIGON in Sacramento - Cộng Đồng Người Việt";
+const UNLISTED_EVENTS_FB_ALT_URL = "https://www.facebook.com/groups/290197905206406";
+const UNLISTED_EVENTS_FB_ALT_NAME = "Người Việt Sacramento and Elk Grove";
 
 /** Public gallery geography: Sacramento region, city of Stockton, Reno / casino circuit. Bay Area out. */
 export const ENTERTAINMENT_TAGLINE =
@@ -237,7 +239,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
   };
 
   const unlistedEventsInvite = () =>
-    `<p class="ent-invite">Know a show we missed? Post it in <a href="${esc(UNLISTED_EVENTS_FB_URL)}" rel="noopener noreferrer" target="_blank">${esc(UNLISTED_EVENTS_FB_NAME)}</a>.</p>`;
+    `<p class="ent-invite">Know a show we missed? Post it in <a href="${esc(UNLISTED_EVENTS_FB_URL)}" rel="noopener noreferrer" target="_blank">${esc(UNLISTED_EVENTS_FB_NAME)}</a> or <a href="${esc(UNLISTED_EVENTS_FB_ALT_URL)}" rel="noopener noreferrer" target="_blank">${esc(UNLISTED_EVENTS_FB_ALT_NAME)}</a>.</p>`;
 
   const retiredRedirectPage = () => `<!doctype html>
 <html lang="en">
