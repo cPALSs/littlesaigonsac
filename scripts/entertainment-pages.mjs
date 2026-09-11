@@ -1,5 +1,6 @@
 /** HTML builders for /entertainment on littlesaigonsac.town */
 
+import { existsSync } from "node:fs";
 import { cardVenueLine, venueLine } from "./venue-display.mjs";
 
 export { cardVenueLine, venueLine } from "./venue-display.mjs";
@@ -57,6 +58,31 @@ function showsFor(events, type, id) {
 
 const UNLISTED_EVENTS_FB_URL = "https://www.facebook.com/groups/604503937066539";
 const UNLISTED_EVENTS_FB_NAME = "LITTLE SAIGON in Sacramento - Cộng Đồng Người Việt";
+
+/** Public gallery geography: Sacramento region, city of Stockton, Reno / casino circuit. Bay Area out. */
+export const ENTERTAINMENT_TAGLINE =
+  "Vietnamese concerts and dance nights around Sacramento, Stockton, and Reno.";
+
+/**
+ * Paths published then withdrawn (Bay Area night, 2026-09-11).
+ * Write a client redirect so the old URL is not a 404. Skip if a live page exists.
+ */
+const RETIRED_ENTERTAINMENT_PATHS = [
+  "van-lang-da-vu-mua-thu-la-bay-2026",
+  "orgs/trung-tam-viet-ngu-van-lang-san-jose",
+  "orgs/the-friend-band",
+  "people/hoang-thuc-linh",
+  "people/huong-thuy",
+  "people/le-ha",
+  "people/ngan-hanh",
+  "people/quoc-bao",
+  "people/quoc-khanh",
+  "people/thien-kim",
+  "people/tuong-vy",
+  "people/vickie-hoa-tran",
+  "people/vu-hien",
+  "people/yen-lam",
+];
 
 export function performerRows(people = {}, orgs = {}) {
   return [
@@ -213,6 +239,31 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
   const unlistedEventsInvite = () =>
     `<p class="ent-invite">Know a show we missed? Post it in <a href="${esc(UNLISTED_EVENTS_FB_URL)}" rel="noopener noreferrer" target="_blank">${esc(UNLISTED_EVENTS_FB_NAME)}</a>.</p>`;
 
+  const retiredRedirectPage = () => `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url=/entertainment/">
+  <link rel="canonical" href="https://littlesaigonsac.town/entertainment/">
+  <title>Moved · Little Saigon Sactown</title>
+</head>
+<body>
+  <p>This page is no longer in the Entertainment gallery. <a href="/entertainment/">See current shows</a>.</p>
+</body>
+</html>
+`;
+
+  const writeRetiredRedirects = ({ dist, join, mkdirSync, writeFileSync }) => {
+    for (const rel of RETIRED_ENTERTAINMENT_PATHS) {
+      const dir = join(dist, "entertainment", rel);
+      const file = join(dir, "index.html");
+      if (existsSync(file)) continue;
+      mkdirSync(dir, { recursive: true });
+      writeFileSync(file, retiredRedirectPage());
+    }
+  };
+
   return {
     posterCard,
     posterGrid,
@@ -224,6 +275,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     entertainmentTabs,
     performerList,
     unlistedEventsInvite,
+    writeRetiredRedirects,
     entityName,
     crumbsEnt: (trail) => crumbs(trail),
   };
@@ -240,7 +292,7 @@ export function homeEntertainmentSection({ entertainment, esc, imgEl, crumbs }) 
         <h2>Entertainment</h2>
         <a href="/entertainment/">All shows</a>
       </div>
-      <p class="lede">Vietnamese concerts and dance nights from Sacramento to Reno.</p>
+      <p class="lede">${ENTERTAINMENT_TAGLINE}</p>
       ${unlistedEventsInvite()}
       <div class="poster-grid poster-grid--home">${strip.map(posterCard).join("")}</div>
     </section>`;
@@ -261,7 +313,7 @@ export function writeEntertainmentPages({
   const { upcoming, past } = splitShows(events, asOf);
   const h = entertainmentHelpers({ esc, imgEl, crumbs });
   const siteName = "Little Saigon Sactown";
-  const galleryDescription = "Vietnamese concerts and dance nights from Sacramento to Reno.";
+  const galleryDescription = ENTERTAINMENT_TAGLINE;
 
   const galleryBody = `<main class="wrap">
     <header class="hero">
@@ -304,7 +356,7 @@ export function writeEntertainmentPages({
         { label: "Performers", current: true },
       ])}
       <h1>Entertainment</h1>
-      <p class="tagline">Vietnamese concerts and dance nights from Sacramento to Reno.</p>
+      <p class="tagline">${galleryDescription}</p>
       ${h.unlistedEventsInvite()}
       ${h.entertainmentTabs("performers")}
     </header>
@@ -411,6 +463,8 @@ export function writeEntertainmentPages({
       }),
     );
   }
+
+  h.writeRetiredRedirects({ dist, join, mkdirSync, writeFileSync });
 
   return {
     events: events.length,
