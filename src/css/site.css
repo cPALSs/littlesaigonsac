@@ -409,34 +409,36 @@ h1 {
   max-width: 40rem;
 }
 
-.invite-card .invite-card-art {
-  display: flex;
-  align-items: center;
+.invite-card {
   justify-content: center;
-  padding: 1.1rem 0.85rem;
-  background: var(--lss-hero-fill);
-  box-shadow: none;
+  align-items: center;
+  gap: 0.95rem;
+  padding: 1.6rem 1.1rem;
+  text-align: center;
+  height: 100%;
+  min-height: 12rem;
+  background: var(--filled);
 }
 
 .invite-card-prompt {
   margin: 0;
-  color: var(--filled);
+  color: var(--ink);
   font-family: "Noto Serif", Georgia, serif;
   font-size: 1.28rem;
   font-weight: 700;
   line-height: 1.2;
-  text-align: center;
   text-wrap: balance;
 }
 
-.invite-card .card-body p {
+.invite-card-copy {
   margin: 0;
+  max-width: 16rem;
   color: var(--ink-soft);
   font-size: 0.86rem;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
-.invite-card .card-body a {
+.invite-card-copy a {
   font-weight: 600;
 }
 
