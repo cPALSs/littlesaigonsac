@@ -1624,14 +1624,9 @@
           "kind": "facebook",
           "url": "https://facebook.com/thunguyen8594",
           "label": "Facebook"
-        },
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/thu_ng85",
-          "label": "Instagram"
         }
       ],
-      "photo": null
+      "photo": "entertainment/people/phuong-thu.jpg"
     },
     "oscar-thuan-nguyen": {
       "id": "oscar-thuan-nguyen",
