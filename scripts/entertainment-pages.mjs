@@ -288,14 +288,13 @@ export function homeEntertainmentSection({ entertainment, esc, imgEl, crumbs }) 
   const { upcoming, past } = splitShows(events, asOf);
   const strip = [...upcoming, ...past].slice(0, 4);
   if (!strip.length) return "";
-  const { posterCard, unlistedEventsInvite } = entertainmentHelpers({ esc, imgEl, crumbs });
+  const { posterCard } = entertainmentHelpers({ esc, imgEl, crumbs });
   return `<section class="wrap feature" id="entertainment">
       <div class="section-head">
         <h2>Entertainment</h2>
         <a href="/entertainment/">All shows</a>
       </div>
       <p class="lede">${ENTERTAINMENT_TAGLINE}</p>
-      ${unlistedEventsInvite()}
       <div class="poster-grid poster-grid--home">${strip.map(posterCard).join("")}</div>
     </section>`;
 }
@@ -359,7 +358,6 @@ export function writeEntertainmentPages({
       ])}
       <h1>Entertainment</h1>
       <p class="tagline">${galleryDescription}</p>
-      ${h.unlistedEventsInvite()}
       ${h.entertainmentTabs("performers")}
     </header>
     ${h.performerList(performers)}
