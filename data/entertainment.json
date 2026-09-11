@@ -266,7 +266,7 @@
         {
           "type": "person",
           "id": "ngoc-mai",
-          "name": "Ngọc Mai",
+          "name": "Osen Ngọc Mai",
           "role": "vocalist"
         },
         {
@@ -545,7 +545,7 @@
         {
           "type": "person",
           "id": "ngoc-mai",
-          "name": "Ngọc Mai",
+          "name": "Osen Ngọc Mai",
           "role": "vocalist"
         },
         {
@@ -1714,7 +1714,7 @@
     },
     "ngoc-mai": {
       "id": "ngoc-mai",
-      "name": "Ngọc Mai",
+      "name": "Osen Ngọc Mai",
       "links": [],
       "photo": null
     },
