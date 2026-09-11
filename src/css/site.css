@@ -409,6 +409,13 @@ h1 {
   max-width: 40rem;
 }
 
+.ent-invite {
+  margin: 0.45rem 0 0;
+  max-width: 40rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
 .toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -730,6 +737,19 @@ footer .wrap {
 
 .card.poster .card-body {
   padding: 0.7rem 0.8rem 0.9rem;
+}
+
+.card.poster .gloss {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.card.poster h2 + .gloss {
+  margin-top: 0.35rem;
+}
+
+.card.poster .gloss + .gloss {
+  margin-top: 0.2rem;
 }
 
 .card.poster .card-photo {

@@ -55,6 +55,9 @@ function showsFor(events, type, id) {
   );
 }
 
+const UNLISTED_EVENTS_FB_URL = "https://www.facebook.com/groups/604503937066539";
+const UNLISTED_EVENTS_FB_NAME = "LITTLE SAIGON in Sacramento - Cộng Đồng Người Việt";
+
 export function performerRows(people = {}, orgs = {}) {
   return [
     ...Object.values(people).map((p) => ({
@@ -207,6 +210,9 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     </ul>`;
   };
 
+  const unlistedEventsInvite = () =>
+    `<p class="ent-invite">Know a show we missed? Post it in <a href="${esc(UNLISTED_EVENTS_FB_URL)}" rel="noopener noreferrer" target="_blank">${esc(UNLISTED_EVENTS_FB_NAME)}</a>.</p>`;
+
   return {
     posterCard,
     posterGrid,
@@ -217,6 +223,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     bandBlock,
     entertainmentTabs,
     performerList,
+    unlistedEventsInvite,
     entityName,
     crumbsEnt: (trail) => crumbs(trail),
   };
@@ -227,13 +234,14 @@ export function homeEntertainmentSection({ entertainment, esc, imgEl, crumbs }) 
   const { upcoming, past } = splitShows(events, asOf);
   const strip = [...upcoming, ...past].slice(0, 4);
   if (!strip.length) return "";
-  const { posterCard } = entertainmentHelpers({ esc, imgEl, crumbs });
+  const { posterCard, unlistedEventsInvite } = entertainmentHelpers({ esc, imgEl, crumbs });
   return `<section class="wrap feature" id="entertainment">
       <div class="section-head">
         <h2>Entertainment</h2>
         <a href="/entertainment/">All shows</a>
       </div>
-      <p class="lede">Vietnamese concerts and dance nights on the Sacramento circuit.</p>
+      <p class="lede">Vietnamese concerts and dance nights from Sacramento to Reno.</p>
+      ${unlistedEventsInvite()}
       <div class="poster-grid poster-grid--home">${strip.map(posterCard).join("")}</div>
     </section>`;
 }
@@ -261,7 +269,8 @@ export function writeEntertainmentPages({
     <header class="hero">
       ${h.crumbsEnt([{ label: "Entertainment", current: true }])}
       <h1>Entertainment</h1>
-      <p class="tagline">Vietnamese concerts and dance nights around Sacramento.</p>
+      <p class="tagline">Vietnamese concerts and dance nights from Sacramento to Reno.</p>
+      ${h.unlistedEventsInvite()}
       ${h.entertainmentTabs("events")}
     </header>
     ${h.bandBlock("Upcoming", upcoming)}
@@ -288,7 +297,8 @@ export function writeEntertainmentPages({
         { label: "Performers", current: true },
       ])}
       <h1>Entertainment</h1>
-      <p class="tagline">Vietnamese concerts and dance nights around Sacramento.</p>
+      <p class="tagline">Vietnamese concerts and dance nights from Sacramento to Reno.</p>
+      ${h.unlistedEventsInvite()}
       ${h.entertainmentTabs("performers")}
     </header>
     ${h.performerList(performers)}
