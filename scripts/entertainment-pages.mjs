@@ -364,7 +364,10 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
   const unlistedEventsInviteCard = () =>
     `<article class="card poster invite-card">
     <p class="invite-card-prompt">Know a show we missed?</p>
-    <p class="invite-card-copy">Post it in <a href="${esc(UNLISTED_EVENTS_FB_URL)}" rel="noopener noreferrer" target="_blank">${esc(UNLISTED_EVENTS_FB_NAME)}</a> or <a href="${esc(UNLISTED_EVENTS_FB_ALT_URL)}" rel="noopener noreferrer" target="_blank">${esc(UNLISTED_EVENTS_FB_ALT_NAME)}</a>.</p>
+    <p class="invite-card-copy">Post it in<br>
+    <a href="${esc(UNLISTED_EVENTS_FB_URL)}" rel="noopener noreferrer" target="_blank">${esc(UNLISTED_EVENTS_FB_NAME)}</a><br>
+    or<br>
+    <a href="${esc(UNLISTED_EVENTS_FB_ALT_URL)}" rel="noopener noreferrer" target="_blank">${esc(UNLISTED_EVENTS_FB_ALT_NAME)}</a>.</p>
   </article>`;
 
   const retiredRedirectPage = () => `<!doctype html>
