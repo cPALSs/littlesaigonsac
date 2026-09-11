@@ -261,27 +261,32 @@ export function writeEntertainmentPages({
   const { upcoming, past } = splitShows(events, asOf);
   const h = entertainmentHelpers({ esc, imgEl, crumbs });
   const siteName = "Little Saigon Sactown";
+  const galleryDescription = "Vietnamese concerts and dance nights from Sacramento to Reno.";
 
-  const gallery = layout({
-    title: `Entertainment · ${siteName}`,
-    current: "entertainment",
-    body: `<main class="wrap">
+  const galleryBody = `<main class="wrap">
     <header class="hero">
       ${h.crumbsEnt([{ label: "Entertainment", current: true }])}
       <h1>Entertainment</h1>
-      <p class="tagline">Vietnamese concerts and dance nights from Sacramento to Reno.</p>
+      <p class="tagline">${galleryDescription}</p>
       ${h.unlistedEventsInvite()}
       ${h.entertainmentTabs("events")}
     </header>
     ${h.bandBlock("Upcoming", upcoming)}
     ${h.bandBlock("Past", past)}
-  </main>`,
-  });
+  </main>`;
+  const galleryPage = (path) =>
+    layout({
+      title: `Entertainment · ${siteName}`,
+      path,
+      description: galleryDescription,
+      current: "entertainment",
+      body: galleryBody,
+    });
 
   mkdirSync(join(dist, "entertainment"), { recursive: true });
   mkdirSync(join(dist, "entertainment/events"), { recursive: true });
-  writeFileSync(join(dist, "entertainment/index.html"), gallery);
-  writeFileSync(join(dist, "entertainment/events/index.html"), gallery);
+  writeFileSync(join(dist, "entertainment/index.html"), galleryPage("/entertainment/"));
+  writeFileSync(join(dist, "entertainment/events/index.html"), galleryPage("/entertainment/events/"));
 
   const performers = performerRows(people, orgs);
   mkdirSync(join(dist, "entertainment/performers"), { recursive: true });
@@ -289,6 +294,8 @@ export function writeEntertainmentPages({
     join(dist, "entertainment/performers/index.html"),
     layout({
       title: `Performers · Entertainment · ${siteName}`,
+      path: "/entertainment/performers/",
+      description: galleryDescription,
       current: "entertainment",
       body: `<main class="wrap">
     <header class="hero">
@@ -314,6 +321,10 @@ export function writeEntertainmentPages({
       join(dir, "index.html"),
       layout({
         title: `${ev.label} · Entertainment`,
+        path: `/entertainment/${ev.id}/`,
+        description: [ev.display_date || ev.start_date, cardVenueLine(ev) || place].filter(Boolean).join(" · "),
+        image: ev.poster,
+        ogType: "article",
         current: "entertainment",
         body: `<main class="wrap event">
       <header class="hero">
@@ -355,6 +366,9 @@ export function writeEntertainmentPages({
       join(dir, "index.html"),
       layout({
         title: `${person.name} · Entertainment`,
+        path: `/entertainment/people/${person.id}/`,
+        description: `${person.name} on Little Saigon Sactown Entertainment.`,
+        image: person.photo,
         current: "entertainment",
         body: `<main class="wrap">
       <header class="hero">
@@ -380,6 +394,9 @@ export function writeEntertainmentPages({
       join(dir, "index.html"),
       layout({
         title: `${org.name} · Entertainment`,
+        path: `/entertainment/orgs/${org.id}/`,
+        description: `${org.name} on Little Saigon Sactown Entertainment.`,
+        image: org.photo,
         current: "entertainment",
         body: `<main class="wrap">
       <header class="hero">

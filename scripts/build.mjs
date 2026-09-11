@@ -85,13 +85,96 @@ const gaTag = gaId
 `
   : "";
 
-const layout = ({ title, body, current = "", home = false }) => `<!doctype html>
+const SITE_ORIGIN = String(data.site.url || "https://littlesaigonsac.town").replace(/\/$/, "");
+const DEFAULT_OG = { path: "/img/brand/og-image.png", width: 1200, height: 630 };
+
+const imageSize = (absPath) => {
+  try {
+    const buf = readFileSync(absPath);
+    if (buf.length >= 24 && buf[0] === 0x89 && buf[1] === 0x50) {
+      return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) };
+    }
+    if (buf[0] === 0xff && buf[1] === 0xd8) {
+      let i = 2;
+      while (i < buf.length - 9) {
+        if (buf[i] !== 0xff) break;
+        const marker = buf[i + 1];
+        if (marker === 0xd8 || marker === 0xd9 || marker === 0x01 || (marker >= 0xd0 && marker <= 0xd7)) {
+          i += 2;
+          continue;
+        }
+        const len = buf.readUInt16BE(i + 2);
+        if (len < 2) break;
+        if (
+          (marker >= 0xc0 && marker <= 0xc3) ||
+          (marker >= 0xc5 && marker <= 0xc7) ||
+          (marker >= 0xc9 && marker <= 0xcb) ||
+          (marker >= 0xcd && marker <= 0xcf)
+        ) {
+          return { width: buf.readUInt16BE(i + 7), height: buf.readUInt16BE(i + 5) };
+        }
+        i += 2 + len;
+      }
+    }
+  } catch {
+    /* ignore unreadable images */
+  }
+  return null;
+};
+
+const absImgUrl = (rel) =>
+  `${SITE_ORIGIN}/img/${String(rel)
+    .replace(/^\/img\//, "")
+    .split("/")
+    .map(encodeURIComponent)
+    .join("/")}`;
+
+const resolveOgImage = (imageRel) => {
+  if (imageRel) {
+    const rel = String(imageRel).replace(/^\/img\//, "");
+    const abs = join(root, "src/img", rel);
+    if (existsSync(abs)) {
+      const size = imageSize(abs);
+      return { url: absImgUrl(rel), width: size?.width, height: size?.height };
+    }
+  }
+  return { url: `${SITE_ORIGIN}${DEFAULT_OG.path}`, width: DEFAULT_OG.width, height: DEFAULT_OG.height };
+};
+
+const socialHead = ({ title, description, path = "/", image, ogType = "website" }) => {
+  const pageUrl = `${SITE_ORIGIN}${path.startsWith("/") ? path : `/${path}`}`;
+  const desc = description || data.site.tagline || "";
+  const og = resolveOgImage(image);
+  const dim =
+    og.width && og.height
+      ? `
+  <meta property="og:image:width" content="${og.width}">
+  <meta property="og:image:height" content="${og.height}">`
+      : "";
+  return `  <meta name="description" content="${esc(desc)}">
+  <link rel="canonical" href="${esc(pageUrl)}">
+  <meta property="og:type" content="${esc(ogType)}">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="${esc(data.site.name)}">
+  <meta property="og:title" content="${esc(title)}">
+  <meta property="og:description" content="${esc(desc)}">
+  <meta property="og:url" content="${esc(pageUrl)}">
+  <meta property="og:image" content="${esc(og.url)}">
+  <meta property="og:image:alt" content="${esc(title)}">${dim}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${esc(title)}">
+  <meta name="twitter:description" content="${esc(desc)}">
+  <meta name="twitter:image" content="${esc(og.url)}">
+`;
+};
+
+const layout = ({ title, body, current = "", home = false, path = "/", description, image, ogType = "website" }) => `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(title)}</title>
-${gaTag}  <link rel="preconnect" href="https://fonts.googleapis.com">
+${gaTag}${socialHead({ title, description, path, image, ogType })}  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/site.css">
@@ -183,6 +266,8 @@ const mealCategoryGrid = () => `<script type="application/json" id="meal-sort-wi
 
 const home = layout({
   title: data.site.name,
+  path: "/",
+  description: data.site.tagline,
   current: "",
   home: true,
   body: `<main>
@@ -206,6 +291,8 @@ const home = layout({
 
 const vietEatsIndex = layout({
   title: `Viet Eats · ${data.site.name}`,
+  path: "/viet-eats/",
+  description: "Vietnamese cuisine and the best kitchens that cook them.",
   current: "viet-eats",
   body: `<main class="wrap">
     <header class="hero">
@@ -223,6 +310,9 @@ const catPage = (cat, i) => {
   const next = categories[i + 1];
   return layout({
     title: `${cat.vi} (${cat.gloss}) · Viet Eats`,
+    path: `/viet-eats/${cat.slug}/`,
+    description: `${cat.vi} (${cat.gloss}) — Vietnamese cuisine picks for Little Saigon Sacramento.`,
+    image: cat.photo,
     current: "viet-eats",
     body: `<main class="wrap category">
       <header class="dish-head">
