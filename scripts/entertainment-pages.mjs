@@ -214,6 +214,28 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
       ${posterGrid(list)}`;
   };
 
+  const labeledPosterGrid = (title, cardsHtml) => {
+    if (!cardsHtml.length) return "";
+    return `<h2 class="section-label band-label">${esc(title)}</h2>
+      <div class="poster-grid">${cardsHtml.join("")}</div>`;
+  };
+
+  /**
+   * Invite lives in the gallery poster grid only.
+   * Upcoming with real shows: append the card there (section stays).
+   * Zero upcoming: collapse Upcoming and put the card first in Past.
+   */
+  const galleryShowSections = (upcoming, past) => {
+    const invite = unlistedEventsInviteCard();
+    const upcomingCards = upcoming.map(posterCard);
+    const pastCards = past.map(posterCard);
+    if (upcomingCards.length) {
+      return `${labeledPosterGrid("Upcoming", [...upcomingCards, invite])}
+    ${labeledPosterGrid("Past", pastCards)}`;
+    }
+    return labeledPosterGrid("Past", [invite, ...pastCards]);
+  };
+
   const entertainmentTabs = (active) => {
     const tabs = [
       { id: "events", href: "/entertainment/events/", label: "Events" },
@@ -238,8 +260,15 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     </ul>`;
   };
 
-  const unlistedEventsInvite = () =>
-    `<p class="ent-invite">Know a show we missed? Post it in <a href="${esc(UNLISTED_EVENTS_FB_URL)}" rel="noopener noreferrer" target="_blank">${esc(UNLISTED_EVENTS_FB_NAME)}</a> or <a href="${esc(UNLISTED_EVENTS_FB_ALT_URL)}" rel="noopener noreferrer" target="_blank">${esc(UNLISTED_EVENTS_FB_ALT_NAME)}</a>.</p>`;
+  const unlistedEventsInviteCard = () =>
+    `<article class="card poster invite-card">
+    <div class="card-photo invite-card-art" aria-hidden="true">
+      <p class="invite-card-prompt">Know a show we missed?</p>
+    </div>
+    <div class="card-body">
+      <p>Know a show we missed? Post it in <a href="${esc(UNLISTED_EVENTS_FB_URL)}" rel="noopener noreferrer" target="_blank">${esc(UNLISTED_EVENTS_FB_NAME)}</a> or <a href="${esc(UNLISTED_EVENTS_FB_ALT_URL)}" rel="noopener noreferrer" target="_blank">${esc(UNLISTED_EVENTS_FB_ALT_NAME)}</a>.</p>
+    </div>
+  </article>`;
 
   const retiredRedirectPage = () => `<!doctype html>
 <html lang="en">
@@ -276,7 +305,8 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     bandBlock,
     entertainmentTabs,
     performerList,
-    unlistedEventsInvite,
+    unlistedEventsInviteCard,
+    galleryShowSections,
     writeRetiredRedirects,
     entityName,
     crumbsEnt: (trail) => crumbs(trail),
@@ -321,11 +351,9 @@ export function writeEntertainmentPages({
       ${h.crumbsEnt([{ label: "Entertainment", current: true }])}
       <h1>Entertainment</h1>
       <p class="tagline">${galleryDescription}</p>
-      ${h.unlistedEventsInvite()}
       ${h.entertainmentTabs("events")}
     </header>
-    ${h.bandBlock("Upcoming", upcoming)}
-    ${h.bandBlock("Past", past)}
+    ${h.galleryShowSections(upcoming, past)}
   </main>`;
   const galleryPage = (path) =>
     layout({

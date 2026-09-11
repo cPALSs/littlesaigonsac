@@ -409,11 +409,35 @@ h1 {
   max-width: 40rem;
 }
 
-.ent-invite {
-  margin: 0.45rem 0 0;
-  max-width: 40rem;
+.invite-card .invite-card-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.1rem 0.85rem;
+  background: var(--lss-hero-fill);
+  box-shadow: none;
+}
+
+.invite-card-prompt {
+  margin: 0;
+  color: var(--filled);
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 1.28rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.invite-card .card-body p {
+  margin: 0;
   color: var(--ink-soft);
-  font-size: 0.95rem;
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
+.invite-card .card-body a {
+  font-weight: 600;
 }
 
 .toolbar {
