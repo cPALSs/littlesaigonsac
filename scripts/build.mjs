@@ -338,6 +338,7 @@ cpSync(join(root, "src/css/site.css"), join(dist, "css/site.css"));
 cpSync(join(root, "src/js/home-sort.js"), join(dist, "js/home-sort.js"));
 cpSync(join(root, "src/js/site-nav.js"), join(dist, "js/site-nav.js"));
 cpSync(join(root, "src/js/poster-lightbox.js"), join(dist, "js/poster-lightbox.js"));
+cpSync(join(root, "src/js/performer-sort.js"), join(dist, "js/performer-sort.js"));
 cpSync(join(root, "src/img"), join(dist, "img"), { recursive: true });
 writeFileSync(join(dist, "CNAME"), "littlesaigonsac.town\n");
 writeFileSync(join(dist, ".nojekyll"), "");

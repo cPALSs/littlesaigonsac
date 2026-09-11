@@ -86,21 +86,87 @@ const RETIRED_ENTERTAINMENT_PATHS = [
   "people/yen-lam",
 ];
 
-export function performerRows(people = {}, orgs = {}) {
-  return [
-    ...Object.values(people).map((p) => ({
-      id: p.id,
-      name: p.name,
-      href: `/entertainment/people/${p.id}/`,
-    })),
-    ...Object.values(orgs).map((o) => ({
-      id: o.id,
-      name: o.name,
-      href: `/entertainment/orgs/${o.id}/`,
-    })),
-  ]
-    .filter((row) => String(row.name || "").trim())
-    .sort((a, b) => a.name.localeCompare(b.name, "vi", { sensitivity: "base" }));
+const PRODUCTION_ROLES = new Set(["host", "producer", "co_producer", "presenter"]);
+const BAND_NAME_RE = /\bband\b|ban\s+nhạc/i;
+
+/**
+ * Graph stores bands as `org` rows; entertainment.json has no `kind`.
+ *
+ * Performers (people + acts): every person; orgs with lineup role `band`;
+ * name matches Band / Ban Nhạc; lineup-only orgs (dance troupes); plus
+ * documented acts the graph credits as producer of their own named set.
+ *
+ * Organizations: remaining orgs (producers, presenters, hosts, venues,
+ * companies). Not in this export — do not re-add: CK Band, The Friend
+ * (retired SJ night), San Jose Dạ Vũ.
+ */
+const ACT_ORG_IDS = new Set(["lucky-wav"]);
+
+export function compareViName(a, b) {
+  return String(a.name || "").localeCompare(String(b.name || ""), "vi", {
+    sensitivity: "base",
+  });
+}
+
+export function eventCountFor(events = [], type, id) {
+  return showsFor(events, type, id).length;
+}
+
+export function isBandOrAct(org, events = []) {
+  if (!org?.id) return false;
+  if (ACT_ORG_IDS.has(org.id)) return true;
+  if (BAND_NAME_RE.test(org.name || "")) return true;
+  let inLineup = false;
+  let inLineupAsBand = false;
+  let inProduction = false;
+  for (const ev of events) {
+    for (const p of ev.lineup || []) {
+      if (p.type === "org" && p.id === org.id) {
+        inLineup = true;
+        if (p.role === "band") inLineupAsBand = true;
+      }
+    }
+    for (const p of ev.producers || []) {
+      if (p.type === "org" && p.id === org.id && PRODUCTION_ROLES.has(p.role)) {
+        inProduction = true;
+      }
+    }
+  }
+  if (inLineupAsBand) return true;
+  if (inLineup && !inProduction) return true;
+  return false;
+}
+
+function directoryRow(entity, type, events) {
+  return {
+    id: entity.id,
+    name: entity.name,
+    type,
+    href:
+      type === "person"
+        ? `/entertainment/people/${entity.id}/`
+        : `/entertainment/orgs/${entity.id}/`,
+    photo: entity.photo || null,
+    eventCount: eventCountFor(events, type, entity.id),
+  };
+}
+
+/** People + bands/acts (A–Z). Organizations separately, event-count desc. */
+export function directorySections(people = {}, orgs = {}, events = []) {
+  const named = (row) => String(row.name || "").trim();
+  const performers = [
+    ...Object.values(people).map((p) => directoryRow(p, "person", events)),
+    ...Object.values(orgs)
+      .filter((o) => isBandOrAct(o, events))
+      .map((o) => directoryRow(o, "org", events)),
+  ].filter(named);
+  const organizations = Object.values(orgs)
+    .filter((o) => !isBandOrAct(o, events))
+    .map((o) => directoryRow(o, "org", events))
+    .filter(named);
+  performers.sort(compareViName);
+  organizations.sort((a, b) => b.eventCount - a.eventCount || compareViName(a, b));
+  return { performers, organizations };
 }
 
 export function entertainmentHelpers({ esc, imgEl, crumbs }) {
@@ -251,13 +317,48 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     </nav>`;
   };
 
-  const performerList = (rows) => {
+  const performerAvatar = (row) => {
+    const photoClass =
+      row.type === "org"
+        ? "entity-photo entity-photo--org performer-avatar"
+        : "entity-photo entity-photo--person performer-avatar";
+    const photoImg = imgEl(row.photo, row.name);
+    return `<span class="${photoClass}">${photoImg}</span>`;
+  };
+
+  const performerList = (rows, { sortable = false } = {}) => {
     if (!rows.length) return "";
-    return `<ul class="performer-list">
+    const attrs = sortable ? ' data-performer-grid' : "";
+    return `<ul class="performer-list"${attrs}>
       ${rows
-        .map((row) => `<li><a href="${esc(row.href)}">${esc(row.name)}</a></li>`)
+        .map(
+          (row) =>
+            `<li data-name="${esc(row.name)}" data-events="${esc(String(row.eventCount ?? 0))}"><a href="${esc(row.href)}">${performerAvatar(row)}<span class="performer-name">${esc(row.name)}</span></a></li>`,
+        )
         .join("")}
     </ul>`;
+  };
+
+  const performerSortBar = () => `<div class="performer-toolbar">
+      <label class="performer-sort" for="performer-sort">Sort
+        <select id="performer-sort" data-performer-sort>
+          <option value="alpha" selected>Alphabetical</option>
+          <option value="popular">Most popular</option>
+        </select>
+      </label>
+    </div>`;
+
+  const performerDirectory = (performers, organizations) => {
+    const peopleBlock = performers.length
+      ? `${performerSortBar()}
+    ${performerList(performers, { sortable: true })}`
+      : "";
+    const orgBlock = organizations.length
+      ? `<h2 class="section-label band-label">Organizations</h2>
+    ${performerList(organizations)}`
+      : "";
+    return `${peopleBlock}
+    ${orgBlock}`;
   };
 
   const unlistedEventsInviteCard = () =>
@@ -305,6 +406,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     bandBlock,
     entertainmentTabs,
     performerList,
+    performerDirectory,
     unlistedEventsInviteCard,
     galleryShowSections,
     writeRetiredRedirects,
@@ -369,7 +471,7 @@ export function writeEntertainmentPages({
   writeFileSync(join(dist, "entertainment/index.html"), galleryPage("/entertainment/"));
   writeFileSync(join(dist, "entertainment/events/index.html"), galleryPage("/entertainment/events/"));
 
-  const performers = performerRows(people, orgs);
+  const { performers, organizations } = directorySections(people, orgs, events);
   mkdirSync(join(dist, "entertainment/performers"), { recursive: true });
   writeFileSync(
     join(dist, "entertainment/performers/index.html"),
@@ -388,8 +490,9 @@ export function writeEntertainmentPages({
       <p class="tagline">${galleryDescription}</p>
       ${h.entertainmentTabs("performers")}
     </header>
-    ${h.performerList(performers)}
-  </main>`,
+    ${h.performerDirectory(performers, organizations)}
+  </main>
+  <script src="/js/performer-sort.js" defer></script>`,
     }),
   );
 

@@ -909,6 +909,38 @@ body.is-lightbox-open {
   color: var(--rust-deep);
 }
 
+.performer-toolbar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  margin: 1.15rem 0 0;
+  overflow: visible;
+}
+
+.performer-sort {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.performer-sort select {
+  appearance: auto;
+  min-height: 2.75rem;
+  max-width: 100%;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.5rem;
+  background: var(--filled);
+  color: var(--ink);
+  font: inherit;
+  font-size: 1rem;
+}
+
 .performer-list {
   --performer-min: 10rem;
   display: grid;
@@ -917,7 +949,7 @@ body.is-lightbox-open {
     minmax(min(100%, max(var(--performer-min), calc(25% - 0.95rem))), 1fr)
   );
   column-gap: 1.25rem;
-  row-gap: 0.7rem;
+  row-gap: 0.95rem;
   margin: 0;
   padding: 1.1rem 0 2.4rem;
   list-style: none;
@@ -930,7 +962,9 @@ body.is-lightbox-open {
 }
 
 .performer-list a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
   color: var(--rust);
   text-decoration: none;
   line-height: 1.2;
@@ -938,6 +972,32 @@ body.is-lightbox-open {
 
 .performer-list a:hover {
   color: var(--rust-deep);
+}
+
+.performer-list .performer-avatar {
+  flex: 0 0 auto;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.performer-list .performer-name {
+  min-width: 0;
+}
+
+@media (max-width: 719px) {
+  .performer-toolbar {
+    z-index: 1;
+  }
+
+  .performer-sort {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .performer-sort select {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
 }
 
 .credit-role {
@@ -1045,5 +1105,10 @@ body.is-lightbox-open {
   .entity-photo {
     width: 7.5rem;
     height: 7.5rem;
+  }
+
+  .performer-list .performer-avatar {
+    width: 3.25rem;
+    height: 3.25rem;
   }
 }
