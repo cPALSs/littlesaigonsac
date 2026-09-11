@@ -411,10 +411,10 @@ h1 {
 
 .invite-card {
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: 0.95rem;
-  padding: 1.6rem 1.1rem;
-  text-align: center;
+  padding: 1.75rem 1.4rem;
+  text-align: left;
   height: 100%;
   min-height: 12rem;
   background: var(--filled);
@@ -432,7 +432,6 @@ h1 {
 
 .invite-card-copy {
   margin: 0;
-  max-width: 16rem;
   color: var(--ink-soft);
   font-size: 0.86rem;
   line-height: 1.4;
