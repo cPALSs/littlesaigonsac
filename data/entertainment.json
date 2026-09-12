@@ -3463,9 +3463,29 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/lenhungocmai",
+          "label": "Instagram"
+        },
+        {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@lenhungocmai",
+          "label": "TikTok"
+        },
+        {
           "kind": "facebook",
-          "url": "https://facebook.com/ngocmaisinger",
+          "url": "https://facebook.com/ngocmai.lenhu",
           "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@ngocmai.singer",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/7yRDcF8kWO70GsJC71wmJv",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/ngoc-mai.jpg"
@@ -5665,9 +5685,19 @@
           "kind": "facebook",
           "url": "https://facebook.com/3ementertainment",
           "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@3EmEntertainment",
+          "label": "YouTube"
+        },
+        {
+          "kind": "website",
+          "url": "https://3ementertainment.com",
+          "label": "Website"
         }
       ],
-      "photo": null
+      "photo": "entertainment/orgs/3em-entertainment.jpg"
     },
     "ustar-productions": {
       "id": "ustar-productions",
