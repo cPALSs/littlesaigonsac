@@ -346,7 +346,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
       <label class="performer-sort" for="performer-sort">Sort
         <select id="performer-sort" data-performer-sort>
           <option value="alpha" selected>Alphabetical</option>
-          <option value="popular">Most popular</option>
+          <option value="popular">Most appearances</option>
         </select>
       </label>
     </div>`;
