@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { existsSync, mkdirSync, readFileSync, writeFileSync, cpSync, rmSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync, cpSync, rmSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { homeEntertainmentSection, writeEntertainmentPages } from "./entertainment-pages.mjs";
@@ -25,7 +25,13 @@ const filledDish = (d) => d.kitchens?.length > 0;
 
 const imgEl = (rel, alt = "") => {
   if (!rel || !existsSync(join(root, "src/img", rel))) return "";
-  return `<img src="/img/${esc(rel)}" alt="${esc(alt)}">`;
+  const abs = join(root, "src/img", rel);
+  const src = `/img/${esc(rel)}`;
+  if (String(rel).startsWith("entertainment/people/")) {
+    const mtime = Math.floor(statSync(abs).mtimeMs);
+    return `<img src="${src}?t=${mtime}" alt="${esc(alt)}">`;
+  }
+  return `<img src="${src}" alt="${esc(alt)}">`;
 };
 
 const igHref = data.site.instagram || "https://www.instagram.com/littlesaigonsactown/";

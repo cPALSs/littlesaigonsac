@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "start": "node scripts/build.mjs && python3 -m http.server 4173 --directory dist"
+    "preview": "node scripts/preview.mjs",
+    "start": "node scripts/build.mjs && node scripts/preview.mjs"
   }
 }
