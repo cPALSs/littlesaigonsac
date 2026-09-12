@@ -444,9 +444,11 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     escName,
     crumbsEnt: (trail) =>
       crumbs(
-        trail.map((item) =>
-          item.label != null ? { ...item, label: displayName(item.label) } : item,
-        ),
+        trail
+          .filter((item) => !item.current)
+          .map((item) =>
+            item.label != null ? { ...item, label: displayName(item.label) } : item,
+          ),
       ),
   };
 }
@@ -486,7 +488,7 @@ export function writeEntertainmentPages({
 
   const galleryBody = `<main class="wrap">
     <header class="hero">
-      ${h.crumbsEnt([{ label: "Entertainment", current: true }])}
+      ${h.crumbsEnt([])}
       <h1>Entertainment</h1>
       <p class="tagline">${galleryDescription}</p>
       ${h.entertainmentTabs("events")}
@@ -518,10 +520,7 @@ export function writeEntertainmentPages({
       current: "entertainment",
       body: `<main class="wrap">
     <header class="hero">
-      ${h.crumbsEnt([
-        { href: "/entertainment/", label: "Entertainment" },
-        { label: "Performers", current: true },
-      ])}
+      ${h.crumbsEnt([{ href: "/entertainment/", label: "Entertainment" }])}
       <h1>Entertainment</h1>
       <p class="tagline">${galleryDescription}</p>
       ${h.entertainmentTabs("performers")}
@@ -550,10 +549,7 @@ export function writeEntertainmentPages({
         current: "entertainment",
         body: `<main class="wrap event">
       <header class="hero">
-        ${h.crumbsEnt([
-          { href: "/entertainment/", label: "Entertainment" },
-          { label: ev.label, current: true },
-        ])}
+        ${h.crumbsEnt([{ href: "/entertainment/", label: "Entertainment" }])}
         <h1>${h.escName(ev.label)}</h1>
       </header>
       <div class="event-layout">
@@ -594,10 +590,7 @@ export function writeEntertainmentPages({
         current: "entertainment",
         body: `<main class="wrap">
       <header class="hero">
-        ${h.crumbsEnt([
-          { href: "/entertainment/", label: "Entertainment" },
-          { label: person.name, current: true },
-        ])}
+        ${h.crumbsEnt([{ href: "/entertainment/", label: "Entertainment" }])}
         ${h.entityHeading(person.name, person.links, person.photo, "person")}
       </header>
       ${u.length || p.length ? h.posterGrid([...u, ...p]) : ""}
@@ -622,10 +615,7 @@ export function writeEntertainmentPages({
         current: "entertainment",
         body: `<main class="wrap">
       <header class="hero">
-        ${h.crumbsEnt([
-          { href: "/entertainment/", label: "Entertainment" },
-          { label: org.name, current: true },
-        ])}
+        ${h.crumbsEnt([{ href: "/entertainment/", label: "Entertainment" }])}
         ${h.entityHeading(org.name, org.links, org.photo, "org")}
       </header>
       ${u.length || p.length ? h.posterGrid([...u, ...p]) : ""}
