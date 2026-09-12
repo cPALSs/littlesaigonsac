@@ -96,6 +96,7 @@ const RETIRED_ENTERTAINMENT_PATHS = [
   "orgs/trung-tam-viet-ngu-van-lang-san-jose",
   "orgs/the-friend-band",
   "people/hoang-liem",
+  "people/hung-bui-mc",
   "people/hoang-thuc-linh",
   "people/huong-thuy",
   "people/le-ha",

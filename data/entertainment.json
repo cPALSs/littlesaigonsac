@@ -1212,14 +1212,14 @@
         },
         {
           "type": "person",
-          "id": "hung-bui-mc",
-          "name": "Hùng Bùi",
+          "id": "lan-tran-mc",
+          "name": "Lân Trần",
           "role": "mc"
         },
         {
           "type": "person",
-          "id": "lan-tran-mc",
-          "name": "Lân Trần",
+          "id": "thanh-hung-mc",
+          "name": "Thanh Hùng",
           "role": "mc"
         },
         {
@@ -1721,6 +1721,9 @@
     "thanh-hung-mc": {
       "id": "thanh-hung-mc",
       "name": "Thanh Hùng",
+      "aka": [
+        "Hùng Bùi"
+      ],
       "links": [],
       "photo": "entertainment/people/thanh-hung-mc.jpg"
     },
@@ -2460,12 +2463,6 @@
       "links": [],
       "photo": "entertainment/people/lan-tran-mc.jpg"
     },
-    "hung-bui-mc": {
-      "id": "hung-bui-mc",
-      "name": "Hùng Bùi",
-      "links": [],
-      "photo": "entertainment/people/hung-bui-mc.jpg"
-    },
     "khanh-ly": {
       "id": "khanh-ly",
       "name": "Khánh Ly",
@@ -2535,9 +2532,9 @@
       "id": "kenny-dang",
       "name": "Kenny Dang",
       "aka": [
-        "Hoàng Liêm",
+        "Hoang Liem",
         "Hoàng Liem",
-        "Hoang Liem"
+        "Hoàng Liêm"
       ],
       "links": [
         {
