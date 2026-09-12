@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-09-11",
+  "exported_at": "2026-09-12",
   "timezone": "America/Los_Angeles",
   "as_of_pt": "2026-09-11",
   "events": [
@@ -544,14 +544,14 @@
         },
         {
           "type": "person",
-          "id": "ngoc-mai",
-          "name": "Osen Ngọc Mai",
+          "id": "nguyen-hong-nhung",
+          "name": "Nguyễn Hồng Nhung",
           "role": "vocalist"
         },
         {
           "type": "person",
-          "id": "nguyen-hong-nhung",
-          "name": "Nguyễn Hồng Nhung",
+          "id": "ngoc-mai",
+          "name": "Osen Ngọc Mai",
           "role": "vocalist"
         },
         {
@@ -615,7 +615,7 @@
         {
           "type": "person",
           "id": "troy",
-          "name": "Troy (Onbar)",
+          "name": "Onbar",
           "role": "vocalist"
         },
         {
@@ -736,14 +736,14 @@
         },
         {
           "type": "person",
-          "id": "lam-nhat-tien",
-          "name": "Lâm Nhật Tiến",
+          "id": "elvis-phuong",
+          "name": "Elvis Phương",
           "role": "vocalist"
         },
         {
           "type": "person",
-          "id": "elvis-phuong",
-          "name": "Elvis Phương",
+          "id": "lam-nhat-tien",
+          "name": "Lâm Nhật Tiến",
           "role": "vocalist"
         },
         {
@@ -1584,7 +1584,7 @@
       "id": "dj-tung",
       "name": "DJ Tùng",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/dj-tung.jpg"
     },
     "tam-hao": {
       "id": "tam-hao",
@@ -1596,11 +1596,14 @@
       "id": "dj-alissa",
       "name": "DJ Alissa",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/dj-alissa.jpg"
     },
     "quynh-giao": {
       "id": "quynh-giao",
       "name": "Quỳnh Giao",
+      "aka": [
+        "Trương Quỳnh Giao"
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -1626,7 +1629,7 @@
       "id": "oscar-thuan-nguyen",
       "name": "Oscar Thuận Nguyễn",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/oscar-thuan-nguyen.jpg"
     },
     "hoang-thuy-vi": {
       "id": "hoang-thuy-vi",
@@ -1674,55 +1677,58 @@
       "id": "mai-thanh-son",
       "name": "Mai Thanh Sơn",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/mai-thanh-son.jpg"
     },
     "ha-thanh-xuan": {
       "id": "ha-thanh-xuan",
       "name": "Hà Thanh Xuân",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/ha-thanh-xuan.jpg"
     },
     "quang-le": {
       "id": "quang-le",
       "name": "Quang Lê",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/quang-le.jpg"
     },
     "trizzie-phuong-trinh": {
       "id": "trizzie-phuong-trinh",
       "name": "Trizzie Phương Trinh",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/trizzie-phuong-trinh.jpg"
     },
     "anh-thu": {
       "id": "anh-thu",
       "name": "Anh Thư",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/anh-thu.jpg"
     },
     "thien-son": {
       "id": "thien-son",
       "name": "Thiên Sơn",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/thien-son.jpg"
     },
     "ngoc-mai": {
       "id": "ngoc-mai",
       "name": "Osen Ngọc Mai",
+      "aka": [
+        "Ngọc Mai"
+      ],
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/ngoc-mai.jpg"
     },
     "thanh-hung-mc": {
       "id": "thanh-hung-mc",
       "name": "Thanh Hùng",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/thanh-hung-mc.jpg"
     },
     "thao-quyen": {
       "id": "thao-quyen",
       "name": "Thảo Quyên",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/thao-quyen.jpg"
     },
     "nguyen-hung": {
       "id": "nguyen-hung",
@@ -1733,6 +1739,9 @@
     "linda-trang-dai": {
       "id": "linda-trang-dai",
       "name": "Linda Trang Đài",
+      "aka": [
+        "Lynda Trang Đài"
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -1752,29 +1761,32 @@
       "id": "wesley-li",
       "name": "Wesley Li",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/wesley-li.jpg"
     },
     "trung-kien": {
       "id": "trung-kien",
       "name": "Trung Kiên",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/trung-kien.jpg"
     },
     "kevin-le": {
       "id": "kevin-le",
       "name": "Kevin Lê",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/kevin-le.jpg"
     },
     "jacky-huang": {
       "id": "jacky-huang",
       "name": "Jacky Huang",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/jacky-huang.jpg"
     },
     "bruce-nguyen": {
       "id": "bruce-nguyen",
       "name": "Bruce Nguyen",
+      "aka": [
+        "Bruce Nguyễn"
+      ],
       "links": [
         {
           "kind": "instagram",
@@ -1910,13 +1922,13 @@
       "id": "angel-gia-han",
       "name": "Angel Gia Hân",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/angel-gia-han.jpg"
     },
     "myra-tran": {
       "id": "myra-tran",
       "name": "Myra Trần",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/myra-tran.jpg"
     },
     "duc-thanh-buoc-nhay": {
       "id": "duc-thanh-buoc-nhay",
@@ -1928,17 +1940,20 @@
       "id": "minh-giang-buoc-nhay",
       "name": "Minh Giang",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/minh-giang-buoc-nhay.jpg"
     },
     "nguyen-hong-nhung": {
       "id": "nguyen-hong-nhung",
       "name": "Nguyễn Hồng Nhung",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/nguyen-hong-nhung.jpg"
     },
     "don-ho": {
       "id": "don-ho",
       "name": "Don Hồ",
+      "aka": [
+        "Don Ho"
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2006,7 +2021,7 @@
       "id": "mai-thien-van",
       "name": "Mai Thiên Vân",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/mai-thien-van.jpg"
     },
     "aaron-le": {
       "id": "aaron-le",
@@ -2028,6 +2043,9 @@
     "dj-uni": {
       "id": "dj-uni",
       "name": "DJ UNI",
+      "aka": [
+        "Trang Tran"
+      ],
       "links": [
         {
           "kind": "website",
@@ -2051,31 +2069,41 @@
       "id": "brian-bui",
       "name": "Brian Bui",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/brian-bui.jpg"
     },
     "jp-breganza": {
       "id": "jp-breganza",
       "name": "JP Breganza",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/jp-breganza.jpg"
     },
     "mikey-vee": {
       "id": "mikey-vee",
       "name": "Mikey Vee",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/mikey-vee.jpg"
     },
     "troy": {
       "id": "troy",
-      "name": "Troy",
-      "links": [],
-      "photo": null
+      "name": "Onbar",
+      "aka": [
+        "Troy Tuan Truong",
+        "Troy"
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/onbar_",
+          "label": "Instagram"
+        }
+      ],
+      "photo": "entertainment/people/troy.jpg"
     },
     "vincent-aire": {
       "id": "vincent-aire",
       "name": "Vincent Aire",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/vincent-aire.jpg"
     },
     "tran-thai-hoa": {
       "id": "tran-thai-hoa",
@@ -2087,19 +2115,19 @@
           "label": "Facebook"
         }
       ],
-      "photo": null
+      "photo": "entertainment/people/tran-thai-hoa.jpg"
     },
     "ho-hoang-yen": {
       "id": "ho-hoang-yen",
       "name": "Hồ Hoàng Yến",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/ho-hoang-yen.jpg"
     },
     "to-bee": {
       "id": "to-bee",
       "name": "To Bee",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/to-bee.jpg"
     },
     "sy-dan": {
       "id": "sy-dan",
@@ -2111,13 +2139,13 @@
       "id": "bich-ngoc-mc",
       "name": "Bích Ngọc",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/bich-ngoc-mc.jpg"
     },
     "y-lan": {
       "id": "y-lan",
       "name": "Ý Lan",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/y-lan.jpg"
     },
     "thanh-tuyen": {
       "id": "thanh-tuyen",
@@ -2141,55 +2169,69 @@
       "id": "truong-vu",
       "name": "Trường Vũ",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/truong-vu.jpg"
     },
     "luu-anh": {
       "id": "luu-anh",
       "name": "Lưu Ánh",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/luu-anh.jpg"
+    },
+    "lam-nhat-tien": {
+      "id": "lam-nhat-tien",
+      "name": "Lâm Nhật Tiến",
+      "aka": [
+        "Đàm Nhật Tiến"
+      ],
+      "links": [],
+      "photo": "entertainment/people/lam-nhat-tien.jpg"
     },
     "diem-suong": {
       "id": "diem-suong",
       "name": "Diễm Sương",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/diem-suong.jpg"
     },
     "trinh-lam": {
       "id": "trinh-lam",
       "name": "Trịnh Lam",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/trinh-lam.jpg"
     },
     "truc-linh": {
       "id": "truc-linh",
       "name": "Trúc Linh",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/truc-linh.jpg"
     },
     "truc-lam": {
       "id": "truc-lam",
       "name": "Trúc Lam",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/truc-lam.jpg"
     },
     "mina-tran": {
       "id": "mina-tran",
       "name": "Mina Trần",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/mina-tran.jpg"
     },
     "lieu-kieu": {
       "id": "lieu-kieu",
       "name": "Liễu Kiều",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/lieu-kieu.jpg"
     },
     "dj-kixi": {
       "id": "dj-kixi",
       "name": "DJ XiXi",
+      "aka": [
+        "DJ Kixi",
+        "Kixi",
+        "Sexy DJ Kixi"
+      ],
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/dj-kixi.jpg"
     },
     "lan-nha": {
       "id": "lan-nha",
@@ -2241,7 +2283,7 @@
       "id": "tieu-chau-nhu-quynh",
       "name": "Tiêu Châu Như Quỳnh",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/tieu-chau-nhu-quynh.jpg"
     },
     "ho-le-thu": {
       "id": "ho-le-thu",
@@ -2259,7 +2301,7 @@
       "id": "lynn-performer",
       "name": "Lynn",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/lynn-performer.jpg"
     },
     "yen-linh": {
       "id": "yen-linh",
@@ -2321,19 +2363,19 @@
       "id": "cat-tuyen",
       "name": "Cát Tuyền",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/cat-tuyen.jpg"
     },
     "dan-kim": {
       "id": "dan-kim",
       "name": "Đan Kim",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/dan-kim.jpg"
     },
     "thoai-my": {
       "id": "thoai-my",
       "name": "Thoại Mỹ",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/thoai-my.jpg"
     },
     "kim-tieu-long": {
       "id": "kim-tieu-long",
@@ -2351,19 +2393,19 @@
       "id": "gerard-william",
       "name": "Gerard William",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/gerard-william.jpg"
     },
     "bich-tuyen": {
       "id": "bich-tuyen",
       "name": "Bích Tuyền",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/bich-tuyen.jpg"
     },
     "anh-hung": {
       "id": "anh-hung",
       "name": "Anh Hùng",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/anh-hung.jpg"
     },
     "bang-kieu": {
       "id": "bang-kieu",
@@ -2392,13 +2434,13 @@
       "id": "ngoc-ngu",
       "name": "Ngọc Ngữ",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/ngoc-ngu.jpg"
     },
     "chau-ngoc-ha": {
       "id": "chau-ngoc-ha",
       "name": "Châu Ngọc Hà",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/chau-ngoc-ha.jpg"
     },
     "philip-huy": {
       "id": "philip-huy",
@@ -2410,13 +2452,13 @@
       "id": "lan-tran-mc",
       "name": "Lân Trần",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/lan-tran-mc.jpg"
     },
     "hung-bui-mc": {
       "id": "hung-bui-mc",
       "name": "Hùng Bùi",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/hung-bui-mc.jpg"
     },
     "khanh-ly": {
       "id": "khanh-ly",
@@ -2435,35 +2477,29 @@
       ],
       "photo": "entertainment/people/khanh-ly.jpg"
     },
-    "lam-nhat-tien": {
-      "id": "lam-nhat-tien",
-      "name": "Lâm Nhật Tiến",
-      "links": [],
-      "photo": "entertainment/people/lam-nhat-tien.jpg"
-    },
     "diep-thanh-thanh": {
       "id": "diep-thanh-thanh",
       "name": "Diệp Thanh Thanh",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/diep-thanh-thanh.jpg"
     },
     "lilian": {
       "id": "lilian",
       "name": "Lilian",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/lilian.jpg"
     },
     "thai-tai": {
       "id": "thai-tai",
       "name": "Thái Tài",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/thai-tai.jpg"
     },
     "thu-ha-vocalist": {
       "id": "thu-ha-vocalist",
       "name": "Thu Hà",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/thu-ha-vocalist.jpg"
     },
     "duong-trieu-vu": {
       "id": "duong-trieu-vu",
@@ -2517,7 +2553,7 @@
       "id": "my-loan",
       "name": "Mỹ Loan",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/my-loan.jpg"
     },
     "chau-le-hang": {
       "id": "chau-le-hang",
@@ -2529,7 +2565,7 @@
       "id": "hang-vy",
       "name": "Hằng Vy",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/hang-vy.jpg"
     }
   },
   "orgs": {
