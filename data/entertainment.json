@@ -1945,7 +1945,13 @@
     "nguyen-hong-nhung": {
       "id": "nguyen-hong-nhung",
       "name": "Nguyễn Hồng Nhung",
-      "links": [],
+      "links": [
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/c/nguyenhongnhungofficial",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/nguyen-hong-nhung.jpg"
     },
     "don-ho": {
