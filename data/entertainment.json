@@ -2007,6 +2007,12 @@
     "le-quyen": {
       "id": "le-quyen",
       "name": "Lệ Quyên",
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2022,6 +2028,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/channel/UCub2cHeQ7IHcEOvB4EzX-XQ",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/4F5jaYapI8RtTpqwaYs4IF",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/le-quyen.jpg"
@@ -2029,6 +2040,12 @@
     "thu-phuong": {
       "id": "thu-phuong",
       "name": "Thu Phương",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "website",
@@ -2049,6 +2066,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/channel/UC8ZxR3nFBGpHCUl3mvQ7X0w",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/3LsIDqxwDjcEKbK3D1IrDk",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/thu-phuong.jpg"
@@ -2056,6 +2078,12 @@
     "cao-thai-son": {
       "id": "cao-thai-son",
       "name": "Cao Thái Sơn",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2066,6 +2094,11 @@
           "kind": "instagram",
           "url": "https://instagram.com/caothaison_official",
           "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@caothaison.official",
+          "label": "YouTube"
         }
       ],
       "photo": "entertainment/people/cao-thai-son.jpg"
@@ -2073,6 +2106,12 @@
     "ngo-thai-ngan": {
       "id": "ngo-thai-ngan",
       "name": "Ngô Thái Ngân",
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2090,6 +2129,16 @@
     "hoai-lam": {
       "id": "hoai-lam",
       "name": "Hoài Lâm",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2105,6 +2154,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/c/HoaiLamVN",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/2dlC6p7Q75wnfhudwTEpxW",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/hoai-lam.jpg"
@@ -2112,18 +2166,52 @@
     "vy-oanh": {
       "id": "vy-oanh",
       "name": "Vy Oanh",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/vyoanhofficial",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/c/VyOanhOfficial",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/4qnRWrsA4QoiuNSxwoJYwq",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/vy-oanh.jpg"
     },
     "nhu-y": {
       "id": "nhu-y",
       "name": "Như Ý",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/nhu-y.jpg"
     },
     "tuan-hung": {
       "id": "tuan-hung",
       "name": "Tuấn Hưng",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2131,9 +2219,19 @@
           "label": "Facebook"
         },
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/tuanhung78",
+          "label": "Instagram"
+        },
+        {
           "kind": "youtube",
           "url": "https://youtube.com/channel/UCeRu0iIRrZyNpUSEVMaZGow",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/7l7DZWQaVIS13zFgSf7eb4",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/tuan-hung.jpg"
@@ -2141,6 +2239,12 @@
     "trung-quan": {
       "id": "trung-quan",
       "name": "Trung Quân",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2156,6 +2260,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/channel/UCq3s8x6TAWfeBC5q_zaGMYw",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/5Cf9nBDNc99UFkq9Yqap7Q",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/trung-quan.jpg"
@@ -2169,7 +2278,34 @@
     "phan-duy-anh": {
       "id": "phan-duy-anh",
       "name": "Phan Duy Anh",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/phanduyanh.official",
+          "label": "Facebook"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/phanduyanh.star",
+          "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/c/PhanDuyAnh",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/2ldAFJhpkWvdSsgDR4EkJE",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/phan-duy-anh.jpg"
     },
     "thu-ha-vocalist": {
@@ -2201,6 +2337,12 @@
       "aka": [
         "Cưởng Lô Tô"
       ],
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/nhat-xuan-hoa.jpg"
     },
@@ -2212,11 +2354,37 @@
         "My Duyen Huynh",
         "MyDuyen Huynh"
       ],
+      "specialties": [
+        {
+          "slug": "co-nhac",
+          "label": "Cải lương · cổ nhạc"
+        }
+      ],
       "links": [
         {
           "kind": "website",
           "url": "https://ovou.com/myduyensing",
           "label": "Website"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/myduyensing",
+          "label": "Facebook"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/yeny.vibes",
+          "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@myduyensing",
+          "label": "YouTube"
+        },
+        {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@yeny.vibes",
+          "label": "TikTok"
         },
         {
           "kind": "facebook",
@@ -2229,6 +2397,12 @@
     "bich-ngoc-mc": {
       "id": "bich-ngoc-mc",
       "name": "Bích Ngọc",
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/bich-ngoc-mc.jpg"
     },
@@ -2241,18 +2415,36 @@
     "ly-tin": {
       "id": "ly-tin",
       "name": "Lý Tín",
+      "specialties": [
+        {
+          "slug": "co-nhac",
+          "label": "Cải lương · cổ nhạc"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/ly-tin.jpg"
     },
     "van-hoang-ns": {
       "id": "van-hoang-ns",
       "name": "Văn Hoàng",
+      "specialties": [
+        {
+          "slug": "co-nhac",
+          "label": "Cải lương · cổ nhạc"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/van-hoang-ns.jpg"
     },
     "dang-lan-ns": {
       "id": "dang-lan-ns",
       "name": "Đặng Lạn",
+      "specialties": [
+        {
+          "slug": "co-nhac",
+          "label": "Cải lương · cổ nhạc"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/dang-lan-ns.jpg"
     },
@@ -2265,6 +2457,12 @@
     "chau-khai-phong": {
       "id": "chau-khai-phong",
       "name": "Châu Khải Phong",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2282,6 +2480,12 @@
     "minh-tuyet": {
       "id": "minh-tuyet",
       "name": "Minh Tuyết",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2294,6 +2498,11 @@
           "label": "YouTube"
         },
         {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/2wjsoWglhKBQVfjUGdth1y",
+          "label": "Spotify"
+        },
+        {
           "kind": "instagram",
           "url": "https://instagram.com/minhtuyetsinger",
           "label": "Instagram"
@@ -2304,12 +2513,30 @@
     "phung-ngoc-huy": {
       "id": "phung-ngoc-huy",
       "name": "Phùng Ngọc Huy",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/c/PhungNgocHuyOFFICIAL",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/phung-ngoc-huy.jpg"
     },
     "dj-tung": {
       "id": "dj-tung",
       "name": "DJ Tùng",
+      "specialties": [
+        {
+          "slug": "dj-edm",
+          "label": "DJ · EDM"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/dj-tung.jpg"
     },
@@ -2322,6 +2549,12 @@
     "dj-alissa": {
       "id": "dj-alissa",
       "name": "DJ Alissa",
+      "specialties": [
+        {
+          "slug": "dj-edm",
+          "label": "DJ · EDM"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/dj-alissa.jpg"
     },
@@ -2330,6 +2563,12 @@
       "name": "Quỳnh Giao",
       "aka": [
         "Trương Quỳnh Giao"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
       ],
       "links": [
         {
@@ -2355,12 +2594,24 @@
     "oscar-thuan-nguyen": {
       "id": "oscar-thuan-nguyen",
       "name": "Oscar Thuận Nguyễn",
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/oscar-thuan-nguyen.jpg"
     },
     "dan-nguyen": {
       "id": "dan-nguyen",
       "name": "Đan Nguyên",
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2376,6 +2627,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/channel/UCytHocZlrMx499o86164B7Q",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/3AYPFIPDQ5aUUZzQ9OsqEn",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/dan-nguyen.jpg"
@@ -2383,13 +2639,57 @@
     "quang-le": {
       "id": "quang-le",
       "name": "Quang Lê",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "que-huong",
+          "label": "Nhạc quê hương"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/quanglehouse",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCNqz53FCc3mUg5NyzHxsXGQ",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/2PQLOJKDN5j1q0q3xltIk8",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/quang-le.jpg"
     },
     "mai-thien-van": {
       "id": "mai-thien-van",
       "name": "Mai Thiên Vân",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "que-huong",
+          "label": "Nhạc quê hương"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/maithienvanofficial",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/maithienvanofficial",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/6DKJX322RvZsWhz0Xn2myz",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/mai-thien-van.jpg"
     },
     "lam-nhat-tien": {
@@ -2398,13 +2698,41 @@
       "aka": [
         "Đàm Nhật Tiến"
       ],
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
+      "links": [
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/02rLqQfWp5cmZYBShP1Fu5",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/lam-nhat-tien.jpg"
     },
     "tommy-ngo": {
       "id": "tommy-ngo",
       "name": "Tommy Ngô",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/2MHcc1IdXXBywlni7vytm1",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/tommy-ngo.jpg"
     },
     "linda-trang-dai": {
@@ -2412,6 +2740,12 @@
       "name": "Linda Trang Đài",
       "aka": [
         "Lynda Trang Đài"
+      ],
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        }
       ],
       "links": [
         {
@@ -2440,6 +2774,12 @@
     "kevin-le": {
       "id": "kevin-le",
       "name": "Kevin Lê",
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/kevin-le.jpg"
     },
@@ -2506,19 +2846,59 @@
     "mai-thanh-son": {
       "id": "mai-thanh-son",
       "name": "Mai Thanh Sơn",
-      "links": [],
+      "links": [
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UC1q8zNtELQcGeeBSLbOLmGg",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/4YDLZ5UjxElAtGyuxQxDi9",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/mai-thanh-son.jpg"
     },
     "ha-thanh-xuan": {
       "id": "ha-thanh-xuan",
       "name": "Hà Thanh Xuân",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/hathanhxuanofficial",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCZuoBO6nCrz2p-KevD080qg",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/ha-thanh-xuan.jpg"
     },
     "trizzie-phuong-trinh": {
       "id": "trizzie-phuong-trinh",
       "name": "Trizzie Phương Trinh",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/trizziephuongtrinh",
+          "label": "Facebook"
+        }
+      ],
       "photo": "entertainment/people/trizzie-phuong-trinh.jpg"
     },
     "anh-thu": {
@@ -2530,7 +2910,13 @@
     "thien-son": {
       "id": "thien-son",
       "name": "Thiên Sơn",
-      "links": [],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/thienson.singer",
+          "label": "Facebook"
+        }
+      ],
       "photo": "entertainment/people/thien-son.jpg"
     },
     "ngoc-mai": {
@@ -2539,7 +2925,19 @@
       "aka": [
         "Ngọc Mai"
       ],
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/ngocmaisinger",
+          "label": "Facebook"
+        }
+      ],
       "photo": "entertainment/people/ngoc-mai.jpg"
     },
     "thanh-hung-mc": {
@@ -2548,19 +2946,47 @@
       "aka": [
         "Hùng Bùi"
       ],
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/thanh-hung-mc.jpg"
     },
     "thao-quyen": {
       "id": "thao-quyen",
       "name": "Thảo Quyên",
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/thao-quyen.jpg"
     },
     "nguyen-hung": {
       "id": "nguyen-hung",
       "name": "Nguyễn Hưng",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/nguyenhungsinger",
+          "label": "Facebook"
+        }
+      ],
       "photo": "entertainment/people/nguyen-hung.jpg"
     },
     "bruce-nguyen": {
@@ -2591,6 +3017,12 @@
     "hong-ngoc": {
       "id": "hong-ngoc",
       "name": "Hồng Ngọc",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2608,6 +3040,12 @@
     "bao-anh": {
       "id": "bao-anh",
       "name": "Bảo Anh",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2620,6 +3058,11 @@
           "label": "YouTube"
         },
         {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/4fCHhderLwLacsIOIKgu3J",
+          "label": "Spotify"
+        },
+        {
           "kind": "instagram",
           "url": "https://instagram.com/baoanh0309",
           "label": "Instagram"
@@ -2630,6 +3073,12 @@
     "hien-ho": {
       "id": "hien-ho",
       "name": "Hiền Hồ",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2645,6 +3094,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/channel/UCoCZ3rmYvwGp08lj-MM1Dow",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/6ZmHJcmCcc9X2sAyz6cHng",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/hien-ho.jpg"
@@ -2652,11 +3106,27 @@
     "noo-phuoc-thinh": {
       "id": "noo-phuoc-thinh",
       "name": "Noo Phước Thịnh",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
           "url": "https://facebook.com/phuocthinh.noo",
           "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UC7tPk1F9H5e2vGUmTDlz9nQ",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/3mibIJiduF0MVLLAvHZAxw",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/noo-phuoc-thinh.jpg"
@@ -2664,6 +3134,12 @@
     "ho-ngoc-ha": {
       "id": "ho-ngoc-ha",
       "name": "Hồ Ngọc Hà",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2679,6 +3155,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/channel/UCNgCserSzcAWFOY-7_f3iug",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/24Wn81dwdDeTCuB1BWGoVJ",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/ho-ngoc-ha.jpg"
@@ -2686,6 +3167,12 @@
     "dan-truong": {
       "id": "dan-truong",
       "name": "Đan Trường",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2696,6 +3183,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/c/DanTruongSingerOfficial",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/5XcfMxmHUiyxc1Q283Nmxj",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/dan-truong.jpg"
@@ -2709,6 +3201,12 @@
     "myra-tran": {
       "id": "myra-tran",
       "name": "Myra Trần",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2729,6 +3227,11 @@
           "kind": "tiktok",
           "url": "https://tiktok.com/@myratrann",
           "label": "TikTok"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/0Y9KzsdFByEI4bigKF1htd",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/myra-tran.jpg"
@@ -2748,6 +3251,12 @@
     "nguyen-hong-nhung": {
       "id": "nguyen-hong-nhung",
       "name": "Nguyễn Hồng Nhung",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "youtube",
@@ -2763,6 +3272,12 @@
       "aka": [
         "Don Ho"
       ],
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2775,6 +3290,11 @@
           "label": "YouTube"
         },
         {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/6dYm0i4voJXVX9rPx6gb2F",
+          "label": "Spotify"
+        },
+        {
           "kind": "instagram",
           "url": "https://instagram.com/donhosinger",
           "label": "Instagram"
@@ -2785,7 +3305,18 @@
     "vicky-nhung": {
       "id": "vicky-nhung",
       "name": "Vicky Nhung",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
+        {
+          "kind": "website",
+          "url": "https://vickynhung.info",
+          "label": "Website"
+        },
         {
           "kind": "facebook",
           "url": "https://facebook.com/vickynhung.kom",
@@ -2807,6 +3338,12 @@
     "aaron-le": {
       "id": "aaron-le",
       "name": "Aaron Le",
+      "specialties": [
+        {
+          "slug": "american-indie",
+          "label": "American · indie"
+        }
+      ],
       "links": [
         {
           "kind": "website",
@@ -2826,6 +3363,12 @@
       "name": "DJ UNI",
       "aka": [
         "Trang Tran"
+      ],
+      "specialties": [
+        {
+          "slug": "dj-edm",
+          "label": "DJ · EDM"
+        }
       ],
       "links": [
         {
@@ -2849,19 +3392,70 @@
     "brian-bui": {
       "id": "brian-bui",
       "name": "Brian Bui",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "co-nhac",
+          "label": "Cải lương · cổ nhạc"
+        }
+      ],
+      "links": [
+        {
+          "kind": "website",
+          "url": "https://brianbui.music",
+          "label": "Website"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/7KDxyIyIRWwHev9K9One5W",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/brian-bui.jpg"
     },
     "jp-breganza": {
       "id": "jp-breganza",
       "name": "JP Breganza",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "american-indie",
+          "label": "American · indie"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/jpbreganza",
+          "label": "Instagram"
+        }
+      ],
       "photo": "entertainment/people/jp-breganza.jpg"
     },
     "mikey-vee": {
       "id": "mikey-vee",
       "name": "Mikey Vee",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "american-indie",
+          "label": "American · indie"
+        }
+      ],
+      "links": [
+        {
+          "kind": "website",
+          "url": "https://hitmkr.com/mikeyveemusic",
+          "label": "Website"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/mikeyveemusic",
+          "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UC98wAeWAfAJDGL1cGDjQoDQ",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/mikey-vee.jpg"
     },
     "troy": {
@@ -2870,6 +3464,12 @@
       "aka": [
         "Troy Tuan Truong",
         "Troy"
+      ],
+      "specialties": [
+        {
+          "slug": "american-indie",
+          "label": "American · indie"
+        }
       ],
       "links": [
         {
@@ -2883,12 +3483,45 @@
     "vincent-aire": {
       "id": "vincent-aire",
       "name": "Vincent Aire",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "american-indie",
+          "label": "American · indie"
+        }
+      ],
+      "links": [
+        {
+          "kind": "website",
+          "url": "https://vincentaire.com",
+          "label": "Website"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/airebebe",
+          "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@VincentAire",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/6wZFv1KN92faFM1RKEfMxG",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/vincent-aire.jpg"
     },
     "tran-thai-hoa": {
       "id": "tran-thai-hoa",
       "name": "Trần Thái Hòa",
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -2901,7 +3534,24 @@
     "ho-hoang-yen": {
       "id": "ho-hoang-yen",
       "name": "Hồ Hoàng Yến",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
+      "links": [
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@hohoangyenmusic",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/7BexWHooxEtDlI69lknj8E",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/ho-hoang-yen.jpg"
     },
     "to-bee": {
@@ -2913,18 +3563,52 @@
     "sy-dan": {
       "id": "sy-dan",
       "name": "Sỹ Đan",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@sydanmusicsoul5397",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/sy-dan.jpg"
     },
     "y-lan": {
       "id": "y-lan",
       "name": "Ý Lan",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
+      "links": [
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/3NOy4VouufNkUdcPh7ouDv",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/y-lan.jpg"
     },
     "thanh-tuyen": {
       "id": "thanh-tuyen",
       "name": "Thanh Tuyền",
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
       "links": [
         {
           "kind": "youtube",
@@ -2937,13 +3621,47 @@
     "elvis-phuong": {
       "id": "elvis-phuong",
       "name": "Elvis Phương",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
+      "links": [
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCiPhmN0Dueth4BnuuP9COYQ",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/4P95HBikaVomMvtD6vg1vD",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/elvis-phuong.jpg"
     },
     "truong-vu": {
       "id": "truong-vu",
       "name": "Trường Vũ",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
+      "links": [
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@singertruongvu1175",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/78P4eADp0NwlcU4tsRCBdo",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/truong-vu.jpg"
     },
     "luu-anh": {
@@ -2955,31 +3673,100 @@
     "diem-suong": {
       "id": "diem-suong",
       "name": "Diễm Sương",
-      "links": [],
+      "links": [
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/1oXWd6Xc84KEx95VsXYAFM",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/diem-suong.jpg"
     },
     "trinh-lam": {
       "id": "trinh-lam",
       "name": "Trịnh Lam",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/1946SXMtprXuDRbjV3TXDh",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/trinh-lam.jpg"
     },
     "truc-linh": {
       "id": "truc-linh",
       "name": "Trúc Linh",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/truclamtruclinhofficial",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@truclamtruclinhofficial",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/truc-linh.jpg"
     },
     "truc-lam": {
       "id": "truc-lam",
       "name": "Trúc Lam",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/truclamtruclinhofficial",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@truclamtruclinhofficial",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/truc-lam.jpg"
     },
     "mina-tran": {
       "id": "mina-tran",
       "name": "Mina Trần",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UC_d6Ga8gTMfpwXu0-aoxUCA",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/54PlBq6pKfmPxaGaZxMtlc",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/mina-tran.jpg"
     },
     "lieu-kieu": {
@@ -2995,6 +3782,12 @@
         "DJ Kixi",
         "Kixi",
         "Sexy DJ Kixi"
+      ],
+      "specialties": [
+        {
+          "slug": "dj-edm",
+          "label": "DJ · EDM"
+        }
       ],
       "links": [],
       "photo": "entertainment/people/dj-kixi.jpg"
@@ -3014,6 +3807,12 @@
     "hoang-my-an": {
       "id": "hoang-my-an",
       "name": "Hoàng Mỹ An",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -3024,6 +3823,11 @@
           "kind": "instagram",
           "url": "https://instagram.com/hoangmyan",
           "label": "Instagram"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/63jwTPkWEetRzdfaJ31iV7",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/hoang-my-an.jpg"
@@ -3031,7 +3835,29 @@
     "tieu-chau-nhu-quynh": {
       "id": "tieu-chau-nhu-quynh",
       "name": "Tiêu Châu Như Quỳnh",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/tieuchaunhuquynhofficial",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/user/tieuchaunhuquynh",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/6MZ67AEHqdNUbuCkFWEPwz",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/tieu-chau-nhu-quynh.jpg"
     },
     "alex-kong": {
@@ -3047,6 +3873,12 @@
         "Hoang Liem",
         "Hoàng Liem",
         "Hoàng Liêm"
+      ],
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
       ],
       "links": [
         {
@@ -3066,12 +3898,45 @@
     "ho-le-thu": {
       "id": "ho-le-thu",
       "name": "Hồ Lệ Thu",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/cs.holethu",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@casiholethuofficial",
+          "label": "YouTube"
+        },
+        {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@holethuofficial",
+          "label": "TikTok"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/6CQqST4eq5bxUONQg6orXS",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/ho-le-thu.jpg"
     },
     "cong-thanh": {
       "id": "cong-thanh",
       "name": "Công Thành",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/cong-thanh.jpg"
     },
@@ -3112,18 +3977,36 @@
     "vy-binh": {
       "id": "vy-binh",
       "name": "Vy Bình",
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
       "links": [],
       "photo": null
     },
     "quang-linh": {
       "id": "quang-linh",
       "name": "Quang Linh",
+      "specialties": [
+        {
+          "slug": "que-huong",
+          "label": "Nhạc quê hương"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/quang-linh.jpg"
     },
     "phan-dinh-tung": {
       "id": "phan-dinh-tung",
       "name": "Phan Đình Tùng",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -3146,6 +4029,12 @@
     "mai-tien-dung": {
       "id": "mai-tien-dung",
       "name": "Mai Tiến Dũng",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -3175,12 +4064,35 @@
     "thoai-my": {
       "id": "thoai-my",
       "name": "Thoại Mỹ",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "co-nhac",
+          "label": "Cải lương · cổ nhạc"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/nghesithoaimy",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCshheR_CHm1jCZYJ4TEt7ww",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/thoai-my.jpg"
     },
     "kim-tieu-long": {
       "id": "kim-tieu-long",
       "name": "Kim Tiểu Long",
+      "specialties": [
+        {
+          "slug": "co-nhac",
+          "label": "Cải lương · cổ nhạc"
+        }
+      ],
       "links": [
         {
           "kind": "youtube",
@@ -3199,7 +4111,19 @@
     "bich-tuyen": {
       "id": "bich-tuyen",
       "name": "Bích Tuyền",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "que-huong",
+          "label": "Nhạc quê hương"
+        }
+      ],
+      "links": [
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/4qxYx9FUknmOHDqEWwiucK",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/bich-tuyen.jpg"
     },
     "anh-hung": {
@@ -3211,6 +4135,12 @@
     "chu-thuy-quynh": {
       "id": "chu-thuy-quynh",
       "name": "Chu Thuý Quỳnh",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -3226,6 +4156,11 @@
           "kind": "tiktok",
           "url": "https://tiktok.com/@quynhtron0997",
           "label": "TikTok"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/62GMhABXxUBGxvaS62fxs6",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/chu-thuy-quynh.jpg"
@@ -3233,6 +4168,12 @@
     "ali-hoang-duong": {
       "id": "ali-hoang-duong",
       "name": "Ali Hoàng Dương",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -3255,6 +4196,12 @@
     "dat-g": {
       "id": "dat-g",
       "name": "Đạt G",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -3270,6 +4217,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/channel/UC2OzDIKOESoKIdR1VtwCAAQ",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/4R3mugkUqCALXgkwSptTbg",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/dat-g.jpg"
@@ -3277,24 +4229,79 @@
     "trong-bac": {
       "id": "trong-bac",
       "name": "Trọng Bắc",
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/trong-bac.jpg"
     },
     "luong-tung-quang": {
       "id": "luong-tung-quang",
       "name": "Lương Tùng Quang",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/luongtungquang07",
+          "label": "Facebook"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/41eUMVb8BInRlwH1Cx6v3N",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/luong-tung-quang.jpg"
     },
     "ky-phuong-uyen": {
       "id": "ky-phuong-uyen",
       "name": "Kỳ Phương Uyên",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/kyphuonguyen",
+          "label": "Facebook"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/kyphuonguyen",
+          "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCvktCseg-PfdoORMJVsYVrw",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/ky-phuong-uyen.jpg"
     },
     "bang-kieu": {
       "id": "bang-kieu",
       "name": "Bằng Kiều",
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -3305,6 +4312,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/channel/UCeLLw4rfJFLJEwYfMie755A",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/0KWdVd7ZYhtlm0CLHIFBya",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/bang-kieu.jpg"
@@ -3312,36 +4324,84 @@
     "lam-anh": {
       "id": "lam-anh",
       "name": "Lam Anh",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/5trMq1OIockzQVpFicyrpn",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/lam-anh.jpg"
     },
     "ngoc-ngu": {
       "id": "ngoc-ngu",
       "name": "Ngọc Ngữ",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "que-huong",
+          "label": "Nhạc quê hương"
+        }
+      ],
+      "links": [
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/7vCKeEqgPv1FFEM2OivtNj",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/ngoc-ngu.jpg"
     },
     "chau-ngoc-ha": {
       "id": "chau-ngoc-ha",
       "name": "Châu Ngọc Hà",
+      "specialties": [
+        {
+          "slug": "que-huong",
+          "label": "Nhạc quê hương"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/chau-ngoc-ha.jpg"
     },
     "philip-huy": {
       "id": "philip-huy",
       "name": "Philip Huy",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/philip-huy.jpg"
     },
     "lan-tran-mc": {
       "id": "lan-tran-mc",
       "name": "Lân Trần",
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/lan-tran-mc.jpg"
     },
     "khanh-ly": {
       "id": "khanh-ly",
       "name": "Khánh Ly",
+      "specialties": [
+        {
+          "slug": "trinh",
+          "label": "Nhạc Trịnh"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -3352,6 +4412,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/channel/UC534KI6NPbnDFVJc6GrMyDg",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/2BT5812uC3XW9TukhlOfD0",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/khanh-ly.jpg"
@@ -3359,7 +4424,19 @@
     "diep-thanh-thanh": {
       "id": "diep-thanh-thanh",
       "name": "Diệp Thanh Thanh",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
+      "links": [
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/6VydREjWMeW1XQhdlBXRAQ",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/diep-thanh-thanh.jpg"
     },
     "lilian": {
@@ -3371,17 +4448,40 @@
     "thai-tai": {
       "id": "thai-tai",
       "name": "Thái Tài",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/7qayHJbnaBSkPau2offKtM",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/thai-tai.jpg"
     },
     "duong-trieu-vu": {
       "id": "duong-trieu-vu",
       "name": "Dương Triệu Vũ",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
           "url": "https://facebook.com/duongtrieuvupage",
           "label": "Facebook"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/7eNVs44Liz46dWLt9LAONW",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/duong-trieu-vu.jpg"
@@ -3389,12 +4489,35 @@
     "y-phuong": {
       "id": "y-phuong",
       "name": "Y Phương",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/yphuongsinger",
+          "label": "Facebook"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/1r8cTb74YEfJsUmjyQXPm6",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/y-phuong.jpg"
     },
     "khoa-do": {
       "id": "khoa-do",
       "name": "Khoa Đỗ",
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/khoa-do.jpg"
     },
@@ -3413,6 +4536,12 @@
     "huy-hoang-mc": {
       "id": "huy-hoang-mc",
       "name": "Huy Hoàng",
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/huy-hoang-mc.jpg"
     },
@@ -3431,7 +4560,19 @@
     "diem-lien": {
       "id": "diem-lien",
       "name": "Diễm Liên",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/0FwaMSL78dR3680RU5kU2j",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/diem-lien.jpg"
     },
     "luu-gia-bao": {

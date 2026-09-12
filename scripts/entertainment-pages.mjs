@@ -110,6 +110,45 @@ export function smartPunctuateName(s) {
   return out;
 }
 
+export const SPECIALTY_LABEL = {
+  "nhac-vang": "Bolero · nhạc vàng",
+  "que-huong": "Nhạc quê hương",
+  "nhac-tre": "Nhạc trẻ",
+  remix: "Remix · dạ vũ",
+  "co-nhac": "Cải lương · cổ nhạc",
+  trinh: "Nhạc Trịnh",
+  "dj-edm": "DJ · EDM",
+  "american-indie": "American · indie",
+  emcee: "Emcee",
+};
+
+/** Known genre slugs in filter / chip order. No `local` / hometown. */
+export const PERFORMER_GENRE_SLUGS = [
+  "nhac-vang",
+  "que-huong",
+  "nhac-tre",
+  "remix",
+  "co-nhac",
+  "trinh",
+  "dj-edm",
+  "american-indie",
+  "emcee",
+];
+
+/** Performers filter only — empty `specialties`. Never store on person_specialty. */
+export const PERFORMER_GENRE_UNKNOWN = "unknown";
+
+export function specialtySlugs(specialties) {
+  if (!Array.isArray(specialties)) return [];
+  return specialties
+    .map((item) => (typeof item === "string" ? item : item?.slug))
+    .filter((slug) => slug && SPECIALTY_LABEL[slug]);
+}
+
+export function performerGenreHref(slug) {
+  return `/entertainment/performers/?genre=${encodeURIComponent(slug)}`;
+}
+
 const ROLE_LABEL = {
   host: "Host",
   producer: "Producer",
@@ -269,6 +308,7 @@ function directoryRow(entity, type, events) {
         : `/entertainment/orgs/${entity.id}/`,
     photo: entity.photo || null,
     eventCount: eventCountFor(events, type, entity.id),
+    specialties: specialtySlugs(entity.specialties),
   };
 }
 
@@ -365,6 +405,17 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
       <path fill="currentColor" d="M10.2 9.2v5.6L15.7 12z"/>
     </svg>`;
 
+  const SPOTIFY_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M7.4 10.1c2.6-1.1 6.6-1.2 9.3.2"/>
+      <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M7.6 13c2.2-.9 5.5-1 7.8.15"/>
+      <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M7.9 15.7c1.7-.7 4.2-.75 6 .1"/>
+    </svg>`;
+
+  const TIKTOK_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+    </svg>`;
+
   const websiteChipLabel = (url) => {
     try {
       const host = new URL(url).hostname.replace(/^www\./i, "");
@@ -389,6 +440,12 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
         if (kind === "youtube") {
           return `<li><a class="social-icon" href="${esc(l.url)}" rel="noopener noreferrer" target="_blank" aria-label="YouTube">${YT_SVG}</a></li>`;
         }
+        if (kind === "spotify") {
+          return `<li><a class="social-icon" href="${esc(l.url)}" rel="noopener noreferrer" target="_blank" aria-label="Spotify">${SPOTIFY_SVG}</a></li>`;
+        }
+        if (kind === "tiktok") {
+          return `<li><a class="social-icon" href="${esc(l.url)}" rel="noopener noreferrer" target="_blank" aria-label="TikTok">${TIKTOK_SVG}</a></li>`;
+        }
         const label = kind === "website" ? websiteChipLabel(l.url) : l.label;
         return `<li><a href="${esc(l.url)}" rel="noopener noreferrer" target="_blank">${esc(label)}</a></li>`;
       })
@@ -396,10 +453,25 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
   </ul>`;
   };
 
-  const entityHeading = (name, links, photo, kind) => {
+  const specialtyChips = (specialties) => {
+    const slugs = specialtySlugs(specialties).slice(0, 3);
+    if (!slugs.length) return "";
+    const chips = slugs.map((slug) => {
+      const item = Array.isArray(specialties)
+        ? specialties.find((row) => (typeof row === "string" ? row : row?.slug) === slug)
+        : null;
+      const label =
+        (item && typeof item === "object" && item.label) || SPECIALTY_LABEL[slug] || slug;
+      return `<li><a class="genre-chip" href="${esc(performerGenreHref(slug))}">${esc(label)}</a></li>`;
+    });
+    return `<ul class="genre-chips">${chips.join("")}</ul>`;
+  };
+
+  const entityHeading = (name, links, photo, kind, specialties) => {
     const shown = kind === "org" ? displayName(name) : listingName(name);
     const photoImg = imgEl(photo, shown);
     const copy = `<h1>${esc(shown)}</h1>
+        ${specialtyChips(specialties)}
         ${socialList(links)}`;
     if (!photoImg) return copy;
     const photoClass =
@@ -473,33 +545,51 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     const attrs = sortable ? ' data-performer-grid' : "";
     return `<ul class="${classes.join(" ")}"${attrs}>
       ${rows
-        .map(
-          (row) =>
-            `<li data-name="${escListingName(row.name)}" data-events="${esc(String(row.eventCount ?? 0))}"><a href="${esc(row.href)}">${performerAvatar(row)}<span class="performer-name">${escListingName(row.name)}</span></a></li>`,
-        )
+        .map((row) => {
+          const genres = (row.specialties || []).join(" ");
+          return `<li data-name="${escListingName(row.name)}" data-events="${esc(String(row.eventCount ?? 0))}" data-genres="${esc(genres)}"><a href="${esc(row.href)}">${performerAvatar(row)}<span class="performer-name">${escListingName(row.name)}</span></a></li>`;
+        })
         .join("")}
     </ul>`;
   };
 
+  const performerGenreOptions = () =>
+    [
+      `<option value="">All</option>`,
+      ...PERFORMER_GENRE_SLUGS.map(
+        (slug) => `<option value="${esc(slug)}">${esc(SPECIALTY_LABEL[slug])}</option>`,
+      ),
+      `<option value="${esc(PERFORMER_GENRE_UNKNOWN)}">Unknown</option>`,
+    ].join("");
+
   const performerSortBar = () => `<div class="performer-toolbar">
+      <label class="performer-genre" for="performer-genre">Genre
+        <select id="performer-genre" data-performer-genre>
+          ${performerGenreOptions()}
+        </select>
+      </label>
       <label class="performer-sort" for="performer-sort">Sort
         <select id="performer-sort" data-performer-sort>
-          <option value="alpha" selected>Alphabetical</option>
-          <option value="popular">Most appearances</option>
+          <option value="alpha">Alphabetical</option>
+          <option value="appearances">Most appearances</option>
         </select>
       </label>
     </div>`;
 
   const performerDirectory = (performers, organizations) => {
     const peopleBlock = performers.length
-      ? `${performerSortBar()}
-    ${performerList(performers, { sortable: true })}`
+      ? `<section data-performer-section="people">
+    ${performerList(performers, { sortable: true })}
+    </section>`
       : "";
     const orgBlock = organizations.length
-      ? `<h2 class="section-label band-label">Organizations</h2>
-    ${performerList(organizations, { sortable: true, variant: "orgs" })}`
+      ? `<section data-performer-section="orgs">
+    <h2 class="section-label band-label">Organizations</h2>
+    ${performerList(organizations, { sortable: true, variant: "orgs" })}
+    </section>`
       : "";
-    return `${peopleBlock}
+    return `${performers.length || organizations.length ? performerSortBar() : ""}
+    ${peopleBlock}
     ${orgBlock}`;
   };
 
@@ -704,8 +794,8 @@ export function writeEntertainmentPages({
         current: "entertainment",
         body: `<main class="wrap">
       <header class="hero">
-        ${h.crumbsEnt([{ href: "/entertainment/", label: "Entertainment" }])}
-        ${h.entityHeading(person.name, person.links, person.photo, "person")}
+        ${h.crumbsEnt([{ href: "/entertainment/performers/", label: "Entertainment" }])}
+        ${h.entityHeading(person.name, person.links, person.photo, "person", person.specialties)}
       </header>
       ${u.length || p.length ? h.posterGrid([...u, ...p]) : ""}
     </main>`,
@@ -729,8 +819,8 @@ export function writeEntertainmentPages({
         current: "entertainment",
         body: `<main class="wrap">
       <header class="hero">
-        ${h.crumbsEnt([{ href: "/entertainment/", label: "Entertainment" }])}
-        ${h.entityHeading(org.name, org.links, org.photo, "org")}
+        ${h.crumbsEnt([{ href: "/entertainment/performers/", label: "Entertainment" }])}
+        ${h.entityHeading(org.name, org.links, org.photo, "org", org.specialties)}
       </header>
       ${u.length || p.length ? h.posterGrid([...u, ...p]) : ""}
     </main>`,
