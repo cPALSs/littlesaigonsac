@@ -860,6 +860,12 @@
         },
         {
           "type": "person",
+          "id": "myduyen-huynh",
+          "name": "Mỹ Duyên",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
           "id": "troy",
           "name": "Onbar",
           "role": "vocalist"
@@ -1968,7 +1974,28 @@
     "thu-phuong": {
       "id": "thu-phuong",
       "name": "Thu Phương",
-      "links": [],
+      "links": [
+        {
+          "kind": "website",
+          "url": "https://casithuphuong.com",
+          "label": "Website"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/thuphuongsinger",
+          "label": "Facebook"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/thuphuong.official",
+          "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UC8ZxR3nFBGpHCUl3mvQ7X0w",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/thu-phuong.jpg"
     },
     "cao-thai-son": {
@@ -1991,13 +2018,40 @@
     "ngo-thai-ngan": {
       "id": "ngo-thai-ngan",
       "name": "Ngô Thái Ngân",
-      "links": [],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/ngan.linda.52",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@ngothainganofficial",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/ngo-thai-ngan.jpg"
     },
     "hoai-lam": {
       "id": "hoai-lam",
       "name": "Hoài Lâm",
-      "links": [],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/hoailamhl",
+          "label": "Facebook"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/hoailam.95",
+          "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/c/HoaiLamVN",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/hoai-lam.jpg"
     },
     "vy-oanh": {
@@ -2097,13 +2151,24 @@
     },
     "myduyen-huynh": {
       "id": "myduyen-huynh",
-      "name": "My Duyen Huynh",
+      "name": "Mỹ Duyên",
       "aka": [
         "My Duyen T. Huynh",
-        "MyDuyen Huynh",
-        "Mỹ Duyên"
+        "My Duyen Huynh",
+        "MyDuyen Huynh"
       ],
-      "links": [],
+      "links": [
+        {
+          "kind": "website",
+          "url": "https://ovou.com/myduyensing",
+          "label": "Website"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/myduyenh111",
+          "label": "Facebook"
+        }
+      ],
       "photo": "entertainment/people/myduyen-huynh.jpg"
     },
     "bich-ngoc-mc": {
@@ -2983,13 +3048,40 @@
     "phan-dinh-tung": {
       "id": "phan-dinh-tung",
       "name": "Phan Đình Tùng",
-      "links": [],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/phandinhtungfanpage",
+          "label": "Facebook"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/phandinhtungsinger",
+          "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCE1Pyr4u_5VhjF1HZ3Db3eA",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/phan-dinh-tung.jpg"
     },
     "mai-tien-dung": {
       "id": "mai-tien-dung",
       "name": "Mai Tiến Dũng",
-      "links": [],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/maitiendung",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@maitiendungofficial",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/mai-tien-dung.jpg"
     },
     "cat-tuyen": {
