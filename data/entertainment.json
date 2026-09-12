@@ -56,6 +56,64 @@
       ]
     },
     {
+      "id": "best-kitchen-pre-halloween-party-2026",
+      "label": "Pre Halloween Party",
+      "display_date": "Oct 24, 2026 · doors 6:00 PM · show 8:00 PM",
+      "start_date": "2026-10-24",
+      "end_date": "2026-10-24",
+      "city": "Sacramento",
+      "venue": "Best Kitchen Karaoke & Bar, 7121 Governors Cir",
+      "place_name": "Best Kitchen Karaoke & Bar",
+      "status": "confirmed",
+      "poster": "entertainment/best-kitchen-pre-halloween-party-2026.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "best-kitchen-karaoke",
+          "name": "Best Kitchen Karaoke & Bar",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "best-kitchen-karaoke",
+          "name": "Best Kitchen Karaoke & Bar",
+          "role": "producer"
+        }
+      ],
+      "lineup": [
+        {
+          "type": "person",
+          "id": "lan-anh-tieu",
+          "name": "Lan Anh Tiêu",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "quach-thanh-danh",
+          "name": "Quách Thành Danh",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "quynh-mai",
+          "name": "Quỳnh Mai",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "kenny-dang",
+          "name": "Kenny Đặng",
+          "role": "mc"
+        },
+        {
+          "type": "person",
+          "id": "lan-anh-tieu",
+          "name": "Lan Anh Tiêu",
+          "role": "dj"
+        }
+      ]
+    },
+    {
       "id": "dem-huyen-thoai-silver-legacy-2026",
       "label": "Đêm Huyền Thoại",
       "display_date": "Oct 24, 2026",
@@ -848,6 +906,12 @@
         },
         {
           "type": "person",
+          "id": "lily-tran",
+          "name": "Flo Mamii",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
           "id": "jp-breganza",
           "name": "JP Breganza",
           "role": "vocalist"
@@ -1413,6 +1477,88 @@
       ]
     },
     {
+      "id": "sacto-by-night-em-nen-dung-lai-2025",
+      "label": "Em nên dừng lại",
+      "display_date": "Jun 28, 2025",
+      "start_date": "2025-06-28",
+      "end_date": "2025-06-28",
+      "city": "Sacramento",
+      "venue": "Sacto By Night, 7121 Governors Cir",
+      "place_name": "Sacto By Night",
+      "status": "held",
+      "poster": "entertainment/sacto-by-night-em-nen-dung-lai-2025.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "sacto-by-night",
+          "name": "Sacto By Night",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "sacto-by-night",
+          "name": "Sacto By Night",
+          "role": "producer"
+        }
+      ],
+      "lineup": [
+        {
+          "type": "person",
+          "id": "bruce-nguyen",
+          "name": "Bruce Nguyễn",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "hung-le",
+          "name": "Hùng Lê Hùng",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "khang-viet",
+          "name": "Khang Việt",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "mai-thanh",
+          "name": "Mai Thanh",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "nicole-nguyen",
+          "name": "Nicole Nguyễn",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "paul-cuong-nguyen",
+          "name": "Paul Cường Nguyễn",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "pham-hong-an",
+          "name": "Phạm Hồng Ân",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "quang-do",
+          "name": "Quang Đỗ",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "dj-uni",
+          "name": "DJ UNI",
+          "role": "dj"
+        }
+      ]
+    },
+    {
       "id": "amv-mung-le-me-2025",
       "label": "Đại Nhạc Hội — Mừng Lễ Mẹ",
       "display_date": "May 3, 2025",
@@ -1921,6 +2067,94 @@
       ]
     },
     {
+      "id": "sacto-by-night-new-wave-concert-2023",
+      "label": "The New Wave Concert",
+      "display_date": "May 21, 2023",
+      "start_date": "2023-05-21",
+      "end_date": "2023-05-21",
+      "city": "Sacramento",
+      "venue": "Sacto By Night, 7121 Governors Cir",
+      "place_name": "Sacto By Night",
+      "status": "held",
+      "poster": "entertainment/sacto-by-night-new-wave-concert-2023.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "sacto-by-night",
+          "name": "Sacto By Night",
+          "role": "host"
+        }
+      ],
+      "lineup": [
+        {
+          "type": "person",
+          "id": "bruce-nguyen",
+          "name": "Bruce Nguyễn",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "linda-trang-dai",
+          "name": "Lynda Trang Đài",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "mai-thanh",
+          "name": "Mai Thanh",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "nguyen-thuy-linh",
+          "name": "Nguyễn Thùy Linh",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "nhu-hoai",
+          "name": "Như Hoài",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "tommy-ngo",
+          "name": "Tommy Ngô",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "trizzie-phuong-trinh",
+          "name": "Trizzie Phương Trinh",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "bao-van",
+          "name": "Bảo Vân",
+          "role": "mc"
+        },
+        {
+          "type": "person",
+          "id": "dj-alex",
+          "name": "DJ Alex",
+          "role": "dj"
+        },
+        {
+          "type": "person",
+          "id": "dj-teeo",
+          "name": "DJ TeeO",
+          "role": "dj"
+        },
+        {
+          "type": "person",
+          "id": "triet-nguyen",
+          "name": "Triết Nguyễn",
+          "role": "other"
+        }
+      ]
+    },
+    {
       "id": "lang-du-countdown-2022",
       "label": "2023 New Year Countdown Show",
       "display_date": "Dec 31, 2022",
@@ -2001,6 +2235,58 @@
           "role": "band"
         }
       ]
+    },
+    {
+      "id": "sacto-by-night-vietnamese-karaoke-remix-2022",
+      "label": "Vietnamese Karaoke Remix",
+      "display_date": "2022",
+      "start_date": "2022-01-09",
+      "end_date": "2022-12-18",
+      "city": "Sacramento",
+      "venue": "Sacto By Night, 7121 Governors Cir",
+      "place_name": "Sacto By Night",
+      "status": "held",
+      "poster": "entertainment/sacto-by-night-vietnamese-karaoke-remix-2022.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "sacto-by-night",
+          "name": "Sacto By Night",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "sacto-by-night",
+          "name": "Sacto By Night",
+          "role": "producer"
+        }
+      ],
+      "lineup": [
+        {
+          "type": "person",
+          "id": "bruce-nguyen",
+          "name": "Bruce Nguyễn",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "mai-thanh",
+          "name": "Mai Thanh",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "dj-alex",
+          "name": "DJ Alex",
+          "role": "dj"
+        },
+        {
+          "type": "person",
+          "id": "dj-teeo",
+          "name": "DJ TeeO",
+          "role": "dj"
+        }
+      ]
     }
   ],
   "people": {
@@ -2015,14 +2301,14 @@
       ],
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/lequyensinger",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/lequyensinger",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/lequyensinger",
+          "label": "Facebook"
         },
         {
           "kind": "youtube",
@@ -2048,19 +2334,14 @@
       ],
       "links": [
         {
-          "kind": "website",
-          "url": "https://casithuphuong.com",
-          "label": "Website"
+          "kind": "instagram",
+          "url": "https://instagram.com/thuphuong.official",
+          "label": "Instagram"
         },
         {
           "kind": "facebook",
           "url": "https://facebook.com/thuphuongsinger",
           "label": "Facebook"
-        },
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/thuphuong.official",
-          "label": "Instagram"
         },
         {
           "kind": "youtube",
@@ -2071,6 +2352,11 @@
           "kind": "spotify",
           "url": "https://open.spotify.com/artist/3LsIDqxwDjcEKbK3D1IrDk",
           "label": "Spotify"
+        },
+        {
+          "kind": "website",
+          "url": "https://casithuphuong.com",
+          "label": "Website"
         }
       ],
       "photo": "entertainment/people/thu-phuong.jpg"
@@ -2086,14 +2372,14 @@
       ],
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/caothaison.official",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/caothaison_official",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/caothaison.official",
+          "label": "Facebook"
         },
         {
           "kind": "youtube",
@@ -2141,14 +2427,14 @@
       ],
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/hoailamhl",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/hoailam.95",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/hoailamhl",
+          "label": "Facebook"
         },
         {
           "kind": "youtube",
@@ -2162,6 +2448,76 @@
         }
       ],
       "photo": "entertainment/people/hoai-lam.jpg"
+    },
+    "quach-thanh-danh": {
+      "id": "quach-thanh-danh",
+      "name": "Quách Thành Danh",
+      "aka": [
+        "Quach Thanh Danh",
+        "Văn Thanh Tùng"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/quach.t.danh",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@quachthanhdanhofficial",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/21PjoYbQZ8sOoCkt7EMYbN",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/quach-thanh-danh.jpg"
+    },
+    "quynh-mai": {
+      "id": "quynh-mai",
+      "name": "Quỳnh Mai",
+      "links": [],
+      "photo": "entertainment/people/quynh-mai.jpg"
+    },
+    "lan-anh-tieu": {
+      "id": "lan-anh-tieu",
+      "name": "Lan Anh Tiêu",
+      "aka": [
+        "Lan Anh"
+      ],
+      "links": [],
+      "photo": "entertainment/people/lan-anh-tieu.jpg"
+    },
+    "kenny-dang": {
+      "id": "kenny-dang",
+      "name": "Kenny Dang",
+      "aka": [
+        "Hoang Liem",
+        "Hoàng Liem",
+        "Hoàng Liêm"
+      ],
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/kenny.dang.31",
+          "label": "Facebook"
+        }
+      ],
+      "photo": "entertainment/people/kenny-dang.jpg"
     },
     "vy-oanh": {
       "id": "vy-oanh",
@@ -2214,14 +2570,14 @@
       ],
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/tuanhung.fanpage",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/tuanhung78",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/tuanhung.fanpage",
+          "label": "Facebook"
         },
         {
           "kind": "youtube",
@@ -2247,14 +2603,14 @@
       ],
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/trungquanofficial",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/quan.cartoon",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/trungquanofficial",
+          "label": "Facebook"
         },
         {
           "kind": "youtube",
@@ -2286,14 +2642,14 @@
       ],
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/phanduyanh.official",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/phanduyanh.star",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/phanduyanh.official",
+          "label": "Facebook"
         },
         {
           "kind": "youtube",
@@ -2362,24 +2718,9 @@
       ],
       "links": [
         {
-          "kind": "website",
-          "url": "https://ovou.com/myduyensing",
-          "label": "Website"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/myduyensing",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/yeny.vibes",
           "label": "Instagram"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/@myduyensing",
-          "label": "YouTube"
         },
         {
           "kind": "tiktok",
@@ -2390,6 +2731,21 @@
           "kind": "facebook",
           "url": "https://facebook.com/myduyenh111",
           "label": "Facebook"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/myduyensing",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@myduyensing",
+          "label": "YouTube"
+        },
+        {
+          "kind": "website",
+          "url": "https://ovou.com/myduyensing",
+          "label": "Website"
         }
       ],
       "photo": "entertainment/people/myduyen-huynh.jpg"
@@ -2465,14 +2821,14 @@
       ],
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/chaukhaiphong.fan",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/chaukhaiphongsinger",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/chaukhaiphong.fan",
+          "label": "Facebook"
         }
       ],
       "photo": "entertainment/people/chau-khai-phong.jpg"
@@ -2488,6 +2844,11 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/minhtuyetsinger",
+          "label": "Instagram"
+        },
+        {
           "kind": "facebook",
           "url": "https://facebook.com/minhtuyetofficialhome",
           "label": "Facebook"
@@ -2501,11 +2862,6 @@
           "kind": "spotify",
           "url": "https://open.spotify.com/artist/2wjsoWglhKBQVfjUGdth1y",
           "label": "Spotify"
-        },
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/minhtuyetsinger",
-          "label": "Instagram"
         }
       ],
       "photo": "entertainment/people/minh-tuyet.jpg"
@@ -2614,14 +2970,14 @@
       ],
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/dannguyen.official.fanpage",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/dan_nguyen9",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/dannguyen.official.fanpage",
+          "label": "Facebook"
         },
         {
           "kind": "youtube",
@@ -2768,7 +3124,17 @@
     "trung-kien": {
       "id": "trung-kien",
       "name": "Trung Kiên",
-      "links": [],
+      "aka": [
+        "Kien Watson",
+        "Kiên Watson"
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/kien.watson",
+          "label": "Facebook"
+        }
+      ],
       "photo": "entertainment/people/trung-kien.jpg"
     },
     "kevin-le": {
@@ -3048,6 +3414,11 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/baoanh0309",
+          "label": "Instagram"
+        },
+        {
           "kind": "facebook",
           "url": "https://facebook.com/nguyenhoaibaoanhfanpage",
           "label": "Facebook"
@@ -3061,11 +3432,6 @@
           "kind": "spotify",
           "url": "https://open.spotify.com/artist/4fCHhderLwLacsIOIKgu3J",
           "label": "Spotify"
-        },
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/baoanh0309",
-          "label": "Instagram"
         }
       ],
       "photo": "entertainment/people/bao-anh.jpg"
@@ -3081,14 +3447,14 @@
       ],
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/hienho2620",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/hienho2620",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/hienho2620",
+          "label": "Facebook"
         },
         {
           "kind": "youtube",
@@ -3142,14 +3508,14 @@
       ],
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/casihongocha",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/hongocha",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/casihongocha",
+          "label": "Facebook"
         },
         {
           "kind": "youtube",
@@ -3209,24 +3575,24 @@
       ],
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/myratrann",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/itsmyratran",
           "label": "Instagram"
         },
         {
-          "kind": "youtube",
-          "url": "https://youtube.com/channel/UCYOWVGdM6G9mjZmVC-921lg",
-          "label": "YouTube"
-        },
-        {
           "kind": "tiktok",
           "url": "https://tiktok.com/@myratrann",
           "label": "TikTok"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/myratrann",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCYOWVGdM6G9mjZmVC-921lg",
+          "label": "YouTube"
         },
         {
           "kind": "spotify",
@@ -3280,6 +3646,11 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/donhosinger",
+          "label": "Instagram"
+        },
+        {
           "kind": "facebook",
           "url": "https://facebook.com/donhoproduction",
           "label": "Facebook"
@@ -3293,11 +3664,6 @@
           "kind": "spotify",
           "url": "https://open.spotify.com/artist/6dYm0i4voJXVX9rPx6gb2F",
           "label": "Spotify"
-        },
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/donhosinger",
-          "label": "Instagram"
         }
       ],
       "photo": "entertainment/people/don-ho.jpg"
@@ -3313,9 +3679,9 @@
       ],
       "links": [
         {
-          "kind": "website",
-          "url": "https://vickynhung.info",
-          "label": "Website"
+          "kind": "instagram",
+          "url": "https://instagram.com/vickynhung",
+          "label": "Instagram"
         },
         {
           "kind": "facebook",
@@ -3323,14 +3689,14 @@
           "label": "Facebook"
         },
         {
-          "kind": "instagram",
-          "url": "https://instagram.com/vickynhung",
-          "label": "Instagram"
-        },
-        {
           "kind": "youtube",
           "url": "https://youtube.com/VickyNhungOfficial",
           "label": "YouTube"
+        },
+        {
+          "kind": "website",
+          "url": "https://vickynhung.info",
+          "label": "Website"
         }
       ],
       "photo": "entertainment/people/vicky-nhung.jpg"
@@ -3346,14 +3712,14 @@
       ],
       "links": [
         {
-          "kind": "website",
-          "url": "https://linktr.ee/theofficialaaronle",
-          "label": "Website"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/theofficialaaronle",
           "label": "Instagram"
+        },
+        {
+          "kind": "linktree",
+          "url": "https://linktr.ee/theofficialaaronle",
+          "label": "linktr.ee"
         }
       ],
       "photo": "entertainment/people/aaron-le.jpg"
@@ -3372,9 +3738,9 @@
       ],
       "links": [
         {
-          "kind": "website",
-          "url": "https://linktr.ee/Dj_UNI",
-          "label": "Website"
+          "kind": "instagram",
+          "url": "https://instagram.com/dj__uni",
+          "label": "Instagram"
         },
         {
           "kind": "facebook",
@@ -3382,9 +3748,9 @@
           "label": "Facebook"
         },
         {
-          "kind": "instagram",
-          "url": "https://instagram.com/dj__uni",
-          "label": "Instagram"
+          "kind": "linktree",
+          "url": "https://linktr.ee/Dj_UNI",
+          "label": "linktr.ee"
         }
       ],
       "photo": "entertainment/people/dj-uni.jpg"
@@ -3400,14 +3766,14 @@
       ],
       "links": [
         {
-          "kind": "website",
-          "url": "https://brianbui.music",
-          "label": "Website"
-        },
-        {
           "kind": "spotify",
           "url": "https://open.spotify.com/artist/7KDxyIyIRWwHev9K9One5W",
           "label": "Spotify"
+        },
+        {
+          "kind": "website",
+          "url": "https://brianbui.music",
+          "label": "Website"
         }
       ],
       "photo": "entertainment/people/brian-bui.jpg"
@@ -3441,11 +3807,6 @@
       ],
       "links": [
         {
-          "kind": "website",
-          "url": "https://hitmkr.com/mikeyveemusic",
-          "label": "Website"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/mikeyveemusic",
           "label": "Instagram"
@@ -3454,6 +3815,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/channel/UC98wAeWAfAJDGL1cGDjQoDQ",
           "label": "YouTube"
+        },
+        {
+          "kind": "website",
+          "url": "https://hitmkr.com/mikeyveemusic",
+          "label": "Website"
         }
       ],
       "photo": "entertainment/people/mikey-vee.jpg"
@@ -3491,11 +3857,6 @@
       ],
       "links": [
         {
-          "kind": "website",
-          "url": "https://vincentaire.com",
-          "label": "Website"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/airebebe",
           "label": "Instagram"
@@ -3509,9 +3870,70 @@
           "kind": "spotify",
           "url": "https://open.spotify.com/artist/6wZFv1KN92faFM1RKEfMxG",
           "label": "Spotify"
+        },
+        {
+          "kind": "website",
+          "url": "https://vincentaire.com",
+          "label": "Website"
         }
       ],
       "photo": "entertainment/people/vincent-aire.jpg"
+    },
+    "lily-tran": {
+      "id": "lily-tran",
+      "name": "Flo Mamii",
+      "aka": [
+        "Lily Tran",
+        "Velmalicious"
+      ],
+      "specialties": [
+        {
+          "slug": "american-indie",
+          "label": "American · indie"
+        },
+        {
+          "slug": "dj-edm",
+          "label": "DJ · EDM"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/letmamiicook",
+          "label": "Instagram"
+        },
+        {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@letmamiicook",
+          "label": "TikTok"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/itslilytran",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@flomamiiofficial",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/3QvnBVvG2EfeBEaRs9Atvp",
+          "label": "Spotify"
+        },
+        {
+          "kind": "soundcloud",
+          "url": "https://on.soundcloud.com/QmUQWItl9MOoQeo5wc",
+          "label": "SoundCloud"
+        },
+        {
+          "kind": "linktree",
+          "url": "https://linktr.ee/letmamiicook",
+          "label": "linktr.ee"
+        }
+      ],
+      "photo": "entertainment/people/lily-tran.jpg"
     },
     "tran-thai-hoa": {
       "id": "tran-thai-hoa",
@@ -3815,14 +4237,14 @@
       ],
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/myanoffical",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/hoangmyan",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/myanoffical",
+          "label": "Facebook"
         },
         {
           "kind": "spotify",
@@ -3866,29 +4288,6 @@
       "links": [],
       "photo": "entertainment/people/alex-kong.jpg"
     },
-    "kenny-dang": {
-      "id": "kenny-dang",
-      "name": "Kenny Dang",
-      "aka": [
-        "Hoang Liem",
-        "Hoàng Liem",
-        "Hoàng Liêm"
-      ],
-      "specialties": [
-        {
-          "slug": "emcee",
-          "label": "Emcee"
-        }
-      ],
-      "links": [
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/kenny.dang.31",
-          "label": "Facebook"
-        }
-      ],
-      "photo": "entertainment/people/kenny-dang.jpg"
-    },
     "billy-khiem": {
       "id": "billy-khiem",
       "name": "Billy Khiêm",
@@ -3906,6 +4305,11 @@
       ],
       "links": [
         {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@holethuofficial",
+          "label": "TikTok"
+        },
+        {
           "kind": "facebook",
           "url": "https://facebook.com/cs.holethu",
           "label": "Facebook"
@@ -3914,11 +4318,6 @@
           "kind": "youtube",
           "url": "https://youtube.com/@casiholethuofficial",
           "label": "YouTube"
-        },
-        {
-          "kind": "tiktok",
-          "url": "https://tiktok.com/@holethuofficial",
-          "label": "TikTok"
         },
         {
           "kind": "spotify",
@@ -3957,14 +4356,14 @@
       "name": "Nguyên Khang",
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/mcnguyenkhang",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/nguyenkhangmc",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/mcnguyenkhang",
+          "label": "Facebook"
         },
         {
           "kind": "youtube",
@@ -4009,14 +4408,14 @@
       ],
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/phandinhtungfanpage",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/phandinhtungsinger",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/phandinhtungfanpage",
+          "label": "Facebook"
         },
         {
           "kind": "youtube",
@@ -4048,6 +4447,76 @@
         }
       ],
       "photo": "entertainment/people/mai-tien-dung.jpg"
+    },
+    "hung-le": {
+      "id": "hung-le",
+      "name": "Hùng Lê Hùng",
+      "aka": [
+        "Hùng Lê"
+      ],
+      "links": [],
+      "photo": "entertainment/people/hung-le.jpg"
+    },
+    "khang-viet": {
+      "id": "khang-viet",
+      "name": "Khang Việt",
+      "aka": [
+        "Khang Viet"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@khangvietofficial",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/26M9jrskgx7RHFydfAiyq5",
+          "label": "Spotify"
+        },
+        {
+          "kind": "soundcloud",
+          "url": "https://soundcloud.com/khangviet",
+          "label": "SoundCloud"
+        }
+      ],
+      "photo": "entertainment/people/khang-viet.jpg"
+    },
+    "paul-cuong-nguyen": {
+      "id": "paul-cuong-nguyen",
+      "name": "Paul Cường Nguyễn",
+      "aka": [
+        "Paul Cuong Nguyen"
+      ],
+      "links": [],
+      "photo": "entertainment/people/paul-cuong-nguyen.jpg"
+    },
+    "quang-do": {
+      "id": "quang-do",
+      "name": "Quang Đỗ",
+      "links": [],
+      "photo": "entertainment/people/quang-do.jpg"
+    },
+    "nicole-nguyen": {
+      "id": "nicole-nguyen",
+      "name": "Nicole Nguyễn",
+      "aka": [
+        "Nicole Nguyen"
+      ],
+      "links": [],
+      "photo": "entertainment/people/nicole-nguyen.jpg"
+    },
+    "pham-hong-an": {
+      "id": "pham-hong-an",
+      "name": "Phạm Hồng Ân",
+      "links": [],
+      "photo": "entertainment/people/pham-hong-an.jpg"
     },
     "cat-tuyen": {
       "id": "cat-tuyen",
@@ -4143,6 +4612,11 @@
       ],
       "links": [
         {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@quynhtron0997",
+          "label": "TikTok"
+        },
+        {
           "kind": "facebook",
           "url": "https://facebook.com/chuthuyquynhofficial",
           "label": "Facebook"
@@ -4151,11 +4625,6 @@
           "kind": "youtube",
           "url": "https://youtube.com/@ChuThuyQuynhOfficial-z4q",
           "label": "YouTube"
-        },
-        {
-          "kind": "tiktok",
-          "url": "https://tiktok.com/@quynhtron0997",
-          "label": "TikTok"
         },
         {
           "kind": "spotify",
@@ -4176,14 +4645,14 @@
       ],
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/alihoangduongofficial",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/alihoangduong",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/alihoangduongofficial",
+          "label": "Facebook"
         },
         {
           "kind": "youtube",
@@ -4204,14 +4673,14 @@
       ],
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/music.datg",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/nguyentandat_g",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/music.datg",
+          "label": "Facebook"
         },
         {
           "kind": "youtube",
@@ -4276,14 +4745,14 @@
       ],
       "links": [
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/kyphuonguyen",
-          "label": "Facebook"
-        },
-        {
           "kind": "instagram",
           "url": "https://instagram.com/kyphuonguyen",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/kyphuonguyen",
+          "label": "Facebook"
         },
         {
           "kind": "youtube",
@@ -4557,6 +5026,45 @@
       "links": [],
       "photo": "entertainment/people/thien-an-guitar.jpg"
     },
+    "nguyen-thuy-linh": {
+      "id": "nguyen-thuy-linh",
+      "name": "Nguyễn Thùy Linh",
+      "links": [],
+      "photo": "entertainment/people/nguyen-thuy-linh.jpg"
+    },
+    "nhu-hoai": {
+      "id": "nhu-hoai",
+      "name": "Như Hoài",
+      "links": [],
+      "photo": "entertainment/people/nhu-hoai.jpg"
+    },
+    "dj-teeo": {
+      "id": "dj-teeo",
+      "name": "DJ TeeO",
+      "aka": [
+        "DJ TEEO"
+      ],
+      "links": [],
+      "photo": "entertainment/people/dj-teeo.jpg"
+    },
+    "dj-alex": {
+      "id": "dj-alex",
+      "name": "DJ Alex",
+      "links": [],
+      "photo": "entertainment/people/dj-alex.jpg"
+    },
+    "bao-van": {
+      "id": "bao-van",
+      "name": "Bảo Vân",
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
+      "links": [],
+      "photo": "entertainment/people/bao-van.jpg"
+    },
     "diem-lien": {
       "id": "diem-lien",
       "name": "Diễm Liên",
@@ -4605,7 +5113,29 @@
       "id": "thunder-valley-casino-resort",
       "name": "Thunder Valley Casino Resort",
       "links": [],
-      "photo": null
+      "photo": "entertainment/orgs/thunder-valley-casino-resort.jpg"
+    },
+    "best-kitchen-karaoke": {
+      "id": "best-kitchen-karaoke",
+      "name": "Best Kitchen Karaoke & Bar",
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/bestkitchenkaraokeandbar",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/bestkitchenkaraokebar",
+          "label": "Facebook"
+        },
+        {
+          "kind": "website",
+          "url": "https://toasttab.com/local/order/best-karaoke-kitchen-and-bar-7121-governors-circle",
+          "label": "Website"
+        }
+      ],
+      "photo": "entertainment/orgs/best-kitchen-karaoke.jpg"
     },
     "hoang-bao-band": {
       "id": "hoang-bao-band",
@@ -4618,11 +5148,6 @@
       "name": "Ruby Blvd Entertainment",
       "links": [
         {
-          "kind": "website",
-          "url": "https://rubyblvd.com",
-          "label": "Website"
-        },
-        {
           "kind": "facebook",
           "url": "https://facebook.com/rubyblvd",
           "label": "Facebook"
@@ -4631,6 +5156,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/rubyblvd",
           "label": "YouTube"
+        },
+        {
+          "kind": "website",
+          "url": "https://rubyblvd.com",
+          "label": "Website"
         }
       ],
       "photo": "entertainment/orgs/ruby-blvd-entertainment.jpg"
@@ -4639,7 +5169,7 @@
       "id": "joy-entertainment",
       "name": "JOY Entertainment",
       "links": [],
-      "photo": null
+      "photo": "entertainment/orgs/joy-entertainment.jpg"
     },
     "mrs-vietnam-norcal-sacramento": {
       "id": "mrs-vietnam-norcal-sacramento",
@@ -4651,7 +5181,7 @@
           "label": "Facebook"
         }
       ],
-      "photo": null
+      "photo": "entertainment/orgs/mrs-vietnam-norcal-sacramento.jpg"
     },
     "nhom-mua-da-sac-mau": {
       "id": "nhom-mua-da-sac-mau",
@@ -4669,7 +5199,7 @@
           "label": "Website"
         }
       ],
-      "photo": null
+      "photo": "entertainment/orgs/xang-xu-liu-foundation.jpg"
     },
     "lang-du-entertainment": {
       "id": "lang-du-entertainment",
@@ -4706,9 +5236,9 @@
       "name": "Vietnamese Martyrs Parish",
       "links": [
         {
-          "kind": "website",
-          "url": "https://cttd.org",
-          "label": "Website"
+          "kind": "facebook",
+          "url": "https://facebook.com/profile.php?id=100064720656670",
+          "label": "Facebook"
         },
         {
           "kind": "youtube",
@@ -4716,9 +5246,9 @@
           "label": "YouTube"
         },
         {
-          "kind": "facebook",
-          "url": "https://facebook.com/profile.php?id=100064720656670",
-          "label": "Facebook"
+          "kind": "website",
+          "url": "https://cttd.org",
+          "label": "Website"
         }
       ],
       "photo": "entertainment/orgs/vietnamese-martyrs-parish.jpg"
@@ -4728,9 +5258,9 @@
       "name": "CineCrown Multimedia Studios",
       "links": [
         {
-          "kind": "website",
-          "url": "https://cinecrown.com",
-          "label": "Website"
+          "kind": "instagram",
+          "url": "https://instagram.com/cinecrown",
+          "label": "Instagram"
         },
         {
           "kind": "facebook",
@@ -4738,9 +5268,9 @@
           "label": "Facebook"
         },
         {
-          "kind": "instagram",
-          "url": "https://instagram.com/cinecrown",
-          "label": "Instagram"
+          "kind": "website",
+          "url": "https://cinecrown.com",
+          "label": "Website"
         }
       ],
       "photo": "entertainment/orgs/cinecrown.jpg"
@@ -4751,12 +5281,12 @@
       "links": [
         {
           "kind": "instagram",
-          "url": "https://instagram.com/ustarproductions",
+          "url": "https://instagram.com/ustar_events",
           "label": "Instagram"
         },
         {
           "kind": "instagram",
-          "url": "https://instagram.com/ustar_events",
+          "url": "https://instagram.com/ustarproductions",
           "label": "Instagram"
         },
         {
@@ -4783,13 +5313,13 @@
           "label": "Facebook"
         }
       ],
-      "photo": null
+      "photo": "entertainment/orgs/showpro-entertainment.jpg"
     },
     "lucky-wav": {
       "id": "lucky-wav",
       "name": "Lucky Wav",
       "links": [],
-      "photo": null
+      "photo": "entertainment/orgs/lucky-wav.jpg"
     },
     "skyway-band": {
       "id": "skyway-band",
@@ -4800,6 +5330,12 @@
     "rice-bowl-restaurant": {
       "id": "rice-bowl-restaurant",
       "name": "Rice Bowl Restaurant",
+      "links": [],
+      "photo": "entertainment/orgs/rice-bowl-restaurant.jpg"
+    },
+    "sacto-by-night": {
+      "id": "sacto-by-night",
+      "name": "Sacto By Night",
       "links": [],
       "photo": null
     },

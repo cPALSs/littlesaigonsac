@@ -152,6 +152,7 @@ export function performerGenreHref(slug) {
 const ROLE_LABEL = {
   host: "Host",
   producer: "Producer",
+  host_producer: "Host / Producer",
   co_producer: "Co-producer",
   presenter: "Presenter",
   vocalist: "Vocalist",
@@ -160,6 +161,45 @@ const ROLE_LABEL = {
   band: "Band",
   other: "Featured",
 };
+
+/**
+ * Same billed entity as both host and producer → one credit
+ * (`Host / Producer`). Different host vs producer orgs stay two rows.
+ * Does not collapse other role pairs (vocalist + DJ stays stacked).
+ *
+ * @param {Array<{ type?: string, id?: string, role?: string }> | null | undefined} items
+ */
+export function collapseHostProducerCredits(items) {
+  if (!Array.isArray(items) || items.length < 2) return items || [];
+  const used = new Set();
+  const out = [];
+  for (let i = 0; i < items.length; i++) {
+    if (used.has(i)) continue;
+    const item = items[i];
+    const counterpart =
+      item.role === "host" ? "producer" : item.role === "producer" ? "host" : null;
+    if (!counterpart || !item.id) {
+      out.push(item);
+      continue;
+    }
+    const matchIdx = items.findIndex(
+      (other, j) =>
+        j !== i &&
+        !used.has(j) &&
+        other.role === counterpart &&
+        other.type === item.type &&
+        other.id === item.id,
+    );
+    if (matchIdx === -1) {
+      out.push(item);
+      continue;
+    }
+    used.add(i);
+    used.add(matchIdx);
+    out.push({ ...item, role: "host_producer" });
+  }
+  return out;
+}
 
 export function splitShows(events, asOf) {
   const upcoming = [];
@@ -377,9 +417,10 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
   };
 
   const creditList = (items, people, orgs) => {
-    if (!items?.length) return "";
+    const rows = collapseHostProducerCredits(items);
+    if (!rows.length) return "";
     return `<ul class="credit-list">
-    ${items
+    ${rows
       .map((item) => {
         const role = ROLE_LABEL[item.role] || "";
         return `<li>${entityName(item, people, orgs)}${
@@ -416,6 +457,22 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
       <path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
     </svg>`;
 
+  const SOUNDCLOUD_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor" d="M1.175 12.225c-.051 0-.094.046-.1.1l-.233 2.154.233 2.105c.007.058.05.098.1.098.046 0 .09-.04.094-.098l.25-2.105-.25-2.154c-.008-.058-.05-.1-.098-.1m.82.48c-.056 0-.1.04-.105.095l-.22 1.675.22 1.627c.005.06.05.095.105.095.052 0 .1-.035.105-.095l.24-1.627-.24-1.675c-.007-.058-.053-.095-.105-.095m1.64-1.06c-.064 0-.116.05-.12.115l-.205 2.62.205 2.427c.005.065.056.117.12.117.06 0 .115-.052.12-.117l.22-2.428-.22-2.62c-.005-.063-.06-.115-.12-.115m.82-.13c-.07 0-.13.058-.136.13l-.197 2.75.197 2.556c.007.075.066.13.136.13.07 0 .13-.055.136-.13l.214-2.557-.214-2.75c-.005-.07-.066-.13-.136-.13m.85.256c-.078 0-.14.063-.145.14l-.185 2.497.185 2.57c.005.077.067.14.145.14.074 0 .136-.063.14-.14l.2-2.57-.2-2.496c-.004-.078-.066-.14-.14-.14m.847-.713c-.082 0-.15.068-.154.15l-.185 3.06.185 2.61c.005.08.072.15.154.15.08 0 .148-.07.153-.15l.2-2.61-.2-3.06c-.005-.082-.073-.15-.153-.15m.848-.114c-.09 0-.163.074-.168.163l-.17 3.174.17 2.623c.005.09.078.164.168.164s.163-.075.168-.164l.186-2.623-.186-3.174c-.005-.09-.078-.163-.168-.163m.974.13c-.1 0-.18.08-.18.18l-.168 3.045.168 2.636c0 .1.081.18.18.18.098 0 .18-.08.18-.18l.18-2.636-.18-3.044c0-.1-.082-.18-.18-.18m.832-.824c-.105 0-.19.085-.194.19l-.16 3.678.16 2.65c.004.105.089.19.194.19s.19-.085.194-.19l.174-2.65-.174-3.679c-.004-.104-.089-.19-.194-.19m.833.176c-.11 0-.2.09-.2.2l-.155 3.5.155 2.66c0 .11.09.2.2.2s.2-.09.2-.2l.168-2.66-.168-3.5c0-.11-.09-.2-.2-.2m1.013.13c-.12 0-.216.098-.22.22l-.14 3.37.14 2.67c.004.12.1.218.22.218.118 0 .215-.098.22-.22l.153-2.67-.154-3.37c-.005-.12-.102-.22-.22-.22m.835-.556c-.128 0-.23.102-.234.23l-.136 3.926.136 2.677c.005.128.106.23.234.23.126 0 .23-.102.234-.23l.145-2.677-.145-3.926c-.004-.128-.108-.23-.234-.23m.835-.13c-.136 0-.246.11-.25.247l-.125 4.058.125 2.68c.004.136.114.248.25.248s.246-.112.25-.248l.137-2.68-.137-4.06c-.004-.136-.114-.246-.25-.246m1.027.156c-.148 0-.268.12-.27.27l-.11 3.9.11 2.698c.002.148.122.268.27.268.148 0 .268-.12.27-.27l.12-2.697-.12-3.9c-.002-.15-.122-.27-.27-.27m.847-.784c-.158 0-.286.128-.29.286l-.11 4.4.11 2.71c.004.158.132.286.29.286.156 0 .285-.128.29-.286l.113-2.71-.115-4.4c-.004-.158-.132-.286-.29-.286m.848-.098c-.17 0-.31.14-.312.31l-.097 4.186.097 2.73c.002.17.142.31.312.31.17 0 .31-.14.312-.31l.105-2.73-.105-4.187c-.002-.17-.142-.31-.312-.31m1.04-.222c-.185 0-.335.15-.338.336l-.088 4.418.088 2.74c.003.186.153.337.338.337.185 0 .335-.15.338-.336l.094-2.74-.094-4.42c-.003-.185-.153-.335-.338-.335m.86 1.04c-.2 0-.362.162-.365.364l-.078 3.378.078 2.76c.003.2.165.362.365.362.2 0 .362-.162.365-.363l.084-2.76-.084-3.378c-.003-.202-.165-.364-.365-.364m.848.248c-.215 0-.39.175-.394.393l-.07 3.13.07 2.776c.004.218.179.394.394.394.215 0 .39-.176.394-.394l.074-2.776-.074-3.13c-.004-.218-.179-.393-.394-.393M22.4 11.32c-.248 0-.48.092-.658.24-.12-.68-.48-1.26-1.02-1.7-.54-.44-1.22-.68-1.94-.68-.28 0-.56.04-.82.12v8.78h8.44c1.38 0 2.5-1.12 2.5-2.5s-1.12-2.5-2.5-2.5c-.04 0-.08 0-.12.002A3.96 3.96 0 0 0 22.4 11.32"/>
+    </svg>`;
+
+  /** Instagram → TikTok → Facebook → YouTube → Spotify → SoundCloud → website → linktr.ee */
+  const SOCIAL_LINK_ORDER = [
+    "instagram",
+    "tiktok",
+    "facebook",
+    "youtube",
+    "spotify",
+    "soundcloud",
+    "website",
+    "linktree",
+  ];
+
   const websiteChipLabel = (url) => {
     try {
       const host = new URL(url).hostname.replace(/^www\./i, "");
@@ -425,12 +482,35 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     }
   };
 
+  const publicLinkKind = (l) => {
+    const url = String(l.url || "").toLowerCase();
+    if (/soundcloud\.com/.test(url)) return "soundcloud";
+    if (/linktr\.ee/.test(url)) return "linktree";
+    return l.kind || "";
+  };
+
+  const publicLinkRank = (kind) => {
+    const i = SOCIAL_LINK_ORDER.indexOf(kind);
+    return i === -1 ? SOCIAL_LINK_ORDER.indexOf("linktree") - 0.5 : i;
+  };
+
   const socialList = (links) => {
     if (!links?.length) return "";
+    const seen = new Set();
+    const ordered = [...links]
+      .filter((l) => {
+        if (!l?.url || seen.has(l.url)) return false;
+        seen.add(l.url);
+        return true;
+      })
+      .sort((a, b) => {
+        const rank = publicLinkRank(publicLinkKind(a)) - publicLinkRank(publicLinkKind(b));
+        return rank !== 0 ? rank : String(a.url).localeCompare(String(b.url));
+      });
     return `<ul class="social-links">
-    ${links
+    ${ordered
       .map((l) => {
-        const kind = l.kind || "";
+        const kind = publicLinkKind(l);
         if (kind === "instagram") {
           return `<li><a class="social-icon" href="${esc(l.url)}" rel="noopener noreferrer" target="_blank" aria-label="Instagram">${IG_SVG}</a></li>`;
         }
@@ -445,6 +525,12 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
         }
         if (kind === "tiktok") {
           return `<li><a class="social-icon" href="${esc(l.url)}" rel="noopener noreferrer" target="_blank" aria-label="TikTok">${TIKTOK_SVG}</a></li>`;
+        }
+        if (kind === "soundcloud") {
+          return `<li><a class="social-icon" href="${esc(l.url)}" rel="noopener noreferrer" target="_blank" aria-label="SoundCloud">${SOUNDCLOUD_SVG}</a></li>`;
+        }
+        if (kind === "linktree") {
+          return `<li><a href="${esc(l.url)}" rel="noopener noreferrer" target="_blank">linktr.ee</a></li>`;
         }
         const label = kind === "website" ? websiteChipLabel(l.url) : l.label;
         return `<li><a href="${esc(l.url)}" rel="noopener noreferrer" target="_blank">${esc(label)}</a></li>`;

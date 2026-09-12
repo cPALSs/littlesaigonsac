@@ -23,6 +23,15 @@ if (entertainment?.people) {
   }
 }
 
+if (entertainment?.orgs) {
+  for (const org of Object.values(entertainment.orgs)) {
+    const rel = `entertainment/orgs/${org.id}.jpg`;
+    if (!org.photo && existsSync(join(root, "src/img", rel))) {
+      org.photo = rel;
+    }
+  }
+}
+
 const esc = (s = "") =>
   String(s)
     .replaceAll("&", "&amp;")
