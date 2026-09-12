@@ -5,6 +5,28 @@ import { cardVenueLine, venueLine } from "./venue-display.mjs";
 
 export { cardVenueLine, venueLine } from "./venue-display.mjs";
 
+const APOSTROPHE = "\u2019";
+const LDQUO = "\u201C";
+const RDQUO = "\u201D";
+
+/**
+ * Display-only typographic punctuation for Entertainment names.
+ * Does not rewrite graph or entertainment.json — apply before HTML escape.
+ *
+ * `'` → `’` (U+2019). Paired wrapping `"` → `“` `”` when they look like
+ * quotation marks around a nickname, not inches (`5"`).
+ */
+export function smartPunctuateName(s) {
+  const raw = String(s ?? "");
+  if (!raw) return raw;
+  let out = raw.replaceAll("'", APOSTROPHE);
+  out = out.replace(
+    /(^|[^0-9])"([^"\n]+)"(?!\d)/g,
+    (_, pre, inner) => `${pre}${LDQUO}${inner}${RDQUO}`,
+  );
+  return out;
+}
+
 const ROLE_LABEL = {
   host: "Host",
   producer: "Producer",
@@ -173,20 +195,23 @@ export function directorySections(people = {}, orgs = {}, events = []) {
 }
 
 export function entertainmentHelpers({ esc, imgEl, crumbs }) {
+  const displayName = (s) => smartPunctuateName(s);
+  const escName = (s) => esc(displayName(s));
+
   const entityName = (item, people, orgs) => {
     const href = entityHref(item, people, orgs);
-    const name = esc(item.name);
+    const name = escName(item.name);
     return href ? `<a href="${esc(href)}">${name}</a>` : `<span>${name}</span>`;
   };
 
   const posterCard = (ev) => {
     const place = cardVenueLine(ev);
     return `<a class="card poster" href="/entertainment/${esc(ev.id)}/">
-    <div class="card-photo">${imgEl(ev.poster, ev.label)}</div>
+    <div class="card-photo">${imgEl(ev.poster, displayName(ev.label))}</div>
     <div class="card-body">
-      <h2>${esc(ev.label)}</h2>
+      <h2>${escName(ev.label)}</h2>
       <p class="gloss">${esc(ev.display_date || ev.start_date || "")}</p>
-      ${place ? `<p class="gloss">${esc(place)}</p>` : ""}
+      ${place ? `<p class="gloss">${escName(place)}</p>` : ""}
     </div>
   </a>`;
   };
@@ -195,7 +220,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     `<div class="poster-grid">${list.map(posterCard).join("")}</div>`;
 
   const eventPoster = (ev) => {
-    const posterImg = imgEl(ev.poster, ev.label);
+    const posterImg = imgEl(ev.poster, displayName(ev.label));
     if (!posterImg) return `<div class="event-poster"></div>`;
     return `<div class="event-poster"><a class="event-poster-open" href="/img/${esc(ev.poster)}" data-lightbox aria-expanded="false">${posterImg}</a></div>`;
   };
@@ -261,8 +286,9 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
   };
 
   const entityHeading = (name, links, photo, kind) => {
-    const photoImg = imgEl(photo, name);
-    const copy = `<h1>${esc(name)}</h1>
+    const shown = displayName(name);
+    const photoImg = imgEl(photo, shown);
+    const copy = `<h1>${esc(shown)}</h1>
         ${socialList(links)}`;
     if (!photoImg) return copy;
     const photoClass =
@@ -325,7 +351,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
       row.type === "org"
         ? "entity-photo entity-photo--org performer-avatar"
         : "entity-photo entity-photo--person performer-avatar";
-    const photoImg = imgEl(row.photo, row.name);
+    const photoImg = imgEl(row.photo, displayName(row.name));
     return `<span class="${photoClass}">${photoImg}</span>`;
   };
 
@@ -336,7 +362,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
       ${rows
         .map(
           (row) =>
-            `<li data-name="${esc(row.name)}" data-events="${esc(String(row.eventCount ?? 0))}"><a href="${esc(row.href)}">${performerAvatar(row)}<span class="performer-name">${esc(row.name)}</span></a></li>`,
+            `<li data-name="${escName(row.name)}" data-events="${esc(String(row.eventCount ?? 0))}"><a href="${esc(row.href)}">${performerAvatar(row)}<span class="performer-name">${escName(row.name)}</span></a></li>`,
         )
         .join("")}
     </ul>`;
@@ -413,7 +439,14 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     galleryShowSections,
     writeRetiredRedirects,
     entityName,
-    crumbsEnt: (trail) => crumbs(trail),
+    displayName,
+    escName,
+    crumbsEnt: (trail) =>
+      crumbs(
+        trail.map((item) =>
+          item.label != null ? { ...item, label: displayName(item.label) } : item,
+        ),
+      ),
   };
 }
 
@@ -505,9 +538,12 @@ export function writeEntertainmentPages({
     writeFileSync(
       join(dir, "index.html"),
       layout({
-        title: `${ev.label} · Entertainment`,
+        title: `${h.displayName(ev.label)} · Entertainment`,
         path: `/entertainment/${ev.id}/`,
-        description: [ev.display_date || ev.start_date, cardVenueLine(ev) || place].filter(Boolean).join(" · "),
+        description: [
+          ev.display_date || ev.start_date,
+          h.displayName(cardVenueLine(ev) || place),
+        ].filter(Boolean).join(" · "),
         image: ev.poster,
         ogType: "article",
         current: "entertainment",
@@ -517,13 +553,13 @@ export function writeEntertainmentPages({
           { href: "/entertainment/", label: "Entertainment" },
           { label: ev.label, current: true },
         ])}
-        <h1>${esc(ev.label)}</h1>
+        <h1>${h.escName(ev.label)}</h1>
       </header>
       <div class="event-layout">
         ${h.eventPoster(ev)}
         <div class="event-copy">
           <p class="event-meta">${esc(ev.display_date || ev.start_date || "")}</p>
-          ${place ? `<p class="event-meta">${esc(place)}</p>` : ""}
+          ${place ? `<p class="event-meta">${h.escName(place)}</p>` : ""}
           ${
             ev.producers.length
               ? `<h2 class="section-label">Producers</h2>${h.creditList(ev.producers, people, orgs)}`
@@ -550,9 +586,9 @@ export function writeEntertainmentPages({
     writeFileSync(
       join(dir, "index.html"),
       layout({
-        title: `${person.name} · Entertainment`,
+        title: `${h.displayName(person.name)} · Entertainment`,
         path: `/entertainment/people/${person.id}/`,
-        description: `${person.name} on Little Saigon Sactown Entertainment.`,
+        description: `${h.displayName(person.name)} on Little Saigon Sactown Entertainment.`,
         image: person.photo,
         current: "entertainment",
         body: `<main class="wrap">
@@ -578,9 +614,9 @@ export function writeEntertainmentPages({
     writeFileSync(
       join(dir, "index.html"),
       layout({
-        title: `${org.name} · Entertainment`,
+        title: `${h.displayName(org.name)} · Entertainment`,
         path: `/entertainment/orgs/${org.id}/`,
-        description: `${org.name} on Little Saigon Sactown Entertainment.`,
+        description: `${h.displayName(org.name)} on Little Saigon Sactown Entertainment.`,
         image: org.photo,
         current: "entertainment",
         body: `<main class="wrap">
