@@ -1559,7 +1559,62 @@
           "role": "producer"
         }
       ],
-      "lineup": []
+      "lineup": [
+        {
+          "type": "person",
+          "id": "ali-hoang-duong",
+          "name": "Ali Hoàng Dương",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "chu-thuy-quynh",
+          "name": "Chu Thuý Quỳnh",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "dat-g",
+          "name": "Đạt G",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "ky-phuong-uyen",
+          "name": "Kỳ Phương Uyên",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "luong-tung-quang",
+          "name": "Lương Tùng Quang",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "myra-tran",
+          "name": "Myra Trần",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "thu-phuong",
+          "name": "Thu Phương",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "trong-bac",
+          "name": "Trọng Bắc",
+          "role": "vocalist"
+        },
+        {
+          "type": "org",
+          "id": "hoang-bao-band",
+          "name": "Hoàng Bảo's Band",
+          "role": "band"
+        }
+      ]
     },
     {
       "id": "vnmp-he-ruc-ro-2024",
@@ -2654,7 +2709,28 @@
     "myra-tran": {
       "id": "myra-tran",
       "name": "Myra Trần",
-      "links": [],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/myratrann",
+          "label": "Facebook"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/itsmyratran",
+          "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCYOWVGdM6G9mjZmVC-921lg",
+          "label": "YouTube"
+        },
+        {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@myratrann",
+          "label": "TikTok"
+        }
+      ],
       "photo": "entertainment/people/myra-tran.jpg"
     },
     "duc-thanh-buoc-nhay": {
@@ -3131,6 +3207,90 @@
       "name": "Anh Hùng",
       "links": [],
       "photo": "entertainment/people/anh-hung.jpg"
+    },
+    "chu-thuy-quynh": {
+      "id": "chu-thuy-quynh",
+      "name": "Chu Thuý Quỳnh",
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/chuthuyquynhofficial",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@ChuThuyQuynhOfficial-z4q",
+          "label": "YouTube"
+        },
+        {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@quynhtron0997",
+          "label": "TikTok"
+        }
+      ],
+      "photo": "entertainment/people/chu-thuy-quynh.jpg"
+    },
+    "ali-hoang-duong": {
+      "id": "ali-hoang-duong",
+      "name": "Ali Hoàng Dương",
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/alihoangduongofficial",
+          "label": "Facebook"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/alihoangduong",
+          "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@Alihoangduong.official",
+          "label": "YouTube"
+        }
+      ],
+      "photo": "entertainment/people/ali-hoang-duong.jpg"
+    },
+    "dat-g": {
+      "id": "dat-g",
+      "name": "Đạt G",
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/music.datg",
+          "label": "Facebook"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/nguyentandat_g",
+          "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UC2OzDIKOESoKIdR1VtwCAAQ",
+          "label": "YouTube"
+        }
+      ],
+      "photo": "entertainment/people/dat-g.jpg"
+    },
+    "trong-bac": {
+      "id": "trong-bac",
+      "name": "Trọng Bắc",
+      "links": [],
+      "photo": "entertainment/people/trong-bac.jpg"
+    },
+    "luong-tung-quang": {
+      "id": "luong-tung-quang",
+      "name": "Lương Tùng Quang",
+      "links": [],
+      "photo": "entertainment/people/luong-tung-quang.jpg"
+    },
+    "ky-phuong-uyen": {
+      "id": "ky-phuong-uyen",
+      "name": "Kỳ Phương Uyên",
+      "links": [],
+      "photo": "entertainment/people/ky-phuong-uyen.jpg"
     },
     "bang-kieu": {
       "id": "bang-kieu",
