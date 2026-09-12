@@ -1008,8 +1008,8 @@
         },
         {
           "type": "person",
-          "id": "thanh-tung-mc",
-          "name": "Thanh Tùng",
+          "id": "thanh-hung-mc",
+          "name": "Thanh Hùng",
           "role": "mc"
         },
         {
@@ -2300,12 +2300,6 @@
         }
       ],
       "photo": "entertainment/people/nguyen-khang.jpg"
-    },
-    "thanh-tung-mc": {
-      "id": "thanh-tung-mc",
-      "name": "Thanh Tùng",
-      "links": [],
-      "photo": null
     },
     "vy-binh": {
       "id": "vy-binh",
