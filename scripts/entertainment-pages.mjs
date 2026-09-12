@@ -93,14 +93,17 @@ const BAND_NAME_RE = /\bband\b|ban\s+nhạc/i;
  * Graph stores bands as `org` rows; entertainment.json has no `kind`.
  *
  * Performers (people + acts): every person; orgs with lineup role `band`;
- * name matches Band / Ban Nhạc; lineup-only orgs (dance troupes); plus
- * documented acts the graph credits as producer of their own named set.
+ * name matches Band / Ban Nhạc; lineup-only orgs (dance troupes).
  *
  * Organizations: remaining orgs (producers, presenters, hosts, venues,
- * companies). Not in this export — do not re-add: CK Band, The Friend
- * (retired SJ night), San Jose Dạ Vũ.
+ * companies), plus the explicit allowlist below. Lucky Wav produces named
+ * nights — it is a production org (with JOY, Ruby Blvd, AMV), not a
+ * lineup act. Do not classify it as a performer via name-regex.
+ *
+ * Not in this export — do not re-add: CK Band, The Friend (retired SJ
+ * night), San Jose Dạ Vũ.
  */
-const ACT_ORG_IDS = new Set(["lucky-wav"]);
+const DIRECTORY_ORG_IDS = new Set(["lucky-wav"]);
 
 export function compareViName(a, b) {
   return String(a.name || "").localeCompare(String(b.name || ""), "vi", {
@@ -114,7 +117,7 @@ export function eventCountFor(events = [], type, id) {
 
 export function isBandOrAct(org, events = []) {
   if (!org?.id) return false;
-  if (ACT_ORG_IDS.has(org.id)) return true;
+  if (DIRECTORY_ORG_IDS.has(org.id)) return false;
   if (BAND_NAME_RE.test(org.name || "")) return true;
   let inLineup = false;
   let inLineupAsBand = false;
