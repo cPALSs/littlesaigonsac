@@ -10,6 +10,8 @@ const GENRE_SLUGS = new Set([
   "dj-edm",
   "american-indie",
   "emcee",
+  "influencer",
+  "martial-arts",
 ]);
 
 /** Filter-only: empty specialties. Not a stored person_specialty slug. */
@@ -25,16 +27,139 @@ function compareName(a, b) {
   });
 }
 
+function lastDate(el) {
+  return String(el.dataset.last || "");
+}
+
+function appearanceYear(el) {
+  const year = lastDate(el).slice(0, 4);
+  return /^\d{4}$/.test(year) ? year : "";
+}
+
+function compareLastThenName(a, b) {
+  return lastDate(b).localeCompare(lastDate(a)) || compareName(a, b);
+}
+
 function sortPerformerGrid(grid, mode) {
   const rows = [...grid.children];
   if (mode === "appearances" || mode === "popular") {
     rows.sort(
       (a, b) => Number(b.dataset.events || 0) - Number(a.dataset.events || 0) || compareName(a, b),
     );
+  } else if (mode === "last") {
+    rows.sort(compareLastThenName);
   } else {
     rows.sort(compareName);
   }
   for (const el of rows) grid.append(el);
+}
+
+function isOneOffAppearance(el) {
+  return Number(el.dataset.events || 0) === 1;
+}
+
+function sectionItems(section) {
+  return [
+    ...section.querySelectorAll(
+      "[data-performer-grid] > li, [data-performer-one-off-grid] > li, [data-performer-year-grid] > li",
+    ),
+  ];
+}
+
+function hasVisibleItem(els) {
+  return els.some((el) => !el.hidden);
+}
+
+function clearYearSplit(section) {
+  const main = section.querySelector("[data-performer-grid]");
+  const yearHost = section.querySelector("[data-performer-years]");
+  if (yearHost && main) {
+    for (const el of yearHost.querySelectorAll("[data-performer-year-grid] > li")) {
+      main.append(el);
+    }
+    yearHost.replaceChildren();
+    yearHost.hidden = true;
+  }
+  section.classList.remove("is-last-split");
+}
+
+function applyLastAppearanceSplit(section) {
+  const main = section.querySelector("[data-performer-grid]");
+  const yearHost = section.querySelector("[data-performer-years]");
+  const oneOffWrap = section.querySelector("[data-performer-one-off]");
+  if (!main || !yearHost) return;
+
+  const items = sectionItems(section);
+  if (oneOffWrap) oneOffWrap.hidden = true;
+  main.hidden = true;
+  section.classList.remove("is-appearances-split");
+  section.classList.add("is-last-split");
+
+  const byYear = new Map();
+  for (const el of items) {
+    const year = appearanceYear(el);
+    if (!byYear.has(year)) byYear.set(year, []);
+    byYear.get(year).push(el);
+  }
+  const years = [...byYear.keys()].sort((a, b) => {
+    if (!a) return 1;
+    if (!b) return -1;
+    return Number(b) - Number(a);
+  });
+
+  yearHost.replaceChildren();
+  for (const year of years) {
+    const wrap = document.createElement("div");
+    wrap.className = "performer-year";
+    wrap.dataset.performerYear = year;
+    if (year) {
+      const heading = document.createElement("h2");
+      heading.className = "section-label band-label";
+      heading.textContent = year;
+      wrap.append(heading);
+    }
+    const grid = document.createElement("ul");
+    grid.className = main.className;
+    grid.setAttribute("data-performer-year-grid", "");
+    wrap.append(grid);
+    const group = byYear.get(year);
+    group.sort(compareName);
+    for (const el of group) grid.append(el);
+    wrap.hidden = !hasVisibleItem([...grid.children]);
+    yearHost.append(wrap);
+  }
+  yearHost.hidden = !years.length;
+}
+
+function applyAppearanceSplit(section, mode) {
+  clearYearSplit(section);
+  const main = section.querySelector("[data-performer-grid]");
+  const oneOffWrap = section.querySelector("[data-performer-one-off]");
+  const oneOffGrid = section.querySelector("[data-performer-one-off-grid]");
+  if (!main) return;
+
+  const items = sectionItems(section);
+  const split = mode === "appearances" && oneOffWrap && oneOffGrid;
+
+  if (split) {
+    for (const el of items) {
+      if (isOneOffAppearance(el)) oneOffGrid.append(el);
+      else main.append(el);
+    }
+    sortPerformerGrid(main, mode);
+    sortPerformerGrid(oneOffGrid, mode);
+    const oneOffVisible = hasVisibleItem([...oneOffGrid.children]);
+    const mainVisible = hasVisibleItem([...main.children]);
+    oneOffWrap.hidden = !oneOffVisible;
+    main.hidden = !mainVisible;
+    section.classList.toggle("is-appearances-split", oneOffVisible);
+  } else {
+    for (const el of items) main.append(el);
+    sortPerformerGrid(main, mode);
+    if (oneOffWrap) oneOffWrap.hidden = true;
+    main.hidden = !hasVisibleItem([...main.children]);
+    section.classList.remove("is-appearances-split");
+  }
 }
 
 function rowMatchesGenre(el, genre) {
@@ -46,12 +171,17 @@ function rowMatchesGenre(el, genre) {
   return slugs.includes(genre);
 }
 
+function readSort(raw) {
+  if (raw === "appearances" || raw === "popular") return "appearances";
+  if (raw === "last") return "last";
+  return "alpha";
+}
+
 function readParams() {
   const params = new URLSearchParams(location.search);
   const rawGenre = params.get("genre") || "";
   const genre = isFilterGenre(rawGenre) ? rawGenre : "";
-  const rawSort = params.get("sort") || "alpha";
-  const sort = rawSort === "appearances" || rawSort === "popular" ? "appearances" : "alpha";
+  const sort = readSort(params.get("sort") || "alpha");
   return { genre, sort };
 }
 
@@ -77,15 +207,13 @@ const grids = document.querySelectorAll("[data-performer-grid]");
 function apply({ writeUrl = true } = {}) {
   const genre = genreSelect?.value || "";
   const mode = sortSelect?.value || "alpha";
-  for (const grid of grids) {
-    for (const el of grid.children) {
+  for (const section of document.querySelectorAll("[data-performer-section]")) {
+    for (const el of sectionItems(section)) {
       el.hidden = !rowMatchesGenre(el, genre);
     }
-    sortPerformerGrid(grid, mode);
-  }
-  for (const section of document.querySelectorAll("[data-performer-section]")) {
-    const items = section.querySelectorAll("[data-performer-grid] > li");
-    section.hidden = ![...items].some((el) => !el.hidden);
+    if (mode === "last") applyLastAppearanceSplit(section);
+    else applyAppearanceSplit(section, mode);
+    section.hidden = !hasVisibleItem(sectionItems(section));
   }
   if (writeUrl) syncUrl(genre, mode);
 }

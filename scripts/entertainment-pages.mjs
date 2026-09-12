@@ -1,6 +1,5 @@
 /** HTML builders for /entertainment on littlesaigonsac.town */
 
-import { existsSync } from "node:fs";
 import { cardVenueLine, venueLine } from "./venue-display.mjs";
 
 export { cardVenueLine, venueLine } from "./venue-display.mjs";
@@ -120,20 +119,18 @@ export const SPECIALTY_LABEL = {
   "dj-edm": "DJ · EDM",
   "american-indie": "American · indie",
   emcee: "Emcee",
+  influencer: "Influencer · talk show",
+  "martial-arts": "Martial arts",
 };
 
-/** Known genre slugs in filter / chip order. No `local` / hometown. */
-export const PERFORMER_GENRE_SLUGS = [
-  "nhac-vang",
-  "que-huong",
-  "nhac-tre",
-  "remix",
-  "co-nhac",
-  "trinh",
-  "dj-edm",
-  "american-indie",
-  "emcee",
-];
+/** Known genre slugs in dropdown order: public label, `vi` locale. No `local`. */
+export function compareSpecialtyLabels(a, b) {
+  return String(a).localeCompare(String(b), "vi", { sensitivity: "base" });
+}
+
+export const PERFORMER_GENRE_SLUGS = Object.keys(SPECIALTY_LABEL).sort((a, b) =>
+  compareSpecialtyLabels(SPECIALTY_LABEL[a], SPECIALTY_LABEL[b]),
+);
 
 /** Performers filter only — empty `specialties`. Never store on person_specialty. */
 export const PERFORMER_GENRE_UNKNOWN = "unknown";
@@ -159,6 +156,8 @@ const ROLE_LABEL = {
   mc: "MC",
   dj: "DJ",
   band: "Band",
+  dance: "Dance troupe",
+  martial_arts: "Martial arts",
   other: "Featured",
 };
 
@@ -249,28 +248,38 @@ const UNLISTED_EVENTS_FB_ALT_NAME = "Người Việt Sacramento and Elk Grove";
 export const ENTERTAINMENT_TAGLINE =
   "Vietnamese concerts and dance nights around Sacramento, Stockton, and Reno.";
 
-/**
- * Paths published then withdrawn (Bay Area night, 2026-09-11).
- * Write a client redirect so the old URL is not a 404. Skip if a live page exists.
- */
-const RETIRED_ENTERTAINMENT_PATHS = [
-  "van-lang-da-vu-mua-thu-la-bay-2026",
-  "orgs/trung-tam-viet-ngu-van-lang-san-jose",
-  "orgs/the-friend-band",
-  "people/hoang-liem",
-  "people/hung-bui-mc",
-  "people/hoang-thuc-linh",
-  "people/huong-thuy",
-  "people/le-ha",
-  "people/ngan-hanh",
-  "people/quoc-bao",
-  "people/quoc-khanh",
-  "people/thien-kim",
-  "people/tuong-vy",
-  "people/vickie-hoa-tran",
-  "people/vu-hien",
-  "people/yen-lam",
-];
+const DANCE_TROUPE_NAME_RE = /vũ\s*đoàn|vu\s*doan|nhóm\s*múa|nhom\s*mua/i;
+const MARTIAL_ARTS_NAME_RE = /xiếc\s*kungfu|xiec\s*kungfu/i;
+
+export function isDanceTroupe(org) {
+  if (!org) return false;
+  if (org.act === "dance-troupe") return true;
+  return DANCE_TROUPE_NAME_RE.test(org.name || "");
+}
+
+export function isMartialArtsAct(org) {
+  if (!org) return false;
+  if (org.act === "martial-arts") return true;
+  return MARTIAL_ARTS_NAME_RE.test(org.name || "");
+}
+
+function hasSpecialty(entity, slug) {
+  return specialtySlugs(entity?.specialties).includes(slug);
+}
+
+function creditRoleLabel(item, orgs, people) {
+  const org = item?.type === "org" && item.id ? orgs?.[item.id] : null;
+  const person = item?.type === "person" && item.id ? people?.[item.id] : null;
+  if (
+    hasSpecialty(person, "martial-arts") ||
+    hasSpecialty(org, "martial-arts") ||
+    isMartialArtsAct(org || item)
+  ) {
+    return ROLE_LABEL.martial_arts;
+  }
+  if (item.role === "band" && isDanceTroupe(org || item)) return ROLE_LABEL.dance;
+  return ROLE_LABEL[item.role] || "";
+}
 
 const PRODUCTION_ROLES = new Set(["host", "producer", "co_producer", "presenter"]);
 const BAND_NAME_RE = /\bband\b|ban\s+nhạc/i;
@@ -278,8 +287,10 @@ const BAND_NAME_RE = /\bband\b|ban\s+nhạc/i;
 /**
  * Graph stores bands as `org` rows; entertainment.json has no `kind`.
  *
- * Performers (people + acts): every person; orgs with lineup role `band`;
- * name matches Band / Ban Nhạc; lineup-only orgs (dance troupes).
+ * Performers (people + acts): every person; orgs with lineup role `band`
+ * (dance troupes use the same billed-org machinery — public label
+ * Dance troupe / Vũ đoàn, not Band); name matches Band / Ban Nhạc;
+ * lineup-only orgs.
  *
  * Organizations: remaining orgs (producers, presenters, hosts, venues,
  * companies), plus the explicit allowlist below. Lucky Wav produces named
@@ -307,6 +318,16 @@ export function compareViName(a, b) {
 
 export function eventCountFor(events = [], type, id) {
   return showsFor(events, type, id).length;
+}
+
+/** ISO `start_date` of the most recent billed public show (lineup or producer). */
+export function lastAppearanceFor(events = [], type, id) {
+  let latest = "";
+  for (const ev of showsFor(events, type, id)) {
+    const start = String(ev.start_date || "").slice(0, 10);
+    if (start && start > latest) latest = start;
+  }
+  return latest;
 }
 
 export function isBandOrAct(org, events = []) {
@@ -348,6 +369,7 @@ function directoryRow(entity, type, events) {
         : `/entertainment/orgs/${entity.id}/`,
     photo: entity.photo || null,
     eventCount: eventCountFor(events, type, entity.id),
+    lastAppearance: lastAppearanceFor(events, type, entity.id),
     specialties: specialtySlugs(entity.specialties),
   };
 }
@@ -422,7 +444,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     return `<ul class="credit-list">
     ${rows
       .map((item) => {
-        const role = ROLE_LABEL[item.role] || "";
+        const role = creditRoleLabel(item, orgs, people);
         return `<li>${entityName(item, people, orgs)}${
           role ? ` <span class="credit-role">${esc(role)}</span>` : ""
         }</li>`;
@@ -540,7 +562,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
   };
 
   const specialtyChips = (specialties) => {
-    const slugs = specialtySlugs(specialties).slice(0, 3);
+    const slugs = specialtySlugs(specialties).slice(0, 4);
     if (!slugs.length) return "";
     const chips = slugs.map((slug) => {
       const item = Array.isArray(specialties)
@@ -553,12 +575,23 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     return `<ul class="genre-chips">${chips.join("")}</ul>`;
   };
 
-  const entityHeading = (name, links, photo, kind, specialties) => {
+  const lifespanText = (lifespan) =>
+    lifespan ? `<span class="lifespan">${esc(lifespan)}</span>` : "";
+
+  const entitySocialRow = (links, lifespan) => {
+    const socials = socialList(links);
+    const years = lifespanText(lifespan);
+    if (!socials && !years) return "";
+    return `<div class="entity-social-row">${socials}${years}</div>`;
+  };
+
+  const entityHeading = (name, links, photo, kind, specialties, lifespan) => {
     const shown = kind === "org" ? displayName(name) : listingName(name);
     const photoImg = imgEl(photo, shown);
+    const years = kind === "person" ? lifespan : "";
     const copy = `<h1>${esc(shown)}</h1>
         ${specialtyChips(specialties)}
-        ${socialList(links)}`;
+        ${entitySocialRow(links, years)}`;
     if (!photoImg) return copy;
     const photoClass =
       kind === "org"
@@ -624,19 +657,46 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     return `<span class="${photoClass}">${photoImg}</span>`;
   };
 
+  const bandMemberList = (members = []) => {
+    if (!members.length) return "";
+    return `<ul class="performer-list band-members">
+      ${members
+        .map((row) => {
+          const photoClass =
+            "entity-photo entity-photo--person performer-avatar";
+          const photoImg = imgEl(row.photo, listingName(row.name));
+          const links = socialList(row.links);
+          const years = lifespanText(row.lifespan);
+          return `<li><div class="band-member">${
+            photoImg ? `<span class="${photoClass}">${photoImg}</span>` : ""
+          }<span class="band-member-copy"><span class="performer-name">${escListingName(row.name)}</span>${years}</span>${
+            links || ""
+          }</div></li>`;
+        })
+        .join("")}
+    </ul>`;
+  };
+
   const performerList = (rows, { sortable = false, variant } = {}) => {
     if (!rows.length) return "";
     const classes = ["performer-list"];
     if (variant === "orgs") classes.push("performer-list--orgs");
     const attrs = sortable ? ' data-performer-grid' : "";
-    return `<ul class="${classes.join(" ")}"${attrs}>
+    const list = `<ul class="${classes.join(" ")}"${attrs}>
       ${rows
         .map((row) => {
           const genres = (row.specialties || []).join(" ");
-          return `<li data-name="${escListingName(row.name)}" data-events="${esc(String(row.eventCount ?? 0))}" data-genres="${esc(genres)}"><a href="${esc(row.href)}">${performerAvatar(row)}<span class="performer-name">${escListingName(row.name)}</span></a></li>`;
+          return `<li data-name="${escListingName(row.name)}" data-events="${esc(String(row.eventCount ?? 0))}" data-last="${esc(row.lastAppearance || "")}" data-genres="${esc(genres)}"><a href="${esc(row.href)}">${performerAvatar(row)}<span class="performer-name">${escListingName(row.name)}</span></a></li>`;
         })
         .join("")}
     </ul>`;
+    if (!sortable) return list;
+    return `${list}
+    <div class="performer-one-off" data-performer-one-off hidden>
+    <h2 class="section-label band-label">One appearance</h2>
+    <ul class="${classes.join(" ")}" data-performer-one-off-grid></ul>
+    </div>
+    <div class="performer-years" data-performer-years hidden></div>`;
   };
 
   const performerGenreOptions = () =>
@@ -658,6 +718,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
         <select id="performer-sort" data-performer-sort>
           <option value="alpha">Alphabetical</option>
           <option value="appearances">Most appearances</option>
+          <option value="last">Last appearance</option>
         </select>
       </label>
     </div>`;
@@ -688,31 +749,6 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     <a href="${esc(UNLISTED_EVENTS_FB_ALT_URL)}" rel="noopener noreferrer" target="_blank">${esc(UNLISTED_EVENTS_FB_ALT_NAME)}</a>.</p>
   </article>`;
 
-  const retiredRedirectPage = () => `<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=/entertainment/">
-  <link rel="canonical" href="https://littlesaigonsac.town/entertainment/">
-  <title>Moved · Little Saigon Sactown</title>
-</head>
-<body>
-  <p>This page is no longer in the Entertainment gallery. <a href="/entertainment/">See current shows</a>.</p>
-</body>
-</html>
-`;
-
-  const writeRetiredRedirects = ({ dist, join, mkdirSync, writeFileSync }) => {
-    for (const rel of RETIRED_ENTERTAINMENT_PATHS) {
-      const dir = join(dist, "entertainment", rel);
-      const file = join(dir, "index.html");
-      if (existsSync(file)) continue;
-      mkdirSync(dir, { recursive: true });
-      writeFileSync(file, retiredRedirectPage());
-    }
-  };
-
   return {
     posterCard,
     posterGrid,
@@ -720,13 +756,13 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     creditList,
     socialList,
     entityHeading,
+    bandMemberList,
     bandBlock,
     entertainmentTabs,
     performerList,
     performerDirectory,
     unlistedEventsInviteCard,
     galleryShowSections,
-    writeRetiredRedirects,
     entityName,
     displayName,
     listingName,
@@ -881,7 +917,7 @@ export function writeEntertainmentPages({
         body: `<main class="wrap">
       <header class="hero">
         ${h.crumbsEnt([{ href: "/entertainment/performers/", label: "Entertainment" }])}
-        ${h.entityHeading(person.name, person.links, person.photo, "person", person.specialties)}
+        ${h.entityHeading(person.name, person.links, person.photo, "person", person.specialties, person.lifespan)}
       </header>
       ${u.length || p.length ? h.posterGrid([...u, ...p]) : ""}
     </main>`,
@@ -908,13 +944,16 @@ export function writeEntertainmentPages({
         ${h.crumbsEnt([{ href: "/entertainment/performers/", label: "Entertainment" }])}
         ${h.entityHeading(org.name, org.links, org.photo, "org", org.specialties)}
       </header>
+      ${
+        Array.isArray(org.members) && org.members.length
+          ? `<h2 class="section-label band-label">Members</h2>${h.bandMemberList(org.members)}`
+          : ""
+      }
       ${u.length || p.length ? h.posterGrid([...u, ...p]) : ""}
     </main>`,
       }),
     );
   }
-
-  h.writeRetiredRedirects({ dist, join, mkdirSync, writeFileSync });
 
   return {
     events: events.length,

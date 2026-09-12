@@ -1,7 +1,7 @@
 {
   "exported_at": "2026-09-12",
   "timezone": "America/Los_Angeles",
-  "as_of_pt": "2026-09-11",
+  "as_of_pt": "2026-09-12",
   "events": [
     {
       "id": "thunder-valley-whisper-of-autumn-2026",
@@ -265,14 +265,20 @@
         },
         {
           "type": "org",
+          "id": "nhom-mua-da-sac-mau",
+          "name": "Nhóm Múa Đa Sắc Màu",
+          "role": "band"
+        },
+        {
+          "type": "org",
           "id": "mrs-vietnam-norcal-sacramento",
           "name": "Mrs. Vietnam NorCal Sacramento",
           "role": "other"
         },
         {
-          "type": "org",
-          "id": "nhom-mua-da-sac-mau",
-          "name": "Nhóm Múa Đa Sắc Màu",
+          "type": "person",
+          "id": "thanh-vinh",
+          "name": "Thành Vinh",
           "role": "other"
         }
       ]
@@ -797,21 +803,9 @@
         },
         {
           "type": "org",
-          "id": "do-doan-buoc-nhay",
-          "name": "Đỗ Đoàn Bước Nhảy",
-          "role": "other"
-        },
-        {
-          "type": "person",
-          "id": "duc-thanh-buoc-nhay",
-          "name": "Đức Thành · Đỗ Đoàn Bước Nhảy",
-          "role": "other"
-        },
-        {
-          "type": "person",
-          "id": "minh-giang-buoc-nhay",
-          "name": "Minh Giang · Đỗ Đoàn Bước Nhảy",
-          "role": "other"
+          "id": "vu-doan-buoc-nhay",
+          "name": "Vũ Đoàn Bước Nhảy",
+          "role": "band"
         }
       ]
     },
@@ -1346,12 +1340,6 @@
       "lineup": [
         {
           "type": "person",
-          "id": "cong-thanh",
-          "name": "Công Thành",
-          "role": "vocalist"
-        },
-        {
-          "type": "person",
           "id": "dan-nguyen",
           "name": "Đan Nguyên",
           "role": "vocalist"
@@ -1360,12 +1348,6 @@
           "type": "person",
           "id": "ho-le-thu",
           "name": "Hồ Lệ Thu",
-          "role": "vocalist"
-        },
-        {
-          "type": "person",
-          "id": "lynn-performer",
-          "name": "Lynn",
           "role": "vocalist"
         },
         {
@@ -1403,6 +1385,12 @@
           "id": "vy-binh",
           "name": "Vy Bình",
           "role": "mc"
+        },
+        {
+          "type": "org",
+          "id": "cong-thanh-lynn",
+          "name": "Công Thành & Lynn",
+          "role": "band"
         }
       ]
     },
@@ -2804,6 +2792,18 @@
       "links": [],
       "photo": "entertainment/people/dang-lan-ns.jpg"
     },
+    "thanh-vinh": {
+      "id": "thanh-vinh",
+      "name": "Thành Vinh",
+      "specialties": [
+        {
+          "slug": "martial-arts",
+          "label": "Martial arts"
+        }
+      ],
+      "links": [],
+      "photo": "entertainment/people/thanh-vinh.jpg"
+    },
     "minh-thu": {
       "id": "minh-thu",
       "name": "Minh Thư",
@@ -3602,18 +3602,6 @@
       ],
       "photo": "entertainment/people/myra-tran.jpg"
     },
-    "duc-thanh-buoc-nhay": {
-      "id": "duc-thanh-buoc-nhay",
-      "name": "Đức Thành",
-      "links": [],
-      "photo": "entertainment/people/duc-thanh-buoc-nhay.jpg"
-    },
-    "minh-giang-buoc-nhay": {
-      "id": "minh-giang-buoc-nhay",
-      "name": "Minh Giang",
-      "links": [],
-      "photo": "entertainment/people/minh-giang-buoc-nhay.jpg"
-    },
     "nguyen-hong-nhung": {
       "id": "nguyen-hong-nhung",
       "name": "Nguyễn Hồng Nhung",
@@ -4327,24 +4315,6 @@
       ],
       "photo": "entertainment/people/ho-le-thu.jpg"
     },
-    "cong-thanh": {
-      "id": "cong-thanh",
-      "name": "Công Thành",
-      "specialties": [
-        {
-          "slug": "nhac-tre",
-          "label": "Nhạc trẻ"
-        }
-      ],
-      "links": [],
-      "photo": "entertainment/people/cong-thanh.jpg"
-    },
-    "lynn-performer": {
-      "id": "lynn-performer",
-      "name": "Lynn",
-      "links": [],
-      "photo": "entertainment/people/lynn-performer.jpg"
-    },
     "yen-linh": {
       "id": "yen-linh",
       "name": "Yến Linh",
@@ -4354,6 +4324,12 @@
     "nguyen-khang": {
       "id": "nguyen-khang",
       "name": "Nguyên Khang",
+      "specialties": [
+        {
+          "slug": "influencer",
+          "label": "Influencer · talk show"
+        }
+      ],
       "links": [
         {
           "kind": "instagram",
@@ -4454,7 +4430,24 @@
       "aka": [
         "Hùng Lê"
       ],
-      "links": [],
+      "specialties": [
+        {
+          "slug": "influencer",
+          "label": "Influencer · talk show"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/pagehunglehung",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/c/h%C3%B9ngl%C3%AAh%C3%B9ngchicago",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/hung-le.jpg"
     },
     "khang-viet": {
@@ -5044,12 +5037,24 @@
       "aka": [
         "DJ TEEO"
       ],
+      "specialties": [
+        {
+          "slug": "dj-edm",
+          "label": "DJ · EDM"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/dj-teeo.jpg"
     },
     "dj-alex": {
       "id": "dj-alex",
       "name": "DJ Alex",
+      "specialties": [
+        {
+          "slug": "dj-edm",
+          "label": "DJ · EDM"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/dj-alex.jpg"
     },
@@ -5141,7 +5146,7 @@
       "id": "hoang-bao-band",
       "name": "Hoàng Bảo's Band",
       "links": [],
-      "photo": null
+      "photo": "entertainment/orgs/hoang-bao-band.jpg"
     },
     "ruby-blvd-entertainment": {
       "id": "ruby-blvd-entertainment",
@@ -5187,7 +5192,8 @@
       "id": "nhom-mua-da-sac-mau",
       "name": "Nhóm Múa Đa Sắc Màu",
       "links": [],
-      "photo": null
+      "photo": "entertainment/orgs/nhom-mua-da-sac-mau.jpg",
+      "act": "dance-troupe"
     },
     "xang-xu-liu-foundation": {
       "id": "xang-xu-liu-foundation",
@@ -5229,7 +5235,7 @@
       "id": "four-season-band",
       "name": "Four Season Band",
       "links": [],
-      "photo": null
+      "photo": "entertainment/orgs/four-season-band.jpg"
     },
     "vietnamese-martyrs-parish": {
       "id": "vietnamese-martyrs-parish",
@@ -5297,11 +5303,47 @@
       ],
       "photo": "entertainment/orgs/ustar-productions.jpg"
     },
-    "do-doan-buoc-nhay": {
-      "id": "do-doan-buoc-nhay",
-      "name": "Đỗ Đoàn Bước Nhảy",
-      "links": [],
-      "photo": null
+    "vu-doan-buoc-nhay": {
+      "id": "vu-doan-buoc-nhay",
+      "name": "Vũ Đoàn Bước Nhảy",
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/buocnhay.bne",
+          "label": "Instagram"
+        },
+        {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@buocnhay.bne",
+          "label": "TikTok"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/vudoanbuocnhay",
+          "label": "Facebook"
+        },
+        {
+          "kind": "website",
+          "url": "https://bnentertainment.asia",
+          "label": "Website"
+        }
+      ],
+      "photo": "entertainment/orgs/vu-doan-buoc-nhay.jpg",
+      "act": "dance-troupe",
+      "members": [
+        {
+          "id": "minh-giang-buoc-nhay",
+          "name": "Minh Giang",
+          "links": [],
+          "photo": "entertainment/people/minh-giang-buoc-nhay.jpg"
+        },
+        {
+          "id": "duc-thanh-buoc-nhay",
+          "name": "Đức Thành",
+          "links": [],
+          "photo": "entertainment/people/duc-thanh-buoc-nhay.jpg"
+        }
+      ]
     },
     "showpro-entertainment": {
       "id": "showpro-entertainment",
@@ -5325,13 +5367,40 @@
       "id": "skyway-band",
       "name": "Skyway Band",
       "links": [],
-      "photo": null
+      "photo": "entertainment/orgs/skyway-band.jpg"
     },
     "rice-bowl-restaurant": {
       "id": "rice-bowl-restaurant",
       "name": "Rice Bowl Restaurant",
       "links": [],
       "photo": "entertainment/orgs/rice-bowl-restaurant.jpg"
+    },
+    "cong-thanh-lynn": {
+      "id": "cong-thanh-lynn",
+      "name": "Công Thành & Lynn",
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/cong.thanhlyn.1",
+          "label": "Facebook"
+        }
+      ],
+      "photo": "entertainment/orgs/cong-thanh-lynn.jpg",
+      "members": [
+        {
+          "id": "cong-thanh",
+          "name": "Công Thành",
+          "lifespan": "1947–2026",
+          "links": [],
+          "photo": "entertainment/people/cong-thanh.jpg"
+        },
+        {
+          "id": "lynn-performer",
+          "name": "Lynn",
+          "links": [],
+          "photo": "entertainment/people/lynn-performer.jpg"
+        }
+      ]
     },
     "sacto-by-night": {
       "id": "sacto-by-night",

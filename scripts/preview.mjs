@@ -1,20 +1,22 @@
 #!/usr/bin/env node
 /**
  * Local Entertainment preview. Serves dist/ on 127.0.0.1:4173, but
- * /img/entertainment/people/*.jpg is read live from src/ (crop Save
- * writes there) with Cache-Control: no-store so the browser does not
- * keep stale portraits. HTML is also no-store; missing people <img>
- * tags are injected when the src JPEG exists (first Save, no rebuild).
+ * /img/entertainment/people/*.jpg and /img/entertainment/orgs/*.jpg
+ * are read live from src/ (crop Save writes there) with Cache-Control:
+ * no-store so the browser does not keep stale portraits. HTML is also
+ * no-store; missing people/band <img> tags are injected when the src
+ * JPEG exists (first Save, no rebuild).
  */
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { createServer } from "node:http";
 import { dirname, extname, join, normalize, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
-import { injectPeoplePortraits } from "./people-portraits-live.mjs";
+import { injectLivePortraits } from "./people-portraits-live.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dist = join(root, "dist");
 const srcPeople = join(root, "src/img/entertainment/people");
+const srcOrgs = join(root, "src/img/entertainment/orgs");
 const HOST = "127.0.0.1";
 const PORT = Number(process.env.PORT || 4173);
 
@@ -40,9 +42,8 @@ function safeJoin(base, urlPath) {
   return abs;
 }
 
-function peopleJpegName(urlPath) {
+function entertainmentJpegName(urlPath, prefix) {
   const pathOnly = urlPath.split("?")[0];
-  const prefix = "/img/entertainment/people/";
   if (!pathOnly.startsWith(prefix)) return null;
   const name = pathOnly.slice(prefix.length);
   if (!name || name.includes("/") || !/\.jpe?g$/i.test(name)) return null;
@@ -51,11 +52,19 @@ function peopleJpegName(urlPath) {
 
 const server = createServer((req, res) => {
   const urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
-  const peopleName = peopleJpegName(urlPath);
-  if (peopleName) {
-    const live = join(srcPeople, peopleName);
-    const fallback = join(dist, "img/entertainment/people", peopleName);
-    const abs = existsSync(live) ? live : existsSync(fallback) ? fallback : null;
+  const peopleName = entertainmentJpegName(urlPath, "/img/entertainment/people/");
+  const orgName = entertainmentJpegName(urlPath, "/img/entertainment/orgs/");
+  const liveJpeg = peopleName
+    ? { live: join(srcPeople, peopleName), fallback: join(dist, "img/entertainment/people", peopleName) }
+    : orgName
+      ? { live: join(srcOrgs, orgName), fallback: join(dist, "img/entertainment/orgs", orgName) }
+      : null;
+  if (liveJpeg) {
+    const abs = existsSync(liveJpeg.live)
+      ? liveJpeg.live
+      : existsSync(liveJpeg.fallback)
+        ? liveJpeg.fallback
+        : null;
     if (!abs) {
       res.writeHead(404, { "Cache-Control": "no-store" });
       res.end("Not found");
@@ -88,7 +97,13 @@ const server = createServer((req, res) => {
   let data = readFileSync(abs);
   const type = MIME[extname(abs).toLowerCase()] || "application/octet-stream";
   if (type.startsWith("text/html")) {
-    data = Buffer.from(injectPeoplePortraits(data.toString("utf8"), urlPath, srcPeople), "utf8");
+    data = Buffer.from(
+      injectLivePortraits(data.toString("utf8"), urlPath, {
+        srcPeopleDir: srcPeople,
+        srcOrgsDir: srcOrgs,
+      }),
+      "utf8",
+    );
   }
   res.writeHead(200, {
     "Content-Type": type,
@@ -100,6 +115,6 @@ const server = createServer((req, res) => {
 
 server.listen(PORT, HOST, () => {
   console.log(`Preview http://${HOST}:${PORT}/ → ${dist}`);
-  console.log("People JPEGs served live from src/img/entertainment/people (no-store)");
-  console.log("HTML no-store; missing people <img> injected when src JPEG exists");
+  console.log("People/band JPEGs served live from src/img/entertainment/{people,orgs} (no-store)");
+  console.log("HTML no-store; missing people/band <img> injected when src JPEG exists");
 });

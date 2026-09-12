@@ -29,6 +29,12 @@ if (entertainment?.orgs) {
     if (!org.photo && existsSync(join(root, "src/img", rel))) {
       org.photo = rel;
     }
+    for (const member of org.members || []) {
+      const memberRel = `entertainment/people/${member.id}.jpg`;
+      if (!member.photo && existsSync(join(root, "src/img", memberRel))) {
+        member.photo = memberRel;
+      }
+    }
   }
 }
 
@@ -45,7 +51,10 @@ const imgEl = (rel, alt = "") => {
   if (!rel || !existsSync(join(root, "src/img", rel))) return "";
   const abs = join(root, "src/img", rel);
   const src = `/img/${esc(rel)}`;
-  if (String(rel).startsWith("entertainment/people/")) {
+  if (
+    String(rel).startsWith("entertainment/people/") ||
+    String(rel).startsWith("entertainment/orgs/")
+  ) {
     const mtime = Math.floor(statSync(abs).mtimeMs);
     return `<img src="${src}?t=${mtime}" alt="${esc(alt)}">`;
   }

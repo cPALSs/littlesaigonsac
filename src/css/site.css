@@ -989,6 +989,65 @@ body.is-lightbox-open {
   min-width: 0;
 }
 
+.performer-list[hidden] {
+  display: none;
+}
+
+[data-performer-section].is-appearances-split [data-performer-grid]:not([hidden]) {
+  padding-bottom: 0.35rem;
+}
+
+.performer-one-off .section-label,
+.performer-year .section-label {
+  margin-top: 1.15rem;
+}
+
+[data-performer-section="people"] .performer-years > .performer-year:first-child .section-label {
+  margin-top: 1.6rem;
+}
+
+[data-performer-section].is-last-split .performer-year:not(:last-child) [data-performer-year-grid] {
+  padding-bottom: 0.35rem;
+}
+
+.performer-year[hidden],
+.performer-years[hidden] {
+  display: none;
+}
+
+.band-members {
+  padding-bottom: 0.6rem;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+}
+
+.band-member {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.7rem;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.band-member-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  gap: 0.12rem;
+}
+
+.band-member .social-links {
+  margin-top: 0;
+}
+
+.band-member .lifespan {
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
 @media (max-width: 719px) {
   .performer-toolbar {
     z-index: 1;
@@ -1024,7 +1083,21 @@ body.is-lightbox-open {
 }
 
 .entity-heading-copy .social-links {
+  margin-top: 0;
+}
+
+.entity-social-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.75rem;
   margin-top: 0.55rem;
+}
+
+.entity-social-row .lifespan {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  white-space: nowrap;
 }
 
 .genre-chips {
@@ -1140,6 +1213,10 @@ a.genre-chip:hover {
 
   .performer-list--orgs {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .performer-list.band-members {
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
   }
 
   .entity-photo {
