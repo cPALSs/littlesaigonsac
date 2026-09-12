@@ -9,12 +9,15 @@ const GENRE_SLUGS = new Set([
   "trinh",
   "dj-edm",
   "american-indie",
+  "chinese",
   "emcee",
   "influencer",
   "martial-arts",
+  "producer",
+  "dance-group",
 ]);
 
-/** Filter-only: empty specialties. Not a stored person_specialty slug. */
+/** Filter-only: empty specialties. Not a stored person_specialty / org_specialty slug. */
 const GENRE_UNKNOWN = "unknown";
 
 function isFilterGenre(raw) {

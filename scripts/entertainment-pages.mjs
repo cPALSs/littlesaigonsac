@@ -118,9 +118,12 @@ export const SPECIALTY_LABEL = {
   trinh: "Nhạc Trịnh",
   "dj-edm": "DJ · EDM",
   "american-indie": "American · indie",
+  chinese: "Chinese",
   emcee: "Emcee",
   influencer: "Influencer · talk show",
   "martial-arts": "Martial arts",
+  producer: "Producer",
+  "dance-group": "Dance group",
 };
 
 /** Known genre slugs in dropdown order: public label, `vi` locale. No `local`. */

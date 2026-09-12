@@ -688,6 +688,82 @@
       ]
     },
     {
+      "id": "hello-summer-anh-sao-hoi-tu-atlantis-2026",
+      "label": "Hello Summer – Ánh Sao Hội Tụ",
+      "display_date": "Jun 20, 2026 · 7:30 PM",
+      "start_date": "2026-06-20",
+      "end_date": "2026-06-20",
+      "city": "Reno",
+      "venue": "Grand Ballroom, Atlantis Casino Resort Spa, 3800 S Virginia St",
+      "place_name": "Atlantis Casino Resort Spa",
+      "status": "held",
+      "poster": "entertainment/hello-summer-anh-sao-hoi-tu-atlantis-2026.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "3em-entertainment",
+          "name": "3Em Entertainment",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "3em-entertainment",
+          "name": "3Em Entertainment",
+          "role": "producer"
+        }
+      ],
+      "lineup": [
+        {
+          "type": "person",
+          "id": "khac-viet",
+          "name": "Khắc Việt",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "mai-thanh",
+          "name": "Mai Thanh",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "minh-tuyet",
+          "name": "Minh Tuyết",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "myra-tran",
+          "name": "Myra Trần",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "phu-truong-thi",
+          "name": "Phú Trường Thi",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "ung-hoang-phuc",
+          "name": "Ưng Hoàng Phúc",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "kenny-dang",
+          "name": "Hoàng Liêm",
+          "role": "mc"
+        },
+        {
+          "type": "org",
+          "id": "skyway-band",
+          "name": "Skyway Band",
+          "role": "band"
+        }
+      ]
+    },
+    {
       "id": "icons-live-hard-rock-2026",
       "label": "Icons Live",
       "display_date": "Jun 5, 2026",
@@ -1593,7 +1669,7 @@
         {
           "type": "person",
           "id": "gerard-william",
-          "name": "Gerard William",
+          "name": "Gerard Williams",
           "role": "vocalist"
         },
         {
@@ -3118,6 +3194,12 @@
       "aka": [
         "李瑋"
       ],
+      "specialties": [
+        {
+          "slug": "chinese",
+          "label": "Chinese"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/wesley-li.jpg"
     },
@@ -3155,6 +3237,12 @@
       "aka": [
         "黃嘉程"
       ],
+      "specialties": [
+        {
+          "slug": "chinese",
+          "label": "Chinese"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/jacky-huang.jpg"
     },
@@ -3164,30 +3252,88 @@
       "aka": [
         "岑敏芝"
       ],
+      "specialties": [
+        {
+          "slug": "chinese",
+          "label": "Chinese"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/jessica-shum.jpg"
     },
     "hoang-thuy-vi": {
       "id": "hoang-thuy-vi",
       "name": "Hoàng Thùy Vi",
+      "aka": [
+        "Hoàng Thúy Vy"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/hoang-thuy-vi.jpg"
     },
     "tony-hoi": {
       "id": "tony-hoi",
       "name": "Tony Hội",
-      "links": [],
+      "aka": [
+        "Hoi Tony Vo",
+        "Tony Hoi"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/hoi.tony.vo.2025",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@tonyhoiofficialchannel5223",
+          "label": "YouTube"
+        },
+        {
+          "kind": "soundcloud",
+          "url": "https://soundcloud.com/hoi-tony",
+          "label": "SoundCloud"
+        }
+      ],
       "photo": "entertainment/people/tony-hoi.jpg"
     },
     "mai-thanh": {
       "id": "mai-thanh",
       "name": "Mai Thanh",
-      "links": [],
+      "aka": [
+        "Mai Thanh Zuzana"
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/maithanhzuzana",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/maithanh.zuzana",
+          "label": "Facebook"
+        }
+      ],
       "photo": "entertainment/people/mai-thanh.jpg"
     },
     "phu-truong-thi": {
       "id": "phu-truong-thi",
       "name": "Phú Trương Thi",
+      "aka": [
+        "Phú Trường Thi"
+      ],
       "links": [],
       "photo": "entertainment/people/phu-truong-thi.jpg"
     },
@@ -3200,6 +3346,12 @@
     "huy-tran": {
       "id": "huy-tran",
       "name": "Huy Tran",
+      "specialties": [
+        {
+          "slug": "producer",
+          "label": "Producer"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -3212,6 +3364,12 @@
     "mai-thanh-son": {
       "id": "mai-thanh-son",
       "name": "Mai Thanh Sơn",
+      "specialties": [
+        {
+          "slug": "que-huong",
+          "label": "Nhạc quê hương"
+        }
+      ],
       "links": [
         {
           "kind": "youtube",
@@ -3276,6 +3434,12 @@
     "thien-son": {
       "id": "thien-son",
       "name": "Thiên Sơn",
+      "specialties": [
+        {
+          "slug": "que-huong",
+          "label": "Nhạc quê hương"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -3361,6 +3525,12 @@
       "aka": [
         "Bruce Nguyễn"
       ],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "instagram",
@@ -3379,6 +3549,110 @@
         }
       ],
       "photo": "entertainment/people/bruce-nguyen.jpg"
+    },
+    "ung-hoang-phuc": {
+      "id": "ung-hoang-phuc",
+      "name": "Ưng Hoàng Phúc",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/unghoangphucofficial",
+          "label": "Instagram"
+        },
+        {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@unghoangphucofficial",
+          "label": "TikTok"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/unghoangphuc",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@unghoangphuckimcuong",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/4HyBLptfM7nZhrcss4if7x",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/ung-hoang-phuc.jpg"
+    },
+    "myra-tran": {
+      "id": "myra-tran",
+      "name": "Myra Trần",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/itsmyratran",
+          "label": "Instagram"
+        },
+        {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@myratrann",
+          "label": "TikTok"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/myratrann",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCYOWVGdM6G9mjZmVC-921lg",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/0Y9KzsdFByEI4bigKF1htd",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/myra-tran.jpg"
+    },
+    "khac-viet": {
+      "id": "khac-viet",
+      "name": "Khắc Việt",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/khacvietsinger",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCPr94gEP09WeEHl6z8KMtQw",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/7luDDYsfkSivBsoTz3BKMq",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/khac-viet.jpg"
     },
     "hong-ngoc": {
       "id": "hong-ngoc",
@@ -3561,46 +3835,14 @@
     "angel-gia-han": {
       "id": "angel-gia-han",
       "name": "Angel Gia Hân",
-      "links": [],
-      "photo": "entertainment/people/angel-gia-han.jpg"
-    },
-    "myra-tran": {
-      "id": "myra-tran",
-      "name": "Myra Trần",
       "specialties": [
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
         }
       ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/itsmyratran",
-          "label": "Instagram"
-        },
-        {
-          "kind": "tiktok",
-          "url": "https://tiktok.com/@myratrann",
-          "label": "TikTok"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/myratrann",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/channel/UCYOWVGdM6G9mjZmVC-921lg",
-          "label": "YouTube"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/0Y9KzsdFByEI4bigKF1htd",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/myra-tran.jpg"
+      "links": [],
+      "photo": "entertainment/people/angel-gia-han.jpg"
     },
     "nguyen-hong-nhung": {
       "id": "nguyen-hong-nhung",
@@ -4083,6 +4325,12 @@
     "diem-suong": {
       "id": "diem-suong",
       "name": "Diễm Sương",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "spotify",
@@ -4205,11 +4453,35 @@
     "lan-nha": {
       "id": "lan-nha",
       "name": "Lân Nhã",
+      "aka": [
+        "Trần Lân Nhã"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
       "links": [
         {
           "kind": "instagram",
           "url": "https://instagram.com/tranlannha",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/casilannha",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UC9sQy-VRzDaDuBD3n4xJ0Zg",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/5CGYEvANR5mmYEuQwTYC93",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/lan-nha.jpg"
@@ -4432,6 +4704,10 @@
       ],
       "specialties": [
         {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        },
+        {
           "slug": "influencer",
           "label": "Influencer · talk show"
         }
@@ -4485,9 +4761,16 @@
       "id": "paul-cuong-nguyen",
       "name": "Paul Cường Nguyễn",
       "aka": [
-        "Paul Cuong Nguyen"
+        "Paul Cuong Nguyen",
+        "Paul Nguyen Cuong"
       ],
-      "links": [],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/paulcuong",
+          "label": "Facebook"
+        }
+      ],
       "photo": "entertainment/people/paul-cuong-nguyen.jpg"
     },
     "quang-do": {
@@ -4502,7 +4785,39 @@
       "aka": [
         "Nicole Nguyen"
       ],
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@nicolethichhat",
+          "label": "TikTok"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/nicoleluvscupcakes",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@nicolethichhat",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/1UsQOc28pvlSqfYGlSs6Mx",
+          "label": "Spotify"
+        },
+        {
+          "kind": "soundcloud",
+          "url": "https://soundcloud.com/nicolenguyen-sc",
+          "label": "SoundCloud"
+        }
+      ],
       "photo": "entertainment/people/nicole-nguyen.jpg"
     },
     "pham-hong-an": {
@@ -4514,13 +4829,46 @@
     "cat-tuyen": {
       "id": "cat-tuyen",
       "name": "Cát Tuyền",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "que-huong",
+          "label": "Nhạc quê hương"
+        }
+      ],
+      "links": [
+        {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@cattuyen_official",
+          "label": "TikTok"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCpgXU9tYIuE9H5fg5GbmYaw",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/cat-tuyen.jpg"
     },
     "dan-kim": {
       "id": "dan-kim",
       "name": "Đan Kim",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/profile.php?id=100007984267038",
+          "label": "Facebook"
+        }
+      ],
       "photo": "entertainment/people/dan-kim.jpg"
     },
     "thoai-my": {
@@ -4566,7 +4914,11 @@
     },
     "gerard-william": {
       "id": "gerard-william",
-      "name": "Gerard William",
+      "name": "Gerard Williams",
+      "aka": [
+        "Gerard Richard Williams III",
+        "Gerard William"
+      ],
       "links": [],
       "photo": "entertainment/people/gerard-william.jpg"
     },
@@ -4904,7 +5256,19 @@
     "lilian": {
       "id": "lilian",
       "name": "Lilian",
-      "links": [],
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "website",
+          "url": "https://lilian-music.bandcamp.com",
+          "label": "Website"
+        }
+      ],
       "photo": "entertainment/people/lilian.jpg"
     },
     "thai-tai": {
@@ -5193,7 +5557,13 @@
       "name": "Nhóm Múa Đa Sắc Màu",
       "links": [],
       "photo": "entertainment/orgs/nhom-mua-da-sac-mau.jpg",
-      "act": "dance-troupe"
+      "act": "dance-troupe",
+      "specialties": [
+        {
+          "slug": "dance-group",
+          "label": "Dance group"
+        }
+      ]
     },
     "xang-xu-liu-foundation": {
       "id": "xang-xu-liu-foundation",
@@ -5281,6 +5651,24 @@
       ],
       "photo": "entertainment/orgs/cinecrown.jpg"
     },
+    "skyway-band": {
+      "id": "skyway-band",
+      "name": "Skyway Band",
+      "links": [],
+      "photo": "entertainment/orgs/skyway-band.jpg"
+    },
+    "3em-entertainment": {
+      "id": "3em-entertainment",
+      "name": "3Em Entertainment",
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/3ementertainment",
+          "label": "Facebook"
+        }
+      ],
+      "photo": null
+    },
     "ustar-productions": {
       "id": "ustar-productions",
       "name": "UStar Productions",
@@ -5330,6 +5718,12 @@
       ],
       "photo": "entertainment/orgs/vu-doan-buoc-nhay.jpg",
       "act": "dance-troupe",
+      "specialties": [
+        {
+          "slug": "dance-group",
+          "label": "Dance group"
+        }
+      ],
       "members": [
         {
           "id": "minh-giang-buoc-nhay",
@@ -5363,12 +5757,6 @@
       "links": [],
       "photo": "entertainment/orgs/lucky-wav.jpg"
     },
-    "skyway-band": {
-      "id": "skyway-band",
-      "name": "Skyway Band",
-      "links": [],
-      "photo": "entertainment/orgs/skyway-band.jpg"
-    },
     "rice-bowl-restaurant": {
       "id": "rice-bowl-restaurant",
       "name": "Rice Bowl Restaurant",
@@ -5386,6 +5774,12 @@
         }
       ],
       "photo": "entertainment/orgs/cong-thanh-lynn.jpg",
+      "specialties": [
+        {
+          "slug": "que-huong",
+          "label": "Nhạc quê hương"
+        }
+      ],
       "members": [
         {
           "id": "cong-thanh",
