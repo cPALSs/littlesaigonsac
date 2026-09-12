@@ -14,6 +14,15 @@ const entertainment = existsSync(entertainmentPath)
   ? JSON.parse(readFileSync(entertainmentPath, "utf8"))
   : null;
 
+if (entertainment?.people) {
+  for (const person of Object.values(entertainment.people)) {
+    const rel = `entertainment/people/${person.id}.jpg`;
+    if (!person.photo && existsSync(join(root, "src/img", rel))) {
+      person.photo = rel;
+    }
+  }
+}
+
 const esc = (s = "") =>
   String(s)
     .replaceAll("&", "&amp;")

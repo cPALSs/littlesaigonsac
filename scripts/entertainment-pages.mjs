@@ -9,24 +9,87 @@ const APOSTROPHE = "\u2019";
 const LDQUO = "\u201C";
 const RDQUO = "\u201D";
 
+const WEEKDAY_PREFIX =
+  /^(?:Sun(?:day)?|Mon(?:day)?|Tue(?:s(?:day)?)?|Wed(?:nesday)?|Thu(?:r(?:s(?:day)?)?)?|Fri(?:day)?|Sat(?:urday)?)\.?,?\s+/i;
+
+/** Visible dates never include weekday (`Sat` / `Sunday`). Hours stay on detail. */
+export function stripWeekdayPrefix(s) {
+  return String(s ?? "").replace(WEEKDAY_PREFIX, "").trim();
+}
+
 /**
- * Poster-card caption date: weekday + calendar day only.
- * Event detail pages keep the full `display_date` (hours, doors, show).
+ * Poster-card caption date: calendar day only — no weekday, no hours.
+ * Event detail keeps hours / doors / show via `detailDisplayDate`.
  *
- * Strips `·` / `|` time tails (`6:30 PM–12:00 AM`, `doors 4:00 PM`) and
- * same-segment clock leftovers (`6 PM`, `5–10 PM`). Leaves date ranges
- * (`Aug 21–22, 2026`) intact.
+ * Strips weekday prefixes (`Sat`, `Sunday,`), `·` / `|` time tails
+ * (`6:30 PM–12:00 AM`, `doors 4:00 PM`) and same-segment clock leftovers
+ * (`6 PM`, `5–10 PM`). Leaves date ranges (`Aug 21–22, 2026`) intact.
  */
 export function cardDisplayDate(raw) {
   let s = String(raw ?? "").trim();
   if (!s) return "";
   const iso = s.match(/^(\d{4}-\d{2}-\d{2})(?:[T\s].*)?$/);
   if (iso) return iso[1];
+  s = stripWeekdayPrefix(s);
   s = s.split(/\s*[·|]\s*/)[0].trim();
   s = s.replace(/\s+(?:at\s+)?\d{1,2}(?::\d{2})?\s*[ap]\.?m\.?\b.*$/i, "");
   s = s.replace(/\s+\d{1,2}\s*[–—-]\s*\d{1,2}\s*[ap]\.?m\.?\b.*$/i, "");
   s = s.replace(/\s+(?:doors|show)\b.*$/i, "");
   return s.trim();
+}
+
+/** Event detail / meta: no weekday; keep hours, doors, show. */
+export function detailDisplayDate(raw) {
+  return stripWeekdayPrefix(raw);
+}
+
+/**
+ * Honorifics that belong on participation `role`, not the listing name.
+ * Does **not** include `DJ` (stage names such as DJ XiXi).
+ * `NS.` / `NS` = nhạc sĩ (not “nghệ sĩ”).
+ */
+const ENTERTAINMENT_TITLE_PREFIX = new RegExp(
+  [
+    "^",
+    "(?:",
+    [
+      "nsưt",
+      "nsut",
+      "nghệ sĩ",
+      "nghe si",
+      "nhạc sĩ",
+      "nhac si",
+      "ca sĩ",
+      "ca sỹ",
+      "ca sy",
+      "mc",
+      "ns\\.",
+      "ns",
+    ].join("|"),
+    ")",
+    "(?=[\\s./]|$)",
+  ].join(""),
+  "iu",
+);
+
+/**
+ * Strip Ca sĩ / MC / NS. / Nghệ sĩ / NSƯT (and compounds) from a listing name.
+ * Repeat so `Ca sĩ / MC Kevin Lê` and `NS. Đặng Lạn` become the given name.
+ *
+ * @param {string | null | undefined} name
+ */
+export function stripEntertainmentTitlePrefixes(name) {
+  let s = String(name ?? "").trim();
+  if (!s) return s;
+  for (let i = 0; i < 8; i++) {
+    const next = s
+      .replace(ENTERTAINMENT_TITLE_PREFIX, "")
+      .replace(/^[./\s]+/u, "")
+      .trim();
+    if (next === s) break;
+    s = next;
+  }
+  return s;
 }
 
 /**
@@ -142,12 +205,20 @@ const BAND_NAME_RE = /\bband\b|ban\s+nhạc/i;
  * Organizations: remaining orgs (producers, presenters, hosts, venues,
  * companies), plus the explicit allowlist below. Lucky Wav produces named
  * nights — it is a production org (with JOY, Ruby Blvd, AMV), not a
- * lineup act. Do not classify it as a performer via name-regex.
+ * lineup act. Lãng Du Entertainment is the same kind of shop (Bao 2026-09-11:
+ * Ban Nhạc Lãng Du is the company billing, not a separate house-band listing).
+ * Mrs. Vietnam NorCal Sacramento is a pageant org (court
+ * appearance), not an individual performer. Do not classify these as a
+ * performer via name-regex or lineup-only heuristics.
  *
  * Not in this export — do not re-add: CK Band, The Friend (retired SJ
  * night), San Jose Dạ Vũ.
  */
-const DIRECTORY_ORG_IDS = new Set(["lucky-wav"]);
+const DIRECTORY_ORG_IDS = new Set([
+  "lucky-wav",
+  "lang-du-entertainment",
+  "mrs-vietnam-norcal-sacramento",
+]);
 
 export function compareViName(a, b) {
   return String(a.name || "").localeCompare(String(b.name || ""), "vi", {
@@ -187,7 +258,10 @@ export function isBandOrAct(org, events = []) {
 function directoryRow(entity, type, events) {
   return {
     id: entity.id,
-    name: entity.name,
+    name:
+      type === "person"
+        ? stripEntertainmentTitlePrefixes(entity.name)
+        : entity.name,
     type,
     href:
       type === "person"
@@ -216,20 +290,35 @@ export function directorySections(people = {}, orgs = {}, events = []) {
   return { performers, organizations };
 }
 
+/**
+ * Gallery-card object-position only (2:3 object-fit cover). Event-detail
+ * posters stay the full image. Landscape venue ads need an explicit focus
+ * so `top center` does not land on title text / the panel seam.
+ */
+const POSTER_CARD_OBJECT_POSITION = {
+  // Whisper of Autumn TVC ad: 2:1, singers in the left half. 12.5% centers
+  // a 2:3 slice on that crowd (not the Thunder Valley lockup).
+  "thunder-valley-whisper-of-autumn-2026": "12.5% 50%",
+};
+
 export function entertainmentHelpers({ esc, imgEl, crumbs }) {
   const displayName = (s) => smartPunctuateName(s);
+  const listingName = (s) => smartPunctuateName(stripEntertainmentTitlePrefixes(s));
   const escName = (s) => esc(displayName(s));
+  const escListingName = (s) => esc(listingName(s));
 
   const entityName = (item, people, orgs) => {
     const href = entityHref(item, people, orgs);
-    const name = escName(item.name);
+    const name = item.type === "org" ? escName(item.name) : escListingName(item.name);
     return href ? `<a href="${esc(href)}">${name}</a>` : `<span>${name}</span>`;
   };
 
   const posterCard = (ev) => {
     const place = cardVenueLine(ev);
+    const focus = POSTER_CARD_OBJECT_POSITION[ev.id];
+    const focusAttr = focus ? ` style="--poster-focus: ${esc(focus)}"` : "";
     return `<a class="card poster" href="/entertainment/${esc(ev.id)}/">
-    <div class="card-photo">${imgEl(ev.poster, displayName(ev.label))}</div>
+    <div class="card-photo"${focusAttr}>${imgEl(ev.poster, displayName(ev.label))}</div>
     <div class="card-body">
       <h2>${escName(ev.label)}</h2>
       <p class="gloss">${esc(cardDisplayDate(ev.display_date || ev.start_date || ""))}</p>
@@ -308,7 +397,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
   };
 
   const entityHeading = (name, links, photo, kind) => {
-    const shown = displayName(name);
+    const shown = kind === "org" ? displayName(name) : listingName(name);
     const photoImg = imgEl(photo, shown);
     const copy = `<h1>${esc(shown)}</h1>
         ${socialList(links)}`;
@@ -373,18 +462,20 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
       row.type === "org"
         ? "entity-photo entity-photo--org performer-avatar"
         : "entity-photo entity-photo--person performer-avatar";
-    const photoImg = imgEl(row.photo, displayName(row.name));
+    const photoImg = imgEl(row.photo, listingName(row.name));
     return `<span class="${photoClass}">${photoImg}</span>`;
   };
 
-  const performerList = (rows, { sortable = false } = {}) => {
+  const performerList = (rows, { sortable = false, variant } = {}) => {
     if (!rows.length) return "";
+    const classes = ["performer-list"];
+    if (variant === "orgs") classes.push("performer-list--orgs");
     const attrs = sortable ? ' data-performer-grid' : "";
-    return `<ul class="performer-list"${attrs}>
+    return `<ul class="${classes.join(" ")}"${attrs}>
       ${rows
         .map(
           (row) =>
-            `<li data-name="${escName(row.name)}" data-events="${esc(String(row.eventCount ?? 0))}"><a href="${esc(row.href)}">${performerAvatar(row)}<span class="performer-name">${escName(row.name)}</span></a></li>`,
+            `<li data-name="${escListingName(row.name)}" data-events="${esc(String(row.eventCount ?? 0))}"><a href="${esc(row.href)}">${performerAvatar(row)}<span class="performer-name">${escListingName(row.name)}</span></a></li>`,
         )
         .join("")}
     </ul>`;
@@ -406,7 +497,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
       : "";
     const orgBlock = organizations.length
       ? `<h2 class="section-label band-label">Organizations</h2>
-    ${performerList(organizations, { sortable: true })}`
+    ${performerList(organizations, { sortable: true, variant: "orgs" })}`
       : "";
     return `${peopleBlock}
     ${orgBlock}`;
@@ -462,7 +553,9 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     writeRetiredRedirects,
     entityName,
     displayName,
+    listingName,
     escName,
+    escListingName,
     crumbsEnt: (trail) =>
       crumbs(
         trail
@@ -562,7 +655,7 @@ export function writeEntertainmentPages({
         title: `${h.displayName(ev.label)} · Entertainment`,
         path: `/entertainment/${ev.id}/`,
         description: [
-          ev.display_date || ev.start_date,
+          detailDisplayDate(ev.display_date || ev.start_date),
           h.displayName(cardVenueLine(ev) || place),
         ].filter(Boolean).join(" · "),
         image: ev.poster,
@@ -576,7 +669,7 @@ export function writeEntertainmentPages({
       <div class="event-layout">
         ${h.eventPoster(ev)}
         <div class="event-copy">
-          <p class="event-meta">${esc(ev.display_date || ev.start_date || "")}</p>
+          <p class="event-meta">${esc(detailDisplayDate(ev.display_date || ev.start_date || ""))}</p>
           ${place ? `<p class="event-meta">${h.escName(place)}</p>` : ""}
           ${
             ev.producers.length
@@ -604,9 +697,9 @@ export function writeEntertainmentPages({
     writeFileSync(
       join(dir, "index.html"),
       layout({
-        title: `${h.displayName(person.name)} · Entertainment`,
+        title: `${h.listingName(person.name)} · Entertainment`,
         path: `/entertainment/people/${person.id}/`,
-        description: `${h.displayName(person.name)} on Little Saigon Sactown Entertainment.`,
+        description: `${h.listingName(person.name)} on Little Saigon Sactown Entertainment.`,
         image: person.photo,
         current: "entertainment",
         body: `<main class="wrap">

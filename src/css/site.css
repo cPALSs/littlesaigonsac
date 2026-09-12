@@ -783,7 +783,7 @@ footer .wrap {
 }
 
 .card.poster .card-photo img {
-  object-position: top center;
+  object-position: var(--poster-focus, top center);
 }
 
 .event-layout {
@@ -944,17 +944,18 @@ body.is-lightbox-open {
 }
 
 .performer-list {
-  --performer-min: 10rem;
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(min(100%, max(var(--performer-min), calc(25% - 0.95rem))), 1fr)
-  );
+  /* People 2 → orgs 2; people 4 → orgs 3; people 1 → orgs 1. */
+  grid-template-columns: repeat(2, 1fr);
   column-gap: 1.25rem;
   row-gap: 0.95rem;
   margin: 0;
   padding: 1.1rem 0 2.4rem;
   list-style: none;
+}
+
+.performer-list--orgs {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .performer-list li {
@@ -1102,6 +1103,14 @@ body.is-lightbox-open {
 
   .poster-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .performer-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .performer-list--orgs {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .entity-photo {

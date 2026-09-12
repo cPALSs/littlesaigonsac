@@ -3,12 +3,14 @@
  * Local Entertainment preview. Serves dist/ on 127.0.0.1:4173, but
  * /img/entertainment/people/*.jpg is read live from src/ (crop Save
  * writes there) with Cache-Control: no-store so the browser does not
- * keep stale portraits.
+ * keep stale portraits. HTML is also no-store; missing people <img>
+ * tags are injected when the src JPEG exists (first Save, no rebuild).
  */
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { createServer } from "node:http";
 import { dirname, extname, join, normalize, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import { injectPeoplePortraits } from "./people-portraits-live.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dist = join(root, "dist");
@@ -83,11 +85,15 @@ const server = createServer((req, res) => {
     res.end("Not found");
     return;
   }
-  const data = readFileSync(abs);
+  let data = readFileSync(abs);
   const type = MIME[extname(abs).toLowerCase()] || "application/octet-stream";
+  if (type.startsWith("text/html")) {
+    data = Buffer.from(injectPeoplePortraits(data.toString("utf8"), urlPath, srcPeople), "utf8");
+  }
   res.writeHead(200, {
     "Content-Type": type,
     "Content-Length": data.length,
+    "Cache-Control": "no-store",
   });
   res.end(data);
 });
@@ -95,4 +101,5 @@ const server = createServer((req, res) => {
 server.listen(PORT, HOST, () => {
   console.log(`Preview http://${HOST}:${PORT}/ → ${dist}`);
   console.log("People JPEGs served live from src/img/entertainment/people (no-store)");
+  console.log("HTML no-store; missing people <img> injected when src JPEG exists");
 });
