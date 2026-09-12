@@ -742,8 +742,8 @@
         },
         {
           "type": "person",
-          "id": "dam-nhat-tien",
-          "name": "Đàm Nhật Tiến",
+          "id": "lam-nhat-tien",
+          "name": "Lâm Nhật Tiến",
           "role": "vocalist"
         },
         {
@@ -2161,12 +2161,6 @@
       "links": [],
       "photo": null
     },
-    "dam-nhat-tien": {
-      "id": "dam-nhat-tien",
-      "name": "Đàm Nhật Tiến",
-      "links": [],
-      "photo": null
-    },
     "diem-suong": {
       "id": "diem-suong",
       "name": "Diễm Sương",
@@ -2463,7 +2457,7 @@
       "id": "lam-nhat-tien",
       "name": "Lâm Nhật Tiến",
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/lam-nhat-tien.jpg"
     },
     "diep-thanh-thanh": {
       "id": "diep-thanh-thanh",
