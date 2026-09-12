@@ -10,6 +10,26 @@ const LDQUO = "\u201C";
 const RDQUO = "\u201D";
 
 /**
+ * Poster-card caption date: weekday + calendar day only.
+ * Event detail pages keep the full `display_date` (hours, doors, show).
+ *
+ * Strips `·` / `|` time tails (`6:30 PM–12:00 AM`, `doors 4:00 PM`) and
+ * same-segment clock leftovers (`6 PM`, `5–10 PM`). Leaves date ranges
+ * (`Aug 21–22, 2026`) intact.
+ */
+export function cardDisplayDate(raw) {
+  let s = String(raw ?? "").trim();
+  if (!s) return "";
+  const iso = s.match(/^(\d{4}-\d{2}-\d{2})(?:[T\s].*)?$/);
+  if (iso) return iso[1];
+  s = s.split(/\s*[·|]\s*/)[0].trim();
+  s = s.replace(/\s+(?:at\s+)?\d{1,2}(?::\d{2})?\s*[ap]\.?m\.?\b.*$/i, "");
+  s = s.replace(/\s+\d{1,2}\s*[–—-]\s*\d{1,2}\s*[ap]\.?m\.?\b.*$/i, "");
+  s = s.replace(/\s+(?:doors|show)\b.*$/i, "");
+  return s.trim();
+}
+
+/**
  * Display-only typographic punctuation for Entertainment names.
  * Does not rewrite graph or entertainment.json — apply before HTML escape.
  *
@@ -212,7 +232,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     <div class="card-photo">${imgEl(ev.poster, displayName(ev.label))}</div>
     <div class="card-body">
       <h2>${escName(ev.label)}</h2>
-      <p class="gloss">${esc(ev.display_date || ev.start_date || "")}</p>
+      <p class="gloss">${esc(cardDisplayDate(ev.display_date || ev.start_date || ""))}</p>
       ${place ? `<p class="gloss">${escName(place)}</p>` : ""}
     </div>
   </a>`;
