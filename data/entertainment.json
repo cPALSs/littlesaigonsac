@@ -602,12 +602,6 @@
         },
         {
           "type": "person",
-          "id": "chris",
-          "name": "Chris (C-Roc)",
-          "role": "vocalist"
-        },
-        {
-          "type": "person",
           "id": "jp-breganza",
           "name": "JP Breganza",
           "role": "vocalist"
@@ -2056,12 +2050,6 @@
     "brian-bui": {
       "id": "brian-bui",
       "name": "Brian Bui",
-      "links": [],
-      "photo": null
-    },
-    "chris": {
-      "id": "chris",
-      "name": "Chris",
       "links": [],
       "photo": null
     },
