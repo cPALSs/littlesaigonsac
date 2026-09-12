@@ -413,7 +413,8 @@ h1 {
   justify-content: center;
   align-items: stretch;
   gap: 0.95rem;
-  padding: 1.75rem;
+  /* Same inset as `.card.poster .card-body` (gloss captions). Beats `.card { padding: 0 }`. */
+  padding: 0.7rem 0.8rem 0.9rem;
   text-align: left;
   height: 100%;
   min-height: 12rem;
