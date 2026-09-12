@@ -1452,8 +1452,8 @@
         },
         {
           "type": "person",
-          "id": "hoang-liem",
-          "name": "MC Hoàng Liêm",
+          "id": "kenny-dang",
+          "name": "Kenny Dang",
           "role": "mc"
         },
         {
@@ -2531,11 +2531,22 @@
       "links": [],
       "photo": "entertainment/people/khoa-do.jpg"
     },
-    "hoang-liem": {
-      "id": "hoang-liem",
-      "name": "Hoàng Liêm",
-      "links": [],
-      "photo": "entertainment/people/hoang-liem.jpg"
+    "kenny-dang": {
+      "id": "kenny-dang",
+      "name": "Kenny Dang",
+      "aka": [
+        "Hoàng Liêm",
+        "Hoàng Liem",
+        "Hoang Liem"
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/kenny.dang.31",
+          "label": "Facebook"
+        }
+      ],
+      "photo": "entertainment/people/kenny-dang.jpg"
     },
     "diem-lien": {
       "id": "diem-lien",
