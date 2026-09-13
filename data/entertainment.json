@@ -2787,6 +2787,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/@ngothainganofficial",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/0D3usP658LbeS2bS4jxkab",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/ngo-thai-ngan.jpg"
@@ -2872,7 +2877,23 @@
       "aka": [
         "Lan Anh"
       ],
-      "links": [],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/lananh.tieu.106",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/lananh.tieu.106",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@LanAnhTieu-tv6jx",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/lan-anh-tieu.jpg"
     },
     "kenny-dang": {
@@ -2935,7 +2956,28 @@
           "label": "Nhạc trẻ"
         }
       ],
-      "links": [],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/nhuy__official",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/nhu.y.entertainment.85",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@nhuyentertainment22",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/10MEOxTLCmEMQKOLkrVSjU",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/nhu-y.jpg"
     },
     "tuan-hung": {
@@ -3268,9 +3310,24 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/phungngochuysinger",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/huyngocphung",
+          "label": "Facebook"
+        },
+        {
           "kind": "youtube",
           "url": "https://youtube.com/c/PhungNgocHuyOFFICIAL",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/6zb5wPGfIJxrQoQ63bZ0h6",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/phung-ngoc-huy.jpg"
@@ -3347,7 +3404,28 @@
           "label": "Emcee"
         }
       ],
-      "links": [],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/oscartnguyen",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/oscar.t.nguyen",
+          "label": "Facebook"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/p/mc-oscar-thu%e1%ba%adn-nguy%e1%bb%85n-61555464610941",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/user/onguyen0715",
+          "label": "YouTube"
+        }
+      ],
       "photo": "entertainment/people/oscar-thuan-nguyen.jpg"
     },
     "dan-nguyen": {
@@ -3393,6 +3471,11 @@
         }
       ],
       "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/casiquangle",
+          "label": "Instagram"
+        },
         {
           "kind": "facebook",
           "url": "https://facebook.com/quanglehouse",
@@ -3457,6 +3540,16 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/lamnhattienofficial",
+          "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCAsxxQQ3jVAI-HMoYlWru_A",
+          "label": "YouTube"
+        },
+        {
           "kind": "spotify",
           "url": "https://open.spotify.com/artist/02rLqQfWp5cmZYBShP1Fu5",
           "label": "Spotify"
@@ -3496,9 +3589,24 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/lyndatrangdaile",
+          "label": "Instagram"
+        },
+        {
           "kind": "facebook",
           "url": "https://facebook.com/lyndatrangdai.le",
           "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCpSAxFPQ48vrWvofrIHkXRg",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/1iLikyUe321HTUrik5GKw4",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/linda-trang-dai.jpg"
@@ -3588,7 +3696,18 @@
           "label": "Nhạc trẻ"
         }
       ],
-      "links": [],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/hoangthuyvy_singer",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/hoangthuyvysinger",
+          "label": "Facebook"
+        }
+      ],
       "photo": "entertainment/people/hoang-thuy-vi.jpg"
     },
     "tony-hoi": {
@@ -3614,6 +3733,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/@tonyhoiofficialchannel5223",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/2uq2WRPGmYWAdOyi5gBKrF",
+          "label": "Spotify"
         },
         {
           "kind": "soundcloud",
@@ -3710,6 +3834,11 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/hathanhxuan_singer",
+          "label": "Instagram"
+        },
+        {
           "kind": "facebook",
           "url": "https://facebook.com/hathanhxuanofficial",
           "label": "Facebook"
@@ -3718,6 +3847,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/channel/UCZuoBO6nCrz2p-KevD080qg",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/5dJC6sFNciDahBR0AeaGvH",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/ha-thanh-xuan.jpg"
@@ -3733,9 +3867,19 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/officialtrizziept",
+          "label": "Instagram"
+        },
+        {
           "kind": "facebook",
           "url": "https://facebook.com/trizziephuongtrinh",
           "label": "Facebook"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/5ryF6NaxKWTUnAt4cuBax8",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/trizzie-phuong-trinh.jpg"
@@ -3760,6 +3904,11 @@
           "kind": "facebook",
           "url": "https://facebook.com/thienson.singer",
           "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@THI%C3%8ANS%C6%A0NPRODUCTION",
+          "label": "YouTube"
         }
       ],
       "photo": "entertainment/people/thien-son.jpg"
@@ -3850,6 +3999,11 @@
           "kind": "facebook",
           "url": "https://facebook.com/nguyenhungsinger",
           "label": "Facebook"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/0XMJw73nkvTjWdWBrbIoc1",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/nguyen-hung.jpg"
@@ -3972,6 +4126,11 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/khacvietmusic",
+          "label": "Instagram"
+        },
+        {
           "kind": "facebook",
           "url": "https://facebook.com/khacvietsinger",
           "label": "Facebook"
@@ -4008,6 +4167,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/c/HongNgocOfficial",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/0gbeh1a6jor3A3vyJFVJxm",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/hong-ngoc.jpg"
@@ -4089,6 +4253,11 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/noophuocthinh88",
+          "label": "Instagram"
+        },
+        {
           "kind": "facebook",
           "url": "https://facebook.com/phuocthinh.noo",
           "label": "Facebook"
@@ -4150,6 +4319,11 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/dantruongofficial",
+          "label": "Instagram"
+        },
+        {
           "kind": "facebook",
           "url": "https://facebook.com/dantruongofficial",
           "label": "Facebook"
@@ -4176,7 +4350,23 @@
           "label": "Nhạc trẻ"
         }
       ],
-      "links": [],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/angelhantran",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/han.tran.18488169",
+          "label": "Facebook"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/3vPhrsNhUqJghOaZXsQmG1",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/angel-gia-han.jpg"
     },
     "nguyen-hong-nhung": {
@@ -4190,9 +4380,19 @@
       ],
       "links": [
         {
+          "kind": "facebook",
+          "url": "https://facebook.com/casinguyenhongnhung",
+          "label": "Facebook"
+        },
+        {
           "kind": "youtube",
           "url": "https://youtube.com/c/nguyenhongnhungofficial",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/6E2yG0gZpABtPZcZwqHkgq",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/nguyen-hong-nhung.jpg"
@@ -4282,6 +4482,16 @@
           "label": "Instagram"
         },
         {
+          "kind": "youtube",
+          "url": "https://youtube.com/@TheOfficialAaronLe",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/0ntvO9hzmTYoy1vNz4DduX",
+          "label": "Spotify"
+        },
+        {
           "kind": "linktree",
           "url": "https://linktr.ee/theofficialaaronle",
           "label": "linktr.ee"
@@ -4331,6 +4541,21 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/bb.dan.tranh",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/bb.dan.tranh",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UC5gcSxxdoOkwxdD1Vxu39Jw",
+          "label": "YouTube"
+        },
+        {
           "kind": "spotify",
           "url": "https://open.spotify.com/artist/7KDxyIyIRWwHev9K9One5W",
           "label": "Spotify"
@@ -4357,6 +4582,11 @@
           "kind": "instagram",
           "url": "https://instagram.com/jpbreganza",
           "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@jpbreganza",
+          "label": "YouTube"
         }
       ],
       "photo": "entertainment/people/jp-breganza.jpg"
@@ -4407,6 +4637,11 @@
           "kind": "instagram",
           "url": "https://instagram.com/onbar_",
           "label": "Instagram"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/2uPom6arRYTECGqqgOKrya",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/troy.jpg"
@@ -4425,6 +4660,11 @@
           "kind": "instagram",
           "url": "https://instagram.com/airebebe",
           "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/vincentairemusic",
+          "label": "Facebook"
         },
         {
           "kind": "youtube",
@@ -4514,6 +4754,11 @@
           "kind": "facebook",
           "url": "https://facebook.com/namcasitranthaihoa",
           "label": "Facebook"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/5jAkbuyAcJlFqLH4z88ukv",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/tran-thai-hoa.jpg"
@@ -4528,6 +4773,11 @@
         }
       ],
       "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/hohoangyen",
+          "label": "Instagram"
+        },
         {
           "kind": "youtube",
           "url": "https://youtube.com/@hohoangyenmusic",
@@ -4562,9 +4812,19 @@
       ],
       "links": [
         {
+          "kind": "facebook",
+          "url": "https://facebook.com/sydan.nguyen.77",
+          "label": "Facebook"
+        },
+        {
           "kind": "youtube",
           "url": "https://youtube.com/@sydanmusicsoul5397",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/52ETDwwck1SGLYXBRhMST1",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/sy-dan.jpg"
@@ -4579,6 +4839,16 @@
         }
       ],
       "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/ylan.le.5",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@YLanOfficial",
+          "label": "YouTube"
+        },
         {
           "kind": "spotify",
           "url": "https://open.spotify.com/artist/3NOy4VouufNkUdcPh7ouDv",
@@ -4601,6 +4871,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/channel/UCrwm1utmmmt94HiBa4OwrLw",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/6nZLN4BFDgyIVX2xAUruED",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/thanh-tuyen.jpg"
@@ -4668,6 +4943,11 @@
       ],
       "links": [
         {
+          "kind": "facebook",
+          "url": "https://facebook.com/diemsuongofficial",
+          "label": "Facebook"
+        },
+        {
           "kind": "spotify",
           "url": "https://open.spotify.com/artist/1oXWd6Xc84KEx95VsXYAFM",
           "label": "Spotify"
@@ -4685,6 +4965,16 @@
         }
       ],
       "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/trinhlammusic",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@TrinhLamMusic",
+          "label": "YouTube"
+        },
         {
           "kind": "spotify",
           "url": "https://open.spotify.com/artist/1946SXMtprXuDRbjV3TXDh",
@@ -4704,14 +4994,29 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/truclinhluv",
+          "label": "Instagram"
+        },
+        {
           "kind": "facebook",
           "url": "https://facebook.com/truclamtruclinhofficial",
+          "label": "Facebook"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/truclinhluv",
           "label": "Facebook"
         },
         {
           "kind": "youtube",
           "url": "https://youtube.com/@truclamtruclinhofficial",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/1k1Xo1kQunprVrmRbAyVF8",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/truc-linh.jpg"
@@ -4728,6 +5033,11 @@
       "links": [
         {
           "kind": "facebook",
+          "url": "https://facebook.com/truclam.nguyen.5",
+          "label": "Facebook"
+        },
+        {
+          "kind": "facebook",
           "url": "https://facebook.com/truclamtruclinhofficial",
           "label": "Facebook"
         },
@@ -4735,6 +5045,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/@truclamtruclinhofficial",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/0PGnyFPRM8aotftcPHxEKv",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/truc-lam.jpg"
@@ -4765,7 +5080,13 @@
     "lieu-kieu": {
       "id": "lieu-kieu",
       "name": "Liễu Kiều",
-      "links": [],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/lieukieu.singer",
+          "label": "Facebook"
+        }
+      ],
       "photo": "entertainment/people/lieu-kieu.jpg"
     },
     "dj-kixi": {
@@ -4859,6 +5180,11 @@
         }
       ],
       "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/tieu_chau_nhu_quynh",
+          "label": "Instagram"
+        },
         {
           "kind": "facebook",
           "url": "https://facebook.com/tieuchaunhuquynhofficial",
@@ -4977,7 +5303,13 @@
           "label": "Nhạc quê hương"
         }
       ],
-      "links": [],
+      "links": [
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/3JwyehW3Ls8vt8GSons5eA",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/quang-linh.jpg"
     },
     "phan-dinh-tung": {
@@ -5019,6 +5351,11 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/maitiendung1069",
+          "label": "Instagram"
+        },
+        {
           "kind": "facebook",
           "url": "https://facebook.com/maitiendung",
           "label": "Facebook"
@@ -5027,6 +5364,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/@maitiendungofficial",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/4WBjLLe7H2Rqha7SSA0rLY",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/mai-tien-dung.jpg"
@@ -5048,6 +5390,11 @@
         }
       ],
       "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/hunglehungchicago",
+          "label": "Instagram"
+        },
         {
           "kind": "facebook",
           "url": "https://facebook.com/pagehunglehung",
@@ -5074,6 +5421,21 @@
         }
       ],
       "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/khangvietofficial",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/khangvietofficial",
+          "label": "Facebook"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/khangvietsinger",
+          "label": "Facebook"
+        },
         {
           "kind": "youtube",
           "url": "https://youtube.com/@khangvietofficial",
@@ -5184,6 +5546,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/channel/UCpgXU9tYIuE9H5fg5GbmYaw",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/42P3KEpCeWlu9H8r5HH8f0",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/cat-tuyen.jpg"
@@ -5198,6 +5565,11 @@
         }
       ],
       "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/dankimsinger",
+          "label": "Instagram"
+        },
         {
           "kind": "facebook",
           "url": "https://facebook.com/profile.php?id=100007984267038",
@@ -5225,6 +5597,11 @@
           "kind": "youtube",
           "url": "https://youtube.com/channel/UCshheR_CHm1jCZYJ4TEt7ww",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/6aZes7BZyrf2ncwAmdqm7N",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/thoai-my.jpg"
@@ -5240,9 +5617,19 @@
       ],
       "links": [
         {
+          "kind": "facebook",
+          "url": "https://facebook.com/kimtieulongofficial",
+          "label": "Facebook"
+        },
+        {
           "kind": "youtube",
           "url": "https://youtube.com/channel/UCjL8CIXfl7Hhd-U07_GREKw",
           "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/3W1DoL6UPxcw3ORz2qn120",
+          "label": "Spotify"
         }
       ],
       "photo": "entertainment/people/kim-tieu-long.jpg"
@@ -5291,6 +5678,11 @@
         }
       ],
       "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/chuthuyquynh.2197",
+          "label": "Instagram"
+        },
         {
           "kind": "tiktok",
           "url": "https://tiktok.com/@quynhtron0997",
@@ -5384,7 +5776,18 @@
           "label": "Bolero · nhạc vàng"
         }
       ],
-      "links": [],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/trongbac.cs",
+          "label": "Facebook"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/5JnaG99dkPrURjbTqn2D0Q",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/trong-bac.jpg"
     },
     "luong-tung-quang": {
@@ -5401,6 +5804,11 @@
         }
       ],
       "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/luongtungquang_casi",
+          "label": "Instagram"
+        },
         {
           "kind": "facebook",
           "url": "https://facebook.com/luongtungquang07",
@@ -5453,6 +5861,11 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/officialbangkieu",
+          "label": "Instagram"
+        },
+        {
           "kind": "facebook",
           "url": "https://facebook.com/bangkieu",
           "label": "Facebook"
@@ -5480,6 +5893,16 @@
         }
       ],
       "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/lamanh_lala",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/lamanhfcofficial",
+          "label": "Facebook"
+        },
         {
           "kind": "spotify",
           "url": "https://open.spotify.com/artist/5trMq1OIockzQVpFicyrpn",
@@ -5515,7 +5938,23 @@
           "label": "Nhạc quê hương"
         }
       ],
-      "links": [],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/chaungochasinger",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/cnh1111",
+          "label": "Facebook"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/4oFMIlXAVelFtZxOEnc9EX",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/chau-ngoc-ha.jpg"
     },
     "philip-huy": {
@@ -5527,7 +5966,23 @@
           "label": "Nhạc trẻ"
         }
       ],
-      "links": [],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/philiphuymusic",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/philip.huy.71",
+          "label": "Facebook"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/3YTT7P7kI5LqgX1EGjps1A",
+          "label": "Spotify"
+        }
+      ],
       "photo": "entertainment/people/philip-huy.jpg"
     },
     "lan-tran-mc": {
@@ -5617,6 +6072,16 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/thaitaistudio",
+          "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCDMqd03DRtcRcKCZgV-L39Q",
+          "label": "YouTube"
+        },
+        {
           "kind": "spotify",
           "url": "https://open.spotify.com/artist/7qayHJbnaBSkPau2offKtM",
           "label": "Spotify"
@@ -5635,9 +6100,19 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/duongtrieuvu",
+          "label": "Instagram"
+        },
+        {
           "kind": "facebook",
           "url": "https://facebook.com/duongtrieuvupage",
           "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@DuongTrieuVu.Official",
+          "label": "YouTube"
         },
         {
           "kind": "spotify",
@@ -5685,7 +6160,18 @@
     "krystal-mai": {
       "id": "krystal-mai",
       "name": "Krystal Mai",
-      "links": [],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/krystalmaii",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/myni.mai",
+          "label": "Facebook"
+        }
+      ],
       "photo": "entertainment/people/krystal-mai.jpg"
     },
     "hang-vy": {
@@ -5780,6 +6266,16 @@
       ],
       "links": [
         {
+          "kind": "instagram",
+          "url": "https://instagram.com/diemliendinh",
+          "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/c/DIEMLIENOFFICIALYOUTUBECHANNEL",
+          "label": "YouTube"
+        },
+        {
           "kind": "spotify",
           "url": "https://open.spotify.com/artist/0FwaMSL78dR3680RU5kU2j",
           "label": "Spotify"
@@ -5790,7 +6286,13 @@
     "luu-gia-bao": {
       "id": "luu-gia-bao",
       "name": "Lưu Gia Bảo",
-      "links": [],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/luugiabao82",
+          "label": "Facebook"
+        }
+      ],
       "photo": "entertainment/people/luu-gia-bao.jpg"
     },
     "marilyn-countdown": {
