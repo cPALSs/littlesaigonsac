@@ -203,13 +203,26 @@ function onPerformersPage() {
   return /^\/entertainment\/performers\/?$/.test(location.pathname);
 }
 
-const genreSelect = document.querySelector("[data-performer-genre]");
-const sortSelect = document.querySelector("[data-performer-sort]");
+const genreGroup = document.querySelector("[data-performer-genre]");
+const sortGroup = document.querySelector("[data-performer-sort]");
+const resetBtn = document.querySelector("[data-performer-reset]");
 const grids = document.querySelectorAll("[data-performer-grid]");
 
+function radioValue(name, fallback = "") {
+  const checked = document.querySelector(`input[name="${name}"]:checked`);
+  return checked ? checked.value : fallback;
+}
+
+function setRadio(name, value) {
+  const match =
+    document.querySelector(`input[name="${name}"][value="${CSS.escape(value)}"]`) ||
+    document.querySelector(`input[name="${name}"][value=""]`);
+  if (match) match.checked = true;
+}
+
 function apply({ writeUrl = true } = {}) {
-  const genre = genreSelect?.value || "";
-  const mode = sortSelect?.value || "alpha";
+  const genre = radioValue("performer-genre");
+  const mode = readSort(radioValue("performer-sort", "alpha"));
   for (const section of document.querySelectorAll("[data-performer-section]")) {
     for (const el of sectionItems(section)) {
       el.hidden = !rowMatchesGenre(el, genre);
@@ -219,15 +232,27 @@ function apply({ writeUrl = true } = {}) {
     section.hidden = !hasVisibleItem(sectionItems(section));
   }
   if (writeUrl) syncUrl(genre, mode);
+  window.lssSetDrawerActive?.("performer-filter", Boolean(genre) || mode !== "alpha");
 }
 
-if ((genreSelect || sortSelect) && grids.length) {
-  const initial = readParams();
-  if (genreSelect) genreSelect.value = initial.genre;
-  if (sortSelect) sortSelect.value = initial.sort;
+function resetFilters() {
+  setRadio("performer-genre", "");
+  setRadio("performer-sort", "alpha");
   apply();
-  genreSelect?.addEventListener("change", () => apply());
-  sortSelect?.addEventListener("change", () => apply());
+}
+
+if ((genreGroup || sortGroup) && grids.length) {
+  const initial = readParams();
+  setRadio("performer-genre", initial.genre);
+  setRadio("performer-sort", initial.sort);
+  apply();
+  genreGroup?.addEventListener("change", () => apply());
+  sortGroup?.addEventListener("change", () => apply());
+  resetBtn?.addEventListener("click", (event) => {
+    event.preventDefault();
+    resetFilters();
+  });
+  if (initial.genre) window.lssOpenDrawer?.("performer-filter");
 }
 
 if (onPerformersPage()) {
@@ -244,7 +269,8 @@ if (onPerformersPage()) {
     event.preventDefault();
     const raw = dest.searchParams.get("genre") || "";
     const genre = isFilterGenre(raw) ? raw : "";
-    if (genreSelect) genreSelect.value = genre;
+    setRadio("performer-genre", genre);
     apply();
+    if (genre) window.lssOpenDrawer?.("performer-filter");
   });
 }

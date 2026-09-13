@@ -126,7 +126,7 @@ export const SPECIALTY_LABEL = {
   "dance-group": "Dance group",
 };
 
-/** Known genre slugs in dropdown order: public label, `vi` locale. No `local`. */
+/** Known genre slugs in radio order: public label, `vi` locale. No `local`. */
 export function compareSpecialtyLabels(a, b) {
   return String(a).localeCompare(String(b), "vi", { sensitivity: "base" });
 }
@@ -418,11 +418,31 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     return href ? `<a href="${esc(href)}">${name}</a>` : `<span>${name}</span>`;
   };
 
-  const posterCard = (ev) => {
+  const posterGeoAttrs = (ev) => {
+    const attrs = [];
+    if (ev.place_id) attrs.push(`data-place-id="${esc(ev.place_id)}"`);
+    if (ev.place_name) attrs.push(`data-place-name="${esc(ev.place_name)}"`);
+    if (ev.google_place_id) attrs.push(`data-google-place-id="${esc(ev.google_place_id)}"`);
+    if (ev.google_place_id) attrs.push(`data-google-place-id="${esc(ev.google_place_id)}"`);
+    if (ev.place_address) attrs.push(`data-place-address="${esc(ev.place_address)}"`);
+    const latRaw = ev.lat;
+    const lngRaw = ev.lng;
+    if (latRaw == null || lngRaw == null) return attrs.length ? ` ${attrs.join(" ")}` : "";
+    const lat = Number(latRaw);
+    const lng = Number(lngRaw);
+    if (!Number.isFinite(lat) || !Number.isFinite(lng) || (lat === 0 && lng === 0)) {
+      return attrs.length ? ` ${attrs.join(" ")}` : "";
+    }
+    attrs.push(`data-lat="${esc(String(lat))}" data-lng="${esc(String(lng))}"`);
+    return attrs.length ? ` ${attrs.join(" ")}` : "";
+  };
+
+  const posterCard = (ev, opts = {}) => {
     const place = cardVenueLine(ev);
     const focus = POSTER_CARD_OBJECT_POSITION[ev.id];
     const focusAttr = focus ? ` style="--poster-focus: ${esc(focus)}"` : "";
-    return `<a class="card poster" href="/entertainment/${esc(ev.id)}/">
+    const whenAttr = opts.when ? ` data-when="${esc(opts.when)}"` : "";
+    return `<a class="card poster" href="/entertainment/${esc(ev.id)}/"${posterGeoAttrs(ev)}${whenAttr}>
     <div class="card-photo"${focusAttr}>${imgEl(ev.poster, displayName(ev.label))}</div>
     <div class="card-body">
       <h2>${escName(ev.label)}</h2>
@@ -614,10 +634,13 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
       ${posterGrid(list)}`;
   };
 
-  const labeledPosterGrid = (title, cardsHtml) => {
+  const labeledPosterGrid = (title, cardsHtml, when) => {
     if (!cardsHtml.length) return "";
-    return `<h2 class="section-label band-label">${esc(title)}</h2>
-      <div class="poster-grid">${cardsHtml.join("")}</div>`;
+    const whenAttr = when ? ` data-when="${esc(when)}"` : "";
+    return `<section class="show-band" data-map-section${whenAttr}>
+      <h2 class="section-label band-label">${esc(title)}</h2>
+      <div class="poster-grid">${cardsHtml.join("")}</div>
+    </section>`;
   };
 
   /**
@@ -627,13 +650,13 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
    */
   const galleryShowSections = (upcoming, past) => {
     const invite = unlistedEventsInviteCard();
-    const upcomingCards = upcoming.map(posterCard);
-    const pastCards = past.map(posterCard);
+    const upcomingCards = upcoming.map((ev) => posterCard(ev, { when: "upcoming" }));
+    const pastCards = past.map((ev) => posterCard(ev, { when: "past" }));
     if (upcomingCards.length) {
-      return `${labeledPosterGrid("Upcoming", [...upcomingCards, invite])}
-    ${labeledPosterGrid("Past", pastCards)}`;
+      return `${labeledPosterGrid("Upcoming", [...upcomingCards, invite], "upcoming")}
+    ${labeledPosterGrid("Past", pastCards, "past")}`;
     }
-    return labeledPosterGrid("Past", [invite, ...pastCards]);
+    return labeledPosterGrid("Past", [invite, ...pastCards], "past");
   };
 
   const entertainmentTabs = (active) => {
@@ -702,28 +725,41 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     <div class="performer-years" data-performer-years hidden></div>`;
   };
 
+  const performerRadio = (name, value, label, checked = false) =>
+    `<label class="performer-radio">
+        <input type="radio" name="${esc(name)}" value="${esc(value)}"${checked ? " checked" : ""}>
+        <span>${esc(label)}</span>
+      </label>`;
+
   const performerGenreOptions = () =>
     [
-      `<option value="">All</option>`,
-      ...PERFORMER_GENRE_SLUGS.map(
-        (slug) => `<option value="${esc(slug)}">${esc(SPECIALTY_LABEL[slug])}</option>`,
+      performerRadio("performer-genre", "", "All", true),
+      ...PERFORMER_GENRE_SLUGS.map((slug) =>
+        performerRadio("performer-genre", slug, SPECIALTY_LABEL[slug]),
       ),
-      `<option value="${esc(PERFORMER_GENRE_UNKNOWN)}">Unknown</option>`,
+      performerRadio("performer-genre", PERFORMER_GENRE_UNKNOWN, "Unknown"),
     ].join("");
 
   const performerSortBar = () => `<div class="performer-toolbar">
-      <label class="performer-genre" for="performer-genre">Genre
-        <select id="performer-genre" data-performer-genre>
-          ${performerGenreOptions()}
-        </select>
-      </label>
-      <label class="performer-sort" for="performer-sort">Sort
-        <select id="performer-sort" data-performer-sort>
-          <option value="alpha">Alphabetical</option>
-          <option value="appearances">Most appearances</option>
-          <option value="last">Last appearance</option>
-        </select>
-      </label>
+      <div class="performer-filter-cols">
+        <a href="/entertainment/performers/" class="performer-reset" data-performer-reset>Reset</a>
+        <div class="performer-filter-flow">
+          <fieldset class="performer-sort" data-performer-sort>
+            <legend>Sort</legend>
+            <div class="performer-sort-options">
+              ${performerRadio("performer-sort", "alpha", "Alphabetical", true)}
+              ${performerRadio("performer-sort", "appearances", "Most appearances")}
+              ${performerRadio("performer-sort", "last", "Last appearance")}
+            </div>
+          </fieldset>
+          <fieldset class="performer-genre" data-performer-genre>
+            <legend>Genre</legend>
+            <div class="performer-genre-options">
+              ${performerGenreOptions()}
+            </div>
+          </fieldset>
+        </div>
+      </div>
     </div>`;
 
   const performerDirectory = (performers, organizations) => {
@@ -738,13 +774,38 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     ${performerList(organizations, { sortable: true, variant: "orgs" })}
     </section>`
       : "";
-    return `${performers.length || organizations.length ? performerSortBar() : ""}
-    ${peopleBlock}
+    return `${peopleBlock}
     ${orgBlock}`;
   };
 
+  const MAP_FAB_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21s6.5-5.2 6.5-10.4A6.5 6.5 0 0 0 5.5 10.6C5.5 15.8 12 21 12 21z"/>
+      <circle cx="12" cy="10.4" r="2.2" fill="currentColor"/>
+    </svg>`;
+  const FILTER_FAB_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h16M7 12h10M10 17h4"/>
+    </svg>`;
+  const DRAWER_TAB_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 9l6 6 6-6"/>
+    </svg>`;
+
+  const filterFab = (id, { label, icon }) =>
+    `<button type="button" class="filter-fab" data-drawer-open="${esc(id)}" aria-expanded="false" aria-controls="${esc(id)}" aria-label="${esc(label)}">
+    ${icon}
+    <span class="filter-fab-badge" aria-hidden="true"></span>
+  </button>`;
+
+  const filterDrawer = (id, { tabLabel, body }) =>
+    `<div class="filter-drawer-overlay" data-drawer-overlay hidden></div>
+    <aside class="filter-drawer" id="${esc(id)}" role="dialog" aria-modal="true" aria-hidden="true" aria-label="${esc(tabLabel)}">
+      <button type="button" class="filter-drawer-tab" data-drawer-close aria-label="${esc(tabLabel)}">
+        ${DRAWER_TAB_SVG}
+      </button>
+      <div class="filter-drawer-body">${body}</div>
+    </aside>`;
+
   const unlistedEventsInviteCard = () =>
-    `<article class="card poster invite-card">
+    `<article class="card poster invite-card" data-map-keep>
     <p class="invite-card-prompt">Know a show we missed?</p>
     <p class="invite-card-copy">Post it in<br>
     <a href="${esc(UNLISTED_EVENTS_FB_URL)}" rel="noopener noreferrer" target="_blank">${esc(UNLISTED_EVENTS_FB_NAME)}</a><br>
@@ -764,6 +825,11 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     entertainmentTabs,
     performerList,
     performerDirectory,
+    performerSortBar,
+    filterFab,
+    filterDrawer,
+    MAP_FAB_SVG,
+    FILTER_FAB_SVG,
     unlistedEventsInviteCard,
     galleryShowSections,
     entityName,
@@ -827,7 +893,16 @@ export function writeEntertainmentPages({
   const galleryBody = `<main class="wrap">
     ${entertainmentPageHead("events")}
     ${h.galleryShowSections(upcoming, past)}
-  </main>`;
+  </main>
+  ${h.filterFab("map-filter", { label: "Map filter", icon: h.MAP_FAB_SVG })}
+  ${h.filterDrawer("map-filter", {
+    tabLabel: "Close map",
+    body: `<div class="ent-map" data-ent-map></div>
+      <p class="ent-map-msg" data-ent-map-msg hidden></p>`,
+  })}
+  <script src="/js/maps-config.js" defer></script>
+  <script src="/js/filter-drawer.js" defer></script>
+  <script src="/js/entertainment-map.js" defer></script>`;
   const galleryPage = (path) =>
     layout({
       title: `Entertainment · ${siteName}`,
@@ -855,6 +930,12 @@ export function writeEntertainmentPages({
     ${entertainmentPageHead("performers", [{ href: "/entertainment/", label: "Entertainment" }])}
     ${h.performerDirectory(performers, organizations)}
   </main>
+  ${h.filterFab("performer-filter", { label: "Filter performers", icon: h.FILTER_FAB_SVG })}
+  ${h.filterDrawer("performer-filter", {
+    tabLabel: "Close filters",
+    body: h.performerSortBar(),
+  })}
+  <script src="/js/filter-drawer.js" defer></script>
   <script src="/js/performer-sort.js" defer></script>`,
     }),
   );

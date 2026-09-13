@@ -1,7 +1,7 @@
 {
-  "exported_at": "2026-09-12",
+  "exported_at": "2026-09-13",
   "timezone": "America/Los_Angeles",
-  "as_of_pt": "2026-09-12",
+  "as_of_pt": "2026-09-13",
   "events": [
     {
       "id": "thunder-valley-whisper-of-autumn-2026",
@@ -12,6 +12,11 @@
       "city": "Lincoln",
       "venue": "The Venue at Thunder Valley, 1200 Athens Ave.",
       "place_name": "Thunder Valley Casino Resort",
+      "place_id": "thunder-valley-casino-resort",
+      "google_place_id": null,
+      "place_address": "1200 Athens Ave, Lincoln, CA 95648",
+      "lat": 38.8403664,
+      "lng": -121.3137366,
       "status": "confirmed",
       "poster": "entertainment/thunder-valley-whisper-of-autumn-2026.jpg",
       "producers": [
@@ -64,6 +69,11 @@
       "city": "Sacramento",
       "venue": "Best Kitchen Karaoke & Bar, 7121 Governors Cir",
       "place_name": "Best Kitchen Karaoke & Bar",
+      "place_id": "eb-venue-297966345",
+      "google_place_id": "ChIJQXTNffTPmoAROwNrQBm9-5k",
+      "place_address": "7121 Governors Circle, Sacramento, CA 95823",
+      "lat": 38.4966897,
+      "lng": -121.4491803,
       "status": "confirmed",
       "poster": "entertainment/best-kitchen-pre-halloween-party-2026.jpg",
       "producers": [
@@ -122,6 +132,11 @@
       "city": "Reno",
       "venue": "Grand Exposition Hall, Silver Legacy, 407 N. Virginia Street",
       "place_name": "Silver Legacy Reno",
+      "place_id": "silver-legacy-reno",
+      "google_place_id": null,
+      "place_address": "407 N Virginia St, Reno, NV 89501",
+      "lat": 39.5303728,
+      "lng": -119.8157743,
       "status": "confirmed",
       "poster": "entertainment/dem-huyen-thoai-silver-legacy-2026.jpg",
       "producers": [
@@ -192,6 +207,11 @@
       "city": "Sacramento",
       "venue": "Asian Pearl Restaurant, 6821 Stockton Blvd #165",
       "place_name": "Asian Pearl Restaurant",
+      "place_id": "asian-pearl-restaurant",
+      "google_place_id": "ChIJJ6_75m7FmoARJyQewepBG8E",
+      "place_address": "6821 Stockton Blvd #165, Sacramento, CA 95823",
+      "lat": 38.522,
+      "lng": -121.435,
       "status": "confirmed",
       "poster": "entertainment/xang-xu-liu-gio-to-san-khau-2026.jpg",
       "producers": [
@@ -292,6 +312,11 @@
       "city": "Sacramento",
       "venue": "A&A Tasty Restaurant, 6601 Florin Road",
       "place_name": "A&A Tasty Restaurant",
+      "place_id": "aa-tasty-restaurant",
+      "google_place_id": "ChIJZZLjhnPFmoAR73GXgj2-Zgk",
+      "place_address": "6601 Florin Rd, Sacramento, CA 95823",
+      "lat": 38.4962,
+      "lng": -121.4345,
       "status": "planned",
       "poster": "entertainment/trina-giai-dieu-mua-thu-2026.jpg",
       "producers": [
@@ -380,6 +405,11 @@
       "city": "Placerville",
       "venue": "Red Hawk Resort + Casino, 1 Red Hawk Parkway",
       "place_name": "Red Hawk Resort + Casino",
+      "place_id": "red-hawk-resort-casino",
+      "google_place_id": "ChIJR2DfLA74moARnnokC0EQ-Ao",
+      "place_address": "1 Red Hawk Parkway, Placerville, CA 95667",
+      "lat": 38.693333,
+      "lng": -120.904722,
       "status": "confirmed",
       "poster": "entertainment/amv-autumn-harmony-red-hawk-2026.jpg",
       "producers": [
@@ -480,6 +510,11 @@
       "city": "Sacramento",
       "venue": "A&A Tasty Restaurant, 6601 Florin Road",
       "place_name": "A&A Tasty Restaurant",
+      "place_id": "aa-tasty-restaurant",
+      "google_place_id": "ChIJZZLjhnPFmoAR73GXgj2-Zgk",
+      "place_address": "6601 Florin Rd, Sacramento, CA 95823",
+      "lat": 38.4962,
+      "lng": -121.4345,
       "status": "planned",
       "poster": "entertainment/huy-tran-mua-thu-yeu-thuong-2026.jpg",
       "producers": [
@@ -538,6 +573,11 @@
       "city": "Sacramento",
       "venue": "8181 Florin Rd",
       "place_name": "Vietnamese Martyrs Parish",
+      "place_id": "vietnamese-martyrs-parish",
+      "google_place_id": "ChIJeaKlHwDFmoARmRC2qSVuQuE",
+      "place_address": "8181 Florin Rd, Sacramento, CA 95828",
+      "lat": 38.4965,
+      "lng": -121.411,
       "status": "held",
       "poster": "entertainment/vnmp-he-ruc-sang-2026.jpg",
       "producers": [
@@ -620,6 +660,11 @@
       "city": "Sacramento",
       "venue": "A&A Tasty Restaurant, 6601 Florin Road",
       "place_name": "A&A Tasty Restaurant",
+      "place_id": "aa-tasty-restaurant",
+      "google_place_id": "ChIJZZLjhnPFmoAR73GXgj2-Zgk",
+      "place_address": "6601 Florin Rd, Sacramento, CA 95823",
+      "lat": 38.4962,
+      "lng": -121.4345,
       "status": "held",
       "poster": "entertainment/amv-vu-khuc-tinh-yeu-2026.jpg",
       "producers": [
@@ -696,6 +741,11 @@
       "city": "Reno",
       "venue": "Grand Ballroom, Atlantis Casino Resort Spa, 3800 S Virginia St",
       "place_name": "Atlantis Casino Resort Spa",
+      "place_id": "atlantis-casino-resort-spa",
+      "google_place_id": null,
+      "place_address": "3800 S Virginia St, Reno, NV 89502",
+      "lat": 39.488865,
+      "lng": -119.793785,
       "status": "held",
       "poster": "entertainment/hello-summer-anh-sao-hoi-tu-atlantis-2026.jpg",
       "producers": [
@@ -772,6 +822,11 @@
       "city": "Wheatland",
       "venue": "Hard Rock Hotel & Casino Sacramento",
       "place_name": "Hard Rock Hotel & Casino Sacramento",
+      "place_id": "hard-rock-sacramento",
+      "google_place_id": "ChIJEaGpzOFPm4ARBVH0e60I1KA",
+      "place_address": "3317 Forty Mile Rd, Wheatland, CA 95692",
+      "lat": 39.0495712,
+      "lng": -121.5145281,
       "status": "held",
       "poster": "entertainment/icons-live-hard-rock-2026.jpg",
       "producers": [
@@ -822,6 +877,102 @@
       ]
     },
     {
+      "id": "uop-vsa-culture-show-2026",
+      "label": "A Glimpse of Home",
+      "display_date": "Apr 11, 2026",
+      "start_date": "2026-04-11",
+      "end_date": "2026-04-11",
+      "city": "Stockton",
+      "venue": "Long Theatre",
+      "place_name": "Long Theatre",
+      "place_id": "long-theatre-uop",
+      "google_place_id": null,
+      "place_address": "3601 Pacific Ave, Stockton, CA 95211",
+      "lat": 37.9804238,
+      "lng": -121.3128472,
+      "status": "held",
+      "poster": "entertainment/uop-vsa-culture-show-2026.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "vsa-university-of-the-pacific",
+          "name": "VSA at University of the Pacific",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "vsa-university-of-the-pacific",
+          "name": "VSA at University of the Pacific",
+          "role": "producer"
+        }
+      ],
+      "lineup": []
+    },
+    {
+      "id": "sheldon-vcn-2026",
+      "label": "Hanoi by Night",
+      "display_date": "Apr 10, 2026",
+      "start_date": "2026-04-10",
+      "end_date": "2026-04-10",
+      "city": "Sacramento",
+      "venue": "Sheldon High School",
+      "place_name": "Sheldon Performing Arts Center",
+      "place_id": "sheldon-performing-arts-center",
+      "google_place_id": null,
+      "place_address": "8333 Kingsbridge Dr, Sacramento, CA 95829",
+      "lat": 38.456298,
+      "lng": -121.3474509,
+      "status": "held",
+      "poster": "entertainment/sheldon-vcn-2026.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "sheldon-high-school-vsa",
+          "name": "Sheldon High School VSA",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "sheldon-high-school-vsa",
+          "name": "Sheldon High School VSA",
+          "role": "producer"
+        }
+      ],
+      "lineup": []
+    },
+    {
+      "id": "ucd-vsa-culture-show-2026",
+      "label": "Memories of the Monsoon",
+      "display_date": "Apr 3–4, 2026",
+      "start_date": "2026-04-03",
+      "end_date": "2026-04-04",
+      "city": "Davis",
+      "venue": "Veterans Memorial Theatre",
+      "place_name": "Veterans Memorial Theatre",
+      "place_id": "veterans-memorial-theatre-davis",
+      "google_place_id": null,
+      "place_address": "203 E 14th St, Davis, CA 95616",
+      "lat": 38.555,
+      "lng": -121.7445,
+      "status": "held",
+      "poster": "entertainment/ucd-vsa-culture-show-2026.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "vsa-uc-davis",
+          "name": "VSA at UC Davis",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "vsa-uc-davis",
+          "name": "VSA at UC Davis",
+          "role": "producer"
+        }
+      ],
+      "lineup": []
+    },
+    {
       "id": "showpro-ky-uc-2026",
       "label": "Ký Ức",
       "display_date": "Mar 28, 2026",
@@ -830,6 +981,11 @@
       "city": "Lincoln",
       "venue": "The Venue at Thunder Valley, 1200 Athens Ave.",
       "place_name": "Thunder Valley Casino Resort",
+      "place_id": "thunder-valley-casino-resort",
+      "google_place_id": null,
+      "place_address": "1200 Athens Ave, Lincoln, CA 95648",
+      "lat": 38.8403664,
+      "lng": -121.3137366,
       "status": "held",
       "poster": "entertainment/showpro-ky-uc-2026.jpg",
       "producers": [
@@ -886,6 +1042,38 @@
       ]
     },
     {
+      "id": "cpalss-florin-vcn-2026",
+      "label": "The Awakening of the Lotus",
+      "display_date": "Mar 13, 2026",
+      "start_date": "2026-03-13",
+      "end_date": "2026-03-13",
+      "city": "Sacramento",
+      "venue": "Sheldon Performing Arts Center",
+      "place_name": "Sheldon Performing Arts Center",
+      "place_id": "sheldon-performing-arts-center",
+      "google_place_id": null,
+      "place_address": "8333 Kingsbridge Dr, Sacramento, CA 95829",
+      "lat": 38.456298,
+      "lng": -121.3474509,
+      "status": "held",
+      "poster": "entertainment/cpalss-florin-vcn-2026.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "florin-high-school-vsa",
+          "name": "Florin High School VSA",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "florin-high-school-vsa",
+          "name": "Florin High School VSA",
+          "role": "producer"
+        }
+      ],
+      "lineup": []
+    },
+    {
       "id": "cache-creek-tet-concert-2026",
       "label": "Mừng Xuân Bính Ngọ",
       "display_date": "Mar 7, 2026",
@@ -894,6 +1082,11 @@
       "city": "Brooks",
       "venue": "Cache Creek Event Center",
       "place_name": "Cache Creek Casino Resort",
+      "place_id": null,
+      "google_place_id": null,
+      "place_address": null,
+      "lat": null,
+      "lng": null,
       "status": "held",
       "poster": "entertainment/cache-creek-tet-concert-2026.jpg",
       "producers": [],
@@ -951,6 +1144,11 @@
       "city": "Elk Grove",
       "venue": "Elk Grove Park",
       "place_name": "Elk Grove Park",
+      "place_id": "elk-grove-park",
+      "google_place_id": "ChIJN735t9jFmoARGREBg6xSlLY",
+      "place_address": "9950 Elk Grove-Florin Rd, Elk Grove, CA 95624",
+      "lat": 38.3931726,
+      "lng": -121.3744743,
       "status": "held",
       "poster": "entertainment/lucky-wav-eglny-2026.jpg",
       "producers": [
@@ -1027,6 +1225,11 @@
       "city": "Sacramento",
       "venue": "8181 Florin Rd",
       "place_name": "Vietnamese Martyrs Parish",
+      "place_id": "vietnamese-martyrs-parish",
+      "google_place_id": "ChIJeaKlHwDFmoARmRC2qSVuQuE",
+      "place_address": "8181 Florin Rd, Sacramento, CA 95828",
+      "lat": 38.4965,
+      "lng": -121.411,
       "status": "held",
       "poster": "entertainment/vnmp-van-nghe-xuan-2026.jpg",
       "producers": [
@@ -1097,6 +1300,11 @@
       "city": "Oroville",
       "venue": "Gold Country Casino Resort, 4020 Olive Hwy",
       "place_name": "Gold Country Casino Resort",
+      "place_id": "gold-country-casino-resort",
+      "google_place_id": null,
+      "place_address": "4020 Olive Hwy, Oroville, CA 95966",
+      "lat": 39.5048225,
+      "lng": -121.5036858,
       "status": "held",
       "poster": "entertainment/amv-dai-nhac-hoi-gold-country-2025.jpg",
       "producers": [
@@ -1251,6 +1459,11 @@
       "city": "Lincoln",
       "venue": "The Venue at Thunder Valley, 1200 Athens Ave.",
       "place_name": "Thunder Valley Casino Resort",
+      "place_id": "thunder-valley-casino-resort",
+      "google_place_id": null,
+      "place_address": "1200 Athens Ave, Lincoln, CA 95648",
+      "lat": 38.8403664,
+      "lng": -121.3137366,
       "status": "held",
       "poster": "entertainment/showpro-fall-in-love-2025.jpg",
       "producers": [
@@ -1321,6 +1534,11 @@
       "city": "Sacramento",
       "venue": "Rice Bowl Restaurant, 2378 Florin Rd",
       "place_name": "Rice Bowl Restaurant",
+      "place_id": "rice-bowl-restaurant",
+      "google_place_id": null,
+      "place_address": "2378 Florin Rd, Sacramento, CA 95822",
+      "lat": 38.4948,
+      "lng": -121.4833,
       "status": "held",
       "poster": "entertainment/rice-bowl-halloween-party-2025.jpg",
       "producers": [
@@ -1397,6 +1615,11 @@
       "city": "Sacramento",
       "venue": "8181 Florin Rd",
       "place_name": "Vietnamese Martyrs Parish",
+      "place_id": "vietnamese-martyrs-parish",
+      "google_place_id": "ChIJeaKlHwDFmoARmRC2qSVuQuE",
+      "place_address": "8181 Florin Rd, Sacramento, CA 95828",
+      "lat": 38.4965,
+      "lng": -121.411,
       "status": "held",
       "poster": "entertainment/vnmp-he-tinh-yeu-2025.jpg",
       "producers": [
@@ -1479,6 +1702,11 @@
       "city": "Lincoln",
       "venue": "The Venue at Thunder Valley, 1200 Athens Ave.",
       "place_name": "Thunder Valley Casino Resort",
+      "place_id": "thunder-valley-casino-resort",
+      "google_place_id": null,
+      "place_address": "1200 Athens Ave, Lincoln, CA 95648",
+      "lat": 38.8403664,
+      "lng": -121.3137366,
       "status": "held",
       "poster": "entertainment/showpro-summer-bash-2025.jpg",
       "producers": [
@@ -1549,6 +1777,11 @@
       "city": "Sacramento",
       "venue": "Sacto By Night, 7121 Governors Cir",
       "place_name": "Sacto By Night",
+      "place_id": "eb-venue-297966345",
+      "google_place_id": "ChIJQXTNffTPmoAROwNrQBm9-5k",
+      "place_address": "7121 Governors Circle, Sacramento, CA 95823",
+      "lat": 38.4966897,
+      "lng": -121.4491803,
       "status": "held",
       "poster": "entertainment/sacto-by-night-em-nen-dung-lai-2025.jpg",
       "producers": [
@@ -1631,6 +1864,11 @@
       "city": "Stateline",
       "venue": "Harrah's Lake Tahoe",
       "place_name": "Harrah's Lake Tahoe",
+      "place_id": "harrahs-lake-tahoe",
+      "google_place_id": null,
+      "place_address": "15 Hwy 50, Stateline, NV 89449",
+      "lat": 38.9593269,
+      "lng": -119.9411181,
       "status": "held",
       "poster": "entertainment/amv-mung-le-me-2025.jpg",
       "producers": [
@@ -1699,6 +1937,38 @@
       ]
     },
     {
+      "id": "ucd-vsa-culture-show-2025",
+      "label": "Where the Mountains Meet the Waves",
+      "display_date": "Apr 4–5, 2025",
+      "start_date": "2025-04-04",
+      "end_date": "2025-04-05",
+      "city": "Davis",
+      "venue": "Veterans Memorial Theatre",
+      "place_name": "Veterans Memorial Theatre",
+      "place_id": "veterans-memorial-theatre-davis",
+      "google_place_id": null,
+      "place_address": "203 E 14th St, Davis, CA 95616",
+      "lat": 38.555,
+      "lng": -121.7445,
+      "status": "held",
+      "poster": "entertainment/ucd-vsa-culture-show-2025.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "vsa-uc-davis",
+          "name": "VSA at UC Davis",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "vsa-uc-davis",
+          "name": "VSA at UC Davis",
+          "role": "producer"
+        }
+      ],
+      "lineup": []
+    },
+    {
       "id": "vnmp-xuan-hy-vong-2025",
       "label": "Xuân Hy Vọng 2025",
       "display_date": "Feb 1, 2025",
@@ -1707,6 +1977,11 @@
       "city": "Sacramento",
       "venue": "Vietnamese Martyrs Parish",
       "place_name": "Vietnamese Martyrs Parish",
+      "place_id": "vietnamese-martyrs-parish",
+      "google_place_id": "ChIJeaKlHwDFmoARmRC2qSVuQuE",
+      "place_address": "8181 Florin Rd, Sacramento, CA 95828",
+      "lat": 38.4965,
+      "lng": -121.411,
       "status": "held",
       "poster": "entertainment/vnmp-xuan-hy-vong-2025.jpg",
       "producers": [
@@ -1759,6 +2034,11 @@
       "city": "Lincoln",
       "venue": "The Venue at Thunder Valley, 1200 Athens Ave.",
       "place_name": "Thunder Valley Casino Resort",
+      "place_id": "thunder-valley-casino-resort",
+      "google_place_id": null,
+      "place_address": "1200 Athens Ave, Lincoln, CA 95648",
+      "lat": 38.8403664,
+      "lng": -121.3137366,
       "status": "held",
       "poster": "entertainment/showpro-giac-mo-co-that-2024.jpg",
       "producers": [
@@ -1835,6 +2115,11 @@
       "city": "Sacramento",
       "venue": "8181 Florin Rd",
       "place_name": "Vietnamese Martyrs Parish",
+      "place_id": "vietnamese-martyrs-parish",
+      "google_place_id": "ChIJeaKlHwDFmoARmRC2qSVuQuE",
+      "place_address": "8181 Florin Rd, Sacramento, CA 95828",
+      "lat": 38.4965,
+      "lng": -121.411,
       "status": "held",
       "poster": "entertainment/vnmp-he-ruc-ro-2024.jpg",
       "producers": [
@@ -1929,6 +2214,11 @@
       "city": "Stateline",
       "venue": "Harrah's Lake Tahoe, 15 Hwy 50",
       "place_name": "Harrah's Lake Tahoe",
+      "place_id": "harrahs-lake-tahoe",
+      "google_place_id": null,
+      "place_address": "15 Hwy 50, Stateline, NV 89449",
+      "lat": 38.9593269,
+      "lng": -119.9411181,
       "status": "held",
       "poster": "entertainment/amv-new-wave-80s-harrahs-2024.jpg",
       "producers": [
@@ -2029,6 +2319,11 @@
       "city": "Sacramento",
       "venue": "8181 Florin Rd",
       "place_name": "Vietnamese Martyrs Parish",
+      "place_id": "vietnamese-martyrs-parish",
+      "google_place_id": "ChIJeaKlHwDFmoARmRC2qSVuQuE",
+      "place_address": "8181 Florin Rd, Sacramento, CA 95828",
+      "lat": 38.4965,
+      "lng": -121.411,
       "status": "held",
       "poster": "entertainment/vnmp-hoi-cho-tet-2024.jpg",
       "producers": [
@@ -2075,6 +2370,11 @@
       "city": "Sacramento",
       "venue": "Sacto By Night, 7121 Governors Cir",
       "place_name": "Sacto By Night",
+      "place_id": "eb-venue-297966345",
+      "google_place_id": "ChIJQXTNffTPmoAROwNrQBm9-5k",
+      "place_address": "7121 Governors Circle, Sacramento, CA 95823",
+      "lat": 38.4966897,
+      "lng": -121.4491803,
       "status": "held",
       "poster": "entertainment/mic-mot-dem-chill-2-2023.jpg",
       "producers": [
@@ -2139,6 +2439,11 @@
       "city": "Sacramento",
       "venue": "Sacto By Night, 7121 Governors Cir",
       "place_name": "Sacto By Night",
+      "place_id": "eb-venue-297966345",
+      "google_place_id": "ChIJQXTNffTPmoAROwNrQBm9-5k",
+      "place_address": "7121 Governors Circle, Sacramento, CA 95823",
+      "lat": 38.4966897,
+      "lng": -121.4491803,
       "status": "held",
       "poster": "entertainment/sacto-by-night-new-wave-concert-2023.jpg",
       "producers": [
@@ -2227,6 +2532,11 @@
       "city": "Sacramento",
       "venue": "Asian Pearl Restaurant, 6821 Stockton Blvd #165",
       "place_name": "Asian Pearl Restaurant",
+      "place_id": "asian-pearl-restaurant",
+      "google_place_id": "ChIJJ6_75m7FmoARJyQewepBG8E",
+      "place_address": "6821 Stockton Blvd #165, Sacramento, CA 95823",
+      "lat": 38.522,
+      "lng": -121.435,
       "status": "held",
       "poster": "entertainment/lang-du-countdown-2022.jpg",
       "producers": [
@@ -2309,6 +2619,11 @@
       "city": "Sacramento",
       "venue": "Sacto By Night, 7121 Governors Cir",
       "place_name": "Sacto By Night",
+      "place_id": "eb-venue-297966345",
+      "google_place_id": "ChIJQXTNffTPmoAROwNrQBm9-5k",
+      "place_address": "7121 Governors Circle, Sacramento, CA 95823",
+      "lat": 38.4966897,
+      "lng": -121.4491803,
       "status": "held",
       "poster": "entertainment/sacto-by-night-vietnamese-karaoke-remix-2022.jpg",
       "producers": [
@@ -5721,6 +6036,107 @@
       ],
       "photo": "entertainment/orgs/ustar-productions.jpg"
     },
+    "vsa-university-of-the-pacific": {
+      "id": "vsa-university-of-the-pacific",
+      "name": "VSA at University of the Pacific",
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/uopvsa",
+          "label": "Instagram"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/uopvsacultureshow",
+          "label": "Instagram"
+        },
+        {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@uopvsa",
+          "label": "TikTok"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/pacificvsa",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCwbnPYrTmGx7crV2y4WlSnQ",
+          "label": "YouTube"
+        },
+        {
+          "kind": "website",
+          "url": "https://uopvsa.wixsite.com/norcaluvsa",
+          "label": "Website"
+        },
+        {
+          "kind": "linktree",
+          "url": "https://linktr.ee/uopvsa",
+          "label": "linktr.ee"
+        }
+      ],
+      "photo": "entertainment/orgs/vsa-university-of-the-pacific.jpg"
+    },
+    "sheldon-high-school-vsa": {
+      "id": "sheldon-high-school-vsa",
+      "name": "Sheldon High School VSA",
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/sheldonvsa",
+          "label": "Instagram"
+        },
+        {
+          "kind": "linktree",
+          "url": "https://linktr.ee/sheldonvsa",
+          "label": "linktr.ee"
+        }
+      ],
+      "photo": "entertainment/orgs/sheldon-high-school-vsa.jpg"
+    },
+    "vsa-uc-davis": {
+      "id": "vsa-uc-davis",
+      "name": "VSA at UC Davis",
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/ucdvsacultureshow",
+          "label": "Instagram"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/vsaatucd",
+          "label": "Instagram"
+        },
+        {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@vsaucd",
+          "label": "TikTok"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/vsaatucd",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCK9WK0TBPbYPKVTbsZlJjqA",
+          "label": "YouTube"
+        },
+        {
+          "kind": "website",
+          "url": "https://vsaatucd.carrd.co",
+          "label": "Website"
+        },
+        {
+          "kind": "website",
+          "url": "https://vsaatucd.wixsite.com/ucdvsa",
+          "label": "Website"
+        }
+      ],
+      "photo": "entertainment/orgs/vsa-uc-davis.jpg"
+    },
     "vu-doan-buoc-nhay": {
       "id": "vu-doan-buoc-nhay",
       "name": "Vũ Đoàn Bước Nhảy",
@@ -5780,6 +6196,38 @@
         }
       ],
       "photo": "entertainment/orgs/showpro-entertainment.jpg"
+    },
+    "florin-high-school-vsa": {
+      "id": "florin-high-school-vsa",
+      "name": "Florin High School VSA",
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/florinvsa",
+          "label": "Instagram"
+        },
+        {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@florinvsa",
+          "label": "TikTok"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/profile.php?id=61553795144631",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCfjFANZzu3FMFLAsGR46ICQ",
+          "label": "YouTube"
+        },
+        {
+          "kind": "linktree",
+          "url": "https://linktr.ee/florinvsa",
+          "label": "linktr.ee"
+        }
+      ],
+      "photo": "entertainment/orgs/florin-high-school-vsa.jpg"
     },
     "lucky-wav": {
       "id": "lucky-wav",
