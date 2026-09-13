@@ -77,8 +77,8 @@
 
   const countPinIcon = (g, n, { area = false } = {}) => {
     const label = formatMagnitude(n);
-    const size = (label.length > 2 ? 28 : label.length > 1 ? 24 : 20) + (area ? 10 : 0);
-    const fontSize = label.length > 2 ? 10 : label.length > 1 ? 11 : 12;
+    const size = (label.length > 2 ? 38 : label.length > 1 ? 32 : 28) + (area ? 4 : 0);
+    const fontSize = label.length > 2 ? 12 : label.length > 1 ? 13 : 14;
     const cx = size / 2;
     const body = area
       ? `<circle cx="${cx}" cy="${cx}" r="${cx - 1.2}" fill="none" stroke="${PIN_FILL}" stroke-width="2.25"/>
