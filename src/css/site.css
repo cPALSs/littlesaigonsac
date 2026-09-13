@@ -250,6 +250,10 @@ a:hover {
 }
 
 @media (max-width: 719px) {
+  .wordmark span {
+    display: none;
+  }
+
   .nav-toggle {
     display: inline-flex;
   }
@@ -323,7 +327,7 @@ a:hover {
 }
 
 .hero {
-  padding: 2.6rem 0 1.6rem;
+  padding: 2rem 0 1.6rem;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -402,6 +406,26 @@ h1 {
   max-width: 36rem;
   color: var(--ink-soft);
   font-size: 1.05rem;
+}
+
+.page-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1.35rem;
+  row-gap: 0.4rem;
+}
+
+.page-head h1 {
+  flex: 0 0 auto;
+}
+
+.page-head .tagline {
+  margin: 0;
+  flex: 1 1 16rem;
+  min-width: min(16rem, 100%);
+  max-width: none;
+  text-wrap: balance;
 }
 
 .lede {

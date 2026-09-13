@@ -815,13 +815,17 @@ export function writeEntertainmentPages({
   const siteName = "Little Saigon Sactown";
   const galleryDescription = ENTERTAINMENT_TAGLINE;
 
+  const entertainmentPageHead = (active, trail = []) => `<header class="hero">
+      ${h.crumbsEnt(trail)}
+      <div class="page-head">
+        <h1>Entertainment</h1>
+        <p class="tagline">${galleryDescription}</p>
+      </div>
+      ${h.entertainmentTabs(active)}
+    </header>`;
+
   const galleryBody = `<main class="wrap">
-    <header class="hero">
-      ${h.crumbsEnt([])}
-      <h1>Entertainment</h1>
-      <p class="tagline">${galleryDescription}</p>
-      ${h.entertainmentTabs("events")}
-    </header>
+    ${entertainmentPageHead("events")}
     ${h.galleryShowSections(upcoming, past)}
   </main>`;
   const galleryPage = (path) =>
@@ -848,12 +852,7 @@ export function writeEntertainmentPages({
       description: galleryDescription,
       current: "entertainment",
       body: `<main class="wrap">
-    <header class="hero">
-      ${h.crumbsEnt([{ href: "/entertainment/", label: "Entertainment" }])}
-      <h1>Entertainment</h1>
-      <p class="tagline">${galleryDescription}</p>
-      ${h.entertainmentTabs("performers")}
-    </header>
+    ${entertainmentPageHead("performers", [{ href: "/entertainment/", label: "Entertainment" }])}
     ${h.performerDirectory(performers, organizations)}
   </main>
   <script src="/js/performer-sort.js" defer></script>`,
