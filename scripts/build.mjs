@@ -230,9 +230,9 @@ ${gaTag}${socialHead({ title, description, path, image, ogType })}  <link rel="p
 `;
 
 const kitchenNote = (k) => {
-  const flavors = k.flavors?.length ? k.flavors : k.note ? [k.note] : [];
-  if (!flavors.length) return "";
-  return `<ul class="kitchen-note">${flavors.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>`;
+  const note = typeof k.note === "string" ? k.note.trim() : "";
+  if (!note) return "";
+  return `<p class="kitchen-note">${esc(note)}</p>`;
 };
 
 const kitchenItems = (dish) => {

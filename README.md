@@ -15,13 +15,13 @@ npm start
 # → http://127.0.0.1:4173/
 ```
 
-Edit the JSON (and CSS/JS under `src/`), run `npm run build`, then:
+Edit the JSON (and CSS/JS under `src/`), run `npm run build` / `npm start`, and **preview locally**. Do **not** `git push` while iterating (copy/CSS/listing tweaks). Wait until Bao says `push`, `deploy`, `ship`, or `okay to push`.
 
 ```bash
 git add -A && git commit -m "Update Little Saigon Sactown" && git push
 ```
 
-Push to `main` deploys via `.github/workflows/deploy-pages.yml` (builds `dist/`, uploads that folder to Pages).
+Push to `main` deploys via `.github/workflows/deploy-pages.yml` (builds `dist/`, uploads that folder to Pages). First-pass “put this new page live” may push once; a tweak loop does not.
 
 ## DNS
 
