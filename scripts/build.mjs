@@ -229,6 +229,12 @@ ${gaTag}${socialHead({ title, description, path, image, ogType })}  <link rel="p
 </html>
 `;
 
+const kitchenNote = (k) => {
+  const flavors = k.flavors?.length ? k.flavors : k.note ? [k.note] : [];
+  if (!flavors.length) return "";
+  return `<ul class="kitchen-note">${flavors.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>`;
+};
+
 const kitchenItems = (dish) => {
   if (!filledDish(dish)) {
     return `<p class="seeking">No candidate yet</p>`;
@@ -237,9 +243,7 @@ const kitchenItems = (dish) => {
     ${dish.kitchens
       .map(
         (k) => `<li>
-      <span class="kitchen-name">${esc(k.name)}</span><span class="sep">, </span><a href="${esc(k.maps)}" rel="noopener noreferrer" target="_blank">${esc(k.address)}</a>${
-          k.note ? `<p class="kitchen-note">${esc(k.note)}</p>` : ""
-        }
+      <span class="kitchen-name">${esc(k.name)}</span><span class="sep">, </span><a href="${esc(k.maps)}" rel="noopener noreferrer" target="_blank">${esc(k.address)}</a>${kitchenNote(k)}
     </li>`,
       )
       .join("")}

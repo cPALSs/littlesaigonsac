@@ -261,9 +261,16 @@
           "kitchens": [
             {
               "name": "Đạt Tăng",
-              "address": "Sacramento, CA 95828",
+              "address": "Sacramento, CA 95828 pickup",
               "maps": "https://www.facebook.com/groups/290197905206406/posts/2167244500835061/",
-              "note": "Freshly made locally, including vegetarian / no-egg"
+              "flavors": [
+                "Thập cẩm. Mixed nut",
+                "Đậu xanh. Mung bean",
+                "Đậu đỏ. Red bean",
+                "Hạt sen. Lotus seed",
+                "Khoai môn. Taro",
+                "Trà xanh. Green tea"
+              ]
             }
           ]
         },
