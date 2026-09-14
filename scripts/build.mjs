@@ -237,7 +237,9 @@ const kitchenItems = (dish) => {
     ${dish.kitchens
       .map(
         (k) => `<li>
-      <span class="kitchen-name">${esc(k.name)}</span><span class="sep">, </span><a href="${esc(k.maps)}" rel="noopener noreferrer" target="_blank">${esc(k.address)}</a>
+      <span class="kitchen-name">${esc(k.name)}</span><span class="sep">, </span><a href="${esc(k.maps)}" rel="noopener noreferrer" target="_blank">${esc(k.address)}</a>${
+          k.note ? `<p class="kitchen-note">${esc(k.note)}</p>` : ""
+        }
     </li>`,
       )
       .join("")}

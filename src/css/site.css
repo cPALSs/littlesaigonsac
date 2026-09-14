@@ -687,6 +687,12 @@ h1 {
   font-weight: 600;
 }
 
+.kitchen-note {
+  margin: 0.15rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
 .sep {
   color: var(--ink-soft);
 }
