@@ -3,7 +3,7 @@
  * People → people/{id}.jpg; billed bands → orgs/{id}.jpg.
  * Never copies dist → src (would overwrite a newer crop).
  */
-import { copyFileSync, existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const PEOPLE_PREFIX = "/img/entertainment/people/";
@@ -28,8 +28,76 @@ export function peopleJpegPath(srcPeopleDir, id) {
   return join(srcPeopleDir, `${id}.jpg`);
 }
 
-export function peopleImgTag(id, alt, mtimeMs) {
-  return `<img src="${PEOPLE_PREFIX}${id}.jpg?t=${mtimeMs}" alt="${alt}">`;
+/** Lineup thumbs — keeps 800×800 JPEGs from using intrinsic size on first paint. */
+export const CREDIT_AVATAR_PX = 28;
+
+const EVENT_INDEX_SKIP = new Set(["people", "orgs", "performers"]);
+
+function escapeRegExp(s) {
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+/** Event pages under dist/entertainment/{slug}/ — not people / orgs / performers indexes. */
+function listEntertainmentEventIndexPaths(distRoot) {
+  const entDir = join(distRoot, "entertainment");
+  if (!existsSync(entDir)) return [];
+  const paths = [];
+  for (const entry of readdirSync(entDir, { withFileTypes: true })) {
+    if (!entry.isDirectory() || EVENT_INDEX_SKIP.has(entry.name)) continue;
+    const indexPath = join(entDir, entry.name, "index.html");
+    if (existsSync(indexPath)) paths.push(indexPath);
+  }
+  return paths;
+}
+
+function creditAvatarPersonRe(id) {
+  const esc = escapeRegExp(id);
+  return new RegExp(
+    `<span class="entity-photo entity-photo--person credit-avatar">(?:<img[^>]*>)?</span><span class="credit-name"><a href="/entertainment/people/${esc}/">([^<]*)</a></span>`,
+    "g",
+  );
+}
+
+function creditAvatarOrgRe(id) {
+  const esc = escapeRegExp(id);
+  return new RegExp(
+    `<span class="entity-photo entity-photo--org credit-avatar">(?:<img[^>]*>)?</span><span class="credit-name"><a href="/entertainment/orgs/${esc}/">([^<]*)</a></span>`,
+    "g",
+  );
+}
+
+/** Bake cache-busted credit-avatar <img> into event lineup HTML (same regex as inject). */
+function patchDistEventCreditAvatars({ distRoot, id, kind, imgForName }) {
+  const re = kind === "org" ? creditAvatarOrgRe(id) : creditAvatarPersonRe(id);
+  const photoClass =
+    kind === "org"
+      ? "entity-photo entity-photo--org credit-avatar"
+      : "entity-photo entity-photo--person credit-avatar";
+  const hrefBase = kind === "org" ? "/entertainment/orgs/" : "/entertainment/people/";
+  let events = 0;
+  for (const pagePath of listEntertainmentEventIndexPaths(distRoot)) {
+    const before = readFileSync(pagePath, "utf8");
+    re.lastIndex = 0;
+    const after = before.replace(
+      re,
+      (_, listed) =>
+        `<span class="${photoClass}">${imgForName(listed)}</span><span class="credit-name"><a href="${hrefBase}${id}/">${listed}</a></span>`,
+    );
+    if (after !== before) {
+      writeFileSync(pagePath, after);
+      events += 1;
+    }
+  }
+  return events;
+}
+
+function sizeAttrs(width, height) {
+  if (!width || !height) return "";
+  return ` width="${width}" height="${height}"`;
+}
+
+export function peopleImgTag(id, alt, mtimeMs, { width, height } = {}) {
+  return `<img src="${PEOPLE_PREFIX}${id}.jpg?t=${mtimeMs}" alt="${alt}"${sizeAttrs(width, height)}>`;
 }
 
 export function copySrcPeopleJpegToDist(srcPeopleDir, distPeopleDir, id) {
@@ -79,6 +147,15 @@ export function injectPeoplePortraits(html, urlPath, srcPeopleDir) {
     },
   );
 
+  out = out.replace(
+    /<span class="entity-photo entity-photo--person credit-avatar">(?:<img[^>]*>)?<\/span><span class="credit-name"><a href="\/entertainment\/people\/([a-z0-9-]+)\/">([^<]*)<\/a><\/span>/g,
+    (full, id, name) => {
+      const meta = jpegMeta(srcPeopleDir, id);
+      if (!meta) return full;
+      return `<span class="entity-photo entity-photo--person credit-avatar">${peopleImgTag(id, name, meta.mtimeMs, { width: CREDIT_AVATAR_PX, height: CREDIT_AVATAR_PX })}</span><span class="credit-name"><a href="/entertainment/people/${id}/">${name}</a></span>`;
+    },
+  );
+
   const personMatch = urlPath.match(/^\/entertainment\/people\/([a-z0-9-]+)\/?$/);
   if (personMatch) {
     const id = personMatch[1];
@@ -113,7 +190,7 @@ export function injectPeoplePortraits(html, urlPath, srcPeopleDir) {
 /** Patch baked dist HTML after a crop Save (names left untouched). */
 export function patchDistPersonPortraitHtml({ distRoot, srcPeopleDir, id, alt }) {
   const meta = jpegMeta(srcPeopleDir, id);
-  if (!meta) return { performers: false, personPage: false };
+  if (!meta) return { performers: false, personPage: false, events: 0 };
   const name = alt || id;
   const img = peopleImgTag(id, name, meta.mtimeMs);
   let performers = false;
@@ -165,7 +242,15 @@ export function patchDistPersonPortraitHtml({ distRoot, srcPeopleDir, id, alt })
     }
   }
 
-  return { performers, personPage };
+  const events = patchDistEventCreditAvatars({
+    distRoot,
+    id,
+    kind: "person",
+    imgForName: (listed) =>
+      peopleImgTag(id, listed, meta.mtimeMs, { width: CREDIT_AVATAR_PX, height: CREDIT_AVATAR_PX }),
+  });
+
+  return { performers, personPage, events };
 }
 
 export function sitePeopleDirs(siteRoot) {
@@ -187,8 +272,8 @@ export function orgsJpegPath(srcOrgsDir, id) {
   return join(srcOrgsDir, `${id}.jpg`);
 }
 
-export function orgsImgTag(id, alt, mtimeMs) {
-  return `<img src="${ORGS_PREFIX}${id}.jpg?t=${mtimeMs}" alt="${alt}">`;
+export function orgsImgTag(id, alt, mtimeMs, { width, height } = {}) {
+  return `<img src="${ORGS_PREFIX}${id}.jpg?t=${mtimeMs}" alt="${alt}"${sizeAttrs(width, height)}>`;
 }
 
 export function copySrcOrgsJpegToDist(srcOrgsDir, distOrgsDir, id) {
@@ -226,6 +311,15 @@ export function injectOrgPortraits(html, urlPath, srcOrgsDir) {
       const meta = orgJpegMeta(srcOrgsDir, id);
       if (!meta) return full;
       return `<a href="/entertainment/orgs/${id}/"><span class="entity-photo entity-photo--org performer-avatar">${orgsImgTag(id, name, meta.mtimeMs)}</span><span class="performer-name">${name}</span></a>`;
+    },
+  );
+
+  out = out.replace(
+    /<span class="entity-photo entity-photo--org credit-avatar">(?:<img[^>]*>)?<\/span><span class="credit-name"><a href="\/entertainment\/orgs\/([a-z0-9-]+)\/">([^<]*)<\/a><\/span>/g,
+    (full, id, name) => {
+      const meta = orgJpegMeta(srcOrgsDir, id);
+      if (!meta) return full;
+      return `<span class="entity-photo entity-photo--org credit-avatar">${orgsImgTag(id, name, meta.mtimeMs, { width: CREDIT_AVATAR_PX, height: CREDIT_AVATAR_PX })}</span><span class="credit-name"><a href="/entertainment/orgs/${id}/">${name}</a></span>`;
     },
   );
 
@@ -269,7 +363,7 @@ export function injectLivePortraits(html, urlPath, { srcPeopleDir, srcOrgsDir })
 /** Patch baked dist HTML after a band crop Save. */
 export function patchDistOrgPortraitHtml({ distRoot, srcOrgsDir, id, alt }) {
   const meta = orgJpegMeta(srcOrgsDir, id);
-  if (!meta) return { performers: false, orgPage: false };
+  if (!meta) return { performers: false, orgPage: false, events: 0 };
   const name = alt || id;
   let performers = false;
   let orgPage = false;
@@ -320,7 +414,15 @@ export function patchDistOrgPortraitHtml({ distRoot, srcOrgsDir, id, alt }) {
     }
   }
 
-  return { performers, orgPage };
+  const events = patchDistEventCreditAvatars({
+    distRoot,
+    id,
+    kind: "org",
+    imgForName: (listed) =>
+      orgsImgTag(id, listed, meta.mtimeMs, { width: CREDIT_AVATAR_PX, height: CREDIT_AVATAR_PX }),
+  });
+
+  return { performers, orgPage, events };
 }
 
 export function siteOrgsDirs(siteRoot) {

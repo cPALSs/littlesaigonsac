@@ -1,7 +1,7 @@
 {
-  "exported_at": "2026-09-13",
+  "exported_at": "2026-09-15",
   "timezone": "America/Los_Angeles",
-  "as_of_pt": "2026-09-13",
+  "as_of_pt": "2026-09-15",
   "events": [
     {
       "id": "thunder-valley-whisper-of-autumn-2026",
@@ -57,6 +57,14 @@
           "id": "thu-phuong",
           "name": "Thu Phương",
           "role": "vocalist"
+        }
+      ],
+      "source_url": "https://img1.wsimg.com/isteam/ip/5c198cf8-8bd2-4afa-94d7-f1e2d2075d2d/VN%20Concert-TVC%20Nov%2014%2C%20206%20AD%20-%201920x960.png",
+      "tickets": [
+        {
+          "kind": "url",
+          "label": "Ticketmaster",
+          "url": "https://www.ticketmaster.com/whisper-of-autumn-lincoln-california-11-14-2026/event/1C00651F9B69BA0A"
         }
       ]
     },
@@ -120,6 +128,14 @@
           "id": "lan-anh-tieu",
           "name": "Lan Anh Tiêu",
           "role": "dj"
+        }
+      ],
+      "source_url": "https://www.facebook.com/groups/604503937066539/posts/2236701863846730",
+      "tickets": [
+        {
+          "kind": "phone",
+          "label": "Best Kitchen",
+          "phone": "9162296868"
         }
       ]
     },
@@ -195,6 +211,14 @@
           "id": "hoang-bao-band",
           "name": "Hoàng Bảo's Band",
           "role": "band"
+        }
+      ],
+      "source_url": "https://www.99concerts.com/",
+      "tickets": [
+        {
+          "kind": "url",
+          "label": "Ticketmaster",
+          "url": "https://www.ticketmaster.com/dem-huyen-thoai-reno-nevada-10-24-2026/event/3900651FADCB4762"
         }
       ]
     },
@@ -301,6 +325,24 @@
           "name": "Thành Vinh",
           "role": "other"
         }
+      ],
+      "source_url": "https://www.facebook.com/photo/?fbid=122149527237002200&set=gm.1736700250936924",
+      "tickets": [
+        {
+          "kind": "phone",
+          "label": "",
+          "phone": "9164303498"
+        },
+        {
+          "kind": "phone",
+          "label": "",
+          "phone": "4084666842"
+        },
+        {
+          "kind": "phone",
+          "label": "",
+          "phone": "9163181088"
+        }
       ]
     },
     {
@@ -393,6 +435,24 @@
           "id": "lang-du-entertainment",
           "name": "Lãng Du Entertainment",
           "role": "band"
+        }
+      ],
+      "source_url": "https://www.instagram.com/trinaballoonart/p/DbKdXNjFjYG/",
+      "tickets": [
+        {
+          "kind": "phone",
+          "label": "Trina",
+          "phone": "9168045485"
+        },
+        {
+          "kind": "phone",
+          "label": "Amy",
+          "phone": "9165195821"
+        },
+        {
+          "kind": "phone",
+          "label": "Chi",
+          "phone": "9168733332"
         }
       ]
     },
@@ -499,6 +559,105 @@
           "name": "Kevin Lê",
           "role": "mc"
         }
+      ],
+      "source_url": "https://www.redhawkcasino.com/autumnharmony/",
+      "tickets": [
+        {
+          "kind": "phone",
+          "label": "Red Hawk",
+          "phone": "5306725095"
+        }
+      ]
+    },
+    {
+      "id": "phuoc-son-van-nghe-gay-quy-2026",
+      "label": "Góp Một Bàn Tay Xây Chùa Phước Sơn",
+      "display_date": "Sep 20, 2026 · 2:00–9:00 PM",
+      "start_date": "2026-09-20",
+      "end_date": "2026-09-20",
+      "city": "Sacramento",
+      "venue": "A&A Tasty Restaurant, 6601 Florin Rd",
+      "place_name": "A&A Tasty Restaurant",
+      "place_id": "aa-tasty-restaurant",
+      "google_place_id": "ChIJZZLjhnPFmoAR73GXgj2-Zgk",
+      "place_address": "6601 Florin Rd, Sacramento, CA 95823",
+      "lat": 38.4962,
+      "lng": -121.4345,
+      "status": "confirmed",
+      "poster": "entertainment/phuoc-son-van-nghe-gay-quy-2026.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "chua-phuoc-son",
+          "name": "Chùa Phước Sơn",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "chua-phuoc-son",
+          "name": "Chùa Phước Sơn",
+          "role": "producer"
+        }
+      ],
+      "lineup": [
+        {
+          "type": "person",
+          "id": "huong-lan",
+          "name": "Hương Lan",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "khanh-lam",
+          "name": "Khánh Lâm",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "quang-le",
+          "name": "Quang Lê",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "rachael-tuong-vy",
+          "name": "Rachael Tường Vy",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "cham-hai",
+          "name": "Châm Hải",
+          "role": "instrumentalist"
+        }
+      ],
+      "source_url": "https://www.facebook.com/groups/5421455097977319/posts/27908437132185795/",
+      "tickets": [
+        {
+          "kind": "phone",
+          "label": "Diệu Nguyện",
+          "phone": "9163902124"
+        },
+        {
+          "kind": "phone",
+          "label": "Thị Sỹ",
+          "phone": "9162071040"
+        },
+        {
+          "kind": "phone",
+          "label": "Nghiêm Hữu",
+          "phone": "2099680857"
+        },
+        {
+          "kind": "phone",
+          "label": "Diệu Hải",
+          "phone": "2093808429"
+        },
+        {
+          "kind": "phone",
+          "label": "Lệ Sương",
+          "phone": "2096620620"
+        }
       ]
     },
     {
@@ -562,7 +721,8 @@
           "name": "Four Season Band",
           "role": "band"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/photo/?fbid=10164974131107074&set=a.10150216863712074"
     },
     {
       "id": "vnmp-he-ruc-sang-2026",
@@ -649,7 +809,8 @@
           "name": "Thảo Quyên",
           "role": "mc"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/photo/?fbid=1457858653048143&set=gm.4478129495785124"
     },
     {
       "id": "amv-vu-khuc-tinh-yeu-2026",
@@ -730,7 +891,8 @@
           "name": "Kevin Lê",
           "role": "mc"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/photo/?fbid=2264114204324537&set=pb.100021779381770.-2207520000"
     },
     {
       "id": "hello-summer-anh-sao-hoi-tu-atlantis-2026",
@@ -811,7 +973,8 @@
           "name": "Skyway Band",
           "role": "band"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/3EmEntertainment/posts/1843065476664656"
     },
     {
       "id": "icons-live-hard-rock-2026",
@@ -874,7 +1037,8 @@
           "name": "Tuấn Hưng",
           "role": "vocalist"
         }
-      ]
+      ],
+      "source_url": "https://www.instagram.com/p/DXx43g3AqCx/"
     },
     {
       "id": "uop-vsa-culture-show-2026",
@@ -906,7 +1070,8 @@
           "role": "producer"
         }
       ],
-      "lineup": []
+      "lineup": [],
+      "source_url": "https://www.instagram.com/p/DWE_M8Zgck9/"
     },
     {
       "id": "sheldon-vcn-2026",
@@ -938,7 +1103,8 @@
           "role": "producer"
         }
       ],
-      "lineup": []
+      "lineup": [],
+      "source_url": "https://www.instagram.com/p/DWRV0nME1K1/"
     },
     {
       "id": "ucd-vsa-culture-show-2026",
@@ -970,7 +1136,8 @@
           "role": "producer"
         }
       ],
-      "lineup": []
+      "lineup": [],
+      "source_url": "https://www.instagram.com/p/DTQhAIdj3Ew/"
     },
     {
       "id": "showpro-ky-uc-2026",
@@ -1039,7 +1206,8 @@
           "name": "Vũ Đoàn Bước Nhảy",
           "role": "band"
         }
-      ]
+      ],
+      "source_url": "https://www.99concerts.com/"
     },
     {
       "id": "cpalss-florin-vcn-2026",
@@ -1071,7 +1239,8 @@
           "role": "producer"
         }
       ],
-      "lineup": []
+      "lineup": [],
+      "source_url": "https://www.instagram.com/p/DUj9s-cjAhj/"
     },
     {
       "id": "cache-creek-tet-concert-2026",
@@ -1133,7 +1302,8 @@
           "name": "Vicky Nhung",
           "role": "vocalist"
         }
-      ]
+      ],
+      "source_url": "https://www.cachecreek.com/events/brooks/mng-xun-bnh-ng"
     },
     {
       "id": "lucky-wav-eglny-2026",
@@ -1289,7 +1459,138 @@
           "name": "Lãng Du Entertainment",
           "role": "band"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/photo.php?fbid=1324826643018012&set=pb.100064720656670.-2207520000&type=3"
+    },
+    {
+      "id": "da-nang-tinh-nguoi-king-palace-2025",
+      "label": "Đà Nẵng Tình Người",
+      "display_date": "Dec 6, 2025 · 5:30 PM",
+      "start_date": "2025-12-06",
+      "end_date": "2025-12-06",
+      "city": "Sacramento",
+      "venue": "King Palace Restaurant, 5829 Stockton Blvd",
+      "place_name": "King Palace Restaurant",
+      "place_id": "king-palace-restaurant",
+      "google_place_id": null,
+      "place_address": "5829 Stockton Blvd, Sacramento, CA 95824",
+      "lat": 38.5204045,
+      "lng": -121.4403764,
+      "status": "held",
+      "poster": "entertainment/da-nang-tinh-nguoi-king-palace-2025.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "hoi-dong-huong-nam-da-nang-sacramento",
+          "name": "Hội Đồng Hương Nam Đà Nẵng Sacramento",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "hoi-dong-huong-nam-da-nang-sacramento",
+          "name": "Hội Đồng Hương Nam Đà Nẵng Sacramento",
+          "role": "producer"
+        }
+      ],
+      "lineup": [
+        {
+          "type": "person",
+          "id": "anh-hung",
+          "name": "Anh Hùng",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "bao-tran",
+          "name": "Bảo Trần",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "chau-dung",
+          "name": "Châu Dũng",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "chon-phuong",
+          "name": "Chơn Phương",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "hong-nhi",
+          "name": "Hồng Nhi",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "jazzlynne-bao-chau",
+          "name": "Jazzlynne Bảo Châu",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "minh-hue",
+          "name": "Minh Huệ",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "nguyen-quang",
+          "name": "Nguyễn Quang",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "phillip-pho-tran",
+          "name": "Phillip Phố Trần",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "phu-phong",
+          "name": "Phú Phong",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "thien-an",
+          "name": "Thiên An",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "tran-bao",
+          "name": "Trần Bảo",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "le-chuong-andy",
+          "name": "Lê Chương Andy",
+          "role": "mc"
+        },
+        {
+          "type": "person",
+          "id": "nhat-xuan-hoa",
+          "name": "Nhật Xuân Hòa",
+          "role": "mc"
+        },
+        {
+          "type": "person",
+          "id": "quynh-giang",
+          "name": "Quỳnh Giang",
+          "role": "mc"
+        },
+        {
+          "type": "person",
+          "id": "cham-hai",
+          "name": "Châm Hải",
+          "role": "instrumentalist"
+        }
+      ],
+      "source_url": "https://www.facebook.com/photo.php?fbid=3336621126501279&set=pb.100004602720338.-2207520000&type=3"
     },
     {
       "id": "amv-dai-nhac-hoi-gold-country-2025",
@@ -1448,7 +1749,8 @@
           "name": "Lãng Du Entertainment",
           "role": "band"
         }
-      ]
+      ],
+      "source_url": "https://www.goldcountrycasino.com/"
     },
     {
       "id": "showpro-fall-in-love-2025",
@@ -1523,7 +1825,8 @@
           "name": "Hoàng Bảo's Band",
           "role": "band"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/photo/?fbid=10225394853892732&set=pcb.10225091268543288"
     },
     {
       "id": "rice-bowl-halloween-party-2025",
@@ -1604,7 +1907,8 @@
           "name": "Billy Khiêm",
           "role": "other"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/photo/?fbid=1300808514788241&set=pcb.1853678588858322"
     },
     {
       "id": "vnmp-he-tinh-yeu-2025",
@@ -1691,7 +1995,8 @@
           "name": "Công Thành & Lynn",
           "role": "band"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/photo.php?fbid=1158060306361314&set=pb.100064720656670.-2207520000&type=3"
     },
     {
       "id": "showpro-summer-bash-2025",
@@ -1766,7 +2071,8 @@
           "name": "Hoàng Bảo's Band",
           "role": "band"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/events/the-venue-at-thunder-valley/summer-bash-vietnamese-concert-at-thunder-valley-casino/1889062281849925/"
     },
     {
       "id": "sacto-by-night-em-nen-dung-lai-2025",
@@ -1853,7 +2159,8 @@
           "name": "DJ UNI",
           "role": "dj"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/photo/?fbid=9393340577441239&set=pb.100002961690908.-2207520000"
     },
     {
       "id": "amv-mung-le-me-2025",
@@ -1934,7 +2241,8 @@
           "name": "Lãng Du Entertainment",
           "role": "band"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/photo/?fbid=566261466438124&set=gm.3478954472237268"
     },
     {
       "id": "ucd-vsa-culture-show-2025",
@@ -1966,7 +2274,8 @@
           "role": "producer"
         }
       ],
-      "lineup": []
+      "lineup": [],
+      "source_url": "https://www.instagram.com/p/DHh4IH_xCVR/"
     },
     {
       "id": "vnmp-xuan-hy-vong-2025",
@@ -2104,7 +2413,8 @@
           "name": "Hoàng Bảo's Band",
           "role": "band"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/events/the-venue-at-thunder-valley/giấc-mơ-có-thật-vietnamese-concert/882828849938932/"
     },
     {
       "id": "vnmp-he-ruc-ro-2024",
@@ -2203,7 +2513,8 @@
           "name": "Lãng Du Entertainment",
           "role": "band"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/photo/?fbid=10221456120230802&set=a.1742979072666"
     },
     {
       "id": "amv-new-wave-80s-harrahs-2024",
@@ -2428,7 +2739,8 @@
           "name": "Triết Nguyễn",
           "role": "other"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/groups/290197905206406/posts/1331627767730076/"
     },
     {
       "id": "sacto-by-night-new-wave-concert-2023",
@@ -2521,7 +2833,8 @@
           "name": "Triết Nguyễn",
           "role": "other"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/photo.php?fbid=5827440870697912&set=pb.100002961690908.-2207520000&type=3"
     },
     {
       "id": "lang-du-countdown-2022",
@@ -2608,7 +2921,8 @@
           "name": "Lãng Du Entertainment",
           "role": "band"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/groups/290197905206406/posts/1213203132905874/"
     },
     {
       "id": "sacto-by-night-vietnamese-karaoke-remix-2022",
@@ -2665,7 +2979,8 @@
           "name": "DJ TeeO",
           "role": "dj"
         }
-      ]
+      ],
+      "source_url": "https://www.facebook.com/photo.php?fbid=5827399547368711&set=pb.100002961690908.-2207520000&type=3"
     }
   ],
   "people": {
@@ -3683,6 +3998,84 @@
       ],
       "links": [],
       "photo": "entertainment/people/jessica-shum.jpg"
+    },
+    "rachael-tuong-vy": {
+      "id": "rachael-tuong-vy",
+      "name": "Rachael Tường Vy",
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/hoanhlee.le",
+          "label": "Facebook"
+        }
+      ],
+      "photo": "entertainment/people/rachael-tuong-vy.jpg"
+    },
+    "huong-lan": {
+      "id": "huong-lan",
+      "name": "Hương Lan",
+      "specialties": [
+        {
+          "slug": "que-huong",
+          "label": "Nhạc quê hương"
+        },
+        {
+          "slug": "co-nhac",
+          "label": "Cải lương · cổ nhạc"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/huonglancasi",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/casihuonglan",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@H%C6%B0%C6%A1ngLanH%E1%BB%AFuPh%C6%B0%E1%BB%9BcOfficial",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/7KOMoBXp30tI5E6SA0NQVn",
+          "label": "Spotify"
+        },
+        {
+          "kind": "linktree",
+          "url": "https://linktr.ee/huonglancasi",
+          "label": "linktr.ee"
+        }
+      ],
+      "photo": "entertainment/people/huong-lan.jpg"
+    },
+    "khanh-lam": {
+      "id": "khanh-lam",
+      "name": "Khánh Lâm",
+      "specialties": [
+        {
+          "slug": "que-huong",
+          "label": "Nhạc quê hương"
+        }
+      ],
+      "links": [],
+      "photo": "entertainment/people/khanh-lam.jpg"
+    },
+    "cham-hai": {
+      "id": "cham-hai",
+      "name": "Châm Hải",
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/cham.hai.90",
+          "label": "Facebook"
+        }
+      ],
+      "photo": "entertainment/people/cham-hai.jpg"
     },
     "hoang-thuy-vi": {
       "id": "hoang-thuy-vi",
@@ -4829,6 +5222,135 @@
       ],
       "photo": "entertainment/people/sy-dan.jpg"
     },
+    "nguyen-quang": {
+      "id": "nguyen-quang",
+      "name": "Nguyễn Quang",
+      "links": [],
+      "photo": "entertainment/people/nguyen-quang.jpg"
+    },
+    "chon-phuong": {
+      "id": "chon-phuong",
+      "name": "Chơn Phương",
+      "links": [],
+      "photo": "entertainment/people/chon-phuong.jpg"
+    },
+    "bao-tran": {
+      "id": "bao-tran",
+      "name": "Bảo Trần",
+      "links": [],
+      "photo": "entertainment/people/bao-tran.jpg"
+    },
+    "chau-dung": {
+      "id": "chau-dung",
+      "name": "Châu Dũng",
+      "links": [],
+      "photo": "entertainment/people/chau-dung.jpg"
+    },
+    "phu-phong": {
+      "id": "phu-phong",
+      "name": "Phú Phong",
+      "links": [],
+      "photo": "entertainment/people/phu-phong.jpg"
+    },
+    "anh-hung": {
+      "id": "anh-hung",
+      "name": "Anh Hùng",
+      "links": [],
+      "photo": "entertainment/people/anh-hung.jpg"
+    },
+    "quynh-giang": {
+      "id": "quynh-giang",
+      "name": "Quỳnh Giang",
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/mc.quynhgiang",
+          "label": "Facebook"
+        }
+      ],
+      "photo": "entertainment/people/quynh-giang.jpg"
+    },
+    "le-chuong-andy": {
+      "id": "le-chuong-andy",
+      "name": "Lê Chương Andy",
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
+      "links": [],
+      "photo": "entertainment/people/le-chuong-andy.jpg"
+    },
+    "tran-bao": {
+      "id": "tran-bao",
+      "name": "Trần Bảo",
+      "links": [],
+      "photo": "entertainment/people/tran-bao.jpg"
+    },
+    "thien-an": {
+      "id": "thien-an",
+      "name": "Thiên An",
+      "links": [],
+      "photo": "entertainment/people/thien-an.jpg"
+    },
+    "minh-hue": {
+      "id": "minh-hue",
+      "name": "Minh Huệ",
+      "links": [],
+      "photo": "entertainment/people/minh-hue.jpg"
+    },
+    "jazzlynne-bao-chau": {
+      "id": "jazzlynne-bao-chau",
+      "name": "Jazzlynne Bảo Châu",
+      "aka": [
+        "Jazzlynne",
+        "Jazzlynne Chau",
+        "Bảo Châu"
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/jazzlynnechau",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/p/jazzlynne-bao-chau-61581703484963",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@jazzlynnechau",
+          "label": "YouTube"
+        }
+      ],
+      "photo": "entertainment/people/jazzlynne-bao-chau.jpg"
+    },
+    "hong-nhi": {
+      "id": "hong-nhi",
+      "name": "Hồng Nhi",
+      "links": [],
+      "photo": "entertainment/people/hong-nhi.jpg"
+    },
+    "phillip-pho-tran": {
+      "id": "phillip-pho-tran",
+      "name": "Phillip Phố Trần",
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/phillippho.tran.12",
+          "label": "Facebook"
+        }
+      ],
+      "photo": "entertainment/people/phillip-pho-tran.jpg"
+    },
     "y-lan": {
       "id": "y-lan",
       "name": "Ý Lan",
@@ -5662,12 +6184,6 @@
       ],
       "photo": "entertainment/people/bich-tuyen.jpg"
     },
-    "anh-hung": {
-      "id": "anh-hung",
-      "name": "Anh Hùng",
-      "links": [],
-      "photo": "entertainment/people/anh-hung.jpg"
-    },
     "chu-thuy-quynh": {
       "id": "chu-thuy-quynh",
       "name": "Chu Thuý Quỳnh",
@@ -6438,6 +6954,18 @@
       "links": [],
       "photo": null
     },
+    "chua-phuoc-son": {
+      "id": "chua-phuoc-son",
+      "name": "Chùa Phước Sơn",
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/p/ch%c3%b9a-ph%c6%b0%e1%bb%9bc-s%c6%a1n-61589652057392",
+          "label": "Facebook"
+        }
+      ],
+      "photo": null
+    },
     "four-season-band": {
       "id": "four-season-band",
       "name": "Four Season Band",
@@ -6736,6 +7264,12 @@
       "name": "Lucky Wav",
       "links": [],
       "photo": "entertainment/orgs/lucky-wav.jpg"
+    },
+    "hoi-dong-huong-nam-da-nang-sacramento": {
+      "id": "hoi-dong-huong-nam-da-nang-sacramento",
+      "name": "Hội Đồng Hương Nam Đà Nẵng Sacramento",
+      "links": [],
+      "photo": null
     },
     "rice-bowl-restaurant": {
       "id": "rice-bowl-restaurant",

@@ -1,8 +1,18 @@
 /** HTML builders for /entertainment on littlesaigonsac.town */
 
-import { cardVenueLine, venueLine } from "./venue-display.mjs";
+import {
+  cardVenueLine,
+  venueLine,
+  venueMapsUrl,
+  venueStreetLine,
+} from "./venue-display.mjs";
 
-export { cardVenueLine, venueLine } from "./venue-display.mjs";
+export {
+  cardVenueLine,
+  venueLine,
+  venueMapsUrl,
+  venueStreetLine,
+} from "./venue-display.mjs";
 
 const APOSTROPHE = "\u2019";
 const LDQUO = "\u201C";
@@ -138,6 +148,97 @@ export const PERFORMER_GENRE_SLUGS = Object.keys(SPECIALTY_LABEL).sort((a, b) =>
 /** Performers filter only — empty `specialties`. Never store on person_specialty. */
 export const PERFORMER_GENRE_UNKNOWN = "unknown";
 
+/** Leftover named genres after the top 4 on an event fingerprint. Not a stored slug. */
+export const FINGERPRINT_OTHER = "other";
+export const FINGERPRINT_MAX_NAMED = 4;
+/** Role specialties — omitted from the fingerprint (not Other, not Unknown). */
+export const FINGERPRINT_EXCLUDE_SLUGS = new Set(["emcee", "producer"]);
+
+function roundPercents(parts) {
+  const total = parts.reduce((sum, n) => sum + n, 0);
+  if (!(total > 0)) return parts.map(() => 0);
+  const raw = parts.map((n) => (n / total) * 100);
+  const floors = raw.map((x) => Math.floor(x + 1e-12));
+  let leftover = 100 - floors.reduce((sum, n) => sum + n, 0);
+  const order = raw
+    .map((x, i) => ({ i, frac: x - floors[i] }))
+    .sort((a, b) => b.frac - a.frac || a.i - b.i);
+  const out = floors.slice();
+  for (let k = 0; k < leftover; k++) out[order[k % order.length].i] += 1;
+  return out;
+}
+
+/**
+ * Lineup genre fingerprint: each billed person/org is 1 point, split evenly
+ * across their specialties after dropping `emcee` and `producer`. Those role
+ * slugs (and MC/producer-only people) are omitted — not Other, not Unknown.
+ * Empty remaining specialties → Unknown. Named slugs: top 4 by points,
+ * leftover named → optional Other, Unknown always last.
+ */
+export function eventGenreFingerprint(lineup = [], people = {}, orgs = {}) {
+  const rows = Array.isArray(lineup) ? lineup : [];
+  const named = new Map();
+  let unknown = 0;
+  let scored = 0;
+  for (const item of rows) {
+    const entity = item?.type === "org" ? orgs?.[item.id] : people?.[item.id];
+    const allSlugs = specialtySlugs(entity?.specialties);
+    const slugs = allSlugs.filter((slug) => !FINGERPRINT_EXCLUDE_SLUGS.has(slug));
+    if (!slugs.length) {
+      if (allSlugs.length) continue;
+      if (item?.role === "mc" || item?.role === "producer") continue;
+      unknown += 1;
+      scored += 1;
+      continue;
+    }
+    scored += 1;
+    const weight = 1 / slugs.length;
+    for (const slug of slugs) {
+      named.set(slug, (named.get(slug) || 0) + weight);
+    }
+  }
+  if (!scored) return { total: 0, segments: [] };
+
+  const namedRows = [...named.entries()]
+    .map(([slug, points]) => ({
+      slug,
+      label: SPECIALTY_LABEL[slug] || slug,
+      points,
+    }))
+    .sort(
+      (a, b) =>
+        b.points - a.points ||
+        compareSpecialtyLabels(a.label, b.label) ||
+        a.slug.localeCompare(b.slug),
+    );
+
+  const top = namedRows.slice(0, FINGERPRINT_MAX_NAMED);
+  const rest = namedRows.slice(FINGERPRINT_MAX_NAMED);
+  const otherPoints = rest.reduce((sum, row) => sum + row.points, 0);
+  const segments = top.map((row) => ({ ...row, kind: "named" }));
+  if (otherPoints > 0) {
+    segments.push({
+      slug: FINGERPRINT_OTHER,
+      label: "Other",
+      points: otherPoints,
+      kind: "other",
+    });
+  }
+  if (unknown > 0) {
+    segments.push({
+      slug: PERFORMER_GENRE_UNKNOWN,
+      label: "Unknown",
+      points: unknown,
+      kind: "unknown",
+    });
+  }
+  const percents = roundPercents(segments.map((row) => row.points));
+  return {
+    total: scored,
+    segments: segments.map((row, i) => ({ ...row, percent: percents[i] })),
+  };
+}
+
 export function specialtySlugs(specialties) {
   if (!Array.isArray(specialties)) return [];
   return specialties
@@ -147,6 +248,54 @@ export function specialtySlugs(specialties) {
 
 export function performerGenreHref(slug) {
   return `/entertainment/performers/?genre=${encodeURIComponent(slug)}`;
+}
+
+export function ticketVendorLabel(url) {
+  let host = "";
+  try {
+    host = new URL(url).hostname.replace(/^www\./i, "").toLowerCase();
+  } catch {
+    return "Tickets";
+  }
+  if (host.includes("ticketmaster")) return "Ticketmaster";
+  if (host.includes("99concerts")) return "99concerts";
+  if (host.includes("eventbrite")) return "Eventbrite";
+  if (host === "axs.com" || host.endsWith(".axs.com")) return "AXS";
+  if (host.includes("redhawkcasino")) return "Red Hawk";
+  return "Tickets";
+}
+
+export function usPhoneDigits(raw) {
+  const digits = String(raw || "").replace(/\D/g, "");
+  if (digits.length === 11 && digits.startsWith("1")) return digits.slice(1);
+  return digits.length === 10 ? digits : "";
+}
+
+export function formatUsPhone(raw) {
+  const n = usPhoneDigits(raw);
+  if (!n) return "";
+  return `(${n.slice(0, 3)}) ${n.slice(3, 6)}-${n.slice(6)}`;
+}
+
+export function telHref(raw) {
+  const n = usPhoneDigits(raw);
+  return n ? `tel:+1${n}` : "";
+}
+
+/** Display order: formatted number, then optional flyer name. */
+export function formatTicketPhoneLine(t) {
+  const number = formatUsPhone(t?.phone);
+  if (!number) return "";
+  const name = String(t?.label || "").trim();
+  return name ? `${number} ${name}` : number;
+}
+
+/** Prefer online purchase URLs; flyer phones only when there is no URL. */
+export function publicTicketCtas(tickets = []) {
+  const rows = Array.isArray(tickets) ? tickets : [];
+  const urls = rows.filter((t) => t?.kind === "url" && t.url);
+  if (urls.length) return urls;
+  return rows.filter((t) => t?.kind === "phone" && usPhoneDigits(t.phone));
 }
 
 const ROLE_LABEL = {
@@ -159,6 +308,7 @@ const ROLE_LABEL = {
   mc: "MC",
   dj: "DJ",
   band: "Band",
+  instrumentalist: "Instrumentalist",
   dance: "Dance troupe",
   martial_arts: "Martial arts",
   other: "Featured",
@@ -247,9 +397,9 @@ const UNLISTED_EVENTS_FB_NAME = "LITTLE SAIGON in Sacramento - Cộng Đồng Ng
 const UNLISTED_EVENTS_FB_ALT_URL = "https://www.facebook.com/groups/290197905206406";
 const UNLISTED_EVENTS_FB_ALT_NAME = "Người Việt Sacramento and Elk Grove";
 
-/** Public gallery geography: Sacramento region, city of Stockton, Reno / casino circuit. Bay Area out. */
+/** Public gallery geography: Sacramento region, city of Stockton, city of Modesto, Reno / casino circuit. Bay Area out. */
 export const ENTERTAINMENT_TAGLINE =
-  "Vietnamese concerts and dance nights around Sacramento, Stockton, and Reno.";
+  "Vietnamese concerts and dance nights around Sacramento, Stockton, Modesto, and Reno.";
 
 const DANCE_TROUPE_NAME_RE = /vũ\s*đoàn|vu\s*doan|nhóm\s*múa|nhom\s*mua/i;
 const MARTIAL_ARTS_NAME_RE = /xiếc\s*kungfu|xiec\s*kungfu/i;
@@ -461,6 +611,25 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     return `<div class="event-poster"><a class="event-poster-open" href="/img/${esc(ev.poster)}" data-lightbox aria-expanded="false">${posterImg}</a></div>`;
   };
 
+  /** Intrinsic 800×800 JPEGs must not win first layout (flex min-width: auto). */
+  const CREDIT_AVATAR_PX = 28;
+
+  const creditImgEl = (rel, alt = "") => {
+    const tag = imgEl(rel, alt);
+    if (!tag) return "";
+    return tag.replace("<img ", `<img width="${CREDIT_AVATAR_PX}" height="${CREDIT_AVATAR_PX}" `);
+  };
+
+  const creditAvatar = (item, people, orgs) => {
+    const entity = item.type === "org" ? orgs?.[item.id] : people?.[item.id];
+    const photoClass =
+      item.type === "org"
+        ? "entity-photo entity-photo--org credit-avatar"
+        : "entity-photo entity-photo--person credit-avatar";
+    const name = item.type === "org" ? displayName(item.name) : listingName(item.name);
+    return `<span class="${photoClass}">${creditImgEl(entity?.photo, name)}</span>`;
+  };
+
   const creditList = (items, people, orgs) => {
     const rows = collapseHostProducerCredits(items);
     if (!rows.length) return "";
@@ -468,7 +637,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     ${rows
       .map((item) => {
         const role = creditRoleLabel(item, orgs, people);
-        return `<li>${entityName(item, people, orgs)}${
+        return `<li>${creditAvatar(item, people, orgs)}<span class="credit-name">${entityName(item, people, orgs)}</span>${
           role ? ` <span class="credit-role">${esc(role)}</span>` : ""
         }</li>`;
       })
@@ -822,11 +991,76 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     <a href="${esc(UNLISTED_EVENTS_FB_ALT_URL)}" rel="noopener noreferrer" target="_blank">${esc(UNLISTED_EVENTS_FB_ALT_NAME)}</a>.</p>
   </article>`;
 
+  const sourceLink = (ev) => {
+    const url = String(ev.source_url || "").trim();
+    if (!/^https?:\/\//i.test(url)) return "";
+    return `<p class="event-source"><a href="${esc(url)}" rel="noopener noreferrer" target="_blank">Source</a></p>`;
+  };
+
+  const ticketCtas = (tickets) => {
+    const ctas = publicTicketCtas(tickets);
+    if (!ctas.length) return "";
+    if (ctas.some((t) => t.kind === "url")) {
+      const buttons = ctas
+        .filter((t) => t.kind === "url" && t.url)
+        .map((t) => {
+          const label = t.label || ticketVendorLabel(t.url);
+          return `<a class="ticket-btn" href="${esc(t.url)}" rel="noopener noreferrer" target="_blank">${esc(label)}</a>`;
+        });
+      if (!buttons.length) return "";
+      return `<p class="event-tickets">${buttons.join("")}</p>`;
+    }
+    const items = ctas
+      .map((t) => {
+        const href = telHref(t.phone);
+        const number = formatUsPhone(t.phone);
+        if (!href || !number) return "";
+        const name = String(t.label || "").trim();
+        const nameHtml = name
+          ? ` <span class="ticket-phone-name">${esc(name)}</span>`
+          : "";
+        return `<li><a href="${esc(href)}">${esc(number)}</a>${nameHtml}</li>`;
+      })
+      .filter(Boolean);
+    if (!items.length) return "";
+    return `<h2 class="section-label">Tickets</h2><ul class="ticket-phone-list">${items.join("")}</ul>`;
+  };
+
+  const genreFingerprint = (lineup, people, orgs) => {
+    const { total, segments } = eventGenreFingerprint(lineup, people, orgs);
+    if (!total || !segments.length) return "";
+    const summary = segments.map((s) => `${s.label} ${s.percent}%`).join(", ");
+    const bar = segments
+      .map((s) => {
+        const title = `${s.label} ${s.percent}%`;
+        const grow = Number.isInteger(s.points) ? String(s.points) : s.points.toFixed(4);
+        const attrs = `class="genre-fingerprint-seg" data-genre="${esc(s.slug)}" style="flex-grow: ${esc(grow)}" title="${esc(title)}"`;
+        if (s.kind === "other") {
+          return `<span ${attrs}></span>`;
+        }
+        return `<a ${attrs} href="${esc(performerGenreHref(s.slug))}" aria-label="${esc(title)}"></a>`;
+      })
+      .join("");
+    const legend = segments
+      .map((s) => {
+        const body = `<span class="genre-fingerprint-swatch" data-genre="${esc(s.slug)}"></span><span class="genre-fingerprint-name">${esc(s.label)}</span><span class="genre-fingerprint-pct">${s.percent}%</span>`;
+        return `<li>${body}</li>`;
+      })
+      .join("");
+    return `<div class="genre-fingerprint">
+    <p class="visually-hidden">Genre fingerprint: ${esc(summary)}</p>
+    <div class="genre-fingerprint-bar" aria-hidden="true">${bar}</div>
+    <ul class="genre-fingerprint-legend">${legend}</ul>
+  </div>`;
+  };
+
   return {
     posterCard,
     posterGrid,
     eventPoster,
     creditList,
+    genreFingerprint,
+    ticketCtas,
     socialList,
     entityHeading,
     bandMemberList,
@@ -840,6 +1074,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     MAP_FAB_SVG,
     FILTER_FAB_SVG,
     unlistedEventsInviteCard,
+    sourceLink,
     galleryShowSections,
     entityName,
     displayName,
@@ -957,7 +1192,13 @@ export function writeEntertainmentPages({
   );
 
   for (const ev of events) {
-    const place = venueLine(ev);
+    const place = cardVenueLine(ev) || venueLine(ev);
+    const street = venueStreetLine(ev);
+    const mapsUrl = venueMapsUrl(ev);
+    const addressLine =
+      street && mapsUrl
+        ? `<p class="event-meta event-address"><a href="${esc(mapsUrl)}" rel="noopener noreferrer" target="_blank">${esc(street)}</a></p>`
+        : "";
     const dir = join(dist, "entertainment", ev.id);
     mkdirSync(dir, { recursive: true });
     writeFileSync(
@@ -967,7 +1208,7 @@ export function writeEntertainmentPages({
         path: `/entertainment/${ev.id}/`,
         description: [
           detailDisplayDate(ev.display_date || ev.start_date),
-          h.displayName(cardVenueLine(ev) || place),
+          h.displayName(place),
         ].filter(Boolean).join(" · "),
         image: ev.poster,
         ogType: "article",
@@ -978,10 +1219,15 @@ export function writeEntertainmentPages({
         <h1>${h.escName(ev.label)}</h1>
       </header>
       <div class="event-layout">
-        ${h.eventPoster(ev)}
+        <div class="event-media">
+          ${h.eventPoster(ev)}
+          ${h.genreFingerprint(ev.lineup, people, orgs)}
+        </div>
         <div class="event-copy">
           <p class="event-meta">${esc(detailDisplayDate(ev.display_date || ev.start_date || ""))}</p>
           ${place ? `<p class="event-meta">${h.escName(place)}</p>` : ""}
+          ${addressLine}
+          ${h.ticketCtas(ev.tickets)}
           ${
             ev.producers.length
               ? `<h2 class="section-label">Producers</h2>${h.creditList(ev.producers, people, orgs)}`
@@ -992,6 +1238,7 @@ export function writeEntertainmentPages({
               ? `<h2 class="section-label">Lineup</h2>${h.creditList(ev.lineup, people, orgs)}`
               : ""
           }
+          ${h.sourceLink(ev)}
         </div>
       </div>
     </main>`,

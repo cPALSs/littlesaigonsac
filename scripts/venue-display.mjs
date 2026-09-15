@@ -102,3 +102,52 @@ export function cardVenueLine(ev) {
   const fallback = fallbackPlaceName(ev);
   return fallback ? withCity(fallback, ev.city) : "";
 }
+
+/** Street + city line for event detail only. Empty when there is no street. */
+export function venueStreetLine(ev) {
+  const fromPlace = abbreviateAddress(ev.place_address || "");
+  if (fromPlace) return fromPlace;
+  const venue = String(ev.venue || "").trim();
+  if (!venue) return "";
+  const parts = venue
+    .split(",")
+    .map((s) => s.replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+  const street = parts.filter(looksLikeStreetLine).map(abbreviateStreetLine);
+  if (!street.length) return "";
+  return withCity(street.join(", "), ev.city);
+}
+
+function isUsableMapsUrl(raw) {
+  const url = String(raw || "").trim();
+  if (!url) return "";
+  try {
+    const u = new URL(url);
+    if (u.protocol !== "http:" && u.protocol !== "https:") return "";
+    const host = u.hostname.replace(/^www\./i, "").toLowerCase();
+    if (host === "maps.app.goo.gl") return url;
+    if (host === "goo.gl" && /^\/maps\b/i.test(u.pathname)) return url;
+    const googleMaps =
+      host === "maps.google.com" ||
+      host === "google.com" ||
+      host.endsWith(".google.com");
+    if (!googleMaps || !/\/maps\b/i.test(u.pathname)) return "";
+    const hasQuery = [...u.searchParams.keys()].some((k) =>
+      ["q", "query", "api", "cid", "place_id", "query_place_id"].includes(k),
+    );
+    const hasPlacePath = /\/maps\/(place|search|dir)\b/i.test(u.pathname);
+    if (!hasQuery && !hasPlacePath) return "";
+    return url;
+  } catch {
+    return "";
+  }
+}
+
+/** Google Maps URL for the venue street (stored place URL, else search). */
+export function venueMapsUrl(ev) {
+  const stored = isUsableMapsUrl(ev.google_maps_url || ev.google_maps);
+  if (stored) return stored;
+  const query = venueStreetLine(ev);
+  if (!query) return "";
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}

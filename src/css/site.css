@@ -38,7 +38,7 @@ body {
   background:
     radial-gradient(1200px 500px at 10% -10%, rgba(155, 29, 20, 0.08), transparent 50%),
     var(--paper);
-  font-family: "Be Vietnam Pro", "Helvetica Neue", sans-serif;
+  font-family: Inter, "Helvetica Neue", sans-serif;
   font-size: 17px;
   line-height: 1.55;
 }
@@ -905,7 +905,7 @@ h1 {
 }
 
 .dish-title .gloss {
-  font-family: "Be Vietnam Pro", "Helvetica Neue", sans-serif;
+  font-family: Inter, "Helvetica Neue", sans-serif;
   font-size: 0.95rem;
   font-weight: 400;
 }
@@ -1132,6 +1132,13 @@ footer .wrap {
   padding: 1.5rem 0 3rem;
 }
 
+.event-media {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
 .event-poster {
   background: var(--open);
   border: 1px solid var(--rule);
@@ -1232,6 +1239,85 @@ body.is-lightbox-open {
   color: var(--ink-soft);
 }
 
+.event-address a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.event-address a:hover {
+  color: var(--rust);
+}
+
+.event-tickets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.75rem 0 0;
+}
+
+.ticket-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.42rem 0.95rem;
+  border-radius: 999px;
+  background: var(--rust);
+  color: var(--filled);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.ticket-btn:hover {
+  background: var(--rust-deep);
+  color: var(--filled);
+}
+
+.ticket-phone-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.28rem 1.4rem;
+  margin: 0.45rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--ink);
+}
+
+.ticket-phone-list a {
+  margin-inline-end: 0.45em;
+  color: var(--rust);
+  font-weight: 400;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.ticket-phone-list a:hover {
+  color: var(--rust-deep);
+}
+
+.ticket-phone-name {
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+}
+
+.event-source {
+  margin: 1.6rem 0 0;
+}
+
+.event-source a {
+  color: var(--rust);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.event-source a:hover {
+  color: var(--rust-deep);
+}
+
 .credit-list {
   margin: 0.45rem 0 0;
   padding: 0;
@@ -1239,7 +1325,37 @@ body.is-lightbox-open {
 }
 
 .credit-list li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.45rem;
   margin: 0.28rem 0;
+}
+
+.credit-list .credit-avatar {
+  display: block;
+  flex: 0 0 1.7rem;
+  flex-shrink: 0;
+  width: 1.7rem;
+  height: 1.7rem;
+  min-width: 1.7rem;
+  max-width: 1.7rem;
+  min-height: 1.7rem;
+  max-height: 1.7rem;
+  overflow: hidden;
+}
+
+.credit-list .credit-avatar img {
+  display: block;
+  width: 1.7rem;
+  height: 1.7rem;
+  max-width: 1.7rem;
+  max-height: 1.7rem;
+  object-fit: cover;
+}
+
+.credit-list .credit-name {
+  min-width: 0;
 }
 
 .credit-list a {
@@ -1249,6 +1365,138 @@ body.is-lightbox-open {
 
 .credit-list a:hover {
   color: var(--rust-deep);
+}
+
+.genre-fingerprint {
+  margin: 0;
+}
+
+.genre-fingerprint-bar {
+  display: flex;
+  width: 100%;
+  height: 0.7rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--open);
+}
+
+.genre-fingerprint-seg {
+  display: block;
+  min-width: 0;
+  flex-shrink: 0;
+  flex-basis: 0;
+  text-decoration: none;
+}
+
+.genre-fingerprint-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.85rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.genre-fingerprint-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  line-height: 1.3;
+}
+
+.genre-fingerprint-swatch {
+  display: block;
+  flex: 0 0 0.7rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 999px;
+}
+
+.genre-fingerprint-pct {
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.genre-fingerprint-seg[data-genre="nhac-vang"],
+.genre-fingerprint-swatch[data-genre="nhac-vang"] {
+  background: #9b1d14;
+}
+
+.genre-fingerprint-seg[data-genre="que-huong"],
+.genre-fingerprint-swatch[data-genre="que-huong"] {
+  background: #b8923a;
+}
+
+.genre-fingerprint-seg[data-genre="nhac-tre"],
+.genre-fingerprint-swatch[data-genre="nhac-tre"] {
+  background: #3b257b;
+}
+
+.genre-fingerprint-seg[data-genre="remix"],
+.genre-fingerprint-swatch[data-genre="remix"] {
+  background: #c45c26;
+}
+
+.genre-fingerprint-seg[data-genre="co-nhac"],
+.genre-fingerprint-swatch[data-genre="co-nhac"] {
+  background: #6e120c;
+}
+
+.genre-fingerprint-seg[data-genre="trinh"],
+.genre-fingerprint-swatch[data-genre="trinh"] {
+  background: #5c4a3e;
+}
+
+.genre-fingerprint-seg[data-genre="dj-edm"],
+.genre-fingerprint-swatch[data-genre="dj-edm"] {
+  background: #1a6b8a;
+}
+
+.genre-fingerprint-seg[data-genre="american-indie"],
+.genre-fingerprint-swatch[data-genre="american-indie"] {
+  background: #3d6b4f;
+}
+
+.genre-fingerprint-seg[data-genre="chinese"],
+.genre-fingerprint-swatch[data-genre="chinese"] {
+  background: #c43c3c;
+}
+
+.genre-fingerprint-seg[data-genre="emcee"],
+.genre-fingerprint-swatch[data-genre="emcee"] {
+  background: #2d5a87;
+}
+
+.genre-fingerprint-seg[data-genre="influencer"],
+.genre-fingerprint-swatch[data-genre="influencer"] {
+  background: #7a3d8c;
+}
+
+.genre-fingerprint-seg[data-genre="martial-arts"],
+.genre-fingerprint-swatch[data-genre="martial-arts"] {
+  background: #8b4513;
+}
+
+.genre-fingerprint-seg[data-genre="producer"],
+.genre-fingerprint-swatch[data-genre="producer"] {
+  background: #4a5568;
+}
+
+.genre-fingerprint-seg[data-genre="dance-group"],
+.genre-fingerprint-swatch[data-genre="dance-group"] {
+  background: #b85c8a;
+}
+
+.genre-fingerprint-seg[data-genre="other"],
+.genre-fingerprint-swatch[data-genre="other"] {
+  background: #a89880;
+}
+
+.genre-fingerprint-seg[data-genre="unknown"],
+.genre-fingerprint-swatch[data-genre="unknown"] {
+  background: #d4c4aa;
 }
 
 .performer-toolbar {
@@ -1599,6 +1847,10 @@ a.genre-chip:hover {
     align-items: start;
   }
 
+  .ticket-phone-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .poster-grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -1623,6 +1875,16 @@ a.genre-chip:hover {
   .performer-list .performer-avatar {
     width: 3.25rem;
     height: 3.25rem;
+  }
+
+  .credit-list .credit-avatar,
+  .credit-list .credit-avatar img {
+    width: 1.7rem;
+    height: 1.7rem;
+    min-width: 1.7rem;
+    max-width: 1.7rem;
+    min-height: 1.7rem;
+    max-height: 1.7rem;
   }
 }
 

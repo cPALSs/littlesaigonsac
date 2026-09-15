@@ -47,5 +47,28 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
+  // CSS/JS: network-first so a new stylesheet is on the first click, not
+  // only after reload. Cache-first left /css/site.css frozen until the SW
+  // file itself changed (cache name was git SHA — CSS-only rebuilds matched).
+  const isStyleOrScript =
+    request.destination === "style" ||
+    request.destination === "script" ||
+    url.pathname.endsWith(".css") ||
+    url.pathname.endsWith(".js");
+  if (isStyleOrScript) {
+    event.respondWith(
+      fetch(request)
+        .then((response) => {
+          if (response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE).then((cache) => cache.put(request, copy));
+          }
+          return response;
+        })
+        .catch(async () => (await caches.match(request)) || Response.error()),
+    );
+    return;
+  }
+
   event.respondWith(caches.match(request).then((cached) => cached || fetch(request)));
 });

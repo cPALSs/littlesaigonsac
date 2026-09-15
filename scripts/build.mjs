@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { createHash } from "node:crypto";
 import { execSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync, cpSync, rmSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -134,12 +135,18 @@ const BACKGROUND_COLOR = "#f4ead8";
 const HOME_SCREEN_TITLE = "Little Saigon";
 const DEFAULT_OG = { path: "/img/brand/og-image.png", width: 1200, height: 630 };
 
+const siteCssSource = readFileSync(join(root, "src/css/site.css"));
+const siteCssHash = createHash("sha256").update(siteCssSource).digest("hex").slice(0, 12);
+const siteCssHref = `/css/site.css?v=${siteCssHash}`;
+
 const cacheStamp = () => {
+  let rev;
   try {
-    return execSync("git rev-parse --short HEAD", { cwd: root, encoding: "utf8" }).trim();
+    rev = execSync("git rev-parse --short HEAD", { cwd: root, encoding: "utf8" }).trim();
   } catch {
-    return new Date().toISOString().slice(0, 10);
+    rev = new Date().toISOString().slice(0, 10);
   }
+  return `${rev}-${siteCssHash}`;
 };
 
 const imageSize = (absPath) => {
@@ -232,8 +239,8 @@ const layout = ({ title, body, current = "", home = false, path = "/", descripti
   <title>${esc(title)}</title>
 ${gaTag}${socialHead({ title, description, path, image, ogType })}  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/site.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="${siteCssHref}">
   <link rel="icon" href="/img/brand/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/img/brand/apple-touch.png">
   <link rel="manifest" href="/site.webmanifest">
@@ -589,7 +596,7 @@ writeFileSync(join(dist, "offline/index.html"), offlinePage);
 const precache = [
   "/",
   "/offline/",
-  "/css/site.css",
+  siteCssHref,
   "/js/home-sort.js",
   "/js/site-nav.js",
   "/js/poster-lightbox.js",
