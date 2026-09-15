@@ -426,7 +426,10 @@ const foodiesPage = foodies
         ${foodies.lede ? `<p class="tagline">${esc(foodies.lede)}</p>` : ""}
       </header>
       <ul class="foodie-list">
-        ${(foodies.people || [])
+        ${[...(foodies.people || [])]
+          .sort((a, b) =>
+            (a.name || "").localeCompare(b.name || "", "en", { sensitivity: "base" }),
+          )
           .map(
             (person) => `<li class="foodie-card">
           <div class="foodie-avatar">${foodieAvatar(person)}</div>

@@ -11,20 +11,20 @@
       "photo": "foodies/honda-nguyen.jpg"
     },
     {
-      "id": "trangaroni",
-      "name": "Trangaroni",
-      "network": "instagram",
-      "handle": "@trangaroni",
-      "url": "https://www.instagram.com/trangaroni/",
-      "photo": "foodies/trangaroni.jpg"
-    },
-    {
       "id": "linda",
       "name": "Linda",
       "network": "instagram",
       "handle": "@livingwlinda",
       "url": "https://www.instagram.com/livingwlinda/",
       "photo": "foodies/linda.jpg"
+    },
+    {
+      "id": "trangaroni",
+      "name": "Trangaroni",
+      "network": "instagram",
+      "handle": "@trangaroni",
+      "url": "https://www.instagram.com/trangaroni/",
+      "photo": "foodies/trangaroni.jpg"
     },
     {
       "id": "vivian-vu",

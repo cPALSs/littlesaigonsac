@@ -596,11 +596,21 @@ h1 {
 
 .foodie-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, max(16.5rem, calc((100% - 1.8rem) / 3))), 1fr)
+  );
   gap: 0.9rem;
   margin: 1.6rem 0 3rem;
   padding: 0;
   list-style: none;
+}
+
+/* 2-col foodie cards wrap handles by 628px (Honda) — stay 1-col through that band. */
+@media (max-width: 659px) {
+  .foodie-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 .foodie-card {
