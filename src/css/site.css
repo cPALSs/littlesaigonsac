@@ -642,10 +642,7 @@ h1 {
 
 .foodie-list {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(min(100%, max(16.5rem, calc((100% - 1.8rem) / 3))), 1fr)
-  );
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
   gap: 0.9rem;
   margin: 1.6rem 0 3rem;
   padding: 0;
@@ -731,7 +728,7 @@ h1 {
 }
 
 .foodie-handle {
-  word-break: break-word;
+  white-space: nowrap;
 }
 
 .muted {
