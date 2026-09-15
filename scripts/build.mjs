@@ -129,6 +129,9 @@ const gaTag = gaId
 const SITE_ORIGIN = String(data.site.url || "https://littlesaigonsac.town").replace(/\/$/, "");
 const THEME_COLOR = "#3b257b";
 const BACKGROUND_COLOR = "#f4ead8";
+// iOS home-screen labels are ~12–13 characters. Longer titles get spaces
+// stripped, then ellipsized (Little Saigon Sactown → LittleSaigonSact...).
+const HOME_SCREEN_TITLE = "Little Saigon";
 const DEFAULT_OG = { path: "/img/brand/og-image.png", width: 1200, height: 630 };
 
 const cacheStamp = () => {
@@ -237,7 +240,7 @@ ${gaTag}${socialHead({ title, description, path, image, ogType })}  <link rel="p
   <meta name="theme-color" content="${THEME_COLOR}">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="${esc(data.site.name)}">
+  <meta name="apple-mobile-web-app-title" content="${esc(HOME_SCREEN_TITLE)}">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 <body${home ? ' class="home"' : ""}>
@@ -543,7 +546,7 @@ writeFileSync(
     {
       id: `${SITE_ORIGIN}/`,
       name: data.site.name,
-      short_name: data.site.name,
+      short_name: HOME_SCREEN_TITLE,
       description: data.site.tagline || SHARE_DESCRIPTION,
       start_url: "/",
       scope: "/",
