@@ -1,0 +1,38 @@
+{
+  "title": "About the foodies",
+  "lede": "Kitchen picks on Viet Eats come from these Sacramento-area food voices. Names are how they brand on Instagram or Facebook.",
+  "people": [
+    {
+      "id": "honda-nguyen",
+      "name": "Honda Nguyen",
+      "network": "facebook",
+      "handle": "hondanguyen2013",
+      "url": "https://www.facebook.com/hondanguyen2013/",
+      "photo": "foodies/honda-nguyen.jpg"
+    },
+    {
+      "id": "trangaroni",
+      "name": "Trangaroni",
+      "network": "instagram",
+      "handle": "@trangaroni",
+      "url": "https://www.instagram.com/trangaroni/",
+      "photo": "foodies/trangaroni.jpg"
+    },
+    {
+      "id": "linda",
+      "name": "Linda",
+      "network": "instagram",
+      "handle": "@livingwlinda",
+      "url": "https://www.instagram.com/livingwlinda/",
+      "photo": "foodies/linda.jpg"
+    },
+    {
+      "id": "vivian-vu",
+      "name": "Vivian Vu",
+      "network": "instagram",
+      "handle": "@foodierealtorviv",
+      "url": "https://www.instagram.com/foodierealtorviv/",
+      "photo": "foodies/vivian-vu.jpg"
+    }
+  ]
+}

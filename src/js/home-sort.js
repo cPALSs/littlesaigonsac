@@ -65,6 +65,20 @@ function sortMealGrid(grid, date = new Date()) {
   grid.dataset.sorted = "true";
 }
 
+function capHomeMealGrid() {
+  const grid = document.querySelector("#viet-eats [data-meal-grid]");
+  if (!grid) return;
+  const cols = getComputedStyle(grid)
+    .gridTemplateColumns.split(/\s+/)
+    .filter(Boolean).length;
+  const cap = cols >= 4 ? 8 : 6;
+  [...grid.children].forEach((el, i) => {
+    el.hidden = i >= cap;
+  });
+  grid.dataset.cols = String(cols);
+  grid.dataset.cap = String(cap);
+}
+
 for (const grid of document.querySelectorAll("[data-meal-grid]")) {
   try {
     sortMealGrid(grid);
@@ -72,3 +86,6 @@ for (const grid of document.querySelectorAll("[data-meal-grid]")) {
     grid.dataset.sorted = "true";
   }
 }
+
+capHomeMealGrid();
+window.addEventListener("resize", capHomeMealGrid);

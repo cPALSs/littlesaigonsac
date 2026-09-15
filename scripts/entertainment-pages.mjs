@@ -861,6 +861,7 @@ export function homeEntertainmentSection({ entertainment, esc, imgEl, crumbs }) 
       </div>
       <p class="lede">${ENTERTAINMENT_TAGLINE}</p>
       <div class="poster-grid poster-grid--home">${strip.map(posterCard).join("")}</div>
+      <p class="section-foot"><a href="/entertainment/">All shows</a></p>
     </section>`;
 }
 

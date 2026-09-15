@@ -166,6 +166,23 @@
       "fit": ["lunch", "dinner"],
       "dishes": [
         {
+          "slug": "bo-luc-lac",
+          "vi": "Bò lúc lắc",
+          "gloss": "Shaking beef",
+          "photo": "bo-luc-lac.jpg",
+          "kitchens": [
+            {
+              "name": "Creasian Fusion",
+              "address": "9163 E Stockton Blvd #300, Elk Grove, CA 95624",
+              "maps": "https://maps.app.goo.gl/UMNnk9uXFSHGNZmm9",
+              "recommender": {
+                "name": "Trangaroni",
+                "url": "https://www.instagram.com/reel/DX5KWMbTHJY/"
+              }
+            }
+          ]
+        },
+        {
           "slug": "bo-ne",
           "vi": "Bò né",
           "gloss": "Steak skillet",
@@ -175,6 +192,15 @@
               "name": "Creasian Fusion",
               "address": "9163 E Stockton Blvd #300, Elk Grove, CA 95624",
               "maps": "https://maps.app.goo.gl/UMNnk9uXFSHGNZmm9"
+            },
+            {
+              "name": "Me’s Kitchen",
+              "address": "2610 Fair Oaks Blvd, Sacramento, CA 95864",
+              "maps": "https://maps.google.com/?cid=6298839051881367216",
+              "recommender": {
+                "name": "Trangaroni",
+                "url": "https://www.instagram.com/reel/DTLceHMj808/"
+              }
             }
           ]
         },
@@ -186,20 +212,36 @@
             {
               "name": "Saigon Oi",
               "address": "6835 Stockton Blvd Ste 450, Sacramento, CA 95823",
-              "maps": "https://maps.google.com/?cid=16141630770361268683"
+              "maps": "https://maps.google.com/?cid=16141630770361268683",
+              "recommender": {
+                "name": "Linda",
+                "url": "https://www.instagram.com/reel/DOZKYsDkkLG/"
+              }
             }
           ]
         },
         {
-          "slug": "bo-luc-lac",
-          "vi": "Bò lúc lắc",
-          "gloss": "Shaking beef",
-          "photo": "bo-luc-lac.jpg",
+          "slug": "canh-ga-nuoc-mam",
+          "vi": "Cánh gà nước mắm",
+          "gloss": "Fish sauce wings",
           "kitchens": [
             {
-              "name": "Creasian Fusion",
-              "address": "9163 E Stockton Blvd #300, Elk Grove, CA 95624",
-              "maps": "https://maps.app.goo.gl/UMNnk9uXFSHGNZmm9"
+              "name": "Saigon Oi",
+              "address": "6835 Stockton Blvd Ste 450, Sacramento, CA 95823",
+              "maps": "https://maps.google.com/?cid=16141630770361268683",
+              "recommender": {
+                "name": "Linda",
+                "url": "https://www.instagram.com/reel/DOZKYsDkkLG/"
+              }
+            },
+            {
+              "name": "Me’s Kitchen",
+              "address": "2610 Fair Oaks Blvd, Sacramento, CA 95864",
+              "maps": "https://maps.google.com/?cid=6298839051881367216",
+              "recommender": {
+                "name": "Trangaroni",
+                "url": "https://www.instagram.com/reel/DTLceHMj808/"
+              }
             }
           ]
         }
@@ -227,6 +269,22 @@
               "name": "Caffeine Society Club",
               "address": "6821 Stockton Blvd Ste 110, Sacramento, CA 95823",
               "maps": "https://maps.google.com/?cid=6901488499280839702"
+            }
+          ]
+        },
+        {
+          "slug": "ca-phe-sua-da",
+          "vi": "Cà phê sữa đá",
+          "gloss": "Iced coffee with condensed milk",
+          "kitchens": [
+            {
+              "name": "Saigon Oi",
+              "address": "6835 Stockton Blvd Ste 450, Sacramento, CA 95823",
+              "maps": "https://maps.google.com/?cid=16141630770361268683",
+              "recommender": {
+                "name": "Linda",
+                "url": "https://www.instagram.com/reel/DOZKYsDkkLG/"
+              }
             }
           ]
         }
@@ -275,14 +333,22 @@
           "photo": "banh-khot.jpg",
           "kitchens": [
             {
-              "name": "Mes Kitchen",
+              "name": "Me’s Kitchen",
               "address": "2610 Fair Oaks Blvd, Sacramento, CA 95864",
-              "maps": "https://maps.google.com/?cid=6298839051881367216"
+              "maps": "https://maps.google.com/?cid=6298839051881367216",
+              "recommender": {
+                "name": "Trangaroni",
+                "url": "https://www.instagram.com/reel/DTLceHMj808/"
+              }
             },
             {
               "name": "Saigon Oi",
               "address": "6835 Stockton Blvd Ste 450, Sacramento, CA 95823",
-              "maps": "https://maps.google.com/?cid=16141630770361268683"
+              "maps": "https://maps.google.com/?cid=16141630770361268683",
+              "recommender": {
+                "name": "Linda",
+                "url": "https://www.instagram.com/reel/DOZKYsDkkLG/"
+              }
             }
           ]
         }
@@ -292,9 +358,26 @@
       "slug": "bun",
       "vi": "Bún",
       "gloss": "Rice vermicelli",
-      "photo": "bun.png",
+      "photo": "bun.jpg",
       "fit": ["lunch", "dinner"],
       "dishes": [
+        {
+          "slug": "bun-bo-hue",
+          "vi": "Bún bò Huế",
+          "gloss": "Spicy beef noodle soup",
+          "kitchens": [
+            {
+              "name": "Quán Nem Ninh Hòa",
+              "address": "6450 Stockton Blvd, Sacramento, CA 95823",
+              "maps": "https://maps.google.com/?cid=5570285335269858978",
+              "note": "Oxtail.",
+              "recommender": {
+                "name": "Honda Nguyen",
+                "url": "https://www.facebook.com/reel/1414727654180381"
+              }
+            }
+          ]
+        },
         {
           "slug": "bun-thit-nuong-cha-gio",
           "vi": "Bún thịt nướng chả giò",
@@ -304,7 +387,61 @@
             {
               "name": "Creasian Fusion",
               "address": "9163 E Stockton Blvd #300, Elk Grove, CA 95624",
-              "maps": "https://maps.app.goo.gl/UMNnk9uXFSHGNZmm9"
+              "maps": "https://maps.app.goo.gl/UMNnk9uXFSHGNZmm9",
+              "recommender": {
+                "name": "Trangaroni",
+                "url": "https://www.instagram.com/reel/DX5KWMbTHJY/"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "banh-canh",
+      "vi": "Bánh canh",
+      "gloss": "Thick rice noodles",
+      "photo": "banh-canh.jpg",
+      "fit": ["lunch", "dinner"],
+      "dishes": [
+        {
+          "slug": "banh-canh-cua",
+          "vi": "Bánh canh cua",
+          "gloss": "Crab bánh canh",
+          "kitchens": [
+            {
+              "name": "Saigon Oi",
+              "address": "6835 Stockton Blvd Ste 450, Sacramento, CA 95823",
+              "maps": "https://maps.google.com/?cid=16141630770361268683",
+              "recommender": {
+                "name": "Linda",
+                "url": "https://www.instagram.com/reel/DOZKYsDkkLG/"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "cuon",
+      "vi": "Cuốn",
+      "gloss": "Rolls",
+      "photo": "cuon.jpg",
+      "fit": ["lunch", "dinner", "snack"],
+      "dishes": [
+        {
+          "slug": "nem-cuon",
+          "vi": "Nem cuốn",
+          "gloss": "Fresh spring rolls",
+          "kitchens": [
+            {
+              "name": "Quán Nem Ninh Hòa",
+              "address": "6450 Stockton Blvd, Sacramento, CA 95823",
+              "maps": "https://maps.google.com/?cid=5570285335269858978",
+              "recommender": {
+                "name": "Trangaroni",
+                "url": "https://www.instagram.com/reel/DWg7moxD6a5/"
+              }
             }
           ]
         }

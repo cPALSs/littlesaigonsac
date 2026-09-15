@@ -13,6 +13,8 @@ const entertainmentPath = join(root, "data/entertainment.json");
 const entertainment = existsSync(entertainmentPath)
   ? JSON.parse(readFileSync(entertainmentPath, "utf8"))
   : null;
+const foodiesPath = join(root, "data/foodies.json");
+const foodies = existsSync(foodiesPath) ? JSON.parse(readFileSync(foodiesPath, "utf8")) : null;
 
 if (entertainment?.people) {
   for (const person of Object.values(entertainment.people)) {
@@ -53,7 +55,8 @@ const imgEl = (rel, alt = "") => {
   const src = `/img/${esc(rel)}`;
   if (
     String(rel).startsWith("entertainment/people/") ||
-    String(rel).startsWith("entertainment/orgs/")
+    String(rel).startsWith("entertainment/orgs/") ||
+    String(rel).startsWith("foodies/")
   ) {
     const mtime = Math.floor(statSync(abs).mtimeMs);
     return `<img src="${src}?t=${mtime}" alt="${esc(alt)}">`;
@@ -71,17 +74,26 @@ const igButton = () => `<a class="ig" href="${esc(igHref)}" rel="noopener norefe
     </svg>
   </a>`;
 
-const crumbs = (trail = []) => `<nav class="crumbs" aria-label="Breadcrumb">
+const crumbs = (trail = []) => {
+  const ancestors = trail.filter((item) => !item.current);
+  return `<nav class="crumbs" aria-label="Breadcrumb">
     <a href="/">Home</a>
-    ${trail
-      .map((item) => {
-        const crumb = item.current
-          ? `<span aria-current="page">${esc(item.label)}</span>`
-          : `<a href="${esc(item.href)}">${esc(item.label)}</a>`;
-        return `<span class="crumbs-sep" aria-hidden="true"> / </span>${crumb}`;
-      })
+    ${ancestors
+      .map(
+        (item) =>
+          `<span class="crumbs-sep" aria-hidden="true"> / </span><a href="${esc(item.href)}">${esc(item.label)}</a>`,
+      )
       .join("")}
   </nav>`;
+};
+
+const siteNavLinks = (current) =>
+  nav
+    .map((item) => {
+      const on = item.id === current;
+      return `<a href="${esc(item.href)}"${on ? ' aria-current="page"' : ""}>${esc(item.label)}</a>`;
+    })
+    .join("");
 
 const siteHeader = (current) => `<header class="site-header">
     <div class="wrap">
@@ -90,12 +102,7 @@ const siteHeader = (current) => `<header class="site-header">
         <span>${esc(data.site.name)}</span>
       </a>
       <nav class="site-nav" id="site-nav" aria-label="Site">
-        ${nav
-          .map((item) => {
-            const on = item.id === current;
-            return `<a href="${esc(item.href)}"${on ? ' aria-current="page"' : ""}>${esc(item.label)}</a>`;
-          })
-          .join("")}
+        ${siteNavLinks(current)}
       </nav>
       <div class="header-tools">
         <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
@@ -174,9 +181,11 @@ const resolveOgImage = (imageRel) => {
   return { url: `${SITE_ORIGIN}${DEFAULT_OG.path}`, width: DEFAULT_OG.width, height: DEFAULT_OG.height };
 };
 
+const SHARE_DESCRIPTION = "Vietnamese food picks for Greater Sacramento.";
+
 const socialHead = ({ title, description, path = "/", image, ogType = "website" }) => {
   const pageUrl = `${SITE_ORIGIN}${path.startsWith("/") ? path : `/${path}`}`;
-  const desc = description || data.site.tagline || "";
+  const desc = description || SHARE_DESCRIPTION;
   const og = resolveOgImage(image);
   const dim =
     og.width && og.height
@@ -220,7 +229,12 @@ ${gaTag}${socialHead({ title, description, path, image, ogType })}  <link rel="p
   <footer>
     <div class="wrap">
       <span>${esc(data.site.name)}</span>
-      ${igButton()}
+      <div class="footer-tools">
+        <nav class="footer-nav" aria-label="Site">
+          ${siteNavLinks(current)}
+        </nav>
+        ${igButton()}
+      </div>
     </div>
   </footer>
   <script src="/js/site-nav.js" defer></script>
@@ -229,10 +243,29 @@ ${gaTag}${socialHead({ title, description, path, image, ogType })}  <link rel="p
 </html>
 `;
 
+const recommenderLinks = (k) => {
+  const raw = k.recommenders ?? k.recommender;
+  const list = (Array.isArray(raw) ? raw : raw ? [raw] : [])
+    .map((rec) => {
+      if (!rec || typeof rec !== "object") return null;
+      const name = typeof rec.name === "string" ? rec.name.trim() : "";
+      const url = typeof rec.url === "string" ? rec.url.trim() : "";
+      if (!name || !url) return null;
+      return `<a href="${esc(url)}" rel="noopener noreferrer" target="_blank">${esc(name)}</a>`;
+    })
+    .filter(Boolean);
+  if (!list.length) return "";
+  if (list.length === 1) return `Recommended by ${list[0]}`;
+  if (list.length === 2) return `Recommended by ${list[0]} and ${list[1]}`;
+  return `Recommended by ${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
+};
+
 const kitchenNote = (k) => {
   const note = typeof k.note === "string" ? k.note.trim() : "";
-  if (!note) return "";
-  return `<p class="kitchen-note">${esc(note)}</p>`;
+  const recs = recommenderLinks(k);
+  if (!note && !recs) return "";
+  const body = note && recs ? `${esc(note)} ${recs}` : note ? esc(note) : recs;
+  return `<p class="kitchen-note">${body}</p>`;
 };
 
 const kitchenItems = (dish) => {
@@ -306,7 +339,7 @@ const mealCategoryGrid = () => `<script type="application/json" id="meal-sort-wi
 const home = layout({
   title: data.site.name,
   path: "/",
-  description: data.site.tagline,
+  description: SHARE_DESCRIPTION,
   current: "",
   home: true,
   body: `<main>
@@ -318,10 +351,14 @@ const home = layout({
     <section class="wrap feature" id="viet-eats">
       <div class="section-head">
         <h2>Viet Eats</h2>
-        <a href="/viet-eats/">All categories</a>
+        <div class="section-head-links">
+          <a href="/viet-eats/">All categories</a>
+          <a href="/viet-eats/foodies/">About the foodies</a>
+        </div>
       </div>
       <p class="lede">Vietnamese cuisine and the best kitchens that cook them.</p>
       ${mealCategoryGrid()}
+      <p class="section-foot"><a href="/viet-eats/">All categories</a></p>
     </section>
     ${entertainment ? homeEntertainmentSection({ entertainment, esc, imgEl, crumbs }) : ""}
   </main>
@@ -331,12 +368,15 @@ const home = layout({
 const vietEatsIndex = layout({
   title: `Viet Eats · ${data.site.name}`,
   path: "/viet-eats/",
-  description: "Vietnamese cuisine and the best kitchens that cook them.",
+  description: SHARE_DESCRIPTION,
   current: "viet-eats",
   body: `<main class="wrap">
     <header class="hero">
       ${crumbs([{ label: "Viet Eats", current: true }])}
-      <h1>Viet Eats</h1>
+      <div class="page-title-row">
+        <h1>Viet Eats</h1>
+        <a href="/viet-eats/foodies/">About the foodies</a>
+      </div>
       <p class="tagline">Dish-first kitchen picks for Little Saigon Sacramento.</p>
     </header>
     ${mealCategoryGrid()}
@@ -344,13 +384,71 @@ const vietEatsIndex = layout({
   <script src="/js/home-sort.js" defer></script>`,
 });
 
+const IG_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="2.4" y="2.4" width="19.2" height="19.2" rx="5.4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="12" cy="12" r="4.35" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="17.45" cy="6.55" r="1.15" fill="currentColor"/>
+    </svg>`;
+
+const FB_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor" d="M14.2 8.2h3.1V4.8h-3.1c-2.7 0-4.6 1.7-4.6 4.5v1.7H7.5v3.4h2.1V21h3.7v-6.6h2.6l.6-3.4h-3.2V9.6c0-.8.4-1.4 1.4-1.4z"/>
+    </svg>`;
+
+const foodieAvatar = (person) => {
+  const photo = imgEl(person.photo, person.name);
+  if (photo) return photo;
+  const letter = (person.name || "?").trim().charAt(0).toUpperCase() || "?";
+  return `<span class="foodie-fallback" aria-hidden="true">${esc(letter)}</span>`;
+};
+
+const foodieSocial = (person) => {
+  const network = person.network === "facebook" ? "Facebook" : "Instagram";
+  const icon = person.network === "facebook" ? FB_SVG : IG_SVG;
+  const handle = person.handle || person.name;
+  const networkClass = person.network === "facebook" ? " foodie-social--facebook" : "";
+  return `<a class="foodie-social${networkClass}" href="${esc(person.url)}" rel="noopener noreferrer" target="_blank">
+        ${icon}
+        <span class="foodie-handle">${esc(handle)}</span>
+        <span class="visually-hidden"> on ${network}</span>
+      </a>`;
+};
+
+const foodiesPage = foodies
+  ? layout({
+      title: `${foodies.title || "About the foodies"} · Viet Eats`,
+      path: "/viet-eats/foodies/",
+      description: foodies.lede || "Sacramento-area food voices behind Viet Eats kitchen picks.",
+      current: "viet-eats",
+      body: `<main class="wrap foodies">
+      <header class="hero">
+        ${crumbs([{ href: "/viet-eats/", label: "Viet Eats" }, { label: foodies.title || "About the foodies", current: true }])}
+        <h1>${esc(foodies.title || "About the foodies")}</h1>
+        ${foodies.lede ? `<p class="tagline">${esc(foodies.lede)}</p>` : ""}
+      </header>
+      <ul class="foodie-list">
+        ${(foodies.people || [])
+          .map(
+            (person) => `<li class="foodie-card">
+          <div class="foodie-avatar">${foodieAvatar(person)}</div>
+          <div class="foodie-body">
+            <h2>${esc(person.name)}</h2>
+            ${foodieSocial(person)}
+          </div>
+        </li>`,
+          )
+          .join("")}
+      </ul>
+    </main>`,
+    })
+  : "";
+
 const catPage = (cat, i) => {
   const prev = categories[i - 1];
   const next = categories[i + 1];
   return layout({
     title: `${cat.vi} (${cat.gloss}) · Viet Eats`,
     path: `/viet-eats/${cat.slug}/`,
-    description: `${cat.vi} (${cat.gloss}) — Vietnamese cuisine picks for Little Saigon Sacramento.`,
+    description: `${cat.vi} (${cat.gloss}) — ${SHARE_DESCRIPTION}`,
     image: cat.photo,
     current: "viet-eats",
     body: `<main class="wrap category">
@@ -386,6 +484,11 @@ writeFileSync(join(dist, "CNAME"), "littlesaigonsac.town\n");
 writeFileSync(join(dist, ".nojekyll"), "");
 writeFileSync(join(dist, "index.html"), home);
 writeFileSync(join(dist, "viet-eats/index.html"), vietEatsIndex);
+if (foodiesPage) {
+  const foodiesDir = join(dist, "viet-eats/foodies");
+  mkdirSync(foodiesDir, { recursive: true });
+  writeFileSync(join(foodiesDir, "index.html"), foodiesPage);
+}
 for (const [i, cat] of categories.entries()) {
   const dir = join(dist, "viet-eats", cat.slug);
   mkdirSync(dir, { recursive: true });
@@ -410,4 +513,5 @@ if (entertainment) {
 const extra = entertainmentCounts
   ? ` + Entertainment (${entertainmentCounts.events} shows, ${entertainmentCounts.people} people, ${entertainmentCounts.orgs} orgs)`
   : "";
-console.log(`Built home + Viet Eats (${categories.length} categories)${extra} → ${dist}`);
+const foodiesNote = foodiesPage ? " + About the foodies" : "";
+console.log(`Built home + Viet Eats (${categories.length} categories)${foodiesNote}${extra} → ${dist}`);

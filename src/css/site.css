@@ -324,6 +324,45 @@ a:hover {
   .home .site-nav a[aria-current="page"] {
     box-shadow: none;
   }
+
+  .section-head {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .section-head h2 {
+    flex: 1 0 100%;
+  }
+
+  .grid[data-meal-grid] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  #viet-eats .grid[data-meal-grid] {
+    padding-bottom: 0.85rem;
+  }
+
+  #entertainment .poster-grid--home {
+    padding-bottom: 0.85rem;
+  }
+
+  footer .wrap {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .footer-tools {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .footer-nav {
+    justify-content: center;
+  }
 }
 
 .hero {
@@ -370,7 +409,7 @@ a:hover {
   display: grid;
   place-items: center;
   margin: 0;
-  height: 27rem;
+  height: 20rem;
   background: var(--lss-hero-fill);
 }
 
@@ -378,6 +417,7 @@ a:hover {
   display: block;
   height: 21rem;
   width: auto;
+  max-height: none;
 }
 
 .kicker {
@@ -406,6 +446,7 @@ h1 {
   max-width: 36rem;
   color: var(--ink-soft);
   font-size: 1.05rem;
+  line-height: 1.1;
 }
 
 .page-head {
@@ -431,6 +472,17 @@ h1 {
 .lede {
   margin: 0.25rem 0 0;
   max-width: 40rem;
+}
+
+.section-foot {
+  display: none;
+  margin: 0 0 2.2rem;
+}
+
+@media (max-width: 719px) {
+  .section-foot {
+    display: block;
+  }
 }
 
 .card.poster.invite-card {
@@ -502,6 +554,128 @@ h1 {
   margin: 0;
   font-family: "Noto Serif", Georgia, serif;
   font-size: 1.85rem;
+  line-height: 1.1;
+}
+
+.section-head-links {
+  display: flex;
+  align-items: baseline;
+  gap: 1.15rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 719px) {
+  .section-head {
+    row-gap: 0.2rem;
+  }
+}
+
+.page-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  flex-wrap: wrap;
+}
+
+.page-title-row h1 {
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.foodie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));
+  gap: 0.9rem;
+  margin: 1.6rem 0 3rem;
+  padding: 0;
+  list-style: none;
+}
+
+.foodie-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.95rem 1rem;
+  background: var(--filled);
+  border: 1px solid var(--rule);
+  box-shadow: var(--shadow);
+}
+
+.foodie-avatar {
+  flex: 0 0 auto;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+
+.foodie-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.foodie-fallback {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--ink-soft);
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+}
+
+.foodie-body h2 {
+  margin: 0 0 0.35rem;
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.foodie-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--rust);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.foodie-social:hover {
+  color: var(--rust-deep);
+}
+
+.foodie-social svg {
+  display: block;
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+}
+
+.foodie-social--facebook svg {
+  padding: 0.08rem;
+  border: 1.5px solid currentColor;
+  border-radius: 0.28rem;
+}
+
+.foodie-handle {
+  word-break: break-word;
 }
 
 .muted {
@@ -513,7 +687,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 0.9rem;
-  padding: 2rem 0 3rem;
+  padding: 1rem 0 3rem;
 }
 
 .grid[data-meal-grid]:not([data-sorted]) {
@@ -575,7 +749,7 @@ h1 {
 .hero-photo {
   width: 100%;
   margin: 1.1rem 0 0;
-  aspect-ratio: 16 / 9;
+  height: 20rem;
   overflow: hidden;
   background: var(--open);
 }
@@ -609,6 +783,7 @@ h1 {
   margin: 0;
   color: var(--ink-soft);
   font-size: 0.92rem;
+  line-height: 1.2;
 }
 
 .status {
@@ -687,12 +862,17 @@ h1 {
   font-weight: 600;
 }
 
-.kitchen-note {
-  margin-top: 0;
+.kitchen-note,
+.kitchen-recommender {
+  margin-top: 0.25rem;
   margin-bottom: 0;
   padding: 0;
   color: var(--ink-soft);
   font-size: 0.92rem;
+}
+
+.kitchen-note a {
+  font-weight: 500;
 }
 
 .sep {
@@ -779,6 +959,56 @@ footer .wrap {
   gap: 1rem;
 }
 
+.footer-tools {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.35rem 1.2rem;
+}
+
+.footer-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.footer-nav a:hover,
+.footer-nav a[aria-current="page"] {
+  color: var(--rust);
+}
+
+.footer-nav a[aria-current="page"] {
+  font-weight: 600;
+}
+
+@media (max-width: 719px) {
+  footer .wrap {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .footer-tools {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .footer-nav {
+    justify-content: center;
+  }
+}
+
 .is-hidden {
   display: none;
 }
@@ -791,7 +1021,19 @@ footer .wrap {
 }
 
 .poster-grid--home {
-  padding-top: 1.4rem;
+  padding-top: 1rem;
+}
+
+@media (max-width: 719px) {
+  .grid[data-meal-grid],
+  .lede + .grid {
+    padding-top: 0.35rem;
+  }
+
+  .poster-grid--home,
+  .lede + .poster-grid {
+    padding-top: 0.35rem;
+  }
 }
 
 .card.poster h2 {
