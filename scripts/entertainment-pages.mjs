@@ -659,19 +659,28 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     return labeledPosterGrid("Past", [invite, ...pastCards], "past");
   };
 
-  const entertainmentTabs = (active) => {
+  const entertainmentTabs = (active, drawer) => {
     const tabs = [
       { id: "events", href: "/entertainment/events/", label: "Events" },
       { id: "performers", href: "/entertainment/performers/", label: "Performers" },
     ];
-    return `<nav class="ent-tabs" aria-label="Entertainment">
+    const pill = drawer
+      ? `<button type="button" class="ent-drawer-pill" data-drawer-open="${esc(drawer.id)}" aria-expanded="false" aria-controls="${esc(drawer.id)}">
+        ${drawer.icon}
+        <span>${esc(drawer.label)}</span>
+      </button>`
+      : "";
+    return `<div class="ent-toolbar">
+      <nav class="ent-tabs" aria-label="Entertainment">
       ${tabs
         .map(
           (tab) =>
             `<a href="${esc(tab.href)}"${tab.id === active ? ' aria-current="page"' : ""}>${esc(tab.label)}</a>`,
         )
         .join("")}
-    </nav>`;
+      </nav>
+      ${pill}
+    </div>`;
   };
 
   const performerAvatar = (row) => {
@@ -882,14 +891,20 @@ export function writeEntertainmentPages({
   const siteName = "Little Saigon Sactown";
   const galleryDescription = ENTERTAINMENT_TAGLINE;
 
-  const entertainmentPageHead = (active, trail = []) => `<header class="hero">
+  const entertainmentPageHead = (active, trail = []) => {
+    const drawer =
+      active === "performers"
+        ? { id: "performer-filter", label: "Filter", icon: h.FILTER_FAB_SVG }
+        : { id: "map-filter", label: "Map", icon: h.MAP_FAB_SVG };
+    return `<header class="hero">
       ${h.crumbsEnt(trail)}
       <div class="page-head">
         <h1>Entertainment</h1>
         <p class="tagline">${galleryDescription}</p>
       </div>
-      ${h.entertainmentTabs(active)}
+      ${h.entertainmentTabs(active, drawer)}
     </header>`;
+  };
 
   const galleryBody = `<main class="wrap">
     ${entertainmentPageHead("events")}

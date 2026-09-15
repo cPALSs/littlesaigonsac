@@ -6,10 +6,13 @@
 
   const overlay = document.querySelector("[data-drawer-overlay]");
   let openId = "";
+  let lastTrigger = null;
 
   const drawerFor = (id) => document.getElementById(id);
+  const triggersFor = (id) =>
+    document.querySelectorAll(`[data-drawer-open="${CSS.escape(id)}"]`);
 
-  const setOpen = (id, open) => {
+  const setOpen = (id, open, trigger) => {
     const drawer = drawerFor(id);
     if (!drawer) return;
     if (open && openId && openId !== id) setOpen(openId, false);
@@ -19,21 +22,24 @@
     if (overlay) overlay.hidden = !open;
     drawer.classList.toggle("is-open", open);
     drawer.setAttribute("aria-hidden", String(!open));
-    const fab = document.querySelector(`[data-drawer-open="${CSS.escape(id)}"]`);
-    fab?.setAttribute("aria-expanded", String(open));
+    for (const btn of triggersFor(id)) {
+      btn.setAttribute("aria-expanded", String(open));
+    }
     const eventName = open ? "lss-drawer-open" : "lss-drawer-close";
     document.dispatchEvent(new CustomEvent(eventName, { detail: { id } }));
     if (open) {
+      lastTrigger = trigger || triggersFor(id)[0] || null;
       drawer.querySelector("[data-drawer-close]")?.focus();
     } else {
-      fab?.focus();
+      lastTrigger?.focus();
+      lastTrigger = null;
     }
   };
 
   for (const fab of fabs) {
     fab.addEventListener("click", () => {
       const id = fab.getAttribute("data-drawer-open");
-      if (id) setOpen(id, true);
+      if (id) setOpen(id, true, fab);
     });
   }
 
@@ -57,7 +63,7 @@
   window.lssOpenDrawer = (id) => setOpen(id, true);
   window.lssCloseDrawer = (id) => setOpen(id || openId, false);
   window.lssSetDrawerActive = (id, active) => {
-    const fab = document.querySelector(`[data-drawer-open="${CSS.escape(id)}"]`);
+    const fab = document.querySelector(`.filter-fab[data-drawer-open="${CSS.escape(id)}"]`);
     fab?.classList.toggle("is-active", Boolean(active));
   };
 })();
