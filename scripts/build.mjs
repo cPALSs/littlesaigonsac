@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { execSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync, cpSync, rmSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -126,7 +127,17 @@ const gaTag = gaId
   : "";
 
 const SITE_ORIGIN = String(data.site.url || "https://littlesaigonsac.town").replace(/\/$/, "");
+const THEME_COLOR = "#3b257b";
+const BACKGROUND_COLOR = "#f4ead8";
 const DEFAULT_OG = { path: "/img/brand/og-image.png", width: 1200, height: 630 };
+
+const cacheStamp = () => {
+  try {
+    return execSync("git rev-parse --short HEAD", { cwd: root, encoding: "utf8" }).trim();
+  } catch {
+    return new Date().toISOString().slice(0, 10);
+  }
+};
 
 const imageSize = (absPath) => {
   try {
@@ -222,6 +233,12 @@ ${gaTag}${socialHead({ title, description, path, image, ogType })}  <link rel="p
   <link rel="stylesheet" href="/css/site.css">
   <link rel="icon" href="/img/brand/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/img/brand/apple-touch.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="${THEME_COLOR}">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="${esc(data.site.name)}">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 <body${home ? ' class="home"' : ""}>
   ${siteHeader(current)}
@@ -239,6 +256,7 @@ ${gaTag}${socialHead({ title, description, path, image, ogType })}  <link rel="p
   </footer>
   <script src="/js/site-nav.js" defer></script>
   <script src="/js/poster-lightbox.js" defer></script>
+  <script src="/js/pwa-register.js" defer></script>
 </body>
 </html>
 `;
@@ -482,6 +500,7 @@ cpSync(join(root, "src/js/performer-sort.js"), join(dist, "js/performer-sort.js"
 cpSync(join(root, "src/js/filter-drawer.js"), join(dist, "js/filter-drawer.js"));
 cpSync(join(root, "src/js/maps-config.js"), join(dist, "js/maps-config.js"));
 cpSync(join(root, "src/js/entertainment-map.js"), join(dist, "js/entertainment-map.js"));
+cpSync(join(root, "src/js/pwa-register.js"), join(dist, "js/pwa-register.js"));
 cpSync(join(root, "src/img"), join(dist, "img"), { recursive: true });
 writeFileSync(join(dist, "CNAME"), "littlesaigonsac.town\n");
 writeFileSync(join(dist, ".nojekyll"), "");
@@ -517,4 +536,78 @@ const extra = entertainmentCounts
   ? ` + Entertainment (${entertainmentCounts.events} shows, ${entertainmentCounts.people} people, ${entertainmentCounts.orgs} orgs)`
   : "";
 const foodiesNote = foodiesPage ? " + About the foodies" : "";
+
+const shortName = "Little Saigon";
+writeFileSync(
+  join(dist, "site.webmanifest"),
+  `${JSON.stringify(
+    {
+      id: `${SITE_ORIGIN}/`,
+      name: data.site.name,
+      short_name: shortName,
+      description: data.site.tagline || SHARE_DESCRIPTION,
+      start_url: "/",
+      scope: "/",
+      display: "standalone",
+      lang: "en",
+      theme_color: THEME_COLOR,
+      background_color: BACKGROUND_COLOR,
+      icons: [
+        { src: "/img/brand/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+        { src: "/img/brand/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+        {
+          src: "/img/brand/icon-512-maskable.png",
+          sizes: "512x512",
+          type: "image/png",
+          purpose: "maskable",
+        },
+      ],
+    },
+    null,
+    2,
+  )}\n`,
+);
+
+const offlinePage = layout({
+  title: `Offline · ${data.site.name}`,
+  path: "/offline/",
+  description: "This page is saved on your device. Connect to load the rest of the site.",
+  current: "",
+  body: `<main class="wrap offline-page">
+    <header class="hero">
+      <h1>You’re offline</h1>
+      <p class="tagline">Little Saigon Sactown needs a connection for this page. Open Home once you’re back online.</p>
+      <p class="lede"><a href="/">Back to Home</a></p>
+    </header>
+  </main>`,
+});
+mkdirSync(join(dist, "offline"), { recursive: true });
+writeFileSync(join(dist, "offline/index.html"), offlinePage);
+
+const precache = [
+  "/",
+  "/offline/",
+  "/css/site.css",
+  "/js/home-sort.js",
+  "/js/site-nav.js",
+  "/js/poster-lightbox.js",
+  "/js/performer-sort.js",
+  "/js/filter-drawer.js",
+  "/js/maps-config.js",
+  "/js/entertainment-map.js",
+  "/js/pwa-register.js",
+  "/site.webmanifest",
+  "/img/brand/icon-192.png",
+  "/img/brand/icon-512.png",
+  "/img/brand/icon-512-maskable.png",
+  "/img/brand/logo-circle.png",
+  "/img/brand/logo-wordmark.svg",
+  "/img/brand/favicon.png",
+  "/img/brand/apple-touch.png",
+];
+const swSource = readFileSync(join(root, "src/sw.js"), "utf8")
+  .replaceAll("__CACHE_NAME__", `lss-${cacheStamp()}`)
+  .replaceAll("__PRECACHE_JSON__", JSON.stringify(precache));
+writeFileSync(join(dist, "sw.js"), swSource);
+
 console.log(`Built home + Viet Eats (${categories.length} categories)${foodiesNote}${extra} → ${dist}`);
