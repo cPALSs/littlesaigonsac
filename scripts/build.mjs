@@ -537,14 +537,13 @@ const extra = entertainmentCounts
   : "";
 const foodiesNote = foodiesPage ? " + About the foodies" : "";
 
-const shortName = "Little Saigon";
 writeFileSync(
   join(dist, "site.webmanifest"),
   `${JSON.stringify(
     {
       id: `${SITE_ORIGIN}/`,
       name: data.site.name,
-      short_name: shortName,
+      short_name: data.site.name,
       description: data.site.tagline || SHARE_DESCRIPTION,
       start_url: "/",
       scope: "/",
