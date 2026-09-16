@@ -5,6 +5,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync, cpSync, rmSync, sta
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { homeEntertainmentSection, writeEntertainmentPages } from "./entertainment-pages.mjs";
+import { adjacentInList, pagerNavHtml } from "../src/js/meal-sort.js";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dist = join(root, "dist");
@@ -390,7 +391,7 @@ const home = layout({
     </section>
     ${entertainment ? homeEntertainmentSection({ entertainment, esc, imgEl, crumbs }) : ""}
   </main>
-  <script src="/js/home-sort.js" defer></script>`,
+  <script type="module" src="/js/home-sort.js"></script>`,
 });
 
 const vietEatsIndex = layout({
@@ -409,7 +410,7 @@ const vietEatsIndex = layout({
     </header>
     ${mealCategoryGrid()}
   </main>
-  <script src="/js/home-sort.js" defer></script>`,
+  <script type="module" src="/js/home-sort.js"></script>`,
 });
 
 const IG_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true">
@@ -473,9 +474,14 @@ const foodiesPage = foodies
     })
   : "";
 
-const catPage = (cat, i) => {
-  const prev = categories[i - 1];
-  const next = categories[i + 1];
+const catLink = (c) => (c ? { href: `/viet-eats/${c.slug}/`, label: c.vi } : null);
+
+const catPage = (cat) => {
+  const { prev, next } = adjacentInList(categories, cat.slug, { wrap: true, key: "slug" });
+  const navPayload = JSON.stringify({
+    current: cat.slug,
+    items: categories.map((c) => ({ slug: c.slug, vi: c.vi, fit: c.fit || [] })),
+  });
   return layout({
     title: `${cat.vi} (${cat.gloss}) · Viet Eats`,
     path: `/viet-eats/${cat.slug}/`,
@@ -490,11 +496,17 @@ const catPage = (cat, i) => {
         <div class="hero-photo">${imgEl(cat.photo, cat.vi)}</div>
       </header>
       ${dishList(cat)}
-      <nav class="nav-dishes">
-        ${prev ? `<a href="/viet-eats/${esc(prev.slug)}/"><span>Previous</span>${esc(prev.vi)}</a>` : "<span></span>"}
-        ${next ? `<a href="/viet-eats/${esc(next.slug)}/" style="text-align:right"><span>Next</span>${esc(next.vi)}</a>` : ""}
-      </nav>
-    </main>`,
+      <script type="application/json" id="meal-sort-windows">${mealSortWindows}</script>
+      <script type="application/json" id="viet-eats-nav">${navPayload}</script>
+      <noscript><style>.nav-dishes[data-viet-eats-nav]:not([data-sorted]){visibility:visible}</style></noscript>
+      ${pagerNavHtml({
+        prev: catLink(prev),
+        next: catLink(next),
+        escape: esc,
+        attrs: "data-viet-eats-nav",
+      })}
+    </main>
+    <script type="module" src="/js/home-sort.js"></script>`,
   });
 };
 
@@ -503,6 +515,7 @@ mkdirSync(join(dist, "css"), { recursive: true });
 mkdirSync(join(dist, "js"), { recursive: true });
 mkdirSync(join(dist, "viet-eats"), { recursive: true });
 cpSync(join(root, "src/css/site.css"), join(dist, "css/site.css"));
+cpSync(join(root, "src/js/meal-sort.js"), join(dist, "js/meal-sort.js"));
 cpSync(join(root, "src/js/home-sort.js"), join(dist, "js/home-sort.js"));
 cpSync(join(root, "src/js/site-nav.js"), join(dist, "js/site-nav.js"));
 cpSync(join(root, "src/js/poster-lightbox.js"), join(dist, "js/poster-lightbox.js"));
@@ -521,10 +534,10 @@ if (foodiesPage) {
   mkdirSync(foodiesDir, { recursive: true });
   writeFileSync(join(foodiesDir, "index.html"), foodiesPage);
 }
-for (const [i, cat] of categories.entries()) {
+for (const cat of categories) {
   const dir = join(dist, "viet-eats", cat.slug);
   mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, "index.html"), catPage(cat, i));
+  writeFileSync(join(dir, "index.html"), catPage(cat));
 }
 
 let entertainmentCounts = null;
@@ -597,6 +610,7 @@ const precache = [
   "/",
   "/offline/",
   siteCssHref,
+  "/js/meal-sort.js",
   "/js/home-sort.js",
   "/js/site-nav.js",
   "/js/poster-lightbox.js",

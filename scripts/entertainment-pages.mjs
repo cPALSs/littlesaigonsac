@@ -6,6 +6,7 @@ import {
   venueMapsUrl,
   venueStreetLine,
 } from "./venue-display.mjs";
+import { adjacentInList, pagerNavHtml } from "../src/js/meal-sort.js";
 
 export {
   cardVenueLine,
@@ -372,6 +373,24 @@ export function splitShows(events, asOf) {
       a.label.localeCompare(b.label, "vi"),
   );
   return { upcoming, past };
+}
+
+/** Same order as the Events gallery: upcoming soonest-first, then past newest-first. */
+export function galleryShowOrder(events, asOf) {
+  const { upcoming, past } = splitShows(events, asOf);
+  return [...upcoming, ...past];
+}
+
+/** Oldest → newest; same date → label A–Z (`vi`). Event pager Previous/Next. */
+export function compareShowsChronological(a, b) {
+  return (
+    (a.start_date || "").localeCompare(b.start_date || "") ||
+    String(a.label || "").localeCompare(String(b.label || ""), "vi")
+  );
+}
+
+export function chronologicalShowOrder(events) {
+  return [...events].sort(compareShowsChronological);
 }
 
 function entityHref(item, people, orgs) {
@@ -1191,13 +1210,26 @@ export function writeEntertainmentPages({
     }),
   );
 
-  for (const ev of events) {
+  const timeline = chronologicalShowOrder(events);
+  const eventLink = (ev) =>
+    ev ? { href: `/entertainment/${ev.id}/`, label: h.displayName(ev.label) } : null;
+
+  for (const ev of timeline) {
     const place = cardVenueLine(ev) || venueLine(ev);
     const street = venueStreetLine(ev);
     const mapsUrl = venueMapsUrl(ev);
     const addressLine =
       street && mapsUrl
         ? `<p class="event-meta event-address"><a href="${esc(mapsUrl)}" rel="noopener noreferrer" target="_blank">${esc(street)}</a></p>`
+        : "";
+    const { prev, next } = adjacentInList(timeline, ev.id, { wrap: false, key: "id" });
+    const pager =
+      prev || next
+        ? pagerNavHtml({
+            prev: eventLink(prev),
+            next: eventLink(next),
+            escape: esc,
+          })
         : "";
     const dir = join(dist, "entertainment", ev.id);
     mkdirSync(dir, { recursive: true });
@@ -1241,6 +1273,7 @@ export function writeEntertainmentPages({
           ${h.sourceLink(ev)}
         </div>
       </div>
+      ${pager}
     </main>`,
       }),
     );

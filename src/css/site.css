@@ -993,6 +993,15 @@ h2.section-label {
   margin-top: 2.4rem;
 }
 
+.nav-dishes[data-viet-eats-nav]:not([data-sorted]) {
+  visibility: hidden;
+}
+
+.event .nav-dishes {
+  margin-top: 0;
+  padding-bottom: 2.4rem;
+}
+
 .nav-dishes a {
   text-decoration: none;
   max-width: 46%;
@@ -1130,6 +1139,10 @@ footer .wrap {
   display: grid;
   gap: 1.6rem;
   padding: 1.5rem 0 3rem;
+}
+
+.event-layout:has(+ .nav-dishes) {
+  padding-bottom: 1.2rem;
 }
 
 .event-media {
