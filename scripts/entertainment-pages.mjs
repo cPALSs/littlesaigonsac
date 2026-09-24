@@ -574,6 +574,8 @@ const POSTER_CARD_OBJECT_POSITION = {
   // Whisper of Autumn TVC ad: 2:1, singers in the left half. 12.5% centers
   // a 2:3 slice on that crowd (not the Thunder Valley lockup).
   "thunder-valley-whisper-of-autumn-2026": "12.5% 50%",
+  // Dạ Vũ Mùa Thu EDH: ~16:9, portraits on the left, gold title on the right.
+  "amv-da-vu-mua-thu-edh-2026": "32% 42%",
 };
 
 export function entertainmentHelpers({ esc, imgEl, crumbs }) {

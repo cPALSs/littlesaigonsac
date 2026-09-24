@@ -1,7 +1,7 @@
 {
-  "exported_at": "2026-09-15",
+  "exported_at": "2026-09-24",
   "timezone": "America/Los_Angeles",
-  "as_of_pt": "2026-09-15",
+  "as_of_pt": "2026-09-24",
   "events": [
     {
       "id": "thunder-valley-whisper-of-autumn-2026",
@@ -221,6 +221,100 @@
           "url": "https://www.ticketmaster.com/dem-huyen-thoai-reno-nevada-10-24-2026/event/3900651FADCB4762"
         }
       ]
+    },
+    {
+      "id": "amv-da-vu-mua-thu-edh-2026",
+      "label": "Dạ Vũ Mùa Thu",
+      "display_date": "Oct 11, 2026 · show 7:00 PM",
+      "start_date": "2026-10-11",
+      "end_date": "2026-10-11",
+      "city": "El Dorado Hills",
+      "venue": "EDH Casino, 3909 Park Drive",
+      "place_name": "EDH Casino",
+      "place_id": "edh-casino",
+      "google_place_id": "ChIJT6j9VSD7moARvhJT90Rn-Q0",
+      "place_address": "3909 Park Drive, El Dorado Hills, CA 95762",
+      "lat": 38.6575474,
+      "lng": -121.0700667,
+      "status": "confirmed",
+      "poster": "entertainment/amv-da-vu-mua-thu-edh-2026.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "edh-casino",
+          "name": "EDH Casino",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "amv-production",
+          "name": "AMV Production",
+          "role": "producer"
+        }
+      ],
+      "lineup": [
+        {
+          "type": "person",
+          "id": "bruce-nguyen",
+          "name": "Bruce Nguyen",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "kevin-le",
+          "name": "Kevin Lê",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "linda-trang-dai",
+          "name": "Linda Trang Đài",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "quynh-giao",
+          "name": "Quỳnh Giao",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "thanh-hieu",
+          "name": "Thanh Hiếu",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "tommy-ngo",
+          "name": "Tommy Ngô",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "trinh-lam",
+          "name": "Trịnh Lam",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "trung-kien",
+          "name": "Trung Kiên",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "que-long",
+          "name": "Quế Long",
+          "role": "instrumentalist"
+        },
+        {
+          "type": "person",
+          "id": "toan-keyboard",
+          "name": "Toàn",
+          "role": "instrumentalist"
+        }
+      ],
+      "source_url": "https://www.facebook.com/events/1778324156716165/"
     },
     {
       "id": "xang-xu-liu-gio-to-san-khau-2026",
@@ -3400,6 +3494,186 @@
       ],
       "photo": "entertainment/people/phan-duy-anh.jpg"
     },
+    "tommy-ngo": {
+      "id": "tommy-ngo",
+      "name": "Tommy Ngô",
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/2MHcc1IdXXBywlni7vytm1",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/tommy-ngo.jpg"
+    },
+    "linda-trang-dai": {
+      "id": "linda-trang-dai",
+      "name": "Linda Trang Đài",
+      "aka": [
+        "Lynda Trang Đài"
+      ],
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/lyndatrangdaile",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/lyndatrangdai.le",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCpSAxFPQ48vrWvofrIHkXRg",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/1iLikyUe321HTUrik5GKw4",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/linda-trang-dai.jpg"
+    },
+    "trinh-lam": {
+      "id": "trinh-lam",
+      "name": "Trịnh Lam",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/trinhlammusic",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@TrinhLamMusic",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/1946SXMtprXuDRbjV3TXDh",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/trinh-lam.jpg"
+    },
+    "quynh-giao": {
+      "id": "quynh-giao",
+      "name": "Quỳnh Giao",
+      "aka": [
+        "Trương Quỳnh Giao"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/tieu.giao.3",
+          "label": "Facebook"
+        }
+      ],
+      "photo": "entertainment/people/quynh-giao.jpg"
+    },
+    "kevin-le": {
+      "id": "kevin-le",
+      "name": "Kevin Lê",
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
+      "links": [],
+      "photo": "entertainment/people/kevin-le.jpg"
+    },
+    "bruce-nguyen": {
+      "id": "bruce-nguyen",
+      "name": "Bruce Nguyen",
+      "aka": [
+        "Bruce Nguyễn"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/brucenguyen_singer",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/sam.nguyen.39",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@BruceNguyen1993",
+          "label": "YouTube"
+        }
+      ],
+      "photo": "entertainment/people/bruce-nguyen.jpg"
+    },
+    "trung-kien": {
+      "id": "trung-kien",
+      "name": "Trung Kiên",
+      "aka": [
+        "Kien Watson",
+        "Kiên Watson"
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/kien.watson",
+          "label": "Facebook"
+        }
+      ],
+      "photo": "entertainment/people/trung-kien.jpg"
+    },
+    "que-long": {
+      "id": "que-long",
+      "name": "Quế Long",
+      "links": [],
+      "photo": "entertainment/people/que-long.jpg"
+    },
+    "toan-keyboard": {
+      "id": "toan-keyboard",
+      "name": "Toàn",
+      "links": [],
+      "photo": "entertainment/people/toan-keyboard.jpg"
+    },
+    "thanh-hieu": {
+      "id": "thanh-hieu",
+      "name": "Thanh Hiếu",
+      "links": [],
+      "photo": "entertainment/people/thanh-hieu.jpg"
+    },
     "thu-ha-vocalist": {
       "id": "thu-ha-vocalist",
       "name": "Thu Hà",
@@ -3677,27 +3951,6 @@
       "links": [],
       "photo": "entertainment/people/dj-alissa.jpg"
     },
-    "quynh-giao": {
-      "id": "quynh-giao",
-      "name": "Quỳnh Giao",
-      "aka": [
-        "Trương Quỳnh Giao"
-      ],
-      "specialties": [
-        {
-          "slug": "nhac-vang",
-          "label": "Bolero · nhạc vàng"
-        }
-      ],
-      "links": [
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/tieu.giao.3",
-          "label": "Facebook"
-        }
-      ],
-      "photo": "entertainment/people/quynh-giao.jpg"
-    },
     "phuong-thu": {
       "id": "phuong-thu",
       "name": "Phương Thư",
@@ -3872,60 +4125,6 @@
       ],
       "photo": "entertainment/people/lam-nhat-tien.jpg"
     },
-    "tommy-ngo": {
-      "id": "tommy-ngo",
-      "name": "Tommy Ngô",
-      "specialties": [
-        {
-          "slug": "remix",
-          "label": "Remix · dạ vũ"
-        }
-      ],
-      "links": [
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/2MHcc1IdXXBywlni7vytm1",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/tommy-ngo.jpg"
-    },
-    "linda-trang-dai": {
-      "id": "linda-trang-dai",
-      "name": "Linda Trang Đài",
-      "aka": [
-        "Lynda Trang Đài"
-      ],
-      "specialties": [
-        {
-          "slug": "remix",
-          "label": "Remix · dạ vũ"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/lyndatrangdaile",
-          "label": "Instagram"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/lyndatrangdai.le",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/channel/UCpSAxFPQ48vrWvofrIHkXRg",
-          "label": "YouTube"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/1iLikyUe321HTUrik5GKw4",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/linda-trang-dai.jpg"
-    },
     "wesley-li": {
       "id": "wesley-li",
       "name": "Wesley Li",
@@ -3940,34 +4139,6 @@
       ],
       "links": [],
       "photo": "entertainment/people/wesley-li.jpg"
-    },
-    "trung-kien": {
-      "id": "trung-kien",
-      "name": "Trung Kiên",
-      "aka": [
-        "Kien Watson",
-        "Kiên Watson"
-      ],
-      "links": [
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/kien.watson",
-          "label": "Facebook"
-        }
-      ],
-      "photo": "entertainment/people/trung-kien.jpg"
-    },
-    "kevin-le": {
-      "id": "kevin-le",
-      "name": "Kevin Lê",
-      "specialties": [
-        {
-          "slug": "emcee",
-          "label": "Emcee"
-        }
-      ],
-      "links": [],
-      "photo": "entertainment/people/kevin-le.jpg"
     },
     "jacky-huang": {
       "id": "jacky-huang",
@@ -4400,37 +4571,6 @@
         }
       ],
       "photo": "entertainment/people/nguyen-hung.jpg"
-    },
-    "bruce-nguyen": {
-      "id": "bruce-nguyen",
-      "name": "Bruce Nguyen",
-      "aka": [
-        "Bruce Nguyễn"
-      ],
-      "specialties": [
-        {
-          "slug": "nhac-tre",
-          "label": "Nhạc trẻ"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/brucenguyen_singer",
-          "label": "Instagram"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/sam.nguyen.39",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/@BruceNguyen1993",
-          "label": "YouTube"
-        }
-      ],
-      "photo": "entertainment/people/bruce-nguyen.jpg"
     },
     "ung-hoang-phuc": {
       "id": "ung-hoang-phuc",
@@ -5476,34 +5616,6 @@
         }
       ],
       "photo": "entertainment/people/diem-suong.jpg"
-    },
-    "trinh-lam": {
-      "id": "trinh-lam",
-      "name": "Trịnh Lam",
-      "specialties": [
-        {
-          "slug": "nhac-tre",
-          "label": "Nhạc trẻ"
-        }
-      ],
-      "links": [
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/trinhlammusic",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/@TrinhLamMusic",
-          "label": "YouTube"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/1946SXMtprXuDRbjV3TXDh",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/trinh-lam.jpg"
     },
     "truc-linh": {
       "id": "truc-linh",
@@ -6893,6 +7005,34 @@
       "links": [],
       "photo": "entertainment/orgs/joy-entertainment.jpg"
     },
+    "edh-casino": {
+      "id": "edh-casino",
+      "name": "EDH Casino",
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/edhcasino",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/edhcasino",
+          "label": "Facebook"
+        },
+        {
+          "kind": "website",
+          "url": "https://edhcasino.com",
+          "label": "Website"
+        }
+      ],
+      "photo": null
+    },
+    "amv-production": {
+      "id": "amv-production",
+      "name": "AMV Production",
+      "links": [],
+      "photo": null
+    },
     "mrs-vietnam-norcal-sacramento": {
       "id": "mrs-vietnam-norcal-sacramento",
       "name": "Mrs. Vietnam NorCal Sacramento",
@@ -6947,12 +7087,6 @@
         }
       ],
       "photo": "entertainment/orgs/trina-balloon-arts.jpg"
-    },
-    "amv-production": {
-      "id": "amv-production",
-      "name": "AMV Production",
-      "links": [],
-      "photo": null
     },
     "chua-phuoc-son": {
       "id": "chua-phuoc-son",
