@@ -159,6 +159,27 @@
       ]
     },
     {
+      "slug": "com",
+      "vi": "Cơm",
+      "gloss": "Rice plates",
+      "photo": "com.jpg",
+      "fit": ["lunch", "dinner"],
+      "dishes": [
+        {
+          "slug": "com-cha-gio-tom-thit-nuong",
+          "vi": "Cơm chả giò tôm thịt nướng",
+          "gloss": "Rice with crispy egg roll, grilled shrimp, and pork",
+          "kitchens": [
+            {
+              "name": "Phở Xe Lửa",
+              "address": "5331 Stockton Blvd, Sacramento, CA 95820",
+              "maps": "https://maps.google.com/?cid=4461685076357638645"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "slug": "thit-hai-san",
       "vi": "Thịt / Hải sản",
       "gloss": "Meat / seafood",

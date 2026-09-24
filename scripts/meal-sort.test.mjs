@@ -12,6 +12,7 @@ const ITEMS = [
   { slug: "pho", vi: "Phở", fit: ["breakfast", "lunch", "dinner"] },
   { slug: "chao", vi: "Cháo", fit: ["breakfast"] },
   { slug: "banh-mi", vi: "Bánh mì", fit: ["breakfast", "lunch"] },
+  { slug: "com", vi: "Cơm", fit: ["lunch", "dinner"] },
   { slug: "thit-hai-san", vi: "Thịt / Hải sản", fit: ["lunch", "dinner"] },
   { slug: "ca-phe", vi: "Cà phê", fit: ["snack"] },
   { slug: "banh", vi: "Bánh", fit: ["snack"] },
@@ -33,6 +34,7 @@ const BETWEEN = new Date("2026-09-15T22:30:00.000Z");
 test("dinner sort matches /viet-eats/ meal grid (dinner, then snack, then rest)", () => {
   assert.deepEqual(slugs(sortMealItems(ITEMS, DINNER)), [
     "pho",
+    "com",
     "thit-hai-san",
     "bun",
     "banh-canh",
@@ -54,6 +56,7 @@ test("breakfast sort puts breakfast-fit first, then snack, then rest", () => {
     "banh",
     "cuon",
     "che",
+    "com",
     "thit-hai-san",
     "bun",
     "banh-canh",
@@ -69,6 +72,7 @@ test("between-meals sort puts snack first", () => {
     "pho",
     "chao",
     "banh-mi",
+    "com",
     "thit-hai-san",
     "bun",
     "banh-canh",
@@ -79,7 +83,7 @@ test("wrapped neighbors follow meal sort, not JSON order", () => {
   const sorted = sortMealItems(ITEMS, DINNER);
   const pho = adjacentInList(sorted, "pho", { wrap: true });
   assert.equal(pho.prev.slug, "banh-mi");
-  assert.equal(pho.next.slug, "thit-hai-san");
+  assert.equal(pho.next.slug, "com");
   const last = adjacentInList(sorted, "banh-mi", { wrap: true });
   assert.equal(last.prev.slug, "chao");
   assert.equal(last.next.slug, "pho");
