@@ -517,12 +517,14 @@ mkdirSync(join(dist, "viet-eats"), { recursive: true });
 cpSync(join(root, "src/css/site.css"), join(dist, "css/site.css"));
 cpSync(join(root, "src/js/meal-sort.js"), join(dist, "js/meal-sort.js"));
 cpSync(join(root, "src/js/home-sort.js"), join(dist, "js/home-sort.js"));
+cpSync(join(root, "src/js/home-shows.js"), join(dist, "js/home-shows.js"));
 cpSync(join(root, "src/js/site-nav.js"), join(dist, "js/site-nav.js"));
 cpSync(join(root, "src/js/poster-lightbox.js"), join(dist, "js/poster-lightbox.js"));
 cpSync(join(root, "src/js/performer-sort.js"), join(dist, "js/performer-sort.js"));
 cpSync(join(root, "src/js/filter-drawer.js"), join(dist, "js/filter-drawer.js"));
 cpSync(join(root, "src/js/maps-config.js"), join(dist, "js/maps-config.js"));
 cpSync(join(root, "src/js/entertainment-map.js"), join(dist, "js/entertainment-map.js"));
+cpSync(join(root, "src/js/entertainment-dates.js"), join(dist, "js/entertainment-dates.js"));
 cpSync(join(root, "src/js/pwa-register.js"), join(dist, "js/pwa-register.js"));
 cpSync(join(root, "src/img"), join(dist, "img"), { recursive: true });
 writeFileSync(join(dist, "CNAME"), "littlesaigonsac.town\n");
@@ -612,12 +614,14 @@ const precache = [
   siteCssHref,
   "/js/meal-sort.js",
   "/js/home-sort.js",
+  "/js/home-shows.js",
   "/js/site-nav.js",
   "/js/poster-lightbox.js",
   "/js/performer-sort.js",
   "/js/filter-drawer.js",
   "/js/maps-config.js",
   "/js/entertainment-map.js",
+  "/js/entertainment-dates.js",
   "/js/pwa-register.js",
   "/site.webmanifest",
   "/img/brand/icon-192.png",

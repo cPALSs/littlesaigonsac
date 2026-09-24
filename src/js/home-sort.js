@@ -7,6 +7,39 @@ import {
   pagerNavHtml,
   sortMealItems,
 } from "./meal-sort.js";
+import { HOME_SHOW_LIMIT, todayPtIso } from "./home-shows.js";
+
+function rotateHomeShows(date = new Date()) {
+  const grid = document.querySelector("[data-home-shows]");
+  if (!grid) return;
+  const today = todayPtIso(date);
+  const cards = [...grid.children];
+  const current = [];
+  const past = [];
+  for (const el of cards) {
+    const end = el.getAttribute("data-end") || el.getAttribute("data-start") || "";
+    if (end && end >= today) current.push(el);
+    else past.push(el);
+  }
+  const byStart = (a, b) =>
+    (a.getAttribute("data-start") || "").localeCompare(b.getAttribute("data-start") || "");
+  current.sort(byStart);
+  past.sort((a, b) => byStart(b, a));
+  const ordered = [...current, ...past];
+  const shown = new Set(ordered.slice(0, HOME_SHOW_LIMIT));
+  for (const el of ordered) {
+    el.hidden = !shown.has(el);
+    grid.append(el);
+  }
+  grid.dataset.sorted = "true";
+}
+
+try {
+  rotateHomeShows();
+} catch {
+  const grid = document.querySelector("[data-home-shows]");
+  if (grid) grid.dataset.sorted = "true";
+}
 
 function readWindows() {
   const raw =

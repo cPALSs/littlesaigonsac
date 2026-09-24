@@ -1094,6 +1094,10 @@ footer .wrap {
   padding-top: 1rem;
 }
 
+.poster-grid--home:not([data-sorted]) {
+  visibility: hidden;
+}
+
 @media (max-width: 719px) {
   .grid[data-meal-grid],
   .lede + .grid {

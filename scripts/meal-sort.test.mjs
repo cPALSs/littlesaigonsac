@@ -6,6 +6,7 @@ import {
   sortMealItems,
 } from "../src/js/meal-sort.js";
 import { chronologicalShowOrder, galleryShowOrder } from "./entertainment-pages.mjs";
+import { homeShowCandidates, partitionShowsByEnd, pickHomeShows } from "../src/js/home-shows.js";
 
 const ITEMS = [
   { slug: "pho", vi: "Phở", fit: ["breakfast", "lunch", "dinner"] },
@@ -146,4 +147,54 @@ test("event pager is chronological: Previous older, Next newer, no wrap", () => 
   const alpha = adjacentInList(ordered, "same-a", { wrap: false, key: "id" });
   assert.equal(alpha.prev.id, "past-new");
   assert.equal(alpha.next.id, "same-b");
+});
+
+const HOME_SHOWS = [
+  { id: "sep-20-a", label: "Alpha", start_date: "2026-09-20", end_date: "2026-09-20" },
+  { id: "sep-20-b", label: "Beta", start_date: "2026-09-20", end_date: "2026-09-20" },
+  { id: "oct-3", label: "October 3", start_date: "2026-10-03", end_date: "2026-10-03" },
+  { id: "oct-4", label: "October 4", start_date: "2026-10-04", end_date: "2026-10-04" },
+  { id: "oct-24", label: "October 24", start_date: "2026-10-24", end_date: "2026-10-24" },
+  { id: "weekend", label: "Weekend", start_date: "2026-08-21", end_date: "2026-08-22" },
+  { id: "old", label: "Old", start_date: "2026-06-05", end_date: "2026-06-05" },
+];
+
+test("home strip drops shows after their end date and keeps later ones", () => {
+  assert.deepEqual(
+    pickHomeShows(HOME_SHOWS, "2026-09-15").map((e) => e.id),
+    ["sep-20-a", "sep-20-b", "oct-3", "oct-4"],
+  );
+  assert.deepEqual(
+    pickHomeShows(HOME_SHOWS, "2026-09-23").map((e) => e.id),
+    ["oct-3", "oct-4", "oct-24", "sep-20-a"],
+  );
+  assert.deepEqual(
+    pickHomeShows(HOME_SHOWS, "2026-08-22").map((e) => e.id),
+    ["weekend", "sep-20-a", "sep-20-b", "oct-3"],
+  );
+});
+
+test("gallery partition moves a finished show into past, newest first", () => {
+  const { upcoming, past } = partitionShowsByEnd(HOME_SHOWS, "2026-09-23");
+  assert.deepEqual(
+    upcoming.map((e) => e.id),
+    ["oct-3", "oct-4", "oct-24"],
+  );
+  assert.deepEqual(
+    past.map((e) => e.id),
+    ["sep-20-a", "sep-20-b", "weekend", "old"],
+  );
+});
+
+test("home candidates include every show still on at build, plus past fillers", () => {
+  const ids = homeShowCandidates(HOME_SHOWS, "2026-09-15").map((e) => e.id);
+  assert.deepEqual(ids, [
+    "sep-20-a",
+    "sep-20-b",
+    "oct-3",
+    "oct-4",
+    "oct-24",
+    "weekend",
+    "old",
+  ]);
 });

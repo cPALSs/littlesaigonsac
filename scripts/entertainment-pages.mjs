@@ -7,6 +7,7 @@ import {
   venueStreetLine,
 } from "./venue-display.mjs";
 import { adjacentInList, pagerNavHtml } from "../src/js/meal-sort.js";
+import { HOME_SHOW_LIMIT, homeShowCandidates } from "../src/js/home-shows.js";
 
 export {
   cardVenueLine,
@@ -611,8 +612,14 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     const focus = POSTER_CARD_OBJECT_POSITION[ev.id];
     const focusAttr = focus ? ` style="--poster-focus: ${esc(focus)}"` : "";
     const whenAttr = opts.when ? ` data-when="${esc(opts.when)}"` : "";
-    return `<a class="card poster" href="/entertainment/${esc(ev.id)}/"${posterGeoAttrs(ev)}${whenAttr}>
-    <div class="card-photo"${focusAttr}>${imgEl(ev.poster, displayName(ev.label))}</div>
+    const start = ev.start_date || "";
+    const end = ev.end_date || start;
+    const startAttr = start ? ` data-start="${esc(start)}"` : "";
+    const endAttr = end ? ` data-end="${esc(end)}"` : "";
+    let photo = imgEl(ev.poster, displayName(ev.label));
+    if (opts.lazy && photo) photo = photo.replace("<img ", '<img loading="lazy" ');
+    return `<a class="card poster" href="/entertainment/${esc(ev.id)}/"${posterGeoAttrs(ev)}${whenAttr}${startAttr}${endAttr}>
+    <div class="card-photo"${focusAttr}>${photo}</div>
     <div class="card-body">
       <h2>${escName(ev.label)}</h2>
       <p class="gloss">${esc(cardDisplayDate(ev.display_date || ev.start_date || ""))}</p>
@@ -1113,17 +1120,22 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
 
 export function homeEntertainmentSection({ entertainment, esc, imgEl, crumbs }) {
   const { events, as_of_pt: asOf } = entertainment;
-  const { upcoming, past } = splitShows(events, asOf);
-  const strip = [...upcoming, ...past].slice(0, 4);
+  const strip = homeShowCandidates(events, asOf, HOME_SHOW_LIMIT);
   if (!strip.length) return "";
   const { posterCard } = entertainmentHelpers({ esc, imgEl, crumbs });
+  const cards = strip.map((ev, i) => {
+    const html = posterCard(ev, { lazy: i >= HOME_SHOW_LIMIT });
+    if (i < HOME_SHOW_LIMIT) return html;
+    return html.replace("<a ", "<a hidden ");
+  });
   return `<section class="wrap feature" id="entertainment">
       <div class="section-head">
         <h2>Entertainment</h2>
         <a href="/entertainment/">All shows</a>
       </div>
       <p class="lede">${ENTERTAINMENT_TAGLINE}</p>
-      <div class="poster-grid poster-grid--home">${strip.map(posterCard).join("")}</div>
+      <noscript><style>.poster-grid--home:not([data-sorted]){visibility:visible}</style></noscript>
+      <div class="poster-grid poster-grid--home" data-home-shows>${cards.join("")}</div>
       <p class="section-foot"><a href="/entertainment/">All shows</a></p>
     </section>`;
 }
@@ -1170,6 +1182,7 @@ export function writeEntertainmentPages({
     body: `<div class="ent-map" data-ent-map></div>
       <p class="ent-map-msg" data-ent-map-msg hidden></p>`,
   })}
+  <script type="module" src="/js/entertainment-dates.js"></script>
   <script src="/js/maps-config.js" defer></script>
   <script src="/js/filter-drawer.js" defer></script>
   <script src="/js/entertainment-map.js" defer></script>`;
