@@ -372,6 +372,23 @@
               }
             }
           ]
+        },
+        {
+          "section": "Savories",
+          "slug": "banh-it-ram",
+          "vi": "Bánh ít ram",
+          "gloss": "Fried sticky rice dumplings",
+          "kitchens": [
+            {
+              "name": "Cố Đô",
+              "address": "6665 Stockton Blvd Ste 10, Sacramento, CA 95823",
+              "maps": "https://maps.google.com/?cid=6813482836146020687",
+              "recommender": {
+                "name": "ramenraptor",
+                "url": "https://www.reddit.com/r/Sacramento/comments/1rpejr1/comment/o9ko53z/"
+              }
+            }
+          ]
         }
       ]
     },
