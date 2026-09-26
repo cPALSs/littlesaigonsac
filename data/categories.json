@@ -33,19 +33,6 @@
       "fit": ["breakfast", "lunch", "dinner"],
       "dishes": [
         {
-          "slug": "pho-dac-biet",
-          "vi": "Phở đặc biệt",
-          "gloss": "Beef combination pho",
-          "photo": "pho-dac-biet.jpg",
-          "kitchens": [
-            {
-              "name": "Sit Lo Saigon",
-              "address": "7405 Laguna Blvd #170, Elk Grove, CA 95758",
-              "maps": "https://maps.app.goo.gl/kGinPw4K49hq46x39"
-            }
-          ]
-        },
-        {
           "slug": "pho-bo",
           "vi": "Phở bò",
           "gloss": "Beef pho",
