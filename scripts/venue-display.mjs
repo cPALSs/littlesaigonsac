@@ -33,7 +33,8 @@ function looksLikeStreetLine(segment) {
 function abbreviateStreetLine(line) {
   let s = line.replace(/\s+/g, " ").trim();
   s = s.replace(
-    /^(\d+\S*)\s+(North|South|East|West|N\.|S\.|E\.|W\.)\s+(?=[A-Za-z])/i,
+    // "5052 West Ln": the directional is the street name when a suffix follows directly.
+    /^(\d+\S*)\s+(North|South|East|West|N\.|S\.|E\.|W\.)\s+(?=[A-Za-z])(?!(?:Streets?|St|Avenues?|Ave|Roads?|Rd|Boulevards?|Blvd|Highways?|Hwy|Drives?|Dr|Lanes?|Ln|Courts?|Ct|Places?|Pl|Way|Circle|Cir|Parkway|Pkwy)\b)/i,
     (_, num, dir) => {
       const key = dir.replace(/\./g, "").toLowerCase();
       return `${num} ${COMPASS[key] || dir} `;

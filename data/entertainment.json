@@ -1,8 +1,48 @@
 {
-  "exported_at": "2026-09-24",
+  "exported_at": "2026-09-27",
   "timezone": "America/Los_Angeles",
-  "as_of_pt": "2026-09-24",
+  "as_of_pt": "2026-09-27",
   "events": [
+    {
+      "id": "vaces-trung-thu-cho-em-2026",
+      "label": "Trung Thu Cho Em",
+      "display_date": "Dec 13, 2026 · 6:00 PM",
+      "start_date": "2026-12-13",
+      "end_date": "2026-12-13",
+      "city": "Stockton",
+      "venue": "China Palace, 5052 West Ln",
+      "place_name": "China Palace",
+      "place_id": "china-palace-stockton",
+      "google_place_id": "ChIJtwj0BuEMkIARh6tAjvvZoYs",
+      "place_address": "5052 West Ln Ste 4C, Stockton, CA 95210",
+      "lat": 38.0006027,
+      "lng": -121.2886429,
+      "status": "confirmed",
+      "poster": "entertainment/vaces-trung-thu-cho-em-2026.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "vaces",
+          "name": "Vietnamese American Cultural and Educational Society",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "vaces",
+          "name": "Vietnamese American Cultural and Educational Society",
+          "role": "producer"
+        }
+      ],
+      "lineup": [
+        {
+          "type": "person",
+          "id": "dan-nguyen",
+          "name": "Đan Nguyên",
+          "role": "vocalist"
+        }
+      ],
+      "source_url": "https://www.facebook.com/events/898328869798925/"
+    },
     {
       "id": "thunder-valley-whisper-of-autumn-2026",
       "label": "Whisper of Autumn",
@@ -3078,6 +3118,39 @@
     }
   ],
   "people": {
+    "dan-nguyen": {
+      "id": "dan-nguyen",
+      "name": "Đan Nguyên",
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/dan_nguyen9",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/dannguyen.official.fanpage",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCytHocZlrMx499o86164B7Q",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/3AYPFIPDQ5aUUZzQ9OsqEn",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/dan-nguyen.jpg"
+    },
     "le-quyen": {
       "id": "le-quyen",
       "name": "Lệ Quyên",
@@ -3995,39 +4068,6 @@
         }
       ],
       "photo": "entertainment/people/oscar-thuan-nguyen.jpg"
-    },
-    "dan-nguyen": {
-      "id": "dan-nguyen",
-      "name": "Đan Nguyên",
-      "specialties": [
-        {
-          "slug": "nhac-vang",
-          "label": "Bolero · nhạc vàng"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/dan_nguyen9",
-          "label": "Instagram"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/dannguyen.official.fanpage",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/channel/UCytHocZlrMx499o86164B7Q",
-          "label": "YouTube"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/3AYPFIPDQ5aUUZzQ9OsqEn",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/dan-nguyen.jpg"
     },
     "quang-le": {
       "id": "quang-le",
@@ -6943,6 +6983,18 @@
     }
   },
   "orgs": {
+    "vaces": {
+      "id": "vaces",
+      "name": "Vietnamese American Cultural and Educational Society",
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/profile.php?id=61566511597707",
+          "label": "Facebook"
+        }
+      ],
+      "photo": null
+    },
     "thunder-valley-casino-resort": {
       "id": "thunder-valley-casino-resort",
       "name": "Thunder Valley Casino Resort",

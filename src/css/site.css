@@ -994,6 +994,8 @@ h2.section-label {
   justify-content: space-between;
   gap: 1rem;
   margin-top: 2.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--rule);
 }
 
 .nav-dishes[data-viet-eats-nav]:not([data-sorted]) {
