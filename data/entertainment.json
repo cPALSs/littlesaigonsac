@@ -1,7 +1,7 @@
 {
-  "exported_at": "2026-09-27",
+  "exported_at": "2026-09-30",
   "timezone": "America/Los_Angeles",
-  "as_of_pt": "2026-09-27",
+  "as_of_pt": "2026-09-30",
   "events": [
     {
       "id": "vaces-trung-thu-cho-em-2026",
@@ -259,6 +259,83 @@
           "kind": "url",
           "label": "Ticketmaster",
           "url": "https://www.ticketmaster.com/dem-huyen-thoai-reno-nevada-10-24-2026/event/3900651FADCB4762"
+        }
+      ]
+    },
+    {
+      "id": "w1-legendary-autumn-night-graton-2026",
+      "label": "Legendary Autumn Night",
+      "display_date": "Oct 16, 2026 · doors 7:00 PM · show 8:00 PM",
+      "start_date": "2026-10-16",
+      "end_date": "2026-10-16",
+      "city": "Rohnert Park",
+      "venue": "The Event at Graton Resort & Casino, 288 Golf Course Dr W",
+      "place_name": "Graton Resort & Casino",
+      "place_id": "graton-resort-casino",
+      "google_place_id": null,
+      "place_address": "288 Golf Course Dr W, Rohnert Park, CA 94928",
+      "lat": 38.356785,
+      "lng": -122.722951,
+      "status": "confirmed",
+      "poster": "entertainment/w1-legendary-autumn-night-graton-2026.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "w1-production",
+          "name": "W1 Production",
+          "role": "producer"
+        }
+      ],
+      "lineup": [
+        {
+          "type": "person",
+          "id": "luong-tung-quang",
+          "name": "Lương Tùng Quang",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "philip-huy",
+          "name": "Philip Huy",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "shayla",
+          "name": "Shayla",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "tuan-anh",
+          "name": "Tuấn Anh",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "vi-tri",
+          "name": "Vi Trí 翁偉智",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "giang-ngoc",
+          "name": "Giáng Ngọc",
+          "role": "mc"
+        },
+        {
+          "type": "org",
+          "id": "og-band",
+          "name": "Featuring O.G. Band",
+          "role": "band"
+        }
+      ],
+      "source_url": "https://www.facebook.com/philip.huy.71/posts/28771289225806258/",
+      "tickets": [
+        {
+          "kind": "url",
+          "label": "Ticketmaster",
+          "url": "https://www.ticketmaster.com/event/170064F9CCEAE734"
         }
       ]
     },
@@ -3567,6 +3644,137 @@
       ],
       "photo": "entertainment/people/phan-duy-anh.jpg"
     },
+    "tuan-anh": {
+      "id": "tuan-anh",
+      "name": "Tuấn Anh",
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        }
+      ],
+      "links": [],
+      "photo": "entertainment/people/tuan-anh.jpg"
+    },
+    "luong-tung-quang": {
+      "id": "luong-tung-quang",
+      "name": "Lương Tùng Quang",
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/luongtungquang_casi",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/luongtungquang07",
+          "label": "Facebook"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/41eUMVb8BInRlwH1Cx6v3N",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/luong-tung-quang.jpg"
+    },
+    "vi-tri": {
+      "id": "vi-tri",
+      "name": "Vi Trí",
+      "aka": [
+        "翁偉智"
+      ],
+      "specialties": [
+        {
+          "slug": "chinese",
+          "label": "Chinese"
+        }
+      ],
+      "links": [],
+      "photo": "entertainment/people/vi-tri.jpg"
+    },
+    "philip-huy": {
+      "id": "philip-huy",
+      "name": "Philip Huy",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/philiphuymusic",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/philip.huy.71",
+          "label": "Facebook"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/3YTT7P7kI5LqgX1EGjps1A",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/philip-huy.jpg"
+    },
+    "shayla": {
+      "id": "shayla",
+      "name": "Shayla",
+      "aka": [
+        "Shayla C. Mai",
+        "Shayla Châu Đình"
+      ],
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/shaylacmai",
+          "label": "Instagram"
+        }
+      ],
+      "photo": "entertainment/people/shayla.jpg"
+    },
+    "giang-ngoc": {
+      "id": "giang-ngoc",
+      "name": "Giáng Ngọc",
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        },
+        {
+          "slug": "influencer",
+          "label": "Influencer · talk show"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/casi.giangngoc",
+          "label": "Facebook"
+        }
+      ],
+      "photo": "entertainment/people/giang-ngoc.jpg"
+    },
     "tommy-ngo": {
       "id": "tommy-ngo",
       "name": "Tommy Ngô",
@@ -6458,38 +6666,6 @@
       ],
       "photo": "entertainment/people/trong-bac.jpg"
     },
-    "luong-tung-quang": {
-      "id": "luong-tung-quang",
-      "name": "Lương Tùng Quang",
-      "specialties": [
-        {
-          "slug": "remix",
-          "label": "Remix · dạ vũ"
-        },
-        {
-          "slug": "nhac-tre",
-          "label": "Nhạc trẻ"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/luongtungquang_casi",
-          "label": "Instagram"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/luongtungquang07",
-          "label": "Facebook"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/41eUMVb8BInRlwH1Cx6v3N",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/luong-tung-quang.jpg"
-    },
     "ky-phuong-uyen": {
       "id": "ky-phuong-uyen",
       "name": "Kỳ Phương Uyên",
@@ -6624,34 +6800,6 @@
         }
       ],
       "photo": "entertainment/people/chau-ngoc-ha.jpg"
-    },
-    "philip-huy": {
-      "id": "philip-huy",
-      "name": "Philip Huy",
-      "specialties": [
-        {
-          "slug": "nhac-tre",
-          "label": "Nhạc trẻ"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/philiphuymusic",
-          "label": "Instagram"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/philip.huy.71",
-          "label": "Facebook"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/3YTT7P7kI5LqgX1EGjps1A",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/philip-huy.jpg"
     },
     "lan-tran-mc": {
       "id": "lan-tran-mc",
@@ -6993,7 +7141,7 @@
           "label": "Facebook"
         }
       ],
-      "photo": null
+      "photo": "entertainment/orgs/vaces.jpg"
     },
     "thunder-valley-casino-resort": {
       "id": "thunder-valley-casino-resort",
@@ -7056,6 +7204,34 @@
       "name": "JOY Entertainment",
       "links": [],
       "photo": "entertainment/orgs/joy-entertainment.jpg"
+    },
+    "og-band": {
+      "id": "og-band",
+      "name": "O.G. Band",
+      "links": [],
+      "photo": null
+    },
+    "w1-production": {
+      "id": "w1-production",
+      "name": "W1 Production",
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/w1_production",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/w1production.us",
+          "label": "Facebook"
+        },
+        {
+          "kind": "website",
+          "url": "https://w1production.com",
+          "label": "Website"
+        }
+      ],
+      "photo": "entertainment/orgs/w1-production.jpg"
     },
     "edh-casino": {
       "id": "edh-casino",
