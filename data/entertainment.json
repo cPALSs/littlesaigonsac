@@ -4,6 +4,78 @@
   "as_of_pt": "2026-09-30",
   "events": [
     {
+      "id": "phuoc-lam-tiec-chay-gay-quy-2026",
+      "label": "Tiệc Chay Gây Quỹ Xây Parking Lot",
+      "display_date": "Dec 20, 2026 · 5:00–10:00 PM",
+      "start_date": "2026-12-20",
+      "end_date": "2026-12-20",
+      "city": "Sacramento",
+      "venue": "A&A Tasty Restaurant, 6601 Florin Rd",
+      "place_name": "A&A Tasty Restaurant",
+      "place_id": "aa-tasty-restaurant",
+      "google_place_id": "ChIJZZLjhnPFmoAR73GXgj2-Zgk",
+      "place_address": "6601 Florin Rd, Sacramento, CA 95823",
+      "lat": 38.4962,
+      "lng": -121.4345,
+      "status": "confirmed",
+      "poster": "entertainment/phuoc-lam-tiec-chay-gay-quy-2026.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "tu-vien-phuoc-lam",
+          "name": "Tu Viện Phước Lâm",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "tu-vien-phuoc-lam",
+          "name": "Tu Viện Phước Lâm",
+          "role": "producer"
+        }
+      ],
+      "lineup": [
+        {
+          "type": "person",
+          "id": "mai-thien-van",
+          "name": "Mai Thiên Vân",
+          "role": "vocalist"
+        }
+      ],
+      "source_url": "https://www.facebook.com/groups/290197905206406/posts/2183284322564412/",
+      "tickets": [
+        {
+          "kind": "phone",
+          "label": "Minh Huệ",
+          "phone": "9166206757"
+        },
+        {
+          "kind": "phone",
+          "label": "Diệu Thảo",
+          "phone": "9168385560"
+        },
+        {
+          "kind": "phone",
+          "label": "Linda Mai",
+          "phone": "4083079939"
+        },
+        {
+          "kind": "phone",
+          "label": "Thanh Mỹ",
+          "phone": "9168716639"
+        },
+        {
+          "kind": "phone",
+          "label": "Thị Sĩ",
+          "phone": "9162071040"
+        },
+        {
+          "kind": "phone",
+          "label": "Quảng Tuệ",
+          "phone": "9163707021"
+        }
+      ]
+    },
+    {
       "id": "vaces-trung-thu-cho-em-2026",
       "label": "Trung Thu Cho Em",
       "display_date": "Dec 13, 2026 · 6:00 PM",
@@ -3195,6 +3267,34 @@
     }
   ],
   "people": {
+    "mai-thien-van": {
+      "id": "mai-thien-van",
+      "name": "Mai Thiên Vân",
+      "specialties": [
+        {
+          "slug": "que-huong",
+          "label": "Nhạc quê hương"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/maithienvanofficial",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/maithienvanofficial",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/6DKJX322RvZsWhz0Xn2myz",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/mai-thien-van.jpg"
+    },
     "dan-nguyen": {
       "id": "dan-nguyen",
       "name": "Đan Nguyên",
@@ -4309,34 +4409,6 @@
         }
       ],
       "photo": "entertainment/people/quang-le.jpg"
-    },
-    "mai-thien-van": {
-      "id": "mai-thien-van",
-      "name": "Mai Thiên Vân",
-      "specialties": [
-        {
-          "slug": "que-huong",
-          "label": "Nhạc quê hương"
-        }
-      ],
-      "links": [
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/maithienvanofficial",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/maithienvanofficial",
-          "label": "YouTube"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/6DKJX322RvZsWhz0Xn2myz",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/mai-thien-van.jpg"
     },
     "lam-nhat-tien": {
       "id": "lam-nhat-tien",
@@ -7131,6 +7203,18 @@
     }
   },
   "orgs": {
+    "tu-vien-phuoc-lam": {
+      "id": "tu-vien-phuoc-lam",
+      "name": "Tu Viện Phước Lâm",
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/tu.vien.phuoc.lam",
+          "label": "Facebook"
+        }
+      ],
+      "photo": null
+    },
     "vaces": {
       "id": "vaces",
       "name": "Vietnamese American Cultural and Educational Society",
