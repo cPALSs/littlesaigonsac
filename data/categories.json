@@ -392,13 +392,30 @@
           "gloss": "Spicy beef noodle soup",
           "kitchens": [
             {
-              "name": "Quán Nem Ninh Hòa",
-              "address": "6450 Stockton Blvd, Sacramento, CA 95823",
-              "maps": "https://maps.google.com/?cid=5570285335269858978",
-              "note": "Oxtail.",
+              "name": "Pho Basil",
+              "address": "8457 Elk Grove Florin Rd #100, Elk Grove, CA 95624",
+              "maps": "https://maps.google.com/?cid=15480803490788664938",
               "recommender": {
-                "name": "Honda Nguyen",
-                "url": "https://www.facebook.com/reel/1414727654180381"
+                "name": "9 TikTok commenters",
+                "url": "https://www.tiktok.com/@saechao_family/photo/7688120791946349855"
+              }
+            },
+            {
+              "name": "Phở King 2",
+              "address": "6830 Stockton Blvd #180, Sacramento, CA 95823",
+              "maps": "https://maps.google.com/?cid=20703986294277396",
+              "recommender": {
+                "name": "8 TikTok commenters",
+                "url": "https://www.tiktok.com/@saechao_family/photo/7688120791946349855"
+              }
+            },
+            {
+              "name": "Pho Ivy",
+              "address": "9261 Laguna Springs Dr, Elk Grove, CA 95758",
+              "maps": "https://maps.google.com/?cid=2744333322345946445",
+              "recommender": {
+                "name": "6 TikTok commenters",
+                "url": "https://www.tiktok.com/@saechao_family/photo/7688120791946349855"
               }
             }
           ]
