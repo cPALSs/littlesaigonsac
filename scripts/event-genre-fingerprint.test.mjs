@@ -170,6 +170,84 @@ test("producer specialty is omitted; dual-tag keeps full music weight", () => {
   assert.ok(!segments.some((s) => s.slug === "producer" || s.slug === FINGERPRINT_OTHER));
 });
 
+test("songwriter is not a sound: keeps full music weight; songwriter-only is Unknown", () => {
+  const lineup = [
+    { type: "person", id: "khac-viet", role: "vocalist" },
+    { type: "person", id: "writer-only", role: "vocalist" },
+  ];
+  const people = {
+    "khac-viet": { specialties: [{ slug: "nhac-tre" }, { slug: "songwriter" }] },
+    "writer-only": { specialties: [{ slug: "songwriter" }] },
+  };
+  const { total, segments } = eventGenreFingerprint(lineup, people, {});
+  assert.equal(total, 2);
+  assert.deepEqual(
+    segments.map((s) => ({ slug: s.slug, points: s.points, percent: s.percent })),
+    [
+      { slug: "nhac-tre", points: 1, percent: 50 },
+      { slug: PERFORMER_GENRE_UNKNOWN, points: 1, percent: 50 },
+    ],
+  );
+});
+
+test("influencer is a role: dropped beside music; influencer-only omitted", () => {
+  const lineup = [
+    { type: "person", id: "hung-le", role: "vocalist" },
+    { type: "person", id: "host", role: "vocalist" },
+  ];
+  const people = {
+    "hung-le": { specialties: [{ slug: "nhac-tre" }, { slug: "influencer" }] },
+    host: { specialties: [{ slug: "influencer" }] },
+  };
+  const { total, segments } = eventGenreFingerprint(lineup, people, {});
+  assert.equal(total, 1);
+  assert.deepEqual(
+    segments.map((s) => ({ slug: s.slug, points: s.points, percent: s.percent })),
+    [{ slug: "nhac-tre", points: 1, percent: 100 }],
+  );
+});
+
+test("billed roles are not a sound: singer/musician/DJ-only score Unknown; DJ + EDM is EDM", () => {
+  const lineup = [
+    { type: "person", id: "voice", role: "vocalist" },
+    { type: "person", id: "keys", role: "instrumentalist" },
+    { type: "person", id: "dj-plain", role: "dj" },
+    { type: "person", id: "dj-club", role: "dj" },
+    { type: "person", id: "bolero", role: "vocalist" },
+  ];
+  const people = {
+    voice: { specialties: [{ slug: "singer" }] },
+    keys: { specialties: [{ slug: "musician" }] },
+    "dj-plain": { specialties: [{ slug: "dj" }] },
+    "dj-club": { specialties: [{ slug: "edm" }, { slug: "dj" }] },
+    bolero: { specialties: [{ slug: "nhac-vang" }, { slug: "singer" }] },
+  };
+  const { total, segments } = eventGenreFingerprint(lineup, people, {});
+  assert.equal(total, 5);
+  assert.deepEqual(
+    segments.map((s) => ({ slug: s.slug, points: s.points, percent: s.percent })),
+    [
+      { slug: "nhac-vang", points: 1, percent: 20 },
+      { slug: "edm", points: 1, percent: 20 },
+      { slug: PERFORMER_GENRE_UNKNOWN, points: 3, percent: 60 },
+    ],
+  );
+});
+
+test("singer + emcee is omitted like emcee-only", () => {
+  const lineup = [
+    { type: "person", id: "kevin", role: "vocalist" },
+    { type: "person", id: "bolero", role: "vocalist" },
+  ];
+  const people = {
+    kevin: { specialties: [{ slug: "singer" }, { slug: "emcee" }] },
+    bolero: { specialties: [{ slug: "nhac-vang" }] },
+  };
+  const { total, segments } = eventGenreFingerprint(lineup, people, {});
+  assert.equal(total, 1);
+  assert.deepEqual(segments.map((s) => s.slug), ["nhac-vang"]);
+});
+
 test("four music genres plus emcee: MC dropped, no Other", () => {
   const music = ["nhac-vang", "que-huong", "nhac-tre", "remix"];
   const lineup = [

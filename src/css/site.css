@@ -1471,8 +1471,8 @@ body.is-lightbox-open {
   background: #5c4a3e;
 }
 
-.genre-fingerprint-seg[data-genre="dj-edm"],
-.genre-fingerprint-swatch[data-genre="dj-edm"] {
+.genre-fingerprint-seg[data-genre="edm"],
+.genre-fingerprint-swatch[data-genre="edm"] {
   background: #1a6b8a;
 }
 
@@ -1496,19 +1496,14 @@ body.is-lightbox-open {
   background: #7a3d8c;
 }
 
-.genre-fingerprint-seg[data-genre="martial-arts"],
-.genre-fingerprint-swatch[data-genre="martial-arts"] {
-  background: #8b4513;
+.genre-fingerprint-seg[data-genre="dance-martial-arts"],
+.genre-fingerprint-swatch[data-genre="dance-martial-arts"] {
+  background: #b85c8a;
 }
 
 .genre-fingerprint-seg[data-genre="producer"],
 .genre-fingerprint-swatch[data-genre="producer"] {
   background: #4a5568;
-}
-
-.genre-fingerprint-seg[data-genre="dance-group"],
-.genre-fingerprint-swatch[data-genre="dance-group"] {
-  background: #b85c8a;
 }
 
 .genre-fingerprint-seg[data-genre="other"],
@@ -1542,9 +1537,19 @@ body.is-lightbox-open {
   font: inherit;
   font-size: 0.92rem;
   font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
   text-decoration: underline;
   text-underline-offset: 0.15em;
   cursor: pointer;
+}
+
+.performer-sort legend {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.85rem;
+  width: 100%;
 }
 
 .performer-reset:hover,
@@ -1570,7 +1575,8 @@ body.is-lightbox-open {
 }
 
 .performer-sort,
-.performer-genre {
+.performer-genre,
+.performer-role {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -1584,6 +1590,7 @@ body.is-lightbox-open {
 }
 
 .performer-genre-options,
+.performer-role-options,
 .performer-sort-options {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -1591,12 +1598,14 @@ body.is-lightbox-open {
   width: 100%;
 }
 
-.performer-genre-options {
+.performer-genre-options,
+.performer-role-options {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .performer-sort legend,
-.performer-genre legend {
+.performer-genre legend,
+.performer-role legend {
   margin: 0 0 0.35rem;
   padding: 0;
   color: var(--ink-soft);
@@ -2191,7 +2200,8 @@ body.is-drawer-open .filter-fab {
   }
 
   .performer-sort-options,
-  .performer-genre-options {
+  .performer-genre-options,
+  .performer-role-options {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

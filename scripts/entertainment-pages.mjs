@@ -128,14 +128,17 @@ export const SPECIALTY_LABEL = {
   remix: "Remix · dạ vũ",
   "co-nhac": "Cải lương · cổ nhạc",
   trinh: "Nhạc Trịnh",
-  "dj-edm": "DJ · EDM",
+  edm: "EDM",
   "american-indie": "American · indie",
   chinese: "Chinese",
+  "dance-martial-arts": "Dance / Martial arts",
+  singer: "Singer",
+  musician: "Musician",
+  dj: "DJ",
+  songwriter: "Songwriter",
   emcee: "Emcee",
-  influencer: "Influencer · talk show",
-  "martial-arts": "Martial arts",
+  influencer: "Content creator",
   producer: "Producer",
-  "dance-group": "Dance group",
 };
 
 /** Known genre slugs in radio order: public label, `vi` locale. No `local`. */
@@ -143,18 +146,32 @@ export function compareSpecialtyLabels(a, b) {
   return String(a).localeCompare(String(b), "vi", { sensitivity: "base" });
 }
 
-export const PERFORMER_GENRE_SLUGS = Object.keys(SPECIALTY_LABEL).sort((a, b) =>
-  compareSpecialtyLabels(SPECIALTY_LABEL[a], SPECIALTY_LABEL[b]),
-);
+/** What the person does on the bill, not the sound. Separate Role filter (`?role=`). */
+export const PERFORMER_ROLE_SLUGS = [
+  "singer",
+  "musician",
+  "dj",
+  "songwriter",
+  "emcee",
+  "influencer",
+  "producer",
+].sort((a, b) => compareSpecialtyLabels(SPECIALTY_LABEL[a], SPECIALTY_LABEL[b]));
+const PERFORMER_ROLE_SET = new Set(PERFORMER_ROLE_SLUGS);
 
-/** Performers filter only — empty `specialties`. Never store on person_specialty. */
+export const PERFORMER_GENRE_SLUGS = Object.keys(SPECIALTY_LABEL)
+  .filter((slug) => !PERFORMER_ROLE_SET.has(slug))
+  .sort((a, b) => compareSpecialtyLabels(SPECIALTY_LABEL[a], SPECIALTY_LABEL[b]));
+
+/** Performers filter only — no genre specialty (roles ignored). Never store on person_specialty. */
 export const PERFORMER_GENRE_UNKNOWN = "unknown";
 
 /** Leftover named genres after the top 4 on an event fingerprint. Not a stored slug. */
 export const FINGERPRINT_OTHER = "other";
 export const FINGERPRINT_MAX_NAMED = 4;
 /** Role specialties — omitted from the fingerprint (not Other, not Unknown). */
-export const FINGERPRINT_EXCLUDE_SLUGS = new Set(["emcee", "producer"]);
+export const FINGERPRINT_EXCLUDE_SLUGS = new Set(["emcee", "influencer", "producer"]);
+/** Modifier specialties — not a sound; a modifier-only entity scores Unknown. */
+export const FINGERPRINT_MODIFIER_SLUGS = new Set(["singer", "musician", "dj", "songwriter"]);
 
 function roundPercents(parts) {
   const total = parts.reduce((sum, n) => sum + n, 0);
@@ -172,8 +189,10 @@ function roundPercents(parts) {
 
 /**
  * Lineup genre fingerprint: each billed person/org is 1 point, split evenly
- * across their specialties after dropping `emcee` and `producer`. Those role
- * slugs (and MC/producer-only people) are omitted — not Other, not Unknown.
+ * across their specialties after dropping `emcee`, `influencer`, and `producer`.
+ * Those role slugs (and people with only them) are omitted — not Other, not
+ * Unknown. Singer / musician / DJ / songwriter are dropped too, but an entity
+ * with only those is Unknown (they make sound; we just don't know which).
  * Empty remaining specialties → Unknown. Named slugs: top 4 by points,
  * leftover named → optional Other, Unknown always last.
  */
@@ -184,7 +203,9 @@ export function eventGenreFingerprint(lineup = [], people = {}, orgs = {}) {
   let scored = 0;
   for (const item of rows) {
     const entity = item?.type === "org" ? orgs?.[item.id] : people?.[item.id];
-    const allSlugs = specialtySlugs(entity?.specialties);
+    const allSlugs = specialtySlugs(entity?.specialties).filter(
+      (slug) => !FINGERPRINT_MODIFIER_SLUGS.has(slug),
+    );
     const slugs = allSlugs.filter((slug) => !FINGERPRINT_EXCLUDE_SLUGS.has(slug));
     if (!slugs.length) {
       if (allSlugs.length) continue;
@@ -249,7 +270,8 @@ export function specialtySlugs(specialties) {
 }
 
 export function performerGenreHref(slug) {
-  return `/entertainment/performers/?genre=${encodeURIComponent(slug)}`;
+  const param = PERFORMER_ROLE_SET.has(slug) ? "role" : "genre";
+  return `/entertainment/performers/?${param}=${encodeURIComponent(slug)}`;
 }
 
 export function ticketVendorLabel(url) {
@@ -443,11 +465,8 @@ function hasSpecialty(entity, slug) {
 function creditRoleLabel(item, orgs, people) {
   const org = item?.type === "org" && item.id ? orgs?.[item.id] : null;
   const person = item?.type === "person" && item.id ? people?.[item.id] : null;
-  if (
-    hasSpecialty(person, "martial-arts") ||
-    hasSpecialty(org, "martial-arts") ||
-    isMartialArtsAct(org || item)
-  ) {
+  // Merged genre covers troupes too; only a tagged *person* reads as a martial artist.
+  if (hasSpecialty(person, "dance-martial-arts") || isMartialArtsAct(org || item)) {
     return ROLE_LABEL.martial_arts;
   }
   if (item.role === "band" && isDanceTroupe(org || item)) return ROLE_LABEL.dance;
@@ -782,7 +801,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
   };
 
   const specialtyChips = (specialties) => {
-    const slugs = specialtySlugs(specialties).slice(0, 4);
+    const slugs = specialtySlugs(specialties).slice(0, 6);
     if (!slugs.length) return "";
     const chips = slugs.map((slug) => {
       const item = Array.isArray(specialties)
@@ -946,12 +965,19 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
       performerRadio("performer-genre", PERFORMER_GENRE_UNKNOWN, "Unknown"),
     ].join("");
 
+  const performerRoleOptions = () =>
+    [
+      performerRadio("performer-role", "", "All", true),
+      ...PERFORMER_ROLE_SLUGS.map((slug) =>
+        performerRadio("performer-role", slug, SPECIALTY_LABEL[slug]),
+      ),
+    ].join("");
+
   const performerSortBar = () => `<div class="performer-toolbar">
       <div class="performer-filter-cols">
-        <a href="/entertainment/performers/" class="performer-reset" data-performer-reset>Reset</a>
         <div class="performer-filter-flow">
           <fieldset class="performer-sort" data-performer-sort>
-            <legend>Sort</legend>
+            <legend><span>Sort</span><a href="/entertainment/performers/" class="performer-reset" data-performer-reset>Reset</a></legend>
             <div class="performer-sort-options">
               ${performerRadio("performer-sort", "alpha", "Alphabetical", true)}
               ${performerRadio("performer-sort", "appearances", "Most appearances")}
@@ -962,6 +988,12 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
             <legend>Genre</legend>
             <div class="performer-genre-options">
               ${performerGenreOptions()}
+            </div>
+          </fieldset>
+          <fieldset class="performer-role" data-performer-role>
+            <legend>Role</legend>
+            <div class="performer-role-options">
+              ${performerRoleOptions()}
             </div>
           </fieldset>
         </div>
@@ -1133,7 +1165,10 @@ export function homeEntertainmentSection({ entertainment, esc, imgEl, crumbs }) 
   return `<section class="wrap feature" id="entertainment">
       <div class="section-head">
         <h2>Entertainment</h2>
-        <a href="/entertainment/">All events</a>
+        <div class="section-head-links">
+          <a href="/entertainment/">All events</a>
+          <a href="/entertainment/performers/">All performers</a>
+        </div>
       </div>
       <p class="lede">${ENTERTAINMENT_TAGLINE}</p>
       <noscript><style>.poster-grid--home:not([data-sorted]){visibility:visible}</style></noscript>

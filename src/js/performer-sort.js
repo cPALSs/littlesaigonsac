@@ -7,17 +7,28 @@ const GENRE_SLUGS = new Set([
   "remix",
   "co-nhac",
   "trinh",
-  "dj-edm",
+  "edm",
   "american-indie",
   "chinese",
-  "emcee",
-  "influencer",
-  "martial-arts",
-  "producer",
-  "dance-group",
+  "dance-martial-arts",
 ]);
 
-/** Filter-only: empty specialties. Not a stored person_specialty / org_specialty slug. */
+const ROLE_SLUGS = new Set([
+  "singer",
+  "musician",
+  "dj",
+  "songwriter",
+  "emcee",
+  "influencer",
+  "producer",
+]);
+
+/** Pre-split links: ?genre=dj-edm now means the DJ role. */
+const LEGACY_GENRE_ROLE = { "dj-edm": "dj" };
+/** Pre-merge links. */
+const LEGACY_GENRE = { "martial-arts": "dance-martial-arts", "dance-group": "dance-martial-arts" };
+
+/** Filter-only: no genre specialty (roles ignored). Not a stored slug. */
 const GENRE_UNKNOWN = "unknown";
 
 function isFilterGenre(raw) {
@@ -165,13 +176,21 @@ function applyAppearanceSplit(section, mode) {
   }
 }
 
-function rowMatchesGenre(el, genre) {
-  const slugs = String(el.dataset.genres || "")
+function rowSlugs(el) {
+  return String(el.dataset.genres || "")
     .split(/\s+/)
     .filter(Boolean);
+}
+
+function rowMatchesGenre(el, genre) {
+  const slugs = rowSlugs(el);
   if (!genre) return true;
-  if (genre === GENRE_UNKNOWN) return slugs.length === 0;
+  if (genre === GENRE_UNKNOWN) return !slugs.some((slug) => GENRE_SLUGS.has(slug));
   return slugs.includes(genre);
+}
+
+function rowMatchesRole(el, role) {
+  return !role || rowSlugs(el).includes(role);
 }
 
 function readSort(raw) {
@@ -183,15 +202,22 @@ function readSort(raw) {
 function readParams() {
   const params = new URLSearchParams(location.search);
   const rawGenre = params.get("genre") || "";
-  const genre = isFilterGenre(rawGenre) ? rawGenre : "";
+  const mappedGenre = LEGACY_GENRE[rawGenre] || rawGenre;
+  const genre = isFilterGenre(mappedGenre) ? mappedGenre : "";
+  // Older links used ?genre=emcee etc. before roles had their own group.
+  const legacyRole = LEGACY_GENRE_ROLE[rawGenre] || (ROLE_SLUGS.has(rawGenre) ? rawGenre : "");
+  const rawRole = params.get("role") || legacyRole;
+  const role = ROLE_SLUGS.has(rawRole) ? rawRole : "";
   const sort = readSort(params.get("sort") || "alpha");
-  return { genre, sort };
+  return { genre, role, sort };
 }
 
-function syncUrl(genre, sort) {
+function syncUrl(genre, role, sort) {
   const url = new URL(location.href);
   if (genre) url.searchParams.set("genre", genre);
   else url.searchParams.delete("genre");
+  if (role) url.searchParams.set("role", role);
+  else url.searchParams.delete("role");
   if (sort && sort !== "alpha") url.searchParams.set("sort", sort);
   else url.searchParams.delete("sort");
   const next = `${url.pathname}${url.search}${url.hash}`;
@@ -204,6 +230,7 @@ function onPerformersPage() {
 }
 
 const genreGroup = document.querySelector("[data-performer-genre]");
+const roleGroup = document.querySelector("[data-performer-role]");
 const sortGroup = document.querySelector("[data-performer-sort]");
 const resetBtn = document.querySelector("[data-performer-reset]");
 const grids = document.querySelectorAll("[data-performer-grid]");
@@ -222,37 +249,44 @@ function setRadio(name, value) {
 
 function apply({ writeUrl = true } = {}) {
   const genre = radioValue("performer-genre");
+  const role = radioValue("performer-role");
   const mode = readSort(radioValue("performer-sort", "alpha"));
   for (const section of document.querySelectorAll("[data-performer-section]")) {
     for (const el of sectionItems(section)) {
-      el.hidden = !rowMatchesGenre(el, genre);
+      el.hidden = !rowMatchesGenre(el, genre) || !rowMatchesRole(el, role);
     }
     if (mode === "last") applyLastAppearanceSplit(section);
     else applyAppearanceSplit(section, mode);
     section.hidden = !hasVisibleItem(sectionItems(section));
   }
-  if (writeUrl) syncUrl(genre, mode);
-  window.lssSetDrawerActive?.("performer-filter", Boolean(genre) || mode !== "alpha");
+  if (writeUrl) syncUrl(genre, role, mode);
+  window.lssSetDrawerActive?.(
+    "performer-filter",
+    Boolean(genre) || Boolean(role) || mode !== "alpha",
+  );
 }
 
 function resetFilters() {
   setRadio("performer-genre", "");
+  setRadio("performer-role", "");
   setRadio("performer-sort", "alpha");
   apply();
 }
 
-if ((genreGroup || sortGroup) && grids.length) {
+if ((genreGroup || roleGroup || sortGroup) && grids.length) {
   const initial = readParams();
   setRadio("performer-genre", initial.genre);
+  setRadio("performer-role", initial.role);
   setRadio("performer-sort", initial.sort);
   apply();
   genreGroup?.addEventListener("change", () => apply());
+  roleGroup?.addEventListener("change", () => apply());
   sortGroup?.addEventListener("change", () => apply());
   resetBtn?.addEventListener("click", (event) => {
     event.preventDefault();
     resetFilters();
   });
-  if (initial.genre) window.lssOpenDrawer?.("performer-filter");
+  if (initial.genre || initial.role) window.lssOpenDrawer?.("performer-filter");
 }
 
 if (onPerformersPage()) {
@@ -267,10 +301,13 @@ if (onPerformersPage()) {
     }
     if (!/^\/entertainment\/performers\/?$/.test(dest.pathname)) return;
     event.preventDefault();
-    const raw = dest.searchParams.get("genre") || "";
-    const genre = isFilterGenre(raw) ? raw : "";
+    const rawGenre = dest.searchParams.get("genre") || "";
+    const genre = isFilterGenre(rawGenre) ? rawGenre : "";
+    const rawRole = dest.searchParams.get("role") || "";
+    const role = ROLE_SLUGS.has(rawRole) ? rawRole : "";
     setRadio("performer-genre", genre);
+    setRadio("performer-role", role);
     apply();
-    if (genre) window.lssOpenDrawer?.("performer-filter");
+    if (genre || role) window.lssOpenDrawer?.("performer-filter");
   });
 }

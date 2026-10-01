@@ -1,7 +1,7 @@
 {
   "exported_at": "2026-10-01",
   "timezone": "America/Los_Angeles",
-  "as_of_pt": "2026-09-30",
+  "as_of_pt": "2026-10-01",
   "events": [
     {
       "id": "phuoc-lam-tiec-chay-gay-quy-2026",
@@ -1660,12 +1660,6 @@
         },
         {
           "type": "person",
-          "id": "jp-breganza",
-          "name": "JP Breganza",
-          "role": "vocalist"
-        },
-        {
-          "type": "person",
           "id": "mikey-vee",
           "name": "Mikey Vee",
           "role": "vocalist"
@@ -1692,6 +1686,12 @@
           "type": "person",
           "id": "dj-uni",
           "name": "DJ UNI",
+          "role": "dj"
+        },
+        {
+          "type": "person",
+          "id": "jp-breganza",
+          "name": "JP Breganza",
           "role": "dj"
         }
       ]
@@ -3301,6 +3301,10 @@
         {
           "slug": "que-huong",
           "label": "Nhạc quê hương"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3329,6 +3333,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3362,6 +3370,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3395,6 +3407,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3433,6 +3449,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3461,6 +3481,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3493,6 +3517,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3530,6 +3558,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3554,6 +3586,12 @@
     "quynh-mai": {
       "id": "quynh-mai",
       "name": "Quỳnh Mai",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/quynh-mai.jpg"
     },
@@ -3562,6 +3600,16 @@
       "name": "Lan Anh Tiêu",
       "aka": [
         "Lan Anh"
+      ],
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        },
+        {
+          "slug": "dj",
+          "label": "DJ"
+        }
       ],
       "links": [
         {
@@ -3612,6 +3660,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3640,6 +3692,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3673,6 +3729,14 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        },
+        {
+          "slug": "songwriter",
+          "label": "Songwriter"
         }
       ],
       "links": [
@@ -3706,6 +3770,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3735,6 +3803,12 @@
     "lam-minh-ngoc": {
       "id": "lam-minh-ngoc",
       "name": "Lâm Minh Ngọc",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/lam-minh-ngoc.jpg"
     },
@@ -3745,6 +3819,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3778,6 +3856,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [],
@@ -3794,6 +3876,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3825,6 +3911,10 @@
         {
           "slug": "chinese",
           "label": "Chinese"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [],
@@ -3837,6 +3927,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3869,6 +3963,10 @@
         {
           "slug": "remix",
           "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3890,7 +3988,7 @@
         },
         {
           "slug": "influencer",
-          "label": "Influencer · talk show"
+          "label": "Content creator"
         }
       ],
       "links": [
@@ -3909,6 +4007,10 @@
         {
           "slug": "remix",
           "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3930,6 +4032,10 @@
         {
           "slug": "remix",
           "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3963,6 +4069,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -3994,6 +4104,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4009,6 +4123,10 @@
       "id": "kevin-le",
       "name": "Kevin Lê",
       "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        },
         {
           "slug": "emcee",
           "label": "Emcee"
@@ -4027,6 +4145,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4055,6 +4177,12 @@
         "Kien Watson",
         "Kiên Watson"
       ],
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -4067,24 +4195,48 @@
     "que-long": {
       "id": "que-long",
       "name": "Quế Long",
+      "specialties": [
+        {
+          "slug": "musician",
+          "label": "Musician"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/que-long.jpg"
     },
     "toan-keyboard": {
       "id": "toan-keyboard",
       "name": "Toàn",
+      "specialties": [
+        {
+          "slug": "musician",
+          "label": "Musician"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/toan-keyboard.jpg"
     },
     "thanh-hieu": {
       "id": "thanh-hieu",
       "name": "Thanh Hiếu",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/thanh-hieu.jpg"
     },
     "thu-ha-vocalist": {
       "id": "thu-ha-vocalist",
       "name": "Thu Hà",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/thu-ha-vocalist.jpg"
     },
@@ -4096,12 +4248,24 @@
         "Hong Phuong Nguyen-Escobedo",
         "Hồng Phượng"
       ],
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/hong-phuong-nguyen-escobedo.jpg"
     },
     "quyet-minh": {
       "id": "quyet-minh",
       "name": "Quyết Minh",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/quyet-minh.jpg"
     },
@@ -4132,6 +4296,10 @@
         {
           "slug": "co-nhac",
           "label": "Cải lương · cổ nhạc"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4173,6 +4341,10 @@
       "name": "Bích Ngọc",
       "specialties": [
         {
+          "slug": "singer",
+          "label": "Singer"
+        },
+        {
           "slug": "emcee",
           "label": "Emcee"
         }
@@ -4183,6 +4355,12 @@
     "andy-beo": {
       "id": "andy-beo",
       "name": "Andy Beo",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/andy-beo.jpg"
     },
@@ -4193,6 +4371,10 @@
         {
           "slug": "co-nhac",
           "label": "Cải lương · cổ nhạc"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [],
@@ -4205,6 +4387,10 @@
         {
           "slug": "co-nhac",
           "label": "Cải lương · cổ nhạc"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [],
@@ -4217,6 +4403,10 @@
         {
           "slug": "co-nhac",
           "label": "Cải lương · cổ nhạc"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [],
@@ -4227,8 +4417,8 @@
       "name": "Thành Vinh",
       "specialties": [
         {
-          "slug": "martial-arts",
-          "label": "Martial arts"
+          "slug": "dance-martial-arts",
+          "label": "Dance / Martial arts"
         }
       ],
       "links": [],
@@ -4237,6 +4427,12 @@
     "minh-thu": {
       "id": "minh-thu",
       "name": "Minh Thư",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/minh-thu.jpg"
     },
@@ -4247,6 +4443,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4270,6 +4470,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4303,6 +4507,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4334,8 +4542,12 @@
       "name": "DJ Tùng",
       "specialties": [
         {
-          "slug": "dj-edm",
-          "label": "DJ · EDM"
+          "slug": "edm",
+          "label": "EDM"
+        },
+        {
+          "slug": "dj",
+          "label": "DJ"
         }
       ],
       "links": [],
@@ -4344,6 +4556,12 @@
     "tam-hao": {
       "id": "tam-hao",
       "name": "Tâm Hảo",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/tam-hao.jpg"
     },
@@ -4352,8 +4570,12 @@
       "name": "DJ Alissa",
       "specialties": [
         {
-          "slug": "dj-edm",
-          "label": "DJ · EDM"
+          "slug": "edm",
+          "label": "EDM"
+        },
+        {
+          "slug": "dj",
+          "label": "DJ"
         }
       ],
       "links": [],
@@ -4362,6 +4584,12 @@
     "phuong-thu": {
       "id": "phuong-thu",
       "name": "Phương Thư",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -4411,6 +4639,10 @@
         {
           "slug": "que-huong",
           "label": "Nhạc quê hương"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4451,6 +4683,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4482,6 +4718,10 @@
         {
           "slug": "chinese",
           "label": "Chinese"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [],
@@ -4497,6 +4737,10 @@
         {
           "slug": "chinese",
           "label": "Chinese"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [],
@@ -4512,6 +4756,10 @@
         {
           "slug": "chinese",
           "label": "Chinese"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [],
@@ -4520,6 +4768,12 @@
     "rachael-tuong-vy": {
       "id": "rachael-tuong-vy",
       "name": "Rachael Tường Vy",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -4540,6 +4794,10 @@
         {
           "slug": "co-nhac",
           "label": "Cải lương · cổ nhạc"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4578,6 +4836,10 @@
         {
           "slug": "que-huong",
           "label": "Nhạc quê hương"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [],
@@ -4586,6 +4848,12 @@
     "cham-hai": {
       "id": "cham-hai",
       "name": "Châm Hải",
+      "specialties": [
+        {
+          "slug": "musician",
+          "label": "Musician"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -4605,6 +4873,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4632,6 +4904,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4664,6 +4940,12 @@
       "aka": [
         "Mai Thanh Zuzana"
       ],
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [
         {
           "kind": "instagram",
@@ -4684,12 +4966,24 @@
       "aka": [
         "Phú Trường Thi"
       ],
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/phu-truong-thi.jpg"
     },
     "thanh-van": {
       "id": "thanh-van",
       "name": "Thanh Vân",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/thanh-van.jpg"
     },
@@ -4718,6 +5012,10 @@
         {
           "slug": "que-huong",
           "label": "Nhạc quê hương"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4741,6 +5039,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4774,6 +5076,10 @@
         {
           "slug": "remix",
           "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4798,6 +5104,12 @@
     "anh-thu": {
       "id": "anh-thu",
       "name": "Anh Thư",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/anh-thu.jpg"
     },
@@ -4808,6 +5120,10 @@
         {
           "slug": "que-huong",
           "label": "Nhạc quê hương"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4834,6 +5150,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4903,6 +5223,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4926,6 +5250,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -4964,6 +5292,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5002,6 +5334,14 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        },
+        {
+          "slug": "songwriter",
+          "label": "Songwriter"
         }
       ],
       "links": [
@@ -5035,6 +5375,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5063,6 +5407,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5096,6 +5444,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5129,6 +5481,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5162,6 +5518,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5195,6 +5555,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5228,6 +5592,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5256,6 +5624,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5287,6 +5659,10 @@
         {
           "slug": "remix",
           "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5320,6 +5696,14 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        },
+        {
+          "slug": "songwriter",
+          "label": "Songwriter"
         }
       ],
       "links": [
@@ -5353,6 +5737,14 @@
         {
           "slug": "american-indie",
           "label": "American · indie"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        },
+        {
+          "slug": "songwriter",
+          "label": "Songwriter"
         }
       ],
       "links": [
@@ -5387,8 +5779,12 @@
       ],
       "specialties": [
         {
-          "slug": "dj-edm",
-          "label": "DJ · EDM"
+          "slug": "edm",
+          "label": "EDM"
+        },
+        {
+          "slug": "dj",
+          "label": "DJ"
         }
       ],
       "links": [
@@ -5417,6 +5813,10 @@
         {
           "slug": "co-nhac",
           "label": "Cải lương · cổ nhạc"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5455,6 +5855,10 @@
         {
           "slug": "american-indie",
           "label": "American · indie"
+        },
+        {
+          "slug": "dj",
+          "label": "DJ"
         }
       ],
       "links": [
@@ -5478,6 +5882,14 @@
         {
           "slug": "american-indie",
           "label": "American · indie"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        },
+        {
+          "slug": "songwriter",
+          "label": "Songwriter"
         }
       ],
       "links": [
@@ -5510,6 +5922,14 @@
         {
           "slug": "american-indie",
           "label": "American · indie"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        },
+        {
+          "slug": "songwriter",
+          "label": "Songwriter"
         }
       ],
       "links": [
@@ -5533,6 +5953,14 @@
         {
           "slug": "american-indie",
           "label": "American · indie"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        },
+        {
+          "slug": "songwriter",
+          "label": "Songwriter"
         }
       ],
       "links": [
@@ -5577,8 +6005,16 @@
           "label": "American · indie"
         },
         {
-          "slug": "dj-edm",
-          "label": "DJ · EDM"
+          "slug": "singer",
+          "label": "Singer"
+        },
+        {
+          "slug": "dj",
+          "label": "DJ"
+        },
+        {
+          "slug": "songwriter",
+          "label": "Songwriter"
         }
       ],
       "links": [
@@ -5627,6 +6063,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5650,6 +6090,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5674,6 +6118,12 @@
     "to-bee": {
       "id": "to-bee",
       "name": "To Bee",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/to-bee.jpg"
     },
@@ -5688,6 +6138,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5712,36 +6166,72 @@
     "nguyen-quang": {
       "id": "nguyen-quang",
       "name": "Nguyễn Quang",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/nguyen-quang.jpg"
     },
     "chon-phuong": {
       "id": "chon-phuong",
       "name": "Chơn Phương",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/chon-phuong.jpg"
     },
     "bao-tran": {
       "id": "bao-tran",
       "name": "Bảo Trần",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/bao-tran.jpg"
     },
     "chau-dung": {
       "id": "chau-dung",
       "name": "Châu Dũng",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/chau-dung.jpg"
     },
     "phu-phong": {
       "id": "phu-phong",
       "name": "Phú Phong",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/phu-phong.jpg"
     },
     "anh-hung": {
       "id": "anh-hung",
       "name": "Anh Hùng",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/anh-hung.jpg"
     },
@@ -5778,18 +6268,36 @@
     "tran-bao": {
       "id": "tran-bao",
       "name": "Trần Bảo",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/tran-bao.jpg"
     },
     "thien-an": {
       "id": "thien-an",
       "name": "Thiên An",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/thien-an.jpg"
     },
     "minh-hue": {
       "id": "minh-hue",
       "name": "Minh Huệ",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/minh-hue.jpg"
     },
@@ -5800,6 +6308,12 @@
         "Jazzlynne",
         "Jazzlynne Chau",
         "Bảo Châu"
+      ],
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
       ],
       "links": [
         {
@@ -5823,12 +6337,24 @@
     "hong-nhi": {
       "id": "hong-nhi",
       "name": "Hồng Nhi",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/hong-nhi.jpg"
     },
     "phillip-pho-tran": {
       "id": "phillip-pho-tran",
       "name": "Phillip Phố Trần",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -5845,6 +6371,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5873,6 +6403,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5896,6 +6430,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5919,6 +6457,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5938,6 +6480,12 @@
     "luu-anh": {
       "id": "luu-anh",
       "name": "Lưu Ánh",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/luu-anh.jpg"
     },
@@ -5948,6 +6496,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -5971,6 +6523,10 @@
         {
           "slug": "remix",
           "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6009,6 +6565,10 @@
         {
           "slug": "remix",
           "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6042,6 +6602,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6061,6 +6625,12 @@
     "lieu-kieu": {
       "id": "lieu-kieu",
       "name": "Liễu Kiều",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -6080,8 +6650,12 @@
       ],
       "specialties": [
         {
-          "slug": "dj-edm",
-          "label": "DJ · EDM"
+          "slug": "edm",
+          "label": "EDM"
+        },
+        {
+          "slug": "dj",
+          "label": "DJ"
         }
       ],
       "links": [],
@@ -6097,6 +6671,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6130,6 +6708,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6158,6 +6740,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6187,6 +6773,12 @@
     "alex-kong": {
       "id": "alex-kong",
       "name": "Alex Kong",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/alex-kong.jpg"
     },
@@ -6203,6 +6795,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6232,6 +6828,12 @@
     "yen-linh": {
       "id": "yen-linh",
       "name": "Yến Linh",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/yen-linh.jpg"
     },
@@ -6240,8 +6842,12 @@
       "name": "Nguyên Khang",
       "specialties": [
         {
+          "slug": "singer",
+          "label": "Singer"
+        },
+        {
           "slug": "influencer",
-          "label": "Influencer · talk show"
+          "label": "Content creator"
         }
       ],
       "links": [
@@ -6282,6 +6888,10 @@
         {
           "slug": "que-huong",
           "label": "Nhạc quê hương"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6300,6 +6910,14 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        },
+        {
+          "slug": "songwriter",
+          "label": "Songwriter"
         }
       ],
       "links": [
@@ -6328,6 +6946,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6366,8 +6988,12 @@
           "label": "Nhạc trẻ"
         },
         {
+          "slug": "singer",
+          "label": "Singer"
+        },
+        {
           "slug": "influencer",
-          "label": "Influencer · talk show"
+          "label": "Content creator"
         }
       ],
       "links": [
@@ -6399,6 +7025,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6442,6 +7072,12 @@
         "Paul Cuong Nguyen",
         "Paul Nguyen Cuong"
       ],
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -6454,6 +7090,12 @@
     "quang-do": {
       "id": "quang-do",
       "name": "Quang Đỗ",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/quang-do.jpg"
     },
@@ -6467,6 +7109,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6501,6 +7147,12 @@
     "pham-hong-an": {
       "id": "pham-hong-an",
       "name": "Phạm Hồng Ân",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/pham-hong-an.jpg"
     },
@@ -6515,6 +7167,10 @@
         {
           "slug": "que-huong",
           "label": "Nhạc quê hương"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6543,6 +7199,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6566,6 +7226,10 @@
         {
           "slug": "co-nhac",
           "label": "Cải lương · cổ nhạc"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6594,6 +7258,10 @@
         {
           "slug": "co-nhac",
           "label": "Cải lương · cổ nhạc"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6622,6 +7290,12 @@
         "Gerard Richard Williams III",
         "Gerard William"
       ],
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/gerard-william.jpg"
     },
@@ -6632,6 +7306,10 @@
         {
           "slug": "que-huong",
           "label": "Nhạc quê hương"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6650,6 +7328,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6688,6 +7370,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6716,6 +7402,14 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        },
+        {
+          "slug": "songwriter",
+          "label": "Songwriter"
         }
       ],
       "links": [
@@ -6749,6 +7443,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6772,6 +7470,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6800,6 +7502,14 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        },
+        {
+          "slug": "songwriter",
+          "label": "Songwriter"
         }
       ],
       "links": [
@@ -6833,6 +7543,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6861,6 +7575,10 @@
         {
           "slug": "que-huong",
           "label": "Nhạc quê hương"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6879,6 +7597,10 @@
         {
           "slug": "que-huong",
           "label": "Nhạc quê hương"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6919,6 +7641,10 @@
         {
           "slug": "trinh",
           "label": "Nhạc Trịnh"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6947,6 +7673,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6965,6 +7695,10 @@
         {
           "slug": "remix",
           "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -6983,6 +7717,10 @@
         {
           "slug": "remix",
           "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -7011,6 +7749,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -7044,6 +7786,10 @@
         {
           "slug": "nhac-vang",
           "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -7075,6 +7821,12 @@
     "krystal-mai": {
       "id": "krystal-mai",
       "name": "Krystal Mai",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [
         {
           "kind": "instagram",
@@ -7092,6 +7844,12 @@
     "hang-vy": {
       "id": "hang-vy",
       "name": "Hằng Vy",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/hang-vy.jpg"
     },
@@ -7122,12 +7880,24 @@
     "nguyen-thuy-linh": {
       "id": "nguyen-thuy-linh",
       "name": "Nguyễn Thùy Linh",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/nguyen-thuy-linh.jpg"
     },
     "nhu-hoai": {
       "id": "nhu-hoai",
       "name": "Như Hoài",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/nhu-hoai.jpg"
     },
@@ -7139,8 +7909,12 @@
       ],
       "specialties": [
         {
-          "slug": "dj-edm",
-          "label": "DJ · EDM"
+          "slug": "edm",
+          "label": "EDM"
+        },
+        {
+          "slug": "dj",
+          "label": "DJ"
         }
       ],
       "links": [],
@@ -7151,8 +7925,12 @@
       "name": "DJ Alex",
       "specialties": [
         {
-          "slug": "dj-edm",
-          "label": "DJ · EDM"
+          "slug": "edm",
+          "label": "EDM"
+        },
+        {
+          "slug": "dj",
+          "label": "DJ"
         }
       ],
       "links": [],
@@ -7177,6 +7955,10 @@
         {
           "slug": "nhac-tre",
           "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
         }
       ],
       "links": [
@@ -7201,6 +7983,12 @@
     "luu-gia-bao": {
       "id": "luu-gia-bao",
       "name": "Lưu Gia Bảo",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [
         {
           "kind": "facebook",
@@ -7213,18 +8001,36 @@
     "marilyn-countdown": {
       "id": "marilyn-countdown",
       "name": "Marilyn",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/marilyn-countdown.jpg"
     },
     "my-loan": {
       "id": "my-loan",
       "name": "Mỹ Loan",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/my-loan.jpg"
     },
     "chau-le-hang": {
       "id": "chau-le-hang",
       "name": "Châu Lệ Hằng",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [],
       "photo": "entertainment/people/chau-le-hang.jpg"
     }
@@ -7392,8 +8198,8 @@
       "act": "dance-troupe",
       "specialties": [
         {
-          "slug": "dance-group",
-          "label": "Dance group"
+          "slug": "dance-martial-arts",
+          "label": "Dance / Martial arts"
         }
       ]
     },
@@ -7686,8 +8492,8 @@
       "act": "dance-troupe",
       "specialties": [
         {
-          "slug": "dance-group",
-          "label": "Dance group"
+          "slug": "dance-martial-arts",
+          "label": "Dance / Martial arts"
         }
       ],
       "members": [
