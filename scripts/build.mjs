@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { createHash } from "node:crypto";
 import { execSync } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, writeFileSync, cpSync, rmSync, statSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, cpSync, rmSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { homeEntertainmentSection, writeEntertainmentPages } from "./entertainment-pages.mjs";
@@ -637,4 +637,30 @@ const swSource = readFileSync(join(root, "src/sw.js"), "utf8")
   .replaceAll("__PRECACHE_JSON__", JSON.stringify(precache));
 writeFileSync(join(dist, "sw.js"), swSource);
 
-console.log(`Built home + Viet Eats (${categories.length} categories)${foodiesNote}${extra} → ${dist}`);
+const SITEMAP_EXCLUDE = new Set(["/offline/"]);
+const builtPages = (dir) =>
+  readdirSync(dir, { withFileTypes: true }).flatMap((ent) => {
+    const p = join(dir, ent.name);
+    if (ent.isDirectory()) return builtPages(p);
+    return ent.name === "index.html" ? [p] : [];
+  });
+const sitemapUrls = [
+  ...new Set(
+    builtPages(dist)
+      .map((file) => readFileSync(file, "utf8").match(/<link rel="canonical" href="([^"]+)"/)?.[1])
+      .filter(Boolean)
+      .map((href) => href.replaceAll("&amp;", "&"))
+      .filter((href) => !SITEMAP_EXCLUDE.has(href.slice(SITE_ORIGIN.length))),
+  ),
+].sort();
+writeFileSync(
+  join(dist, "sitemap.xml"),
+  `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapUrls.map((u) => `  <url><loc>${esc(u)}</loc></url>`).join("\n")}
+</urlset>
+`,
+);
+writeFileSync(join(dist, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_ORIGIN}/sitemap.xml\n`);
+
+console.log(`Built home + Viet Eats (${categories.length} categories)${foodiesNote}${extra} · sitemap ${sitemapUrls.length} URLs → ${dist}`);
