@@ -1133,12 +1133,12 @@ export function homeEntertainmentSection({ entertainment, esc, imgEl, crumbs }) 
   return `<section class="wrap feature" id="entertainment">
       <div class="section-head">
         <h2>Entertainment</h2>
-        <a href="/entertainment/">All shows</a>
+        <a href="/entertainment/">All events</a>
       </div>
       <p class="lede">${ENTERTAINMENT_TAGLINE}</p>
       <noscript><style>.poster-grid--home:not([data-sorted]){visibility:visible}</style></noscript>
       <div class="poster-grid poster-grid--home" data-home-shows>${cards.join("")}</div>
-      <p class="section-foot"><a href="/entertainment/">All shows</a></p>
+      <p class="section-foot"><a href="/entertainment/">All events</a></p>
     </section>`;
 }
 

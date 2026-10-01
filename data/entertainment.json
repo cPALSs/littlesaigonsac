@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-09-30",
+  "exported_at": "2026-10-01",
   "timezone": "America/Los_Angeles",
   "as_of_pt": "2026-09-30",
   "events": [
@@ -738,6 +738,33 @@
           "phone": "9168733332"
         }
       ]
+    },
+    {
+      "id": "vnmp-trung-thu-2026",
+      "label": "Tết Trung Thu",
+      "display_date": "Oct 3, 2026 · 6:30–9:00 PM",
+      "start_date": "2026-10-03",
+      "end_date": "2026-10-03",
+      "city": "Sacramento",
+      "venue": "Hội Trường Giáo Xứ, 8181 Florin Rd",
+      "place_name": "Vietnamese Martyrs Parish",
+      "place_id": "vietnamese-martyrs-parish",
+      "google_place_id": "ChIJeaKlHwDFmoARmRC2qSVuQuE",
+      "place_address": "8181 Florin Rd, Sacramento, CA 95828",
+      "lat": 38.4965,
+      "lng": -121.411,
+      "status": "confirmed",
+      "poster": "entertainment/vnmp-trung-thu-2026.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "doan-kito-vua-sacramento",
+          "name": "Đoàn Kitô Vua Sacramento",
+          "role": "host"
+        }
+      ],
+      "lineup": [],
+      "source_url": "https://www.instagram.com/p/Ddp0d1Ro6fW/"
     },
     {
       "id": "amv-autumn-harmony-red-hawk-2026",
@@ -7399,6 +7426,23 @@
         }
       ],
       "photo": "entertainment/orgs/trina-balloon-arts.jpg"
+    },
+    "doan-kito-vua-sacramento": {
+      "id": "doan-kito-vua-sacramento",
+      "name": "Đoàn Kitô Vua Sacramento",
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/ktvsac",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/ktvsac",
+          "label": "Facebook"
+        }
+      ],
+      "photo": null
     },
     "chua-phuoc-son": {
       "id": "chua-phuoc-son",
