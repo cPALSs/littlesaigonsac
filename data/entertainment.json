@@ -1,7 +1,7 @@
 {
-  "exported_at": "2026-10-02",
+  "exported_at": "2026-10-09",
   "timezone": "America/Los_Angeles",
-  "as_of_pt": "2026-10-02",
+  "as_of_pt": "2026-10-09",
   "events": [
     {
       "id": "phuoc-lam-tiec-chay-gay-quy-2026",
@@ -331,6 +331,40 @@
           "kind": "url",
           "label": "Ticketmaster",
           "url": "https://www.ticketmaster.com/dem-huyen-thoai-reno-nevada-10-24-2026/event/3900651FADCB4762"
+        }
+      ]
+    },
+    {
+      "id": "sleeping-on-water-premiere-2026",
+      "label": "Sleeping on Water — Film Premiere",
+      "display_date": "Oct 18, 2026 · doors 1:00 PM · show 1:30 PM · Q&A 2:00 PM",
+      "start_date": "2026-10-18",
+      "end_date": "2026-10-18",
+      "city": "Sacramento",
+      "venue": "Chinese Community Church – Gym, 5600 Gilgunn Way",
+      "place_name": "Chinese Community Church",
+      "place_id": "chinese-community-church-sacramento",
+      "google_place_id": "ChIJG-h_hcfRmoAR-eO8gbMdNu4",
+      "place_address": "5600 Gilgunn Way, Sacramento, CA 95822",
+      "lat": 38.524471,
+      "lng": -121.504651,
+      "status": "confirmed",
+      "poster": "entertainment/sleeping-on-water-premiere-2026.jpg",
+      "producers": [
+        {
+          "type": "person",
+          "id": "nhu-than",
+          "name": "Nhu Than",
+          "role": "producer"
+        }
+      ],
+      "lineup": [],
+      "source_url": "https://www.linkedin.com/feed/update/urn:li:activity:7514018287719149568/",
+      "tickets": [
+        {
+          "kind": "url",
+          "label": "Eventbrite",
+          "url": "https://www.eventbrite.com/e/sacramento-aapi-christian-short-film-premiere-sleeping-on-water-tickets-2002492163968"
         }
       ]
     },
@@ -3438,6 +3472,29 @@
         }
       ],
       "photo": "entertainment/people/lam-truong.jpg"
+    },
+    "nhu-than": {
+      "id": "nhu-than",
+      "name": "Nhu Than",
+      "specialties": [
+        {
+          "slug": "producer",
+          "label": "Producer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/nhu.d.e",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/juliana.than.5",
+          "label": "Facebook"
+        }
+      ],
+      "photo": null
     },
     "quang-ha": {
       "id": "quang-ha",
