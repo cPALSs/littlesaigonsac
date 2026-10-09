@@ -1390,11 +1390,17 @@ body.is-lightbox-open {
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.5);
   color: #262626;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
   transform: translateY(-50%);
   cursor: pointer;
+  transition: background 0.15s;
+}
+
+.carousel-nav:hover,
+.carousel-nav:focus-visible {
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .carousel-nav svg {
