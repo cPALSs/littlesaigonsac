@@ -139,6 +139,7 @@ export const SPECIALTY_LABEL = {
   emcee: "Emcee",
   influencer: "Content creator",
   producer: "Producer",
+  band: "Band",
 };
 
 /** Known genre slugs in radio order: public label, `vi` locale. No `local`. */
@@ -155,6 +156,7 @@ export const PERFORMER_ROLE_SLUGS = [
   "emcee",
   "influencer",
   "producer",
+  "band",
 ].sort((a, b) => compareSpecialtyLabels(SPECIALTY_LABEL[a], SPECIALTY_LABEL[b]));
 const PERFORMER_ROLE_SET = new Set(PERFORMER_ROLE_SLUGS);
 
@@ -547,7 +549,33 @@ export function isBandOrAct(org, events = []) {
   return false;
 }
 
+/** Billed music act (bands, singing duos) — not dance troupes or martial-arts acts. */
+export function isMusicBand(org, events = []) {
+  return isBandOrAct(org, events) && !isDanceTroupe(org) && !isMartialArtsAct(org);
+}
+
+/** Person billed only in host / producer / presenter credits, never in a lineup. */
+export function isProductionOnlyPerson(person, events = []) {
+  if (!person?.id) return false;
+  let inProduction = false;
+  for (const ev of events) {
+    if ((ev.lineup || []).some((p) => p.type === "person" && p.id === person.id)) return false;
+    if (
+      (ev.producers || []).some(
+        (p) => p.type === "person" && p.id === person.id && PRODUCTION_ROLES.has(p.role),
+      )
+    ) {
+      inProduction = true;
+    }
+  }
+  return inProduction;
+}
+
 function directoryRow(entity, type, events) {
+  const specialties = specialtySlugs(entity.specialties);
+  if (type === "org" && isMusicBand(entity, events) && !specialties.includes("band")) {
+    specialties.push("band");
+  }
   return {
     id: entity.id,
     name:
@@ -562,26 +590,37 @@ function directoryRow(entity, type, events) {
     photo: entity.photo || null,
     eventCount: eventCountFor(events, type, entity.id),
     lastAppearance: lastAppearanceFor(events, type, entity.id),
-    specialties: specialtySlugs(entity.specialties),
+    specialties,
   };
 }
 
-/** People + bands/acts and Organizations: default A–Z (client can re-sort both). */
+/**
+ * People + bands/acts, then Producers (production-only people), then
+ * Organizations: default A–Z (client can re-sort each).
+ */
 export function directorySections(people = {}, orgs = {}, events = []) {
   const named = (row) => String(row.name || "").trim();
+  const peopleList = Object.values(people);
   const performers = [
-    ...Object.values(people).map((p) => directoryRow(p, "person", events)),
+    ...peopleList
+      .filter((p) => !isProductionOnlyPerson(p, events))
+      .map((p) => directoryRow(p, "person", events)),
     ...Object.values(orgs)
       .filter((o) => isBandOrAct(o, events))
       .map((o) => directoryRow(o, "org", events)),
   ].filter(named);
+  const producers = peopleList
+    .filter((p) => isProductionOnlyPerson(p, events))
+    .map((p) => directoryRow(p, "person", events))
+    .filter(named);
   const organizations = Object.values(orgs)
     .filter((o) => !isBandOrAct(o, events))
     .map((o) => directoryRow(o, "org", events))
     .filter(named);
   performers.sort(compareViName);
+  producers.sort(compareViName);
   organizations.sort(compareViName);
-  return { performers, organizations };
+  return { performers, producers, organizations };
 }
 
 /**
@@ -1035,10 +1074,16 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
       </div>
     </div>`;
 
-  const performerDirectory = (performers, organizations) => {
+  const performerDirectory = (performers, producers, organizations) => {
     const peopleBlock = performers.length
       ? `<section data-performer-section="people">
     ${performerList(performers, { sortable: true })}
+    </section>`
+      : "";
+    const producerBlock = producers.length
+      ? `<section data-performer-section="producers">
+    <h2 class="section-label band-label">Producers</h2>
+    ${performerList(producers, { sortable: true })}
     </section>`
       : "";
     const orgBlock = organizations.length
@@ -1048,6 +1093,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     </section>`
       : "";
     return `${peopleBlock}
+    ${producerBlock}
     ${orgBlock}`;
   };
 
@@ -1272,7 +1318,7 @@ export function writeEntertainmentPages({
   writeFileSync(join(dist, "entertainment/index.html"), galleryPage("/entertainment/"));
   writeFileSync(join(dist, "entertainment/events/index.html"), galleryPage("/entertainment/events/"));
 
-  const { performers, organizations } = directorySections(people, orgs, events);
+  const { performers, producers, organizations } = directorySections(people, orgs, events);
   mkdirSync(join(dist, "entertainment/performers"), { recursive: true });
   writeFileSync(
     join(dist, "entertainment/performers/index.html"),
@@ -1283,7 +1329,7 @@ export function writeEntertainmentPages({
       current: "entertainment",
       body: `<main class="wrap">
     ${entertainmentPageHead("performers", [{ href: "/entertainment/", label: "Entertainment" }])}
-    ${h.performerDirectory(performers, organizations)}
+    ${h.performerDirectory(performers, producers, organizations)}
   </main>
   ${h.filterFab("performer-filter", { label: "Filter performers", icon: h.FILTER_FAB_SVG })}
   ${h.filterDrawer("performer-filter", {

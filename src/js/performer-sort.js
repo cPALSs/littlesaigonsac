@@ -21,6 +21,7 @@ const ROLE_SLUGS = new Set([
   "emcee",
   "influencer",
   "producer",
+  "band",
 ]);
 
 /** Pre-split links: ?genre=dj-edm now means the DJ role. */
