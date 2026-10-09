@@ -267,6 +267,7 @@ ${gaTag}${socialHead({ title, description, path, image, ogType })}  <link rel="p
   </footer>
   <script src="/js/site-nav.js" defer></script>
   <script src="/js/poster-lightbox.js" defer></script>
+  <script src="/js/media-carousel.js" defer></script>
   <script src="/js/pwa-register.js" defer></script>
 </body>
 </html>
@@ -520,6 +521,7 @@ cpSync(join(root, "src/js/home-sort.js"), join(dist, "js/home-sort.js"));
 cpSync(join(root, "src/js/home-shows.js"), join(dist, "js/home-shows.js"));
 cpSync(join(root, "src/js/site-nav.js"), join(dist, "js/site-nav.js"));
 cpSync(join(root, "src/js/poster-lightbox.js"), join(dist, "js/poster-lightbox.js"));
+cpSync(join(root, "src/js/media-carousel.js"), join(dist, "js/media-carousel.js"));
 cpSync(join(root, "src/js/performer-sort.js"), join(dist, "js/performer-sort.js"));
 cpSync(join(root, "src/js/filter-drawer.js"), join(dist, "js/filter-drawer.js"));
 cpSync(join(root, "src/js/maps-config.js"), join(dist, "js/maps-config.js"));
@@ -617,6 +619,7 @@ const precache = [
   "/js/home-shows.js",
   "/js/site-nav.js",
   "/js/poster-lightbox.js",
+  "/js/media-carousel.js",
   "/js/performer-sort.js",
   "/js/filter-drawer.js",
   "/js/maps-config.js",

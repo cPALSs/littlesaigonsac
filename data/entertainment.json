@@ -360,6 +360,7 @@
       ],
       "lineup": [],
       "source_url": "https://www.linkedin.com/feed/update/urn:li:activity:7514018287719149568/",
+      "trailer_url": "https://www.youtube.com/watch?v=Y7qGbVZYMgc",
       "tickets": [
         {
           "kind": "url",
@@ -3484,14 +3485,14 @@
       ],
       "links": [
         {
-          "kind": "instagram",
-          "url": "https://instagram.com/nhu.d.e",
-          "label": "Instagram"
-        },
-        {
           "kind": "facebook",
           "url": "https://facebook.com/juliana.than.5",
           "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@nhu_le_than",
+          "label": "YouTube"
         }
       ],
       "photo": null

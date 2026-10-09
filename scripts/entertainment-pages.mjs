@@ -652,10 +652,41 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
   const posterGrid = (list) =>
     `<div class="poster-grid">${list.map(posterCard).join("")}</div>`;
 
+  const trailerId = (ev) =>
+    String(ev.trailer_url || "").match(/(?:youtube\.com\/watch\?(?:.*&)?v=|youtu\.be\/)([\w-]{11})/i)?.[1] || "";
+
+  const trailerFrame = (ev, id) =>
+    `<iframe src="https://www.youtube-nocookie.com/embed/${id}?enablejsapi=1&playsinline=1&rel=0" title="${esc(`${ev.label} trailer`)}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+
+  /** Poster + trailer share one Instagram-style carousel frame sized by the poster. */
   const eventPoster = (ev) => {
     const posterImg = imgEl(ev.poster, displayName(ev.label));
-    if (!posterImg) return `<div class="event-poster"></div>`;
-    return `<div class="event-poster"><a class="event-poster-open" href="/img/${esc(ev.poster)}" data-lightbox aria-expanded="false">${posterImg}</a></div>`;
+    const posterLink = posterImg
+      ? `<a class="event-poster-open" href="/img/${esc(ev.poster)}" data-lightbox aria-expanded="false">${posterImg}</a>`
+      : "";
+    const vid = trailerId(ev);
+    if (!vid) return `<div class="event-poster">${posterLink}</div>`;
+    if (!posterLink) return `<div class="event-poster event-trailer-solo">${trailerFrame(ev, vid)}</div>`;
+    const slides = [posterLink, trailerFrame(ev, vid)];
+    const labels = ["Poster", "Trailer"];
+    return `<div class="event-carousel" data-carousel>
+          <div class="event-poster carousel-frame">
+            <div class="carousel-track" tabindex="0" role="group" aria-roledescription="carousel" aria-label="${esc(`${displayName(ev.label)} poster and trailer`)}">
+              ${slides
+                .map(
+                  (html, i) =>
+                    `<div class="carousel-slide${i ? " carousel-slide--video" : ""}" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${slides.length}: ${labels[i]}">${html}</div>`,
+                )
+                .join("")}
+            </div>
+            <button type="button" class="carousel-nav carousel-prev" aria-label="Previous" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M14.5 6l-6 6 6 6"/></svg></button>
+            <button type="button" class="carousel-nav carousel-next" aria-label="Next" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M9.5 6l6 6-6 6"/></svg></button>
+            <button type="button" class="carousel-badge" data-carousel-to="1" hidden>▶ Trailer</button>
+          </div>
+          <div class="carousel-dots" aria-hidden="true">${slides
+            .map((_, i) => `<span class="carousel-dot${i ? "" : " is-active"}"></span>`)
+            .join("")}</div>
+          </div>`;
   };
 
   /** Intrinsic 800×800 JPEGs must not win first layout (flex min-width: auto). */
