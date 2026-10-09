@@ -1168,6 +1168,7 @@ footer .wrap {
 }
 
 .event-poster-open {
+  position: relative;
   display: block;
   margin: 0;
   padding: 0;
@@ -1216,6 +1217,102 @@ body.is-lightbox-open {
   width: auto;
   height: auto;
   object-fit: contain;
+}
+
+.poster-lightbox-video {
+  width: min(100%, calc((100dvh - 4rem) * 16 / 9), 1280px);
+}
+
+.poster-lightbox-video[hidden],
+.poster-lightbox-img[hidden],
+.poster-lightbox-nav[hidden] {
+  display: none;
+}
+
+.poster-lightbox-video iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  background: #000;
+}
+
+.poster-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  color: #262626;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.poster-lightbox-nav:hover,
+.poster-lightbox-nav:focus-visible {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.poster-lightbox-nav:focus-visible {
+  outline: 2px solid #f4ead8;
+  outline-offset: 2px;
+}
+
+.poster-lightbox-nav svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.poster-lightbox-prev {
+  left: 0.75rem;
+}
+
+.poster-lightbox-next {
+  right: 0.75rem;
+}
+
+.zoom-hint {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(18, 18, 18, 0.55);
+  color: #fff;
+  pointer-events: none;
+}
+
+button.zoom-hint {
+  pointer-events: auto;
+  cursor: zoom-in;
+}
+
+button.zoom-hint:hover,
+button.zoom-hint:focus-visible {
+  background: rgba(18, 18, 18, 0.8);
+}
+
+button.zoom-hint:focus-visible {
+  outline: 2px solid var(--rust);
+  outline-offset: 2px;
+}
+
+.zoom-hint svg {
+  width: 17px;
+  height: 17px;
 }
 
 .poster-lightbox-close {
@@ -1374,6 +1471,7 @@ body.is-lightbox-open {
 }
 
 .carousel-slide--video {
+  position: relative;
   display: flex;
   align-items: center;
   background: #000;

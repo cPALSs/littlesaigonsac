@@ -658,16 +658,20 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
   const trailerFrame = (ev, id) =>
     `<iframe src="https://www.youtube-nocookie.com/embed/${id}?enablejsapi=1&playsinline=1&rel=0" title="${esc(`${ev.label} trailer`)}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
 
+  const ZOOM_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M10.5 8v5M8 10.5h5"/></g></svg>`;
+
   /** Poster + trailer share one Instagram-style carousel frame sized by the poster. */
   const eventPoster = (ev) => {
     const posterImg = imgEl(ev.poster, displayName(ev.label));
+    const group = esc(ev.id);
     const posterLink = posterImg
-      ? `<a class="event-poster-open" href="/img/${esc(ev.poster)}" data-lightbox aria-expanded="false">${posterImg}</a>`
+      ? `<a class="event-poster-open" href="/img/${esc(ev.poster)}" data-lightbox data-lightbox-group="${group}" aria-expanded="false">${posterImg}<span class="zoom-hint" aria-hidden="true">${ZOOM_ICON}</span></a>`
       : "";
     const vid = trailerId(ev);
     if (!vid) return `<div class="event-poster">${posterLink}</div>`;
+    const trailerZoom = `<button type="button" class="zoom-hint" data-lightbox="https://www.youtube-nocookie.com/embed/${vid}?autoplay=1&playsinline=1&rel=0" data-lightbox-type="video" data-lightbox-group="${group}" aria-label="${esc(`Open ${displayName(ev.label)} trailer larger`)}">${ZOOM_ICON}</button>`;
     if (!posterLink) return `<div class="event-poster event-trailer-solo">${trailerFrame(ev, vid)}</div>`;
-    const slides = [posterLink, trailerFrame(ev, vid)];
+    const slides = [posterLink, `${trailerFrame(ev, vid)}${trailerZoom}`];
     const labels = ["Poster", "Trailer"];
     return `<div class="event-carousel" data-carousel>
           <div class="event-poster carousel-frame">
