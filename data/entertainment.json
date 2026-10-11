@@ -672,6 +672,12 @@
         },
         {
           "type": "person",
+          "id": "lala-tran",
+          "name": "LaLa Trần",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
           "id": "lam-truong",
           "name": "Lam Trường",
           "role": "vocalist"
@@ -680,12 +686,6 @@
           "type": "person",
           "id": "quang-ha",
           "name": "Quang Hà",
-          "role": "vocalist"
-        },
-        {
-          "type": "person",
-          "id": "lala-tran",
-          "name": "LaLa Trần",
           "role": "vocalist"
         }
       ],
@@ -1754,11 +1754,11 @@
       "city": "Brooks",
       "venue": "Cache Creek Event Center",
       "place_name": "Cache Creek Casino Resort",
-      "place_id": null,
+      "place_id": "cache-creek-casino-resort",
       "google_place_id": null,
-      "place_address": null,
-      "lat": null,
-      "lng": null,
+      "place_address": "14455 Highway 16, Brooks, CA 95606",
+      "lat": 38.73433,
+      "lng": -122.1443297,
       "status": "held",
       "poster": "entertainment/cache-creek-tet-concert-2026.jpg",
       "producers": [],
@@ -3731,7 +3731,7 @@
         }
       ],
       "links": [],
-      "photo": null
+      "photo": "entertainment/people/thanh-mai.jpg"
     },
     "anthony-t": {
       "id": "anthony-t",
@@ -4622,6 +4622,170 @@
       ],
       "links": [],
       "photo": "entertainment/people/thanh-hieu.jpg"
+    },
+    "dam-vinh-hung": {
+      "id": "dam-vinh-hung",
+      "name": "Đàm Vĩnh Hưng",
+      "aka": [
+        "Dam Vinh Hung",
+        "Mr. Đàm"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/damvinhhung0210",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/dvhfanpage",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/user/damvinhhungpops",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/4ht0wODL01ELRxlDYvsFad",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/dam-vinh-hung.jpg"
+    },
+    "lam-truong": {
+      "id": "lam-truong",
+      "name": "Lam Trường",
+      "aka": [
+        "Lam Truong",
+        "Tiêu Lam Trường"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/lamtruongsinger",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/lamtruongsinger",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/lamtruongofficial",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/5tPrBvEiBBbSyMFz2u2ZMi",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/lam-truong.jpg"
+    },
+    "quang-ha": {
+      "id": "quang-ha",
+      "name": "Quang Hà",
+      "aka": [
+        "Quang Ha",
+        "Vũ Hoàng Hà"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/quanghaofficial",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@quanghatv",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/5OSU5tRR0M59TppFcvl4s8",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/quang-ha.jpg"
+    },
+    "lala-tran": {
+      "id": "lala-tran",
+      "name": "LaLa Trần",
+      "aka": [
+        "Lala Tran",
+        "LaLa Tran",
+        "Lala Trần"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/lalatran0112",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/lalatran.1991",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@lalatran.official",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/1Bn3dlrtgiD6zDzRSDBaMi",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/lala-tran.jpg"
     },
     "thu-ha-vocalist": {
       "id": "thu-ha-vocalist",
@@ -8324,170 +8488,6 @@
       ],
       "links": [],
       "photo": "entertainment/people/chau-le-hang.jpg"
-    },
-    "dam-vinh-hung": {
-      "id": "dam-vinh-hung",
-      "name": "Đàm Vĩnh Hưng",
-      "aka": [
-        "Mr. Đàm",
-        "Dam Vinh Hung"
-      ],
-      "specialties": [
-        {
-          "slug": "nhac-tre",
-          "label": "Nhạc trẻ"
-        },
-        {
-          "slug": "nhac-vang",
-          "label": "Bolero · nhạc vàng"
-        },
-        {
-          "slug": "singer",
-          "label": "Singer"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/damvinhhung0210",
-          "label": "Instagram"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/dvhfanpage",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/user/damvinhhungpops",
-          "label": "YouTube"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/4ht0wODL01ELRxlDYvsFad",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/dam-vinh-hung.jpg"
-    },
-    "lam-truong": {
-      "id": "lam-truong",
-      "name": "Lam Trường",
-      "aka": [
-        "Lam Truong",
-        "Tiêu Lam Trường"
-      ],
-      "specialties": [
-        {
-          "slug": "nhac-tre",
-          "label": "Nhạc trẻ"
-        },
-        {
-          "slug": "singer",
-          "label": "Singer"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/lamtruongsinger",
-          "label": "Instagram"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/lamtruongsinger",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/lamtruongofficial",
-          "label": "YouTube"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/5tPrBvEiBBbSyMFz2u2ZMi",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/lam-truong.jpg"
-    },
-    "quang-ha": {
-      "id": "quang-ha",
-      "name": "Quang Hà",
-      "aka": [
-        "Quang Ha",
-        "Vũ Hoàng Hà"
-      ],
-      "specialties": [
-        {
-          "slug": "nhac-tre",
-          "label": "Nhạc trẻ"
-        },
-        {
-          "slug": "singer",
-          "label": "Singer"
-        }
-      ],
-      "links": [
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/QuangHaOfficial",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/@quanghatv",
-          "label": "YouTube"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/5OSU5tRR0M59TppFcvl4s8",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/quang-ha.jpg"
-    },
-    "lala-tran": {
-      "id": "lala-tran",
-      "name": "LaLa Trần",
-      "aka": [
-        "Lala Trần",
-        "Lala Tran",
-        "LaLa Tran"
-      ],
-      "specialties": [
-        {
-          "slug": "nhac-tre",
-          "label": "Nhạc trẻ"
-        },
-        {
-          "slug": "singer",
-          "label": "Singer"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/lalatran0112",
-          "label": "Instagram"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/lalatran.1991",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/@lalatran.official",
-          "label": "YouTube"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/1Bn3dlrtgiD6zDzRSDBaMi",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/lala-tran.jpg"
     }
   },
   "orgs": {
@@ -8644,6 +8644,28 @@
       "name": "AMV Production",
       "links": [],
       "photo": null
+    },
+    "cache-creek-casino-resort": {
+      "id": "cache-creek-casino-resort",
+      "name": "Cache Creek Casino Resort",
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/cachecreekcasino",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/cachecreek",
+          "label": "Facebook"
+        },
+        {
+          "kind": "website",
+          "url": "https://cachecreek.com",
+          "label": "Website"
+        }
+      ],
+      "photo": "entertainment/orgs/cache-creek-casino-resort.jpg"
     },
     "mrs-vietnam-norcal-sacramento": {
       "id": "mrs-vietnam-norcal-sacramento",
@@ -9084,28 +9106,6 @@
       "name": "MIC — Music Inspiration Community",
       "links": [],
       "photo": null
-    },
-    "cache-creek-casino-resort": {
-      "id": "cache-creek-casino-resort",
-      "name": "Cache Creek Casino Resort",
-      "links": [
-        {
-          "kind": "website",
-          "url": "https://www.cachecreek.com/",
-          "label": "Website"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/cachecreek",
-          "label": "Facebook"
-        },
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/cachecreekcasino",
-          "label": "Instagram"
-        }
-      ],
-      "photo": "entertainment/orgs/cache-creek-casino-resort.jpg"
     }
   }
 }
