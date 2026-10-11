@@ -1,7 +1,7 @@
 {
-  "exported_at": "2026-10-09",
+  "exported_at": "2026-10-11",
   "timezone": "America/Los_Angeles",
-  "as_of_pt": "2026-10-09",
+  "as_of_pt": "2026-10-11",
   "events": [
     {
       "id": "phuoc-lam-tiec-chay-gay-quy-2026",
@@ -114,6 +114,105 @@
         }
       ],
       "source_url": "https://www.facebook.com/events/898328869798925/"
+    },
+    {
+      "id": "mlinda-back-to-the-80s-rice-bowl-2026",
+      "label": "Back to the 80's New Wave Party",
+      "display_date": "Nov 22, 2026 · doors 6:00 PM · show 7:30 PM–1:00 AM",
+      "start_date": "2026-11-22",
+      "end_date": "2026-11-22",
+      "city": "Sacramento",
+      "venue": "Rice Bowl Restaurant, 2378 Florin Rd",
+      "place_name": "Rice Bowl Restaurant",
+      "place_id": "rice-bowl-restaurant",
+      "google_place_id": null,
+      "place_address": "2378 Florin Rd, Sacramento, CA 95822",
+      "lat": 38.4948,
+      "lng": -121.4833,
+      "status": "confirmed",
+      "poster": "entertainment/mlinda-back-to-the-80s-rice-bowl-2026.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "mlinda-vip-promos",
+          "name": "MLinda VIP Promos",
+          "role": "presenter"
+        }
+      ],
+      "lineup": [
+        {
+          "type": "person",
+          "id": "da-nhat-yen",
+          "name": "Dạ Nhật Yến",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "don-ho",
+          "name": "Don Hồ",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "thai-tai",
+          "name": "Thái Tài",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "thanh-mai",
+          "name": "Thanh Mai",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "tommy-ngo",
+          "name": "Tommy Ngô",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "trizzie-phuong-trinh",
+          "name": "Trizzie Phương Trinh",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "anthony-t",
+          "name": "Anthony T",
+          "role": "mc"
+        },
+        {
+          "type": "person",
+          "id": "dj-andy",
+          "name": "DJ Andy",
+          "role": "dj"
+        },
+        {
+          "type": "org",
+          "id": "sonny-le-band",
+          "name": "Sonny Le Band",
+          "role": "band"
+        }
+      ],
+      "source_url": "https://www.facebook.com/groups/290197905206406/posts/2195691501323694",
+      "tickets": [
+        {
+          "kind": "phone",
+          "label": "Kim",
+          "phone": "9162142222"
+        },
+        {
+          "kind": "phone",
+          "label": "Anthony",
+          "phone": "9168035303"
+        },
+        {
+          "kind": "phone",
+          "label": "Chanh",
+          "phone": "9163339878"
+        }
+      ]
     },
     {
       "id": "thunder-valley-whisper-of-autumn-2026",
@@ -3388,193 +3487,6 @@
     }
   ],
   "people": {
-    "dam-vinh-hung": {
-      "id": "dam-vinh-hung",
-      "name": "Đàm Vĩnh Hưng",
-      "aka": [
-        "Mr. Đàm",
-        "Dam Vinh Hung"
-      ],
-      "specialties": [
-        {
-          "slug": "nhac-tre",
-          "label": "Nhạc trẻ"
-        },
-        {
-          "slug": "nhac-vang",
-          "label": "Bolero · nhạc vàng"
-        },
-        {
-          "slug": "singer",
-          "label": "Singer"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/damvinhhung0210",
-          "label": "Instagram"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/dvhfanpage",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/user/damvinhhungpops",
-          "label": "YouTube"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/4ht0wODL01ELRxlDYvsFad",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/dam-vinh-hung.jpg"
-    },
-    "lam-truong": {
-      "id": "lam-truong",
-      "name": "Lam Trường",
-      "aka": [
-        "Lam Truong",
-        "Tiêu Lam Trường"
-      ],
-      "specialties": [
-        {
-          "slug": "nhac-tre",
-          "label": "Nhạc trẻ"
-        },
-        {
-          "slug": "singer",
-          "label": "Singer"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/lamtruongsinger",
-          "label": "Instagram"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/lamtruongsinger",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/lamtruongofficial",
-          "label": "YouTube"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/5tPrBvEiBBbSyMFz2u2ZMi",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/lam-truong.jpg"
-    },
-    "nhu-than": {
-      "id": "nhu-than",
-      "name": "Nhu Than",
-      "specialties": [
-        {
-          "slug": "producer",
-          "label": "Producer"
-        }
-      ],
-      "links": [
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/juliana.than.5",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/@nhu_le_than",
-          "label": "YouTube"
-        }
-      ],
-      "photo": null
-    },
-    "quang-ha": {
-      "id": "quang-ha",
-      "name": "Quang Hà",
-      "aka": [
-        "Quang Ha",
-        "Vũ Hoàng Hà"
-      ],
-      "specialties": [
-        {
-          "slug": "nhac-tre",
-          "label": "Nhạc trẻ"
-        },
-        {
-          "slug": "singer",
-          "label": "Singer"
-        }
-      ],
-      "links": [
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/QuangHaOfficial",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/@quanghatv",
-          "label": "YouTube"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/5OSU5tRR0M59TppFcvl4s8",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/quang-ha.jpg"
-    },
-    "lala-tran": {
-      "id": "lala-tran",
-      "name": "LaLa Trần",
-      "aka": [
-        "Lala Trần",
-        "Lala Tran",
-        "LaLa Tran"
-      ],
-      "specialties": [
-        {
-          "slug": "nhac-tre",
-          "label": "Nhạc trẻ"
-        },
-        {
-          "slug": "singer",
-          "label": "Singer"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/lalatran0112",
-          "label": "Instagram"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/lalatran.1991",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/@lalatran.official",
-          "label": "YouTube"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/1Bn3dlrtgiD6zDzRSDBaMi",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/lala-tran.jpg"
-    },
     "mai-thien-van": {
       "id": "mai-thien-van",
       "name": "Mai Thiên Vân",
@@ -3643,6 +3555,207 @@
         }
       ],
       "photo": "entertainment/people/dan-nguyen.jpg"
+    },
+    "thai-tai": {
+      "id": "thai-tai",
+      "name": "Thái Tài",
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/thaitaistudio",
+          "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UCDMqd03DRtcRcKCZgV-L39Q",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/7qayHJbnaBSkPau2offKtM",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/thai-tai.jpg"
+    },
+    "trizzie-phuong-trinh": {
+      "id": "trizzie-phuong-trinh",
+      "name": "Trizzie Phương Trinh",
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/officialtrizziept",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/trizziephuongtrinh",
+          "label": "Facebook"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/5ryF6NaxKWTUnAt4cuBax8",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/trizzie-phuong-trinh.jpg"
+    },
+    "don-ho": {
+      "id": "don-ho",
+      "name": "Don Hồ",
+      "aka": [
+        "Don Ho"
+      ],
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/donhosinger",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/donhoproduction",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/channel/UC6rL-1K0lhoYfyQyN7FWHvQ",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/6dYm0i4voJXVX9rPx6gb2F",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/don-ho.jpg"
+    },
+    "da-nhat-yen": {
+      "id": "da-nhat-yen",
+      "name": "Dạ Nhật Yến",
+      "aka": [
+        "Yenn"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/danhatyenn",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@Yenn3D",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/7kTp315U9K143dPGulbKn8",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/da-nhat-yen.jpg"
+    },
+    "tommy-ngo": {
+      "id": "tommy-ngo",
+      "name": "Tommy Ngô",
+      "specialties": [
+        {
+          "slug": "remix",
+          "label": "Remix · dạ vũ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/2MHcc1IdXXBywlni7vytm1",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/tommy-ngo.jpg"
+    },
+    "thanh-mai": {
+      "id": "thanh-mai",
+      "name": "Thanh Mai",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [],
+      "photo": null
+    },
+    "anthony-t": {
+      "id": "anthony-t",
+      "name": "Anthony T",
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
+      "links": [],
+      "photo": "entertainment/people/anthony-t.jpg"
+    },
+    "dj-andy": {
+      "id": "dj-andy",
+      "name": "DJ Andy",
+      "specialties": [
+        {
+          "slug": "dj",
+          "label": "DJ"
+        }
+      ],
+      "links": [],
+      "photo": "entertainment/people/dj-andy.jpg"
     },
     "le-quyen": {
       "id": "le-quyen",
@@ -4130,6 +4243,29 @@
       ],
       "photo": "entertainment/people/phan-duy-anh.jpg"
     },
+    "nhu-than": {
+      "id": "nhu-than",
+      "name": "Nhu Than",
+      "specialties": [
+        {
+          "slug": "producer",
+          "label": "Producer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/juliana.than.5",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@nhu_le_than",
+          "label": "YouTube"
+        }
+      ],
+      "photo": null
+    },
     "tuan-anh": {
       "id": "tuan-anh",
       "name": "Tuấn Anh",
@@ -4280,28 +4416,6 @@
         }
       ],
       "photo": "entertainment/people/giang-ngoc.jpg"
-    },
-    "tommy-ngo": {
-      "id": "tommy-ngo",
-      "name": "Tommy Ngô",
-      "specialties": [
-        {
-          "slug": "remix",
-          "label": "Remix · dạ vũ"
-        },
-        {
-          "slug": "singer",
-          "label": "Singer"
-        }
-      ],
-      "links": [
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/2MHcc1IdXXBywlni7vytm1",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/tommy-ngo.jpg"
     },
     "linda-trang-dai": {
       "id": "linda-trang-dai",
@@ -5350,38 +5464,6 @@
       ],
       "photo": "entertainment/people/ha-thanh-xuan.jpg"
     },
-    "trizzie-phuong-trinh": {
-      "id": "trizzie-phuong-trinh",
-      "name": "Trizzie Phương Trinh",
-      "specialties": [
-        {
-          "slug": "remix",
-          "label": "Remix · dạ vũ"
-        },
-        {
-          "slug": "singer",
-          "label": "Singer"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/officialtrizziept",
-          "label": "Instagram"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/trizziephuongtrinh",
-          "label": "Facebook"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/5ryF6NaxKWTUnAt4cuBax8",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/trizzie-phuong-trinh.jpg"
-    },
     "anh-thu": {
       "id": "anh-thu",
       "name": "Anh Thư",
@@ -5929,46 +6011,6 @@
         }
       ],
       "photo": "entertainment/people/nguyen-hong-nhung.jpg"
-    },
-    "don-ho": {
-      "id": "don-ho",
-      "name": "Don Hồ",
-      "aka": [
-        "Don Ho"
-      ],
-      "specialties": [
-        {
-          "slug": "remix",
-          "label": "Remix · dạ vũ"
-        },
-        {
-          "slug": "singer",
-          "label": "Singer"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/donhosinger",
-          "label": "Instagram"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/donhoproduction",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/channel/UC6rL-1K0lhoYfyQyN7FWHvQ",
-          "label": "YouTube"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/6dYm0i4voJXVX9rPx6gb2F",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/don-ho.jpg"
     },
     "vicky-nhung": {
       "id": "vicky-nhung",
@@ -7991,38 +8033,6 @@
       ],
       "photo": "entertainment/people/lilian.jpg"
     },
-    "thai-tai": {
-      "id": "thai-tai",
-      "name": "Thái Tài",
-      "specialties": [
-        {
-          "slug": "remix",
-          "label": "Remix · dạ vũ"
-        },
-        {
-          "slug": "singer",
-          "label": "Singer"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/thaitaistudio",
-          "label": "Instagram"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/channel/UCDMqd03DRtcRcKCZgV-L39Q",
-          "label": "YouTube"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/7qayHJbnaBSkPau2offKtM",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/thai-tai.jpg"
-    },
     "duong-trieu-vu": {
       "id": "duong-trieu-vu",
       "name": "Dương Triệu Vũ",
@@ -8314,31 +8324,173 @@
       ],
       "links": [],
       "photo": "entertainment/people/chau-le-hang.jpg"
-    }
-  },
-  "orgs": {
-    "cache-creek-casino-resort": {
-      "id": "cache-creek-casino-resort",
-      "name": "Cache Creek Casino Resort",
+    },
+    "dam-vinh-hung": {
+      "id": "dam-vinh-hung",
+      "name": "Đàm Vĩnh Hưng",
+      "aka": [
+        "Mr. Đàm",
+        "Dam Vinh Hung"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
       "links": [
         {
-          "kind": "website",
-          "url": "https://www.cachecreek.com/",
-          "label": "Website"
+          "kind": "instagram",
+          "url": "https://instagram.com/damvinhhung0210",
+          "label": "Instagram"
         },
         {
           "kind": "facebook",
-          "url": "https://facebook.com/cachecreek",
+          "url": "https://facebook.com/dvhfanpage",
           "label": "Facebook"
         },
         {
-          "kind": "instagram",
-          "url": "https://instagram.com/cachecreekcasino",
-          "label": "Instagram"
+          "kind": "youtube",
+          "url": "https://youtube.com/user/damvinhhungpops",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/4ht0wODL01ELRxlDYvsFad",
+          "label": "Spotify"
         }
       ],
-      "photo": "entertainment/orgs/cache-creek-casino-resort.jpg"
+      "photo": "entertainment/people/dam-vinh-hung.jpg"
     },
+    "lam-truong": {
+      "id": "lam-truong",
+      "name": "Lam Trường",
+      "aka": [
+        "Lam Truong",
+        "Tiêu Lam Trường"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/lamtruongsinger",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/lamtruongsinger",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/lamtruongofficial",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/5tPrBvEiBBbSyMFz2u2ZMi",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/lam-truong.jpg"
+    },
+    "quang-ha": {
+      "id": "quang-ha",
+      "name": "Quang Hà",
+      "aka": [
+        "Quang Ha",
+        "Vũ Hoàng Hà"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/QuangHaOfficial",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@quanghatv",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/5OSU5tRR0M59TppFcvl4s8",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/quang-ha.jpg"
+    },
+    "lala-tran": {
+      "id": "lala-tran",
+      "name": "LaLa Trần",
+      "aka": [
+        "Lala Trần",
+        "Lala Tran",
+        "LaLa Tran"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/lalatran0112",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/lalatran.1991",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@lalatran.official",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/1Bn3dlrtgiD6zDzRSDBaMi",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/lala-tran.jpg"
+    }
+  },
+  "orgs": {
     "tu-vien-phuoc-lam": {
       "id": "tu-vien-phuoc-lam",
       "name": "Tu Viện Phước Lâm",
@@ -8362,6 +8514,18 @@
         }
       ],
       "photo": "entertainment/orgs/vaces.jpg"
+    },
+    "sonny-le-band": {
+      "id": "sonny-le-band",
+      "name": "Sonny Le Band",
+      "links": [],
+      "photo": null
+    },
+    "mlinda-vip-promos": {
+      "id": "mlinda-vip-promos",
+      "name": "MLinda VIP Promos",
+      "links": [],
+      "photo": null
     },
     "thunder-valley-casino-resort": {
       "id": "thunder-valley-casino-resort",
@@ -8920,6 +9084,28 @@
       "name": "MIC — Music Inspiration Community",
       "links": [],
       "photo": null
+    },
+    "cache-creek-casino-resort": {
+      "id": "cache-creek-casino-resort",
+      "name": "Cache Creek Casino Resort",
+      "links": [
+        {
+          "kind": "website",
+          "url": "https://www.cachecreek.com/",
+          "label": "Website"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/cachecreek",
+          "label": "Facebook"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/cachecreekcasino",
+          "label": "Instagram"
+        }
+      ],
+      "photo": "entertainment/orgs/cache-creek-casino-resort.jpg"
     }
   }
 }
