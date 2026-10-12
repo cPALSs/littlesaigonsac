@@ -1,13 +1,17 @@
 /**
  * Live portrait helpers for local preview + face-crop Save.
- * People → people/{id}.jpg; billed bands → orgs/{id}.jpg.
+ * People → people/{id}.jpg; billed bands → orgs/{id}.jpg. Pages show the
+ * {id}.236.webp avatar variant; og:image keeps the source JPEG.
  * Never copies dist → src (would overwrite a newer crop).
  */
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { AVATAR_PX, writeAvatarVariant } from "./images.mjs";
 
 const PEOPLE_PREFIX = "/img/entertainment/people/";
 const ORGS_PREFIX = "/img/entertainment/orgs/";
+const AVATAR_SUFFIX = `.${AVATAR_PX}.webp`;
+const AVATAR_SUFFIX_RE = escapeRegExp(AVATAR_SUFFIX);
 
 /** Hero with a bare h1 (no photo yet): keep chips / socials under the name. */
 const HERO_BARE_H1_RE =
@@ -28,7 +32,7 @@ export function peopleJpegPath(srcPeopleDir, id) {
   return join(srcPeopleDir, `${id}.jpg`);
 }
 
-/** Lineup thumbs — keeps 800×800 JPEGs from using intrinsic size on first paint. */
+/** Lineup thumbs — keeps the avatar from using its intrinsic size on first paint. */
 export const CREDIT_AVATAR_PX = 28;
 
 const EVENT_INDEX_SKIP = new Set(["people", "orgs", "performers"]);
@@ -96,8 +100,27 @@ function sizeAttrs(width, height) {
   return ` width="${width}" height="${height}"`;
 }
 
-export function peopleImgTag(id, alt, mtimeMs, { width, height } = {}) {
-  return `<img src="${PEOPLE_PREFIX}${id}.jpg?t=${mtimeMs}" alt="${alt}"${sizeAttrs(width, height)}>`;
+function avatarImgTag(prefix, id, alt, mtimeMs, { width = AVATAR_PX, height = AVATAR_PX } = {}) {
+  return `<img src="${prefix}${id}${AVATAR_SUFFIX}?t=${mtimeMs}" alt="${alt}"${sizeAttrs(width, height)} decoding="async">`;
+}
+
+/** Refresh ?t= on every avatar URL for this id (og:image .jpg is left alone). */
+function bumpAvatarUrls(html, prefix, id, mtimeMs) {
+  return html.replace(
+    new RegExp(`${escapeRegExp(`${prefix}${id}`)}${AVATAR_SUFFIX_RE}(?:\\?t=\\d+)?`, "g"),
+    `${prefix}${id}${AVATAR_SUFFIX}?t=${mtimeMs}`,
+  );
+}
+
+/** Write the avatar variant next to the copied JPEG; preview renders it on demand meanwhile. */
+function publishAvatarVariant(srcAbs, siteRoot, rel) {
+  writeAvatarVariant(srcAbs, join(siteRoot, "dist/img"), rel).catch((err) => {
+    console.warn(`Avatar variant for ${rel} failed: ${err.message}`);
+  });
+}
+
+export function peopleImgTag(id, alt, mtimeMs, size) {
+  return avatarImgTag(PEOPLE_PREFIX, id, alt, mtimeMs, size);
 }
 
 export function copySrcPeopleJpegToDist(srcPeopleDir, distPeopleDir, id) {
@@ -161,11 +184,8 @@ export function injectPeoplePortraits(html, urlPath, srcPeopleDir) {
     const id = personMatch[1];
     const meta = jpegMeta(srcPeopleDir, id);
     if (meta) {
-      if (out.includes(`${PEOPLE_PREFIX}${id}.jpg`)) {
-        out = out.replace(
-          new RegExp(`${PEOPLE_PREFIX}${id}\\.jpg(?:\\?t=\\d+)?`, "g"),
-          `${PEOPLE_PREFIX}${id}.jpg?t=${meta.mtimeMs}`,
-        );
+      if (out.includes(`${PEOPLE_PREFIX}${id}${AVATAR_SUFFIX}`)) {
+        out = bumpAvatarUrls(out, PEOPLE_PREFIX, id, meta.mtimeMs);
       } else {
         out = out.replace(HERO_BARE_H1_RE, (_, head, name, afterH1) =>
           wrapHeroEntityHeading(
@@ -216,11 +236,8 @@ export function patchDistPersonPortraitHtml({ distRoot, srcPeopleDir, id, alt })
   if (existsSync(pagePath)) {
     let html = readFileSync(pagePath, "utf8");
     const before = html;
-    if (html.includes(`${PEOPLE_PREFIX}${id}.jpg`)) {
-      html = html.replace(
-        new RegExp(`${PEOPLE_PREFIX}${id}\\.jpg(?:\\?t=\\d+)?`, "g"),
-        `${PEOPLE_PREFIX}${id}.jpg?t=${meta.mtimeMs}`,
-      );
+    if (html.includes(`${PEOPLE_PREFIX}${id}${AVATAR_SUFFIX}`)) {
+      html = bumpAvatarUrls(html, PEOPLE_PREFIX, id, meta.mtimeMs);
     } else {
       html = html.replace(HERO_BARE_H1_RE, (_, head, h1, afterH1) =>
         wrapHeroEntityHeading(
@@ -264,6 +281,9 @@ export function sitePeopleDirs(siteRoot) {
 export function publishPeoplePortrait(siteRoot, id, alt) {
   const { srcPeopleDir, distPeopleDir, distRoot } = sitePeopleDirs(siteRoot);
   const copied = copySrcPeopleJpegToDist(srcPeopleDir, distPeopleDir, id);
+  if (existsSync(peopleJpegPath(srcPeopleDir, id))) {
+    publishAvatarVariant(peopleJpegPath(srcPeopleDir, id), siteRoot, `entertainment/people/${id}.jpg`);
+  }
   const patched = patchDistPersonPortraitHtml({ distRoot, srcPeopleDir, id, alt });
   return { copied, ...patched };
 }
@@ -272,8 +292,8 @@ export function orgsJpegPath(srcOrgsDir, id) {
   return join(srcOrgsDir, `${id}.jpg`);
 }
 
-export function orgsImgTag(id, alt, mtimeMs, { width, height } = {}) {
-  return `<img src="${ORGS_PREFIX}${id}.jpg?t=${mtimeMs}" alt="${alt}"${sizeAttrs(width, height)}>`;
+export function orgsImgTag(id, alt, mtimeMs, size) {
+  return avatarImgTag(ORGS_PREFIX, id, alt, mtimeMs, size);
 }
 
 export function copySrcOrgsJpegToDist(srcOrgsDir, distOrgsDir, id) {
@@ -328,11 +348,8 @@ export function injectOrgPortraits(html, urlPath, srcOrgsDir) {
     const id = orgMatch[1];
     const meta = orgJpegMeta(srcOrgsDir, id);
     if (meta) {
-      if (out.includes(`${ORGS_PREFIX}${id}.jpg`)) {
-        out = out.replace(
-          new RegExp(`${ORGS_PREFIX}${id}\\.jpg(?:\\?t=\\d+)?`, "g"),
-          `${ORGS_PREFIX}${id}.jpg?t=${meta.mtimeMs}`,
-        );
+      if (out.includes(`${ORGS_PREFIX}${id}${AVATAR_SUFFIX}`)) {
+        out = bumpAvatarUrls(out, ORGS_PREFIX, id, meta.mtimeMs);
       } else {
         out = out.replace(HERO_BARE_H1_RE, (_, head, name, afterH1) =>
           wrapHeroEntityHeading(
@@ -388,11 +405,8 @@ export function patchDistOrgPortraitHtml({ distRoot, srcOrgsDir, id, alt }) {
   if (existsSync(pagePath)) {
     let html = readFileSync(pagePath, "utf8");
     const before = html;
-    if (html.includes(`${ORGS_PREFIX}${id}.jpg`)) {
-      html = html.replace(
-        new RegExp(`${ORGS_PREFIX}${id}\\.jpg(?:\\?t=\\d+)?`, "g"),
-        `${ORGS_PREFIX}${id}.jpg?t=${meta.mtimeMs}`,
-      );
+    if (html.includes(`${ORGS_PREFIX}${id}${AVATAR_SUFFIX}`)) {
+      html = bumpAvatarUrls(html, ORGS_PREFIX, id, meta.mtimeMs);
     } else {
       html = html.replace(HERO_BARE_H1_RE, (_, head, h1, afterH1) =>
         wrapHeroEntityHeading(
@@ -436,6 +450,9 @@ export function siteOrgsDirs(siteRoot) {
 export function publishOrgPortrait(siteRoot, id, alt) {
   const { srcOrgsDir, distOrgsDir, distRoot } = siteOrgsDirs(siteRoot);
   const copied = copySrcOrgsJpegToDist(srcOrgsDir, distOrgsDir, id);
+  if (existsSync(orgsJpegPath(srcOrgsDir, id))) {
+    publishAvatarVariant(orgsJpegPath(srcOrgsDir, id), siteRoot, `entertainment/orgs/${id}.jpg`);
+  }
   const patched = patchDistOrgPortraitHtml({ distRoot, srcOrgsDir, id, alt });
   return { copied, ...patched };
 }

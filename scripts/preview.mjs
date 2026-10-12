@@ -3,14 +3,16 @@
  * Local Entertainment preview. Serves dist/ on 127.0.0.1:4173, but
  * /img/entertainment/people/*.jpg and /img/entertainment/orgs/*.jpg
  * are read live from src/ (crop Save writes there) with Cache-Control:
- * no-store so the browser does not keep stale portraits. HTML is also
- * no-store; missing people/band <img> tags are injected when the src
- * JPEG exists (first Save, no rebuild).
+ * no-store so the browser does not keep stale portraits. Their
+ * *.236.webp avatar variants are rendered on demand from those JPEGs.
+ * HTML is also no-store; missing people/band <img> tags are injected
+ * when the src JPEG exists (first Save, no rebuild).
  */
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { createServer } from "node:http";
 import { dirname, extname, join, normalize, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import { AVATAR_PX, renderVariant } from "./images.mjs";
 import { injectLivePortraits } from "./people-portraits-live.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -51,8 +53,41 @@ function entertainmentJpegName(urlPath, prefix) {
   return name;
 }
 
-const server = createServer((req, res) => {
+const AVATAR_URL_RE = new RegExp(`^/img/entertainment/(people|orgs)/([a-z0-9-]+)\\.${AVATAR_PX}\\.webp$`);
+
+/** src JPEG path + mtime → rendered WebP, so repeat requests skip sharp. */
+const avatarCache = new Map();
+
+async function liveAvatar(urlPath) {
+  const m = urlPath.match(AVATAR_URL_RE);
+  if (!m) return null;
+  const srcJpeg = join(m[1] === "people" ? srcPeople : srcOrgs, `${m[2]}.jpg`);
+  if (!existsSync(srcJpeg)) {
+    const built = join(dist, urlPath);
+    return existsSync(built) ? readFileSync(built) : null;
+  }
+  const key = `${srcJpeg}:${statSync(srcJpeg).mtimeMs}`;
+  if (!avatarCache.has(key)) avatarCache.set(key, await renderVariant(srcJpeg, "avatar"));
+  return avatarCache.get(key);
+}
+
+const server = createServer(async (req, res) => {
   const urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
+  if (AVATAR_URL_RE.test(urlPath)) {
+    const data = await liveAvatar(urlPath).catch(() => null);
+    if (!data) {
+      res.writeHead(404, { "Cache-Control": "no-store" });
+      res.end("Not found");
+      return;
+    }
+    res.writeHead(200, {
+      "Content-Type": "image/webp",
+      "Content-Length": data.length,
+      "Cache-Control": "no-store",
+    });
+    res.end(data);
+    return;
+  }
   const peopleName = entertainmentJpegName(urlPath, "/img/entertainment/people/");
   const orgName = entertainmentJpegName(urlPath, "/img/entertainment/orgs/");
   const liveJpeg = peopleName
@@ -116,6 +151,6 @@ const server = createServer((req, res) => {
 
 server.listen(PORT, HOST, () => {
   console.log(`Preview http://${HOST}:${PORT}/ → ${dist}`);
-  console.log("People/band JPEGs served live from src/img/entertainment/{people,orgs} (no-store)");
+  console.log("People/band JPEGs + avatar WebPs served live from src/img/entertainment/{people,orgs} (no-store)");
   console.log("HTML no-store; missing people/band <img> injected when src JPEG exists");
 });

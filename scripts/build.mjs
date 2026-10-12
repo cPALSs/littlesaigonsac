@@ -5,6 +5,7 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, cpSync
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { homeEntertainmentSection, writeEntertainmentPages } from "./entertainment-pages.mjs";
+import { prepareSiteImages } from "./images.mjs";
 import { adjacentInList, pagerNavHtml } from "../src/js/meal-sort.js";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -52,19 +53,30 @@ const esc = (s = "") =>
 
 const filledDish = (d) => d.kitchens?.length > 0;
 
-const imgEl = (rel, alt = "") => {
+const images = await prepareSiteImages({ srcDir: join(root, "src/img"), cacheDir: join(root, ".cache/img") });
+
+/**
+ * Page <img> for a src/img path, pointing at its small variant (avatar,
+ * poster thumb, category card) unless `kind` says otherwise. `size` forces
+ * square width/height attrs; `lazy` overrides the kind's default.
+ */
+const imgEl = (rel, alt = "", { kind, size, lazy } = {}) => {
   if (!rel || !existsSync(join(root, "src/img", rel))) return "";
   const abs = join(root, "src/img", rel);
-  const src = `/img/${esc(rel)}`;
+  const v = images.variant(rel, kind);
+  if (!v) return "";
+  let src = `/img/${esc(v.rel)}`;
   if (
     String(rel).startsWith("entertainment/people/") ||
     String(rel).startsWith("entertainment/orgs/") ||
     String(rel).startsWith("foodies/")
   ) {
-    const mtime = Math.floor(statSync(abs).mtimeMs);
-    return `<img src="${src}?t=${mtime}" alt="${esc(alt)}">`;
+    src += `?t=${Math.floor(statSync(abs).mtimeMs)}`;
   }
-  return `<img src="${src}" alt="${esc(alt)}">`;
+  const [w, h] = size ? [size, size] : [v.width, v.height];
+  const dims = w && h ? ` width="${w}" height="${h}"` : "";
+  const loading = (lazy ?? v.lazy) ? ' loading="lazy"' : "";
+  return `<img src="${src}" alt="${esc(alt)}"${dims}${loading} decoding="async">`;
 };
 
 const igHref = data.site.instagram || "https://www.instagram.com/littlesaigonsactown/";
@@ -196,7 +208,7 @@ const resolveOgImage = (imageRel) => {
     const rel = String(imageRel).replace(/^\/img\//, "");
     const abs = join(root, "src/img", rel);
     if (existsSync(abs)) {
-      const size = imageSize(abs);
+      const size = images.full(rel) || imageSize(abs);
       return { url: absImgUrl(rel), width: size?.width, height: size?.height };
     }
   }
@@ -494,7 +506,7 @@ const catPage = (cat) => {
         ${crumbs([{ href: "/viet-eats/", label: "Viet Eats" }, { label: cat.vi, current: true }])}
         <h1>${esc(cat.vi)}</h1>
         <p class="tagline">${esc(cat.gloss)}</p>
-        <div class="hero-photo">${imgEl(cat.photo, cat.vi)}</div>
+        <div class="hero-photo">${imgEl(cat.photo, cat.vi, { kind: "catHero" })}</div>
       </header>
       ${dishList(cat)}
       <script type="application/json" id="meal-sort-windows">${mealSortWindows}</script>
@@ -528,7 +540,7 @@ cpSync(join(root, "src/js/maps-config.js"), join(dist, "js/maps-config.js"));
 cpSync(join(root, "src/js/entertainment-map.js"), join(dist, "js/entertainment-map.js"));
 cpSync(join(root, "src/js/entertainment-dates.js"), join(dist, "js/entertainment-dates.js"));
 cpSync(join(root, "src/js/pwa-register.js"), join(dist, "js/pwa-register.js"));
-cpSync(join(root, "src/img"), join(dist, "img"), { recursive: true });
+images.emit(join(dist, "img"));
 writeFileSync(join(dist, "CNAME"), "littlesaigonsac.town\n");
 writeFileSync(join(dist, ".nojekyll"), "");
 writeFileSync(join(dist, "index.html"), home);
@@ -667,3 +679,4 @@ ${sitemapUrls.map((u) => `  <url><loc>${esc(u)}</loc></url>`).join("\n")}
 writeFileSync(join(dist, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_ORIGIN}/sitemap.xml\n`);
 
 console.log(`Built home + Viet Eats (${categories.length} categories)${foodiesNote}${extra} · sitemap ${sitemapUrls.length} URLs → ${dist}`);
+console.log(`Images: ${images.count} files (${images.rendered} rendered, rest cached or copied)`);

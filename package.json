@@ -6,5 +6,8 @@
     "build": "node scripts/build.mjs",
     "preview": "node scripts/preview.mjs",
     "start": "node scripts/build.mjs && node scripts/preview.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
   }
 }

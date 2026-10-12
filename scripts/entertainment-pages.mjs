@@ -676,8 +676,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
     const end = ev.end_date || start;
     const startAttr = start ? ` data-start="${esc(start)}"` : "";
     const endAttr = end ? ` data-end="${esc(end)}"` : "";
-    let photo = imgEl(ev.poster, displayName(ev.label));
-    if (opts.lazy && photo) photo = photo.replace("<img ", '<img loading="lazy" ');
+    const photo = imgEl(ev.poster, displayName(ev.label), { lazy: Boolean(opts.lazy) });
     return `<a class="card poster" href="/entertainment/${esc(ev.id)}/"${posterGeoAttrs(ev)}${whenAttr}${startAttr}${endAttr}>
     <div class="card-photo"${focusAttr}>${photo}</div>
     <div class="card-body">
@@ -732,14 +731,10 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
           </div>`;
   };
 
-  /** Intrinsic 800×800 JPEGs must not win first layout (flex min-width: auto). */
+  /** Intrinsic avatar size must not win first layout (flex min-width: auto). */
   const CREDIT_AVATAR_PX = 28;
 
-  const creditImgEl = (rel, alt = "") => {
-    const tag = imgEl(rel, alt);
-    if (!tag) return "";
-    return tag.replace("<img ", `<img width="${CREDIT_AVATAR_PX}" height="${CREDIT_AVATAR_PX}" `);
-  };
+  const creditImgEl = (rel, alt = "") => imgEl(rel, alt, { size: CREDIT_AVATAR_PX });
 
   const creditAvatar = (item, people, orgs) => {
     const entity = item.type === "org" ? orgs?.[item.id] : people?.[item.id];
@@ -900,7 +895,7 @@ export function entertainmentHelpers({ esc, imgEl, crumbs }) {
 
   const entityHeading = (name, links, photo, kind, specialties, lifespan) => {
     const shown = kind === "org" ? displayName(name) : listingName(name);
-    const photoImg = imgEl(photo, shown);
+    const photoImg = imgEl(photo, shown, { lazy: false });
     const years = kind === "person" ? lifespan : "";
     const copy = `<h1>${esc(shown)}</h1>
         ${specialtyChips(specialties)}

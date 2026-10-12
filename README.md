@@ -55,6 +55,7 @@ That writes `data/entertainment.json` and `src/img/entertainment/{activity-id}.j
 
 ## Notes
 
-- Category stills: `src/img/`. Concert posters: `src/img/entertainment/`.
+- Category stills: `src/img/`. Concert posters: `src/img/entertainment/`. Performer / band avatars: `src/img/entertainment/{people,orgs}/`.
+- `src/img/` holds full-resolution sources. The build (`scripts/images.mjs`, sharp) writes smaller WebP variants into `dist/img/` and pages load those: avatars `{id}.236.webp` (7.5rem at 2x), poster cards `{id}.720.webp`, category cards `.720.webp`, category heroes `.2240.webp`. The lightbox and `og:image` use the file at the source path; posters there are capped at digital A5 (1748×2480). Variants are cached in `.cache/img/` (gitignored), so only new or changed images are re-rendered. Run `npm install` once in this clone.
 - Do not file dish canon into Community Graph SQLite.
 - Visitor pages must not link monorepo paths, `file://`, or Bao Thoughts vault paths.
