@@ -53,6 +53,13 @@ const esc = (s = "") =>
 
 const filledDish = (d) => d.kitchens?.length > 0;
 
+// Category hero photo also thumbs the dish it depicts (`heroDish`).
+for (const cat of categories) {
+  if (!cat.heroDish || !cat.photo) continue;
+  const dish = (cat.dishes || []).find((d) => d.slug === cat.heroDish);
+  if (dish) dish.photo = cat.photo;
+}
+
 const images = await prepareSiteImages({ srcDir: join(root, "src/img"), cacheDir: join(root, ".cache/img") });
 
 /**

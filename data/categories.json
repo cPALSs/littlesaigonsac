@@ -30,13 +30,14 @@
       "vi": "Phở",
       "gloss": "Noodle soup",
       "photo": "pho.jpg",
+      "heroDish": "pho-bo",
       "fit": ["breakfast", "lunch", "dinner"],
       "dishes": [
         {
           "slug": "pho-bo",
           "vi": "Phở bò",
           "gloss": "Beef pho",
-          "photo": "pho-bo.jpg",
+          "photo": "pho.jpg",
           "kitchens": [
             {
               "name": "Phở City",
@@ -82,6 +83,7 @@
       "vi": "Cháo",
       "gloss": "Porridge / congee",
       "photo": "chao.png",
+      "heroDish": "chao-trang",
       "fit": ["breakfast"],
       "dishes": [
         {
@@ -119,6 +121,7 @@
           "slug": "chao-trang",
           "vi": "Cháo trắng",
           "gloss": "Plain congee",
+          "photo": "chao.png",
           "kitchens": []
         }
       ]
@@ -128,13 +131,14 @@
       "vi": "Bánh mì",
       "gloss": "Sandwich",
       "photo": "banh-mi.jpg",
+      "heroDish": "banh-mi-thit-nguoi",
       "fit": ["breakfast", "lunch"],
       "dishes": [
         {
           "slug": "banh-mi-thit-nguoi",
           "vi": "Bánh mì thịt nguội",
           "gloss": "Cold cuts",
-          "photo": "banh-mi-thit-nguoi.jpg",
+          "photo": "banh-mi.jpg",
           "kitchens": [
             {
               "name": "Paris Bánh Mì",
@@ -150,12 +154,14 @@
       "vi": "Cơm",
       "gloss": "Rice plates",
       "photo": "com.jpg",
+      "heroDish": "com-cha-gio-tom-thit-nuong",
       "fit": ["lunch", "dinner"],
       "dishes": [
         {
           "slug": "com-cha-gio-tom-thit-nuong",
           "vi": "Cơm chả giò tôm thịt nướng",
           "gloss": "Rice with crispy egg roll, grilled shrimp, and pork",
+          "photo": "com.jpg",
           "kitchens": [
             {
               "name": "Phở Xe Lửa",
@@ -171,6 +177,7 @@
       "vi": "Thịt / Hải sản",
       "gloss": "Meat / seafood",
       "photo": "thit-hai-san.jpg",
+      "heroDish": "bo-ne",
       "fit": ["lunch", "dinner"],
       "dishes": [
         {
@@ -194,7 +201,7 @@
           "slug": "bo-ne",
           "vi": "Bò né",
           "gloss": "Steak skillet",
-          "photo": "bo-ne.jpg",
+          "photo": "thit-hai-san.jpg",
           "kitchens": [
             {
               "name": "Creasian Fusion",
@@ -279,6 +286,7 @@
       "vi": "Cà phê",
       "gloss": "Coffee",
       "photo": "ca-phe.jpg",
+      "heroDish": "ca-phe-sua-da",
       "fit": ["snack"],
       "dishes": [
         {
@@ -303,6 +311,7 @@
           "slug": "ca-phe-sua-da",
           "vi": "Cà phê sữa đá",
           "gloss": "Iced coffee with condensed milk",
+          "photo": "ca-phe.jpg",
           "kitchens": [
             {
               "name": "Saigon Oi",
@@ -322,6 +331,7 @@
       "vi": "Bánh",
       "gloss": "Sweet / savory pastries",
       "photo": "banh.jpg",
+      "heroDish": "banh-khot",
       "fit": ["snack"],
       "dishes": [
         {
@@ -357,7 +367,7 @@
           "slug": "banh-khot",
           "vi": "Bánh khọt",
           "gloss": "Crispy savory pancakes",
-          "photo": "banh-khot.jpg",
+          "photo": "banh.jpg",
           "kitchens": [
             {
               "name": "Me’s Kitchen",
@@ -403,6 +413,7 @@
       "vi": "Bún",
       "gloss": "Rice vermicelli",
       "photo": "bun.jpg",
+      "heroDish": "bun-thit-nuong-cha-gio",
       "fit": ["lunch", "dinner"],
       "dishes": [
         {
@@ -443,7 +454,7 @@
           "slug": "bun-thit-nuong-cha-gio",
           "vi": "Bún thịt nướng chả giò",
           "gloss": "Grilled pork and crispy egg rolls",
-          "photo": "bun-thit-nuong-cha-gio.jpg",
+          "photo": "bun.jpg",
           "kitchens": [
             {
               "name": "Creasian Fusion",
@@ -463,12 +474,14 @@
       "vi": "Bánh canh",
       "gloss": "Thick rice noodles",
       "photo": "banh-canh.jpg",
+      "heroDish": "banh-canh-cua",
       "fit": ["lunch", "dinner"],
       "dishes": [
         {
           "slug": "banh-canh-cua",
           "vi": "Bánh canh cua",
           "gloss": "Crab bánh canh",
+          "photo": "banh-canh.jpg",
           "kitchens": [
             {
               "name": "Saigon Oi",
@@ -488,12 +501,14 @@
       "vi": "Cuốn",
       "gloss": "Rolls",
       "photo": "cuon.jpg",
+      "heroDish": "nem-cuon",
       "fit": ["lunch", "dinner", "snack"],
       "dishes": [
         {
           "slug": "nem-cuon",
           "vi": "Nem cuốn",
           "gloss": "Fresh spring rolls",
+          "photo": "cuon.jpg",
           "kitchens": [
             {
               "name": "Quán Nem Ninh Hòa",
@@ -513,13 +528,14 @@
       "vi": "Chè",
       "gloss": "Dessert brews",
       "photo": "che.jpg",
+      "heroDish": "che-ba-mau",
       "fit": ["snack"],
       "dishes": [
         {
           "slug": "che-ba-mau",
           "vi": "Chè ba màu",
           "gloss": "Three-color chè",
-          "photo": "che-ba-mau.jpg",
+          "photo": "che.jpg",
           "kitchens": [
             {
               "name": "Pho Bac Hoa Viet",
