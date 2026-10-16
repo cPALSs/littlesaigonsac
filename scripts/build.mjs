@@ -325,13 +325,39 @@ const kitchenItems = (dish) => {
   </ul>`;
 };
 
-const dishItem = (dish, n) => `<li class="dish ${filledDish(dish) ? "filled" : "open"}">
+const ZOOM_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M10.5 8v5M8 10.5h5"/></g></svg>`;
+
+const dishPhotoCreditHtml = (credit) => {
+  if (!credit?.name || !credit?.home) return "";
+  const license =
+    credit.license && credit.licenseUrl
+      ? ` · <a href="${esc(credit.licenseUrl)}" rel="noopener noreferrer license" target="_blank">${esc(credit.license)}</a>`
+      : "";
+  return `Photo by <a href="${esc(credit.home)}" rel="noopener noreferrer" target="_blank">${esc(credit.name)}</a>${license}`;
+};
+
+const attrEscape = (s) => String(s).replaceAll("&", "&amp;").replaceAll('"', "&quot;");
+
+const dishPhoto = (dish) => {
+  const img = imgEl(dish.photo, dish.vi, { kind: "catCard", lazy: true });
+  if (!img) return "";
+  const full = `/img/${esc(dish.photo)}`;
+  const credit = dishPhotoCreditHtml(dish.photoCredit);
+  const captionAttr = credit ? ` data-lightbox-caption="${attrEscape(credit)}"` : "";
+  return `<a class="dish-photo" href="${full}" data-lightbox${captionAttr} aria-label="${esc(`View ${dish.vi} larger`)}" aria-expanded="false">${img}<span class="zoom-hint" aria-hidden="true">${ZOOM_ICON}</span></a>`;
+};
+
+const dishItem = (dish, n) => {
+  const photo = dishPhoto(dish);
+  return `<li class="dish ${filledDish(dish) ? "filled" : "open"}${photo ? " has-photo" : ""}">
+      ${photo}
       <span class="dish-n">${n}.</span>
       <div class="dish-body">
         <p class="dish-title">${esc(dish.vi)} <span class="gloss">(${esc(dish.gloss)})</span></p>
         ${kitchenItems(dish)}
       </div>
     </li>`;
+};
 
 const dishList = (cat) => {
   let html = "";

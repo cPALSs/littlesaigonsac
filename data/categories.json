@@ -252,6 +252,25 @@
               }
             }
           ]
+        },
+        {
+          "slug": "thit-kho-trung",
+          "vi": "Thịt kho trứng",
+          "gloss": "Braised pork & egg",
+          "photo": "thit-kho-trung.jpg",
+          "photoCredit": {
+            "name": "HungryHuy",
+            "home": "https://www.hungryhuy.com/",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+          },
+          "kitchens": [
+            {
+              "name": "May May Foods",
+              "address": "7235 Franklin Blvd #2, Sacramento, CA 95823",
+              "maps": "https://maps.google.com/?cid=9056633825758123362"
+            }
+          ]
         }
       ]
     },

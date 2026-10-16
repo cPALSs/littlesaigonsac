@@ -13,8 +13,11 @@
   dialog.setAttribute("aria-label", "Poster");
   dialog.hidden = true;
   dialog.innerHTML = `
-    <img class="poster-lightbox-img" alt="">
-    <div class="poster-lightbox-video" hidden></div>
+    <div class="poster-lightbox-stage">
+      <img class="poster-lightbox-img" alt="">
+      <div class="poster-lightbox-video" hidden></div>
+      <div class="poster-lightbox-caption" hidden></div>
+    </div>
     <button type="button" class="poster-lightbox-nav poster-lightbox-prev" aria-label="Previous" hidden>${chevron("M14.5 6l-6 6 6 6")}</button>
     <button type="button" class="poster-lightbox-nav poster-lightbox-next" aria-label="Next" hidden>${chevron("M9.5 6l6 6-6 6")}</button>
     <button type="button" class="poster-lightbox-close" aria-label="Close">
@@ -25,8 +28,10 @@
   `;
   document.body.appendChild(dialog);
 
+  const stage = dialog.querySelector(".poster-lightbox-stage");
   const img = dialog.querySelector(".poster-lightbox-img");
   const video = dialog.querySelector(".poster-lightbox-video");
+  const caption = dialog.querySelector(".poster-lightbox-caption");
   const prevBtn = dialog.querySelector(".poster-lightbox-prev");
   const nextBtn = dialog.querySelector(".poster-lightbox-next");
   const closeBtn = dialog.querySelector(".poster-lightbox-close");
@@ -34,6 +39,20 @@
   let openTrigger = null;
   let items = [];
   let index = 0;
+
+  const focusables = () =>
+    [prevBtn, nextBtn, ...caption.querySelectorAll("a"), closeBtn].filter((el) => !el.hidden);
+
+  const setCaption = (item) => {
+    const html = item.getAttribute("data-lightbox-caption");
+    if (html) {
+      caption.innerHTML = html;
+      caption.hidden = false;
+    } else {
+      caption.replaceChildren();
+      caption.hidden = true;
+    }
+  };
 
   const triggerSrc = (el) => {
     const data = el.getAttribute("data-lightbox");
@@ -67,6 +86,7 @@
     const src = triggerSrc(item);
     const isVideo = item.dataset.lightboxType === "video";
     video.replaceChildren();
+    setCaption(item);
     if (isVideo) {
       img.hidden = true;
       img.removeAttribute("src");
@@ -83,7 +103,7 @@
       img.hidden = false;
       img.src = src;
       img.alt = item.querySelector("img")?.alt || "Poster";
-      dialog.setAttribute("aria-label", "Poster");
+      dialog.setAttribute("aria-label", item.getAttribute("aria-label") || "Poster");
     }
     prevBtn.hidden = index === 0;
     nextBtn.hidden = index >= items.length - 1;
@@ -99,6 +119,8 @@
     img.removeAttribute("src");
     img.alt = "";
     video.replaceChildren();
+    caption.replaceChildren();
+    caption.hidden = true;
     const restore = lastFocus;
     lastFocus = null;
     openTrigger = null;
@@ -136,16 +158,17 @@
   nextBtn.addEventListener("click", () => show(index + 1));
 
   dialog.addEventListener("click", (event) => {
-    if (event.target === dialog || event.target === video) close();
+    if (event.target === dialog || event.target === video || event.target === stage) close();
   });
 
   dialog.addEventListener("keydown", (event) => {
     if (event.key !== "Tab") return;
-    const focusables = [prevBtn, nextBtn, closeBtn].filter((b) => !b.hidden);
-    const at = focusables.indexOf(document.activeElement);
+    const list = focusables();
+    if (!list.length) return;
+    const at = list.indexOf(document.activeElement);
     const step = event.shiftKey ? -1 : 1;
     event.preventDefault();
-    focusables[(at + step + focusables.length) % focusables.length].focus();
+    list[(at + step + list.length) % list.length].focus();
   });
 
   document.addEventListener("keydown", (event) => {
