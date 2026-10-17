@@ -13,7 +13,7 @@ const ITEMS = [
   { slug: "chao", vi: "Cháo", fit: ["breakfast"] },
   { slug: "banh-mi", vi: "Bánh mì", fit: ["breakfast", "lunch"] },
   { slug: "com", vi: "Cơm", fit: ["lunch", "dinner"] },
-  { slug: "thit-hai-san", vi: "Thịt / Hải sản", fit: ["lunch", "dinner"] },
+  { slug: "thit-hai-san", vi: "Thịt / hải sản", fit: ["lunch", "dinner"] },
   { slug: "ca-phe", vi: "Cà phê", fit: ["snack"] },
   { slug: "banh", vi: "Bánh", fit: ["snack"] },
   { slug: "bun", vi: "Bún", fit: ["lunch", "dinner"] },

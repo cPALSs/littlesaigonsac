@@ -51,7 +51,7 @@ Beehiiv publication `pub_8794d295-8334-4654-abe5-88cc4b0e34df`, tag `viet-eats`.
 | `/p/vieteats-pho` | Phở |
 | `/p/vieteats-chao` | Cháo |
 | `/p/vieteats-banh-mi` | Bánh mì |
-| `/p/vieteats-meat-seafood` | Thịt / Hải sản |
+| `/p/vieteats-meat-seafood` | Thịt / hải sản |
 | `/p/vieteats-ca-phe` (confirm slug) | Cà phê |
 | `/p/vieteats-banh` | Bánh |
 | `/p/vieteats-bun` | Bún |

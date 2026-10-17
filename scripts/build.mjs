@@ -304,30 +304,94 @@ const recommenderLinks = (k) => {
     })
     .filter(Boolean);
   if (!list.length) return "";
-  if (list.length === 1) return `Recommended by ${list[0]}`;
-  if (list.length === 2) return `Recommended by ${list[0]} and ${list[1]}`;
-  return `Recommended by ${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
+  if (list.length === 1) return `Tip by ${list[0]}`;
+  if (list.length === 2) return `Tip by ${list[0]} and ${list[1]}`;
+  return `Tip by ${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
 };
 
+/** Soft meta on the name line: free-text note and/or “Tip by …”. */
 const kitchenNote = (k) => {
   const note = typeof k.note === "string" ? k.note.trim() : "";
   const recs = recommenderLinks(k);
   if (!note && !recs) return "";
   const body = note && recs ? `${esc(note)} ${recs}` : note ? esc(note) : recs;
-  return `<p class="kitchen-note">${body}</p>`;
+  return `<span class="kitchen-note">${body}</span>`;
+};
+
+/** Drop ", ST 12345" (and ZIP+4) for display; keep street + city. Maps href stays full. */
+const shortAddress = (address) =>
+  String(address ?? "")
+    .replace(/,?\s*[A-Z]{2}\s+\d{5}(?:-\d{4})?\b/g, "")
+    .replace(/\s{2,}/g, " ")
+    .trim()
+    .replace(/,\s*$/, "");
+
+/** True for Google Maps / goo.gl maps hosts (not Instagram/Facebook stored in `maps`). */
+const isGoogleMapsHref = (raw) => {
+  try {
+    const u = new URL(String(raw || "").trim());
+    if (u.protocol !== "http:" && u.protocol !== "https:") return false;
+    const host = u.hostname.replace(/^www\./i, "").toLowerCase();
+    if (host === "maps.app.goo.gl") return true;
+    if (host === "goo.gl" && /^\/maps\b/i.test(u.pathname)) return true;
+    if (host === "maps.google.com") return true;
+    if (host === "google.com" || host.endsWith(".google.com")) {
+      return /\/maps\b/i.test(u.pathname) || u.searchParams.has("cid");
+    }
+    return false;
+  } catch {
+    return false;
+  }
+};
+
+/**
+ * Cross-platform Maps URL (Google Maps URLs API). On mobile with the app
+ * installed, https://www.google.com/maps/… usually hands off to the native
+ * app; maps.app.goo.gl short links + target=_blank often stay in-browser.
+ * Non-maps values (IG/FB) pass through unchanged.
+ */
+const kitchenMapsHref = (k) => {
+  const stored = String(k.maps || "").trim();
+  if (!stored || !isGoogleMapsHref(stored)) return stored;
+
+  const name = String(k.name || "").trim();
+  const address = String(k.address || "").trim();
+  const query = [name, address].filter(Boolean).join(", ");
+  if (query) {
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+  }
+
+  try {
+    const u = new URL(stored);
+    const cid = u.searchParams.get("cid");
+    if (cid) return `https://www.google.com/maps?cid=${encodeURIComponent(cid)}`;
+  } catch {
+    /* keep stored */
+  }
+  return stored;
 };
 
 const kitchenItems = (dish) => {
   if (!filledDish(dish)) {
     return `<p class="seeking">No candidate yet</p>`;
   }
+  // Build-time A–Z by name; leave categories.json order alone for editorial edits.
+  // en + base: case/accent-insensitive so Pho/Phở interleave (vi locale groups bare Pho first).
+  const kitchens = [...dish.kitchens].sort((a, b) =>
+    String(a.name || "").localeCompare(String(b.name || ""), "en", { sensitivity: "base" })
+  );
   return `<ul class="kitchens">
-    ${dish.kitchens
-      .map(
-        (k) => `<li>
-      <span class="kitchen-name">${esc(k.name)}</span><span class="sep">, </span><a href="${esc(k.maps)}" rel="noopener noreferrer" target="_blank">${esc(k.address)}</a>${kitchenNote(k)}
-    </li>`,
-      )
+    ${kitchens
+      .map((k) => {
+        const href = kitchenMapsHref(k);
+        // Universal Links / App Links often fail with target=_blank (new tab).
+        const blank = isGoogleMapsHref(href) ? "" : ' target="_blank"';
+        const note = kitchenNote(k);
+        return `<li>
+      <span class="kitchen-primary"><span class="kitchen-name">${esc(k.name)}</span>${note}</span>
+      <a class="kitchen-address" href="${esc(href)}" rel="noopener noreferrer"${blank}>${esc(shortAddress(k.address))}</a>
+    </li>`;
+      })
       .join("")}
   </ul>`;
 };
@@ -356,11 +420,30 @@ const dishPhoto = (dish) => {
 
 const dishItem = (dish, n) => {
   const photo = dishPhoto(dish);
-  return `<li class="dish ${filledDish(dish) ? "filled" : "open"}${photo ? " has-photo" : ""}">
-      ${photo}
-      <span class="dish-n">${n}.</span>
+  const num = `<span class="dish-n">${n}.</span>`;
+  const title = `<p class="dish-title">${esc(dish.vi)} <span class="gloss">(${esc(dish.gloss)})</span></p>`;
+  if (photo) {
+    // Mobile: title lives in .dish-photo-copy (overlay on thumb).
+    // Desktop: same title+kitchens stack in .dish-body (own column, content height).
+    return `<li class="dish ${filledDish(dish) ? "filled" : "open"} has-photo">
+      <div class="dish-visual">
+        ${photo}
+        <div class="dish-photo-copy">
+          ${num}
+          ${title}
+        </div>
+      </div>
       <div class="dish-body">
-        <p class="dish-title">${esc(dish.vi)} <span class="gloss">(${esc(dish.gloss)})</span></p>
+        ${num}
+        ${title}
+        ${kitchenItems(dish)}
+      </div>
+    </li>`;
+  }
+  return `<li class="dish ${filledDish(dish) ? "filled" : "open"}">
+      ${num}
+      <div class="dish-body">
+        ${title}
         ${kitchenItems(dish)}
       </div>
     </li>`;
@@ -536,10 +619,13 @@ const catPage = (cat) => {
     current: "viet-eats",
     body: `<main class="wrap category">
       <header class="dish-head">
-        ${crumbs([{ href: "/viet-eats/", label: "Viet Eats" }, { label: cat.vi, current: true }])}
-        <h1>${esc(cat.vi)}</h1>
-        <p class="tagline">${esc(cat.gloss)}</p>
-        <div class="hero-photo">${imgEl(cat.photo, cat.vi, { kind: "catHero" })}</div>
+        <div class="dish-hero">
+          <div class="hero-photo">${imgEl(cat.photo, cat.vi, { kind: "catHero" })}</div>
+          <div class="dish-hero-copy">
+            ${crumbs([{ href: "/viet-eats/", label: "Viet Eats" }, { label: cat.vi, current: true }])}
+            <h1>${esc(cat.vi)} <span class="gloss">(${esc(cat.gloss)})</span></h1>
+          </div>
+        </div>
       </header>
       ${dishList(cat)}
       <script type="application/json" id="meal-sort-windows">${mealSortWindows}</script>
