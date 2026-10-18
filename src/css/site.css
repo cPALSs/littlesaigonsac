@@ -1559,7 +1559,9 @@ body.is-lightbox-open {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   padding: 3rem 1rem 1rem;
+  overflow: hidden;
   background: rgba(12, 8, 6, 0.88);
 }
 
@@ -1572,16 +1574,21 @@ body.is-lightbox-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: min(100%, calc(100vw - 2rem));
-  max-height: min(100%, calc(100dvh - 3.5rem));
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .poster-lightbox-img {
   display: block;
-  max-width: min(100%, calc(100vw - 2rem));
-  max-height: min(100%, calc(100dvh - 3.5rem));
   width: auto;
   height: auto;
+  /* Definite viewport caps. A percentage here is cyclic: the frame sizes to the image. */
+  max-width: calc(100vw - 2rem);
+  max-height: calc(100dvh - 4rem);
+  min-width: 0;
+  min-height: 0;
   object-fit: contain;
 }
 
