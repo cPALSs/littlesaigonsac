@@ -268,6 +268,12 @@
           "id": "thu-phuong",
           "name": "Thu Phương",
           "role": "vocalist"
+        },
+        {
+          "type": "org",
+          "id": "hoang-bao-band",
+          "name": "Hoàng Bảo's Band",
+          "role": "band"
         }
       ],
       "source_url": "https://www.facebook.com/photo/?fbid=10228877429274940&set=pcb.10228877439435194",
@@ -8527,6 +8533,12 @@
       "links": [],
       "photo": null
     },
+    "hoang-bao-band": {
+      "id": "hoang-bao-band",
+      "name": "Hoàng Bảo's Band",
+      "links": [],
+      "photo": "entertainment/orgs/hoang-bao-band.jpg"
+    },
     "thunder-valley-casino-resort": {
       "id": "thunder-valley-casino-resort",
       "name": "Thunder Valley Casino Resort",
@@ -8554,12 +8566,6 @@
         }
       ],
       "photo": "entertainment/orgs/best-kitchen-karaoke.jpg"
-    },
-    "hoang-bao-band": {
-      "id": "hoang-bao-band",
-      "name": "Hoàng Bảo's Band",
-      "links": [],
-      "photo": "entertainment/orgs/hoang-bao-band.jpg"
     },
     "ruby-blvd-entertainment": {
       "id": "ruby-blvd-entertainment",
