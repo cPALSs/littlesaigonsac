@@ -157,9 +157,61 @@
           "id": "dan-nguyen",
           "name": "Đan Nguyên",
           "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "jazzlynne-bao-chau",
+          "name": "Jazzlynne Bảo Châu",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "lieu-kieu",
+          "name": "Liễu Kiều",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "victoria-thuy-vy",
+          "name": "Victoria Thuy Vy",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "thuy-ha-mc",
+          "name": "Thuy Ha",
+          "role": "mc"
+        },
+        {
+          "type": "org",
+          "id": "four-stars-band",
+          "name": "The Four Stars Band",
+          "role": "band"
         }
       ],
-      "source_url": "https://www.facebook.com/events/898328869798925/"
+      "source_url": "https://www.facebook.com/groups/1110349593173619/posts/2161252661416635/",
+      "tickets": [
+        {
+          "kind": "phone",
+          "label": "KimAnh",
+          "phone": "2096624158"
+        },
+        {
+          "kind": "phone",
+          "label": "KimHang",
+          "phone": "2099331014"
+        },
+        {
+          "kind": "phone",
+          "label": "Be Nguyen Boonsalat",
+          "phone": "2092270511"
+        },
+        {
+          "kind": "phone",
+          "label": "Cash Vo",
+          "phone": "2097748444"
+        }
+      ]
     },
     {
       "id": "mlinda-back-to-the-80s-rice-bowl-2026",
@@ -3608,6 +3660,124 @@
       ],
       "photo": "entertainment/people/dan-nguyen.jpg"
     },
+    "lieu-kieu": {
+      "id": "lieu-kieu",
+      "name": "Liễu Kiều",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/lieukieu.singer",
+          "label": "Facebook"
+        }
+      ],
+      "photo": "entertainment/people/lieu-kieu.jpg"
+    },
+    "jazzlynne-bao-chau": {
+      "id": "jazzlynne-bao-chau",
+      "name": "Jazzlynne Bảo Châu",
+      "aka": [
+        "Jazzlynne",
+        "Jazzlynne Chau",
+        "Bảo Châu"
+      ],
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/jazzlynnechau",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/p/jazzlynne-bao-chau-61581703484963",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@jazzlynnechau",
+          "label": "YouTube"
+        }
+      ],
+      "photo": "entertainment/people/jazzlynne-bao-chau.jpg"
+    },
+    "victoria-thuy-vy": {
+      "id": "victoria-thuy-vy",
+      "name": "Victoria Thúy Vy",
+      "aka": [
+        "Victoria Thuy Vy",
+        "Victoria Thúy Vi McDowell",
+        "Victoria Thúy Vi"
+      ],
+      "specialties": [
+        {
+          "slug": "nhac-vang",
+          "label": "Bolero · nhạc vàng"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/victoriathuyvi",
+          "label": "Instagram"
+        },
+        {
+          "kind": "tiktok",
+          "url": "https://tiktok.com/@victoriathuyvimcdowell",
+          "label": "TikTok"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/victoriathuyvimcdowell",
+          "label": "Facebook"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/c/VictoriaThuyVi",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/0jq5LI4jV4E2xnyZ1mGojW",
+          "label": "Spotify"
+        },
+        {
+          "kind": "website",
+          "url": "https://victoriathuyvi.com",
+          "label": "Website"
+        }
+      ],
+      "photo": "entertainment/people/victoria-thuy-vy.jpg"
+    },
+    "thuy-ha-mc": {
+      "id": "thuy-ha-mc",
+      "name": "Thúy Hà",
+      "aka": [
+        "Thuy Ha"
+      ],
+      "specialties": [
+        {
+          "slug": "emcee",
+          "label": "Emcee"
+        }
+      ],
+      "links": [],
+      "photo": "entertainment/people/thuy-ha-mc.jpg"
+    },
     "thai-tai": {
       "id": "thai-tai",
       "name": "Thái Tài",
@@ -6840,39 +7010,6 @@
       "links": [],
       "photo": "entertainment/people/minh-hue.jpg"
     },
-    "jazzlynne-bao-chau": {
-      "id": "jazzlynne-bao-chau",
-      "name": "Jazzlynne Bảo Châu",
-      "aka": [
-        "Jazzlynne",
-        "Jazzlynne Chau",
-        "Bảo Châu"
-      ],
-      "specialties": [
-        {
-          "slug": "singer",
-          "label": "Singer"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/jazzlynnechau",
-          "label": "Instagram"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/p/jazzlynne-bao-chau-61581703484963",
-          "label": "Facebook"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/@jazzlynnechau",
-          "label": "YouTube"
-        }
-      ],
-      "photo": "entertainment/people/jazzlynne-bao-chau.jpg"
-    },
     "hong-nhi": {
       "id": "hong-nhi",
       "name": "Hồng Nhi",
@@ -7160,24 +7297,6 @@
         }
       ],
       "photo": "entertainment/people/mina-tran.jpg"
-    },
-    "lieu-kieu": {
-      "id": "lieu-kieu",
-      "name": "Liễu Kiều",
-      "specialties": [
-        {
-          "slug": "singer",
-          "label": "Singer"
-        }
-      ],
-      "links": [
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/lieukieu.singer",
-          "label": "Facebook"
-        }
-      ],
-      "photo": "entertainment/people/lieu-kieu.jpg"
     },
     "dj-kixi": {
       "id": "dj-kixi",
@@ -8605,6 +8724,12 @@
         }
       ],
       "photo": null
+    },
+    "four-stars-band": {
+      "id": "four-stars-band",
+      "name": "The Four Stars Band",
+      "links": [],
+      "photo": "entertainment/orgs/four-stars-band.jpg"
     },
     "vaces": {
       "id": "vaces",
