@@ -4,6 +4,52 @@
   "as_of_pt": "2026-10-27",
   "events": [
     {
+      "id": "cpalss-lny-2027",
+      "label": "Elk Grove Lunar New Year Tết",
+      "display_date": "Feb 13–14, 2027 · 11:00 AM–7:00 PM",
+      "start_date": "2027-02-13",
+      "end_date": "2027-02-14",
+      "city": "Elk Grove",
+      "venue": "Elk Grove Park",
+      "place_name": "Elk Grove Park",
+      "place_id": "elk-grove-park",
+      "google_place_id": "ChIJN735t9jFmoARGREBg6xSlLY",
+      "place_address": "9950 Elk Grove-Florin Rd, Elk Grove, CA 95624",
+      "lat": 38.3931726,
+      "lng": -121.3744743,
+      "status": "planned",
+      "poster": "entertainment/cpalss-lny-2027.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "cpalss",
+          "name": "cPALSs",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "nvcc",
+          "name": "NorCal Vietnamese Chamber of Commerce",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "vacos",
+          "name": "VACOS",
+          "role": "host"
+        }
+      ],
+      "lineup": [],
+      "source_url": "https://eglny.com",
+      "tickets": [
+        {
+          "kind": "url",
+          "label": "Eventbrite",
+          "url": "https://www.eventbrite.com/e/elk-grove-lunar-new-year-tet-2027-tickets-2003999736157"
+        }
+      ]
+    },
+    {
       "id": "phuoc-lam-tiec-chay-gay-quy-2026",
       "label": "Tiệc Chay Gây Quỹ Xây Parking Lot",
       "display_date": "Dec 20, 2026 · 5:00–10:00 PM",
@@ -8497,6 +8543,57 @@
     }
   },
   "orgs": {
+    "cpalss": {
+      "id": "cpalss",
+      "name": "cPALSs",
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/cpalss.uplifting",
+          "label": "Instagram"
+        },
+        {
+          "kind": "website",
+          "url": "https://cpalss.com",
+          "label": "Website"
+        }
+      ],
+      "photo": "entertainment/orgs/cpalss.jpg"
+    },
+    "vacos": {
+      "id": "vacos",
+      "name": "VACOS",
+      "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/vietnameseamericancommunutysacramento",
+          "label": "Facebook"
+        },
+        {
+          "kind": "website",
+          "url": "https://vacos.org",
+          "label": "Website"
+        }
+      ],
+      "photo": "entertainment/orgs/vacos.jpg"
+    },
+    "nvcc": {
+      "id": "nvcc",
+      "name": "NorCal Vietnamese Chamber of Commerce",
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/norcal_chamber",
+          "label": "Instagram"
+        },
+        {
+          "kind": "website",
+          "url": "https://norcalchamber.org",
+          "label": "Website"
+        }
+      ],
+      "photo": "entertainment/orgs/nvcc.jpg"
+    },
     "tu-vien-phuoc-lam": {
       "id": "tu-vien-phuoc-lam",
       "name": "Tu Viện Phước Lâm",
