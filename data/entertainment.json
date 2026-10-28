@@ -1,7 +1,7 @@
 {
-  "exported_at": "2026-10-27",
+  "exported_at": "2026-10-28",
   "timezone": "America/Los_Angeles",
-  "as_of_pt": "2026-10-27",
+  "as_of_pt": "2026-10-28",
   "events": [
     {
       "id": "cpalss-lny-2027",
@@ -8799,6 +8799,11 @@
       "id": "xang-xu-liu-foundation",
       "name": "Xang Xừ Líu Foundation",
       "links": [
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/xangxuliufoundation",
+          "label": "Facebook"
+        },
         {
           "kind": "website",
           "url": "https://xangxuliufoundation.betterworld.org",
