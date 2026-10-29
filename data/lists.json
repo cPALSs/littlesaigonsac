@@ -1,0 +1,322 @@
+{
+  "headline": "Lists",
+  "lead": "Community rosters for Little Saigon Sacramento — lion dance troupes and Vietnamese-owned nail salons.",
+  "contactNote": "Know a listing to add or correct? Message @littlesaigonsactown on Instagram.",
+  "categories": [
+    {
+      "slug": "lion-dance",
+      "title": "Lion dance groups",
+      "blurb": "Greater Sacramento and Stockton troupes — civic studios, temples, college, high school, and middle school.",
+      "headline": "Lion dance groups",
+      "lead": "Greater Sacramento and Stockton lion dance groups — civic studios, temple teams, college troupes, high school clubs, and one middle school feeder.",
+      "contactNote": "Know a local lion dance group we missed? Message @littlesaigonsactown on Instagram.",
+      "lanes": [
+        {
+          "id": "civic",
+          "title": "Civic / studio",
+          "troupes": [
+            {
+              "name": "Eastern Ways Martial Arts",
+              "instagram": "https://www.instagram.com/eastern_ways/",
+              "handle": "@eastern_ways",
+              "website": "https://www.easternways.com",
+              "avatar": "lists/lion-dance/eastern_ways.jpg"
+            },
+            {
+              "name": "Honor Kung Fu Academy",
+              "instagram": "https://www.instagram.com/honorkungfu_academy/",
+              "handle": "@honorkungfu_academy",
+              "website": "https://www.honorkungfu.com",
+              "avatar": "lists/lion-dance/honorkungfu_academy.jpg"
+            },
+            {
+              "name": "Jade Rabbit Dragon and Lion Dance",
+              "instagram": "https://www.instagram.com/jaderabbitld/",
+              "handle": "@jaderabbitld",
+              "website": "https://www.jaderabbitliondance.com",
+              "avatar": "lists/lion-dance/jaderabbitld.jpg"
+            },
+            {
+              "name": "Teng Fei Lion Dance",
+              "instagram": "https://www.instagram.com/tengfeisacramento/",
+              "handle": "@tengfeisacramento",
+              "website": "https://sacliondance.com",
+              "avatar": "lists/lion-dance/tengfeisacramento.jpg"
+            },
+            {
+              "name": "Thien Quang Lion Dance",
+              "aka": "Stockton",
+              "instagram": "https://www.instagram.com/thienquang_liondance/",
+              "handle": "@thienquang_liondance",
+              "avatar": "lists/lion-dance/thienquang_liondance.jpg"
+            }
+          ]
+        },
+        {
+          "id": "temple",
+          "title": "Temple",
+          "troupes": [
+            {
+              "name": "Dieu Quang Temple Lion Dance",
+              "instagram": "https://www.instagram.com/dqliondance/",
+              "handle": "@dqliondance",
+              "avatar": "lists/lion-dance/dqliondance.jpg"
+            },
+            {
+              "name": "Kim Quang Temple Lion Dance",
+              "instagram": "https://www.instagram.com/gdptkqliondance/",
+              "handle": "@gdptkqliondance",
+              "avatar": "lists/lion-dance/gdptkqliondance.jpg"
+            },
+            {
+              "name": "Stockton Chinese Benevolent Association",
+              "aka": "lion dance classes · dragon team",
+              "website": "https://stocktoncba.org/chinese-lion-dance-classes/"
+            }
+          ]
+        },
+        {
+          "id": "college",
+          "title": "College",
+          "troupes": [
+            {
+              "name": "Blooming Lotus",
+              "aka": "UC Davis",
+              "instagram": "https://www.instagram.com/bloominglotusatucd/",
+              "handle": "@bloominglotusatucd",
+              "avatar": "lists/lion-dance/bloominglotusatucd.jpg"
+            },
+            {
+              "name": "Red Lotus",
+              "aka": "Sacramento State VSA",
+              "instagram": "https://www.instagram.com/redlotus.official/",
+              "handle": "@redlotus.official",
+              "avatar": "lists/lion-dance/redlotus-official.jpg"
+            }
+          ]
+        },
+        {
+          "id": "high-school",
+          "title": "High school",
+          "troupes": [
+            {
+              "name": "Cosumnes Oaks Lion Dance",
+              "instagram": "https://www.instagram.com/cohsliondance/",
+              "handle": "@cohsliondance",
+              "avatar": "lists/lion-dance/cohsliondance.jpg"
+            },
+            {
+              "name": "Florin High Asian Club",
+              "aka": "ONE GENERATION",
+              "instagram": "https://www.instagram.com/florinhighac/",
+              "handle": "@florinhighac",
+              "avatar": "lists/lion-dance/florinhighac.jpg"
+            },
+            {
+              "name": "Franklin Lion Dance Club",
+              "instagram": "https://www.instagram.com/frhsliondance/",
+              "handle": "@frhsliondance",
+              "avatar": "lists/lion-dance/frhsliondance.jpg"
+            },
+            {
+              "name": "Laguna Creek Chinese Culture Club",
+              "aka": "Lion Dance Team",
+              "instagram": "https://www.instagram.com/lchsccc/",
+              "handle": "@lchsccc",
+              "avatar": "lists/lion-dance/lchsccc.jpg"
+            },
+            {
+              "name": "Mira Loma Chinese Performing Arts Team",
+              "aka": "Dragon & Lion Dance · San Juan Unified",
+              "instagram": "https://www.instagram.com/mlhs_chinese_club/",
+              "handle": "@mlhs_chinese_club",
+              "avatar": "lists/lion-dance/mlhs_chinese_club.jpg"
+            },
+            {
+              "name": "Monterey Trail Lion Dance Club",
+              "instagram": "https://www.instagram.com/mths_liondance/",
+              "handle": "@mths_liondance",
+              "avatar": "lists/lion-dance/mths_liondance.jpg"
+            },
+            {
+              "name": "Pleasant Grove Lion Dance Club",
+              "instagram": "https://www.instagram.com/pgliondance/",
+              "handle": "@pgliondance",
+              "avatar": "lists/lion-dance/pgliondance.jpg"
+            },
+            {
+              "name": "Sheldon Lion Dance Club",
+              "instagram": "https://www.instagram.com/shsliondance/",
+              "handle": "@shsliondance",
+              "website": "https://linktr.ee/shsliondance",
+              "avatar": "lists/lion-dance/shsliondance.jpg"
+            }
+          ]
+        },
+        {
+          "id": "middle-school",
+          "title": "Middle school",
+          "troupes": [
+            {
+              "name": "Katherine L. Albiani Middle School Chinese Lion Dancers",
+              "website": "https://kams.egusd.net/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "nail-salons",
+      "title": "Nail salons",
+      "blurb": "Working roster of Vietnamese-owned and Viet-adjacent nail salons in Greater Sacramento — help us verify ownership.",
+      "headline": "Nail salons",
+      "lead": "A working roster of Vietnamese-owned and Viet-adjacent nail salons across Greater Sacramento.",
+      "intro": "This is a research list for community review — not a certified Viet-owned seal. Names come from field notes, hire posts, and local referrals. Help us verify ownership and accuracy.",
+      "contactNote": "Corrections or additions? Message @littlesaigonsactown on Instagram.",
+      "listings": [
+        {
+          "name": "Angel Nails",
+          "addresses": [
+            "5510 Florin Rd, Sacramento, CA 95823"
+          ]
+        },
+        {
+          "name": "Peach + Ivy Nail and Skin",
+          "addresses": [
+            "341 Iron Point Rd Ste C, Folsom, CA 95630"
+          ]
+        },
+        {
+          "name": "AnnGoo Nails",
+          "note": "Press-on nail brand (Bay Area) — no Sacramento storefront on file"
+        },
+        {
+          "name": "Venus Nail Spa",
+          "addresses": [
+            "9170 W Stockton Blvd #170, Elk Grove, CA 95758"
+          ]
+        },
+        {
+          "name": "NailsPOS",
+          "type": "tool",
+          "note": "POS / booking software for nail salons — not a salon",
+          "addresses": [
+            "6830 Stockton Blvd #200, Sacramento, CA 95823"
+          ]
+        },
+        {
+          "name": "Sidney Le Beauty",
+          "type": "beauty",
+          "note": "Beauty salon (not nails-only)",
+          "addresses": [
+            "8270 Belvedere Ave Ste 100, Sacramento, CA 95826"
+          ]
+        },
+        {
+          "name": "Moonshine & Co.",
+          "note": "First CA nail salon with full liquor license",
+          "addresses": [
+            "2905 30th St, Sacramento, CA 95817"
+          ]
+        },
+        {
+          "name": "Amour Nails & Lash",
+          "addresses": [
+            "1850 Douglas Blvd #904, Roseville, CA 95661"
+          ]
+        },
+        {
+          "name": "Relax Nail Vibe",
+          "note": "Advertised ventilation + UV air disinfection + autoclave",
+          "addresses": [
+            "645 E Bidwell St, Folsom, CA 95630"
+          ]
+        },
+        {
+          "name": "Parklife Nail Salon and Spa",
+          "addresses": [
+            "2070 Fair Oaks Blvd Ste 140, Sacramento, CA 95825",
+            "3590 Crocker Dr Ste 150, Sacramento, CA 95818"
+          ]
+        },
+        {
+          "name": "Luxury Nail Spa",
+          "addresses": [
+            "7837 Madison Ave, Citrus Heights, CA 95610",
+            "7520 Elk Grove Blvd Ste 110-120, Elk Grove, CA 95757",
+            "2405 Iron Point Rd Suite 105, Folsom, CA 95630"
+          ]
+        },
+        {
+          "name": "JP Nail Spa",
+          "addresses": [
+            "4700 Freeport Blvd, Sacramento, CA 95822"
+          ]
+        },
+        {
+          "name": "Oasis Nails",
+          "addresses": [
+            "4424 Freeport Blvd Ste 2, Sacramento, CA 95822"
+          ]
+        },
+        {
+          "name": "Luxi Spa & Salon",
+          "addresses": [
+            "8829 Sheldon Rd Ste 130, Elk Grove, CA 95624"
+          ]
+        },
+        {
+          "name": "My-Le’s Beauty College",
+          "type": "school",
+          "note": "Training school — student nail sets / artist pipeline, not an owner salon",
+          "addresses": [
+            "4516 Florin Rd, Sacramento, CA 95823"
+          ]
+        },
+        {
+          "name": "Signature Nails Salon",
+          "addresses": [
+            "8391 Folsom Blvd #3, Sacramento, CA 95826"
+          ]
+        },
+        {
+          "name": "D & D Nails Bar",
+          "addresses": [
+            "3336 Coach Ln, Cameron Park, CA 95682"
+          ]
+        },
+        {
+          "name": "Eco Friendly Nail Salon",
+          "addresses": [
+            "3190 Arden Way, Sacramento, CA 95825"
+          ]
+        },
+        {
+          "name": "Pham Nails",
+          "addresses": [
+            "7610 Folsom-Auburn Rd #140, Folsom, CA 95630"
+          ]
+        },
+        {
+          "name": "Cali Nails and Spa",
+          "addresses": [
+            "196 Nut Tree Pkwy Ste H, Vacaville, CA 95687"
+          ]
+        },
+        {
+          "name": "Nails X Lounge",
+          "addresses": [
+            "1701 Ethan Way, Sacramento, CA 95825",
+            "6035 Florin Rd, Sacramento, CA 95823"
+          ]
+        },
+        {
+          "name": "Lacquer Nails",
+          "addresses": [
+            "310 Lincoln Ctr, Stockton, CA 95207"
+          ]
+        }
+      ]
+    }
+  ]
+}

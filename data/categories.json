@@ -13,6 +13,11 @@
         "id": "entertainment",
         "label": "Entertainment",
         "href": "/entertainment/"
+      },
+      {
+        "id": "lists",
+        "label": "Lists",
+        "href": "/lists/"
       }
     ],
     "instagram": "https://www.instagram.com/littlesaigonsactown/",

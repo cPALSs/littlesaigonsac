@@ -5,6 +5,7 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, cpSync
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { homeEntertainmentSection, writeEntertainmentPages } from "./entertainment-pages.mjs";
+import { writeListsPages } from "./lists-pages.mjs";
 import { prepareSiteImages } from "./images.mjs";
 import { adjacentInList, pagerNavHtml } from "../src/js/meal-sort.js";
 
@@ -19,6 +20,8 @@ const entertainment = existsSync(entertainmentPath)
   : null;
 const foodiesPath = join(root, "data/foodies.json");
 const foodies = existsSync(foodiesPath) ? JSON.parse(readFileSync(foodiesPath, "utf8")) : null;
+const listsPath = join(root, "data/lists.json");
+const lists = existsSync(listsPath) ? JSON.parse(readFileSync(listsPath, "utf8")) : null;
 
 if (entertainment?.people) {
   for (const person of Object.values(entertainment.people)) {
@@ -76,7 +79,8 @@ const imgEl = (rel, alt = "", { kind, size, lazy } = {}) => {
   if (
     String(rel).startsWith("entertainment/people/") ||
     String(rel).startsWith("entertainment/orgs/") ||
-    String(rel).startsWith("foodies/")
+    String(rel).startsWith("foodies/") ||
+    String(rel).startsWith("lists/lion-dance/")
   ) {
     src += `?t=${Math.floor(statSync(abs).mtimeMs)}`;
   }
@@ -690,8 +694,26 @@ if (entertainment) {
   });
 }
 
+let listsCounts = null;
+if (lists) {
+  listsCounts = writeListsPages({
+    dist,
+    join,
+    mkdirSync,
+    writeFileSync,
+    layout,
+    esc,
+    imgEl,
+    crumbs,
+    lists,
+  });
+}
+
 const extra = entertainmentCounts
   ? ` + Entertainment (${entertainmentCounts.events} shows, ${entertainmentCounts.people} people, ${entertainmentCounts.orgs} orgs)`
+  : "";
+const listsNote = listsCounts
+  ? ` + Lists (${listsCounts.troupes} lion troupes, ${listsCounts.nailSalons} nail listings)`
   : "";
 const foodiesNote = foodiesPage ? " + About the foodies" : "";
 
@@ -797,5 +819,5 @@ ${sitemapUrls.map((u) => `  <url><loc>${esc(u)}</loc></url>`).join("\n")}
 );
 writeFileSync(join(dist, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_ORIGIN}/sitemap.xml\n`);
 
-console.log(`Built home + Viet Eats (${categories.length} categories)${foodiesNote}${extra} · sitemap ${sitemapUrls.length} URLs → ${dist}`);
+console.log(`Built home + Viet Eats (${categories.length} categories)${foodiesNote}${extra}${listsNote} · sitemap ${sitemapUrls.length} URLs → ${dist}`);
 console.log(`Images: ${images.count} files (${images.rendered} rendered, rest cached or copied)`);

@@ -37,7 +37,13 @@ const posix = (p) => p.split(sep).join("/");
 /** Which treatment a src/img-relative path gets. */
 export function roleForRel(rel) {
   const r = posix(rel);
-  if (/^entertainment\/(people|orgs)\/[^/]+$/.test(r) || /^foodies\/[^/]+$/.test(r)) return "avatar";
+  if (
+    /^entertainment\/(people|orgs)\/[^/]+$/.test(r) ||
+    /^foodies\/[^/]+$/.test(r) ||
+    /^lists\/lion-dance\/[^/]+$/.test(r)
+  ) {
+    return "avatar";
+  }
   if (/^entertainment\/[^/]+$/.test(r)) return "poster";
   if (/^[^/]+$/.test(r)) return "category";
   return "passthrough";

@@ -497,7 +497,7 @@ h1 {
   max-width: 36rem;
   color: var(--ink-soft);
   font-size: 1.05rem;
-  line-height: 1.1;
+  line-height: 1.4;
 }
 
 .offline-page .hero {
@@ -2852,4 +2852,217 @@ body.is-drawer-open .filter-fab {
   .filter-drawer:has(.ent-map) {
     height: 45vh;
   }
+}
+
+/* —— Lists directory —— */
+.lists-hub-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .lists-hub-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.lists-hub-card {
+  display: block;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid color-mix(in srgb, var(--ink, #1a1225) 12%, transparent);
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  background: color-mix(in srgb, #fff 70%, var(--paper, #f4ead8));
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.lists-hub-card:hover {
+  border-color: color-mix(in srgb, var(--accent, #3b257b) 45%, transparent);
+  transform: translateY(-1px);
+}
+
+.lists-hub-card h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.25rem;
+}
+
+.lists-hub-card .gloss {
+  margin: 0;
+  color: var(--muted, #5c5368);
+  font-size: 0.95rem;
+}
+
+.lists-hub-count {
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent, #3b257b);
+}
+
+.lists-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin: 0 0 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink, #1a1225) 10%, transparent);
+}
+
+.lists-toc a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--accent, #3b257b);
+}
+
+.lists-toc a:hover {
+  text-decoration: underline;
+}
+
+.lists-lane {
+  margin: 0 0 2rem;
+}
+
+.lists-lane h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.lists-roster-list {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+.lists-roster-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink, #1a1225) 10%, transparent);
+  line-height: 1.5;
+}
+
+.lists-roster-item:first-child {
+  border-top: 1px solid color-mix(in srgb, var(--ink, #1a1225) 10%, transparent);
+}
+
+.lists-roster-item--nail {
+  align-items: flex-start;
+}
+
+.lists-avatar-link {
+  flex: 0 0 auto;
+  display: block;
+  line-height: 0;
+}
+
+.lists-roster-item img {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: color-mix(in srgb, var(--ink, #1a1225) 8%, transparent);
+}
+
+.lists-roster-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.lists-roster-name {
+  display: block;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.lists-aka {
+  font-weight: 500;
+  color: var(--muted, #5c5368);
+}
+
+.lists-aka::before {
+  content: " · ";
+}
+
+.lists-type {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  background: color-mix(in srgb, var(--accent, #3b257b) 12%, transparent);
+  color: var(--accent, #3b257b);
+}
+
+.lists-roster-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  line-height: 1.3;
+}
+
+.lists-roster-links a {
+  color: var(--accent, #3b257b);
+  text-decoration: none;
+}
+
+.lists-roster-links a:hover {
+  text-decoration: underline;
+}
+
+.lists-roster-web::before {
+  content: "·";
+  color: var(--muted, #5c5368);
+  margin: 0 0.4rem;
+}
+
+.lists-roster-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted, #5c5368);
+}
+
+.lists-roster-meta--stack {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0.2rem;
+}
+
+.lists-address {
+  color: var(--ink-soft, #5c4a3e);
+  text-decoration-color: rgba(92, 74, 62, 0.45);
+}
+
+.lists-address:hover {
+  color: var(--rust-deep, #8a3a2a);
+  text-decoration-color: currentColor;
+}
+
+.lists-listing-note {
+  display: block;
+  font-size: 0.88rem;
+}
+
+.lists-verify-banner {
+  margin: 1.25rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--accent, #3b257b);
+  background: color-mix(in srgb, var(--accent, #3b257b) 8%, transparent);
+  font-size: 0.95rem;
+}
+
+.lists-note {
+  margin-top: 1.25rem;
 }
