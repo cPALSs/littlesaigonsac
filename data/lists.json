@@ -178,23 +178,33 @@
           "name": "Angel Nails",
           "addresses": [
             "5510 Florin Rd, Sacramento, CA 95823"
-          ]
+          ],
+          "website": "https://angelnails.lanpage.net/",
+          "facebook": "https://www.facebook.com/297520010953086"
         },
         {
           "name": "Peach + Ivy Nail and Skin",
           "addresses": [
             "341 Iron Point Rd Ste C, Folsom, CA 95630"
-          ]
+          ],
+          "website": "https://peachandivy.com/",
+          "instagram": "https://www.instagram.com/peachandivyfolsom/",
+          "facebook": "https://www.facebook.com/peachandivyfolsom/"
         },
         {
           "name": "AnnGoo Nails",
-          "note": "Press-on nail brand (Bay Area) — no Sacramento storefront on file"
+          "note": "Press-on nail brand (Bay Area) — no Sacramento storefront on file",
+          "website": "https://anngoonails.com/",
+          "instagram": "https://www.instagram.com/anngoonails/"
         },
         {
           "name": "Venus Nail Spa",
           "addresses": [
             "9170 W Stockton Blvd #170, Elk Grove, CA 95758"
-          ]
+          ],
+          "website": "https://www.venusnailspaca.us/",
+          "instagram": "https://www.instagram.com/venusnailspaeg/",
+          "facebook": "https://www.facebook.com/VenusNailSpaCA/"
         },
         {
           "name": "NailsPOS",
@@ -202,7 +212,9 @@
           "note": "POS / booking software for nail salons — not a salon",
           "addresses": [
             "6830 Stockton Blvd #200, Sacramento, CA 95823"
-          ]
+          ],
+          "website": "https://nailspos.com/",
+          "facebook": "https://www.facebook.com/104951841176874"
         },
         {
           "name": "Sidney Le Beauty",
@@ -210,34 +222,46 @@
           "note": "Beauty salon (not nails-only)",
           "addresses": [
             "8270 Belvedere Ave Ste 100, Sacramento, CA 95826"
-          ]
+          ],
+          "website": "https://sidneyle.com/",
+          "instagram": "https://www.instagram.com/sidneyle/"
         },
         {
           "name": "Moonshine & Co.",
           "note": "First CA nail salon with full liquor license",
           "addresses": [
             "2905 30th St, Sacramento, CA 95817"
-          ]
+          ],
+          "website": "https://www.moonshineandco.com/",
+          "instagram": "https://www.instagram.com/moonshineco/"
         },
         {
           "name": "Amour Nails & Lash",
           "addresses": [
             "1850 Douglas Blvd #904, Roseville, CA 95661"
-          ]
+          ],
+          "website": "https://amournailslash.com/",
+          "instagram": "https://www.instagram.com/amournailslash.25/",
+          "facebook": "https://www.facebook.com/amournailsandlash/"
         },
         {
           "name": "Relax Nail Vibe",
           "note": "Advertised ventilation + UV air disinfection + autoclave",
           "addresses": [
             "645 E Bidwell St, Folsom, CA 95630"
-          ]
+          ],
+          "website": "https://relaxnailfolsom.com/",
+          "facebook": "https://www.facebook.com/relaxnailfolsom"
         },
         {
           "name": "Parklife Nail Salon and Spa",
           "addresses": [
             "2070 Fair Oaks Blvd Ste 140, Sacramento, CA 95825",
             "3590 Crocker Dr Ste 150, Sacramento, CA 95818"
-          ]
+          ],
+          "website": "https://parklifenailsalon.com/",
+          "instagram": "https://www.instagram.com/parklifesacramento/",
+          "facebook": "https://www.facebook.com/parklifenailsalon/"
         },
         {
           "name": "Luxury Nail Spa",
@@ -245,25 +269,35 @@
             "7837 Madison Ave, Citrus Heights, CA 95610",
             "7520 Elk Grove Blvd Ste 110-120, Elk Grove, CA 95757",
             "2405 Iron Point Rd Suite 105, Folsom, CA 95630"
-          ]
+          ],
+          "website": "https://citrusheightsluxurynailspa.com/",
+          "instagram": "https://www.instagram.com/citrusheights_luxurynailspa/",
+          "facebook": "https://www.facebook.com/391120380751538"
         },
         {
           "name": "JP Nail Spa",
           "addresses": [
             "4700 Freeport Blvd, Sacramento, CA 95822"
-          ]
+          ],
+          "website": "https://jpnailandspa.com/",
+          "facebook": "https://www.facebook.com/100206091964739"
         },
         {
           "name": "Oasis Nails",
           "addresses": [
             "4424 Freeport Blvd Ste 2, Sacramento, CA 95822"
-          ]
+          ],
+          "website": "https://oasisnailssacramento.com/",
+          "instagram": "https://www.instagram.com/oasisnails.freeport.blvd/"
         },
         {
           "name": "Luxi Spa & Salon",
           "addresses": [
             "8829 Sheldon Rd Ste 130, Elk Grove, CA 95624"
-          ]
+          ],
+          "website": "https://www.luxisalon.com/",
+          "instagram": "https://www.instagram.com/luxispaandsalon/",
+          "facebook": "https://www.facebook.com/455430057648205"
         },
         {
           "name": "My-Le’s Beauty College",
@@ -271,50 +305,67 @@
           "note": "Training school — student nail sets / artist pipeline, not an owner salon",
           "addresses": [
             "4516 Florin Rd, Sacramento, CA 95823"
-          ]
+          ],
+          "website": "https://www.mylebeautycollegeinc.com/",
+          "instagram": "https://www.instagram.com/mylebeauty/",
+          "facebook": "https://www.facebook.com/mylebeautycollege/"
         },
         {
           "name": "Signature Nails Salon",
           "addresses": [
             "8391 Folsom Blvd #3, Sacramento, CA 95826"
-          ]
+          ],
+          "website": "https://signaturenailsnspasacramento.com/"
         },
         {
           "name": "D & D Nails Bar",
           "addresses": [
             "3336 Coach Ln, Cameron Park, CA 95682"
-          ]
+          ],
+          "instagram": "https://www.instagram.com/danddnailsbar/",
+          "facebook": "https://www.facebook.com/p/DD-Nails-Bar-100090877732476/"
         },
         {
           "name": "Eco Friendly Nail Salon",
           "addresses": [
             "3190 Arden Way, Sacramento, CA 95825"
-          ]
+          ],
+          "website": "https://ecofriendlynailsalon.com/",
+          "instagram": "https://www.instagram.com/ecofriendlynail/",
+          "facebook": "https://www.facebook.com/2014051328668689"
         },
         {
           "name": "Pham Nails",
           "addresses": [
             "7610 Folsom-Auburn Rd #140, Folsom, CA 95630"
-          ]
+          ],
+          "website": "https://phamnailsalon.square.site/",
+          "facebook": "https://www.facebook.com/386408051399636"
         },
         {
           "name": "Cali Nails and Spa",
           "addresses": [
             "196 Nut Tree Pkwy Ste H, Vacaville, CA 95687"
-          ]
+          ],
+          "website": "https://calinailsandspavacaville.com/",
+          "facebook": "https://www.facebook.com/111220271207630"
         },
         {
           "name": "Nails X Lounge",
           "addresses": [
             "1701 Ethan Way, Sacramento, CA 95825",
             "6035 Florin Rd, Sacramento, CA 95823"
-          ]
+          ],
+          "website": "https://nailsxlounge.com/",
+          "facebook": "https://www.facebook.com/nailsxlounge"
         },
         {
           "name": "Lacquer Nails",
           "addresses": [
             "310 Lincoln Ctr, Stockton, CA 95207"
-          ]
+          ],
+          "website": "https://lacquernailsstockton.com/",
+          "instagram": "https://www.instagram.com/lacquer209/"
         }
       ]
     }

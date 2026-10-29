@@ -1,5 +1,15 @@
 /** HTML builders for /lists on littlesaigonsac.town */
 
+const IG_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="2.4" y="2.4" width="19.2" height="19.2" rx="5.4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="12" cy="12" r="4.35" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="17.45" cy="6.55" r="1.15" fill="currentColor"/>
+    </svg>`;
+
+const FB_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor" d="M14.2 8.2h3.1V4.8h-3.1c-2.7 0-4.6 1.7-4.6 4.5v1.7H7.5v3.4h2.1V21h3.7v-6.6h2.6l.6-3.4h-3.2V9.6c0-.8.4-1.4 1.4-1.4z"/>
+    </svg>`;
+
 function websiteLabelFromUrl(url) {
   try {
     const host = new URL(url).hostname.replace(/^www\./, "");
@@ -7,6 +17,28 @@ function websiteLabelFromUrl(url) {
   } catch {
     return url;
   }
+}
+
+/** Website chip + IG/FB icon links for nail roster rows. */
+function nailSocialLinks(listing, esc) {
+  const parts = [];
+  if (listing.website) {
+    parts.push(
+      `<a class="lists-web" href="${esc(listing.website)}" rel="noopener noreferrer" target="_blank">${esc(websiteLabelFromUrl(listing.website))}</a>`,
+    );
+  }
+  if (listing.instagram) {
+    parts.push(
+      `<a class="social-icon" href="${esc(listing.instagram)}" rel="noopener noreferrer" target="_blank" aria-label="Instagram">${IG_SVG}</a>`,
+    );
+  }
+  if (listing.facebook) {
+    parts.push(
+      `<a class="social-icon" href="${esc(listing.facebook)}" rel="noopener noreferrer" target="_blank" aria-label="Facebook">${FB_SVG}</a>`,
+    );
+  }
+  if (!parts.length) return "";
+  return `<span class="lists-roster-social">${parts.join("")}</span>`;
 }
 
 function displayArea(area) {
@@ -240,6 +272,7 @@ function nailListingItem(listing, esc, addresses) {
       <span class="lists-roster-text">
         <span class="lists-roster-name">${esc(listing.name)}${badge ? ` <span class="lists-type">${esc(badge)}</span>` : ""}</span>
         ${addressHtml ? `<span class="lists-roster-meta lists-roster-meta--stack">${addressHtml}</span>` : ""}
+        ${nailSocialLinks(listing, esc)}
         ${listing.note ? `<span class="lists-listing-note muted">${esc(listing.note)}</span>` : ""}
       </span>
     </li>`;

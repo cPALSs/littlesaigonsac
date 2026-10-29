@@ -3040,6 +3040,47 @@ body.is-drawer-open .filter-fab {
   color: var(--muted, #5c5368);
 }
 
+.lists-roster-social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.lists-roster-social .lists-web {
+  font-size: 0.88rem;
+  color: var(--accent, #3b257b);
+  text-decoration: none;
+}
+
+.lists-roster-social .lists-web:hover {
+  text-decoration: underline;
+}
+
+.lists-roster-social a.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--ink-soft, #5c4a3e);
+  border: 1px solid var(--rule, rgba(28, 20, 15, 0.12));
+  border-radius: 0.4rem;
+  text-decoration: none;
+}
+
+.lists-roster-social a.social-icon:hover {
+  color: var(--rust, #9b1d14);
+  border-color: var(--rust, #9b1d14);
+}
+
+.lists-roster-social a.social-icon svg {
+  display: block;
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
 .lists-roster-meta--stack {
   flex-direction: column;
   flex-wrap: nowrap;
