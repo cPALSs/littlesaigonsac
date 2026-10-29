@@ -2927,7 +2927,8 @@ body.is-drawer-open .filter-fab {
 
 .lists-lane h2 {
   margin: 0 0 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.45rem;
+  font-weight: 400;
 }
 
 .lists-roster-list {
