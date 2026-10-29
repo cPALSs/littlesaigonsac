@@ -122,6 +122,87 @@
       ]
     },
     {
+      "id": "aabc-holiday-charity-concert-2026",
+      "label": "AABC 5th Annual Holiday Charity Concert",
+      "display_date": "Dec 18, 2026 · 5:30–11:30 PM",
+      "start_date": "2026-12-18",
+      "end_date": "2026-12-18",
+      "city": "Elk Grove",
+      "venue": "District 56, 8230 Civic Center Dr #100",
+      "place_name": "District 56",
+      "place_id": "district-56",
+      "google_place_id": "ChIJXW7xGpDHmoARpI87nXrHwxQ",
+      "place_address": "8230 Civic Center Dr, Elk Grove, CA 95757",
+      "lat": 38.4094,
+      "lng": -121.3765,
+      "status": "confirmed",
+      "poster": "entertainment/aabc-holiday-charity-concert-2026.jpg",
+      "producers": [
+        {
+          "type": "org",
+          "id": "asian-american-business-club-aabc",
+          "name": "Asian American Business Club (AABC)",
+          "role": "host"
+        },
+        {
+          "type": "org",
+          "id": "california-is-my-home-caimh",
+          "name": "California Is My Home",
+          "role": "host"
+        }
+      ],
+      "lineup": [
+        {
+          "type": "person",
+          "id": "aaron-le",
+          "name": "Aaron Le",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "alex-kong",
+          "name": "Alex Kong",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "angel-gia-han",
+          "name": "Angel Gia Hân",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "arriane-del",
+          "name": "Arriane Del",
+          "role": "vocalist"
+        },
+        {
+          "type": "person",
+          "id": "johnny-zhong",
+          "name": "Johnny Zhong",
+          "role": "vocalist"
+        }
+      ],
+      "source_url": "https://www.instagram.com/p/De_Mr-Dm9cj/",
+      "tickets": [
+        {
+          "kind": "phone",
+          "label": "Peter Phong",
+          "phone": "9165194723"
+        },
+        {
+          "kind": "phone",
+          "label": "Kitt Lee",
+          "phone": "9163036871"
+        },
+        {
+          "kind": "phone",
+          "label": "Eva Zhou",
+          "phone": "9167176295"
+        }
+      ]
+    },
+    {
       "id": "vaces-trung-thu-cho-em-2026",
       "label": "Mid-Autumn Fundraising Gala",
       "display_date": "Dec 13, 2026 · 6:00 PM",
@@ -3623,6 +3704,151 @@
       ],
       "photo": "entertainment/people/mai-thien-van.jpg"
     },
+    "angel-gia-han": {
+      "id": "angel-gia-han",
+      "name": "Angel Gia Hân",
+      "specialties": [
+        {
+          "slug": "nhac-tre",
+          "label": "Nhạc trẻ"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/angelhantran",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/han.tran.18488169",
+          "label": "Facebook"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/3vPhrsNhUqJghOaZXsQmG1",
+          "label": "Spotify"
+        }
+      ],
+      "photo": "entertainment/people/angel-gia-han.jpg"
+    },
+    "arriane-del": {
+      "id": "arriane-del",
+      "name": "Arriane Del",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/arriane.del",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/arriane.sf",
+          "label": "Facebook"
+        },
+        {
+          "kind": "linktree",
+          "url": "https://linktr.ee/arrianedel",
+          "label": "linktr.ee"
+        }
+      ],
+      "photo": "entertainment/people/arriane-del.jpg"
+    },
+    "alex-kong": {
+      "id": "alex-kong",
+      "name": "Alex Kong",
+      "specialties": [
+        {
+          "slug": "american-indie",
+          "label": "American · indie"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/alexkongmusic",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/alexkongg",
+          "label": "Facebook"
+        },
+        {
+          "kind": "soundcloud",
+          "url": "https://soundcloud.com/alexkong",
+          "label": "SoundCloud"
+        }
+      ],
+      "photo": "entertainment/people/alex-kong.jpg"
+    },
+    "johnny-zhong": {
+      "id": "johnny-zhong",
+      "name": "Johnny Zhong",
+      "specialties": [
+        {
+          "slug": "singer",
+          "label": "Singer"
+        }
+      ],
+      "links": [],
+      "photo": "entertainment/people/johnny-zhong.jpg"
+    },
+    "aaron-le": {
+      "id": "aaron-le",
+      "name": "Aaron Le",
+      "specialties": [
+        {
+          "slug": "american-indie",
+          "label": "American · indie"
+        },
+        {
+          "slug": "singer",
+          "label": "Singer"
+        },
+        {
+          "slug": "songwriter",
+          "label": "Songwriter"
+        }
+      ],
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/theofficialaaronle",
+          "label": "Instagram"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://youtube.com/@TheOfficialAaronLe",
+          "label": "YouTube"
+        },
+        {
+          "kind": "spotify",
+          "url": "https://open.spotify.com/artist/0ntvO9hzmTYoy1vNz4DduX",
+          "label": "Spotify"
+        },
+        {
+          "kind": "linktree",
+          "url": "https://linktr.ee/theofficialaaronle",
+          "label": "linktr.ee"
+        }
+      ],
+      "photo": "entertainment/people/aaron-le.jpg"
+    },
     "dan-nguyen": {
       "id": "dan-nguyen",
       "name": "Đan Nguyên",
@@ -6334,38 +6560,6 @@
       ],
       "photo": "entertainment/people/dan-truong.jpg"
     },
-    "angel-gia-han": {
-      "id": "angel-gia-han",
-      "name": "Angel Gia Hân",
-      "specialties": [
-        {
-          "slug": "nhac-tre",
-          "label": "Nhạc trẻ"
-        },
-        {
-          "slug": "singer",
-          "label": "Singer"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/angelhantran",
-          "label": "Instagram"
-        },
-        {
-          "kind": "facebook",
-          "url": "https://facebook.com/han.tran.18488169",
-          "label": "Facebook"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/3vPhrsNhUqJghOaZXsQmG1",
-          "label": "Spotify"
-        }
-      ],
-      "photo": "entertainment/people/angel-gia-han.jpg"
-    },
     "nguyen-hong-nhung": {
       "id": "nguyen-hong-nhung",
       "name": "Nguyễn Hồng Nhung",
@@ -6438,47 +6632,6 @@
         }
       ],
       "photo": "entertainment/people/vicky-nhung.jpg"
-    },
-    "aaron-le": {
-      "id": "aaron-le",
-      "name": "Aaron Le",
-      "specialties": [
-        {
-          "slug": "american-indie",
-          "label": "American · indie"
-        },
-        {
-          "slug": "singer",
-          "label": "Singer"
-        },
-        {
-          "slug": "songwriter",
-          "label": "Songwriter"
-        }
-      ],
-      "links": [
-        {
-          "kind": "instagram",
-          "url": "https://instagram.com/theofficialaaronle",
-          "label": "Instagram"
-        },
-        {
-          "kind": "youtube",
-          "url": "https://youtube.com/@TheOfficialAaronLe",
-          "label": "YouTube"
-        },
-        {
-          "kind": "spotify",
-          "url": "https://open.spotify.com/artist/0ntvO9hzmTYoy1vNz4DduX",
-          "label": "Spotify"
-        },
-        {
-          "kind": "linktree",
-          "url": "https://linktr.ee/theofficialaaronle",
-          "label": "linktr.ee"
-        }
-      ],
-      "photo": "entertainment/people/aaron-le.jpg"
     },
     "dj-uni": {
       "id": "dj-uni",
@@ -7427,18 +7580,6 @@
         }
       ],
       "photo": "entertainment/people/tieu-chau-nhu-quynh.jpg"
-    },
-    "alex-kong": {
-      "id": "alex-kong",
-      "name": "Alex Kong",
-      "specialties": [
-        {
-          "slug": "singer",
-          "label": "Singer"
-        }
-      ],
-      "links": [],
-      "photo": "entertainment/people/alex-kong.jpg"
     },
     "billy-khiem": {
       "id": "billy-khiem",
@@ -8724,6 +8865,45 @@
         }
       ],
       "photo": null
+    },
+    "asian-american-business-club-aabc": {
+      "id": "asian-american-business-club-aabc",
+      "name": "Asian American Business Club (AABC)",
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/aabcsacramento",
+          "label": "Instagram"
+        },
+        {
+          "kind": "website",
+          "url": "https://aabcsacramento.com",
+          "label": "Website"
+        }
+      ],
+      "photo": "entertainment/orgs/asian-american-business-club-aabc.jpg"
+    },
+    "california-is-my-home-caimh": {
+      "id": "california-is-my-home-caimh",
+      "name": "California Is My Home",
+      "links": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/cais.myhome",
+          "label": "Instagram"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/p/california-is-my-home-61571274877849",
+          "label": "Facebook"
+        },
+        {
+          "kind": "website",
+          "url": "https://caismyhome.com",
+          "label": "Website"
+        }
+      ],
+      "photo": "entertainment/orgs/california-is-my-home-caimh.jpg"
     },
     "four-stars-band": {
       "id": "four-stars-band",
